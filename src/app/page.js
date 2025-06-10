@@ -3,6 +3,7 @@
 import React from 'react'
 import Navbar from './components/navbar';
 import Hero from './components/landing/hero';
+import Elephant from './components/landing/elephant';
 
 
 function Home() {
@@ -10,6 +11,7 @@ function Home() {
     <div>
       <Navbar/>
           <Hero/>
+          <Elephant/>
     </div>
   )
 }
