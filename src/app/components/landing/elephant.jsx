@@ -27,7 +27,7 @@ const Elephant = () => {
           A Comprehensive Cultural Arts Organization Crafting Solutions To Empower The People,
           Planet And Ensuring Significant Advancements With A Focus On The Diverse Heritage Of India.
         </p>
-        <button className="mt-6 border border-[#3c597B] text-[#3c597B] px-6 py-2 rounded-full hover:bg-[#3c5978] hover:text-white transition duration-300">
+        <button className="mt-6 border border-[#3c597B] text-[#3c597B] px-6 py-2 rounded-full hover:bg-[#3c597B] hover:text-white transition duration-300">
           Delve Deeper
         </button>
       </div>
