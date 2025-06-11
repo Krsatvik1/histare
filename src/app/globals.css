@@ -31,3 +31,38 @@ body {
   font-weight: normal;
   font-style: normal;
 }
+/* Container keeps overflow hidden so we don’t see the loop-back */
+.work-scroll-container {
+  overflow-x: hidden;
+}
+
+/* Track slides left continuously; pauses on hover */
+.work-scroll-track {
+  display: flex;
+  animation: scroll-x 8s linear infinite;
+}
+.work-scroll-container:hover .work-scroll-track {
+  animation-play-state: paused;
+}
+
+/* Each card has left+right border so the borders join into one long divider */
+.work-card {
+  flex: 0 0 300px;
+  border-left: 1px solid #c7c7c7;
+  border-right: 1px solid #c7c7c7;
+}
+
+/* little breathing space between content and boundaries */
+.work-card > * {
+  margin-bottom: 0.75rem;
+}
+
+@keyframes scroll-x {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    /* “-50%” works because we duplicated the list once */
+    transform: translateX(-50%);
+  }
+}

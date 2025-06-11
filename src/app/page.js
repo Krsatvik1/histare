@@ -7,6 +7,8 @@ import Elephant from './components/landing/elephant';
 import Footer from './components/landing/footer';
 import Testimonial from './components/landing/testimonial';
 import Partnership from './components/landing/partnership';
+import Programe from './components/landing/programe';
+import Work from './components/landing/work';
 
 
 function Home() {
@@ -15,6 +17,8 @@ function Home() {
       <Navbar/>
           <Hero/>
           <Elephant/>
+          <Work/>
+          <Programe/>
           <Partnership/>
           <Testimonial/>
           <Footer/>
