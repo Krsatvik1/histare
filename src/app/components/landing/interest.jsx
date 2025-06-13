@@ -28,7 +28,7 @@ export default function Interest() {
       <i>  Our </i>Spectrum <i> of</i> Interests
       </h2>
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8 max-w-5xl mx-auto">
+      <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-5 gap-8 max-w-5xl mx-auto">
         {interests.map((title, index) => (
           <div key={index} className="flex flex-col items-center text-sm text-[#3c597B]">
             <img
