@@ -42,7 +42,7 @@ function CardContent({ item, reversed }) {
   /* “reversed” means: text first, image last  */
   const Info = (
     <>
-      <div className="text-sm text-gray-700 mt-3">{item.category}</div>
+      <div className="text-sm text-gray-700 mt-8">{item.category}</div>
       <div className="text-md font-semibold text-black">{item.title}</div>
       {item.author && (
         <div className="text-sm text-gray-600">{item.author}</div>

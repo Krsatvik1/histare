@@ -14,7 +14,7 @@ function Partnership() {
         <span className=" font-normal">Associates</span>
       </h2>
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 justify-items-center items-center">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8 justify-items-center items-center">
         <div className="w-32 sm:w-40 md:w-48">
           <Image
             src="/images/landing/google.png"

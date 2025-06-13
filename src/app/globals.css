@@ -76,3 +76,24 @@ body {
   scroll-snap-align: start;
   height: 100vh;
 }
+
+/* Custom Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F3F0ED; /* light track */
+  border-radius: 100vh;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3c597B; /* your brand dark blue */
+  border-radius: 100vh;
+  border: 2px solid #F3F0ED;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2b4260; /* darker on hover */
+}
