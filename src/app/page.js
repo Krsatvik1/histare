@@ -9,6 +9,7 @@ import Testimonial from './components/landing/testimonial';
 import Partnership from './components/landing/partnership';
 import Programe from './components/landing/programe';
 import Work from './components/landing/work';
+import Interest from './components/landing/interest';
 
 
 function Home() {
@@ -18,6 +19,7 @@ function Home() {
           <Hero/>
           <Elephant/>
           <Work/>
+          <Interest/>
           <Programe/>
           <Partnership/>
           <Testimonial/>
