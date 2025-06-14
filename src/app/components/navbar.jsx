@@ -32,7 +32,7 @@ const Navbar = () => {
             animate={{ x: 0 }}
             exit={{ x: '100%' }}
             transition={{ duration: 0.5, ease: 'easeInOut' }}
-            className="fixed top-0 right-0 h-full w-full md:w-[700px] bg-[#fdfaf7] z-40 shadow-xl"
+            className="fixed top-0 right-0 h-full w-full bg-[#fdfaf7] z-40 shadow-xl flex flex-col justify-end"
           >
             {/* Background Circle */}
             <div className="absolute bottom-0 right-0 w-[700px] h-[700px] z-0 pointer-events-none overflow-hidden">
@@ -41,16 +41,16 @@ const Navbar = () => {
                 alt="Decorative Circle"
                 width={800}
                 height={800}
-                className="translate-x-[-35%] translate-y-[60%] opacity-60"
+                className="-scale-x-100 translate-x-[30%] translate-y-[60%] opacity-60"
               />
             </div>
 
-            {/* Animated Text Content */}
+            {/* Animated Text Content at the bottom */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.5 }}
-              className="relative z-10 h-full px-10 py-32 text-[#3c597B] text-2xl font-[Rofane] space-y-6"
+              className="relative z-10 px-10 py-16 text-[#3c597B] text-2xl font-[Rofane] space-y-6"
             >
               <p>Our Framework</p>
               <p>Our History</p>
