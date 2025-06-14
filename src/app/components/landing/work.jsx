@@ -1,3 +1,4 @@
+'use client';
 import React from "react";
 import Image from "next/image";
 
@@ -39,7 +40,6 @@ const workItems = [
 ];
 
 function CardContent({ item, reversed }) {
-  /* “reversed” means: text first, image last  */
   const Info = (
     <>
       <div className="text-sm text-gray-700 mt-8">{item.category}</div>

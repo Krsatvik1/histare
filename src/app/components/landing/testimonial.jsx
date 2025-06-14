@@ -29,7 +29,7 @@ function Testimonial() {
     const interval = setInterval(() => {
       setDirection(1); // always right to left
       setIndex((prev) => (prev + 1) % testimonials.length);
-    }, 2000); // Auto change every 2 sec
+    }, 4000); // Auto change every 2 sec
 
     return () => clearInterval(interval);
   }, []);
@@ -67,7 +67,7 @@ function Testimonial() {
               animate="center"
               exit="exit"
               transition={{ duration: 0.6, ease: 'easeInOut' }}
-              className="absolute w-full border border-[#f1d394] rounded-lg p-20 text-[#333]"
+              className="absolute w-full border-2 border-[#f1d394] rounded-lg p-16 text-[#333]"
             >
               <p className="text-lg leading-relaxed mb-6">{testimonials[index].text}</p>
               <p className="text-right font-semibold text-[#1e1e1e]">
