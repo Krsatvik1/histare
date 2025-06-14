@@ -12,12 +12,12 @@ export default function Frameworks() {
       <div className="px-6 md:px-20 py-16 justify-center text-[#1e1e1e] font-sans max-w-5xl mx-auto p-16">
         <div className=''>
           <h2
-  className="text-4xl md:text-5xl mt-24 mb-32 text-[#3c597B] text-center"
- style={{ fontFamily: "Rofane", fontStyle: "italic" }}
->
-  <span className="italic font-normal">Our </span>
-  <span className="not-italic font-normal">Framework</span>
-</h2>
+            className="text-4xl md:text-5xl mt-24 mb-32 text-[#3c597B] text-center"
+          style={{ fontFamily: "Rofane", fontStyle: "italic" }}
+          >
+            <span className="italic font-normal">Our </span>
+            <span className="not-italic font-normal">Framework</span>
+          </h2>
           </div>
         {/* Vision */}
         <div className="flex flex-col md:flex-row md:items-start my-20">
