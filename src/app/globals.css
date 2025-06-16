@@ -97,3 +97,16 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #2b4260; /* darker on hover */
 }
+
+@keyframes scrollInfinite {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scrollInfinite {
+  animation: scrollInfinite 30s linear infinite;
+}
