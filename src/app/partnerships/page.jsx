@@ -11,10 +11,10 @@ export default function Partnerships() {
       <div className="px-6 md:px-20 py-24 text-[#1e1e1e] font-sans max-w-5xl mx-auto">
         <h2
           className="text-4xl md:text-5xl mt-24 mb-32 text-[#3c597B] text-center"
-          style={{ fontFamily: 'Rofane', fontStyle: 'italic' }}
+          style={{ fontFamily: 'Rofane' }}
         >
-          <span className="italic font-normal">The </span>
-          <span className="not-italic font-normal">Value of Partnerships</span>
+          <span className="italic font-normal">The </span>Value
+          <span className="italic font-normal"> of </span>Partnerships
         </h2>
 
         <div className="text-base md:text-lg leading-relaxed text-[#1e1e1e] space-y-6">
