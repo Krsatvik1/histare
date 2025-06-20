@@ -12,7 +12,8 @@ const Navbar = () => {
       {/* Navbar */}
       <nav className="fixed top-0 left-0 w-full flex items-center justify-between p-6 z-50 ">
         <div>
-          <img src="/images/navbar/logo.png" alt="Histare Logo" className="h-16 w-auto" />
+          <a href="/"><img src="/images/navbar/logo.png" alt="Histare Logo" className="h-16 w-auto" /></a>
+          
         </div>
         <div>
           <button
@@ -50,14 +51,14 @@ const Navbar = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.5 }}
-              className="relative z-10 px-10 py-16 text-[#3c597B] text-2xl font-[Rofane] space-y-6"
+              className="relative z-10 px-10 py-16 text-[#3c597B] text-2xl font-[Rofane] space-y-6 flex flex-col"
             >
-              <p>Our Framework</p>
-              <p>Our History</p>
-              <p>The Value of Partnerships</p>
-              <p>Our Vision in Action</p>
-              <p>Our Essence</p>
-              <p>Our Insights</p>
+              <a href="/essence">Our Framework</a>
+              <a href="/framework">Our History</a>
+              <a href="/history">The Value of Partnerships</a>
+              <a href="/insights">Our Vision in Action</a>
+              <a href="/partnerships">Our Essence</a>
+              <a href="/vision">Our Insights</a>
             </motion.div>
           </motion.div>
         )}
