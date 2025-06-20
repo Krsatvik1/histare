@@ -14,8 +14,8 @@ export default function CollectorsAffaire() {
         <Image
           src="/images/landing/collectors.png"
           alt="Collectors' Affaire"
-          width={200}
-          height={200}
+          width={500}
+          height={500}
           className="mb-6"
         />
         <p className="text-sm md:text-base text-gray-300 tracking-wide">
