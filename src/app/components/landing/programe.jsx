@@ -13,6 +13,7 @@ function Programe() {
       </h2>
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-6 justify-center">
+<a href='/collectors'>
         <div className="rounded-xl overflow-hidden shadow-md cursor-pointer">
           <Image
             src="/images/landing/collectors.png"
@@ -22,6 +23,7 @@ function Programe() {
             className="object-cover w-full h-auto"
           />
         </div>
+</a>
 <a href='/erbe'>
         <div className="rounded-xl overflow-hidden shadow-md cursor-pointer">
           <Image
@@ -32,7 +34,7 @@ function Programe() {
             className="object-cover w-full h-auto"
           />
         </div>
-</a>
+</a><a href='/vitrine'>
         <div className="rounded-xl overflow-hidden shadow-md cursor-pointer">
           <Image
             src="/images/landing/vitrine.png"
@@ -42,7 +44,7 @@ function Programe() {
             className="object-cover w-full h-auto"
           />
         </div>
-
+</a><a href='/now'>
         <div className="rounded-xl overflow-hidden shadow-md cursor-pointer">
           <Image
             src="/images/landing/now.png"
@@ -52,6 +54,7 @@ function Programe() {
             className="object-cover w-full h-auto"
           />
         </div>
+        </a>
       </div>
     </div>
   );
