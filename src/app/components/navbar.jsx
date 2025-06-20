@@ -18,7 +18,7 @@ const Navbar = () => {
         <div>
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="focus:outline-none text-gray-600 text-2xl"
+            className="focus:outline-none text-gray-600 text-2xl p-10 cursor-pointer"
           >
             &#8942;
           </button>
