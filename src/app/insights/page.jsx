@@ -5,18 +5,90 @@ import Navbar from '../components/navbar';
 import Footer from '../components/footer';
 
 const reports = [
-  { id: 1, title: 'A REFLECTION', type: 'Impact Report' },
-  { id: 2, title: 'THE ART GESTALT', type: 'Civic Aesthetics Report' },
-  { id: 3, title: 'COLLECTION BUILDING', type: 'Case Study' },
-  { id: 4, title: 'SAMAAT PROGRAMME', type: 'Case Study' },
-  { id: 5, title: 'THE ART GESTALT I', type: 'Applied Research Report' },
-  { id: 6, title: 'HOW SUSTAINABILITY INTERSECTS WITH TRADITIONAL CULTURE', type: 'Exploratory Report' },
-  { id: 7, title: 'DIGITAL PAINTINGS', type: 'Exploratory Report' },
-  { id: 8, title: 'ABSTRACT EXPRESSIONISM', type: 'Exploratory Report' },
-  { id: 9, title: 'CUBISM', type: 'Exploratory Report' },
-  { id: 10, title: 'DIGITAL PAINTINGS', type: 'Creative Study' },
-  { id: 11, title: 'HOW SUSTAINABILITY TRANSLATES IN EMERGING GALLERIES', type: 'Creative Study' },
-  { id: 12, title: 'ABSTRACT EXPRESSIONISM', type: 'Creative Study' },
+  {
+    id: 1,
+    title: 'A REFLECTION',
+    type: 'Impact Report',
+    imageUrl: 'https://dev-histare.netlify.app/images/insightsImages/reflection_ir.png',
+    pdfUrl: 'https://dev-histare.netlify.app/pdfs/erbe_project/impact_report.pdf',
+  },
+  {
+    id: 2,
+    title: 'THE ART GESTALT',
+    type: 'Craft practices Report',
+    imageUrl: 'https://dev-histare.netlify.app/images/insightsImages/art_gestalt_cpr.png',
+    pdfUrl: 'https://dev-histare.netlify.app/pdfs/erbe_project/art_gestalt.pdf',
+  },
+  {
+    id: 3,
+    title: 'COLLECTION BUILDING',
+    type: 'Case Study',
+    imageUrl: 'https://dev-histare.netlify.app/images/insightsImages/collection_building_case_study.png',
+    pdfUrl: 'https://dev-histare.netlify.app/pdfs/insights/collection_building_case_study.pdf',
+  },
+  {
+    id: 4,
+    title: 'SMART PROGRAMME',
+    type: 'Case Study',
+    imageUrl: 'https://dev-histare.netlify.app/images/insightsImages/vitrine_case_study.png',
+    pdfUrl: 'https://dev-histare.netlify.app/pdfs/insights/vitrine_case_study.pdf',
+  },
+  {
+    id: 5,
+    title: 'THE ART GESTALT',
+    type: 'Market Research Report',
+    imageUrl: 'https://dev-histare.netlify.app/images/insightsImages/mrr_art_gestalt.png',
+    pdfUrl: 'https://dev-histare.netlify.app/pdfs/insights/mrr_art_gestalt.pdf',
+  },
+  {
+    id: 6,
+    title: 'HOW SUSTAINABILITY HAS SHAPED UP IN TRADITIONAL CULTURE',
+    type: 'Exploratory Report',
+    imageUrl: 'https://dev-histare.netlify.app/images/insightsImages/nfi.png',
+    pdfUrl: 'https://example.com/sustainability1.pdf',
+  },
+  {
+    id: 7,
+    title: 'DIGITAL PAINTINGS',
+    type: 'Exploratory Report',
+    imageUrl: 'https://dev-histare.netlify.app/images/insightsImages/digital_paintings.png',
+    pdfUrl: 'https://dev-histare.netlify.app/pdfs/insights/digital_paintings.pdf',
+  },
+  {
+    id: 8,
+    title: 'ABSTRACT EXPRESSIONISM',
+    type: 'Exploratory Report',
+    imageUrl: 'https://dev-histare.netlify.app/images/insightsImages/nfi.png',
+    pdfUrl: 'https://example.com/abstract-expressionism1.pdf',
+  },
+  {
+    id: 9,
+    title: 'CUBISM',
+    type: 'Exploratory Report',
+    imageUrl: 'https://dev-histare.netlify.app/images/insightsImages/cubism.png',
+    pdfUrl: 'https://dev-histare.netlify.app/pdfs/insights/cubism.pdf',
+  },
+  {
+    id: 10,
+    title: 'INDIAN ART AND CRAFTS',
+    type: 'Market Research Report',
+    imageUrl: 'https://dev-histare.netlify.app/images/insightsImages/indian_arts_and_crafts.png',
+    pdfUrl: 'https://dev-histare.netlify.app/pdfs/insights/iac_mrr.pdf',
+  },
+  {
+    id: 11,
+    title: 'HOW SUSTAINABILITY HAS SHAPED UP IN TRADITIONAL CULTURE',
+    type: 'Creative Study',
+    imageUrl: 'https://dev-histare.netlify.app/images/insightsImages/how_sustainability_has_shaped.png',
+    pdfUrl: 'https://dev-histare.netlify.app/pdfs/insights/how_sustainability_has_shaped.pdf',
+  },
+  {
+    id: 12,
+    title: 'ABSTRACT EXPRESSIONISM',
+    type: 'Creative Study',
+    imageUrl: 'https://dev-histare.netlify.app/images/insightsImages/abstract_expressionism.png',
+    pdfUrl: 'https://dev-histare.netlify.app/pdfs/insights/abstract_expressionism.pdf',
+  },
 ];
 
 export default function Insights() {
@@ -39,13 +111,25 @@ export default function Insights() {
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center text-sm md:text-base">
           {reports.map((report) => (
-            <div key={report.id} className="flex flex-col items-center space-y-2">
-              <div className="w-20 h-20 md:w-24 md:h-24 bg-gray-200 flex items-center justify-center text-xl font-semibold text-gray-700">
-                {report.id}
-              </div>
-              <div className="font-light">{report.title}</div>
+                 <a
+                 key={report.id} 
+                href={report.pdfUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-light hover:underline"
+              >
+            <div className="flex flex-col items-center space-y-2">
+              <img
+                src={report.imageUrl}
+                alt={report.title}
+                className="w-20 h-20 md:w-24 md:h-24 object-cover rounded shadow"
+              />
+         
+                {report.title}
+             
               <div className="text-gray-500 text-sm">{report.type}</div>
             </div>
+             </a>
           ))}
         </div>
       </div>
