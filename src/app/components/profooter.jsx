@@ -8,7 +8,7 @@ import {
   FaFacebook
 } from 'react-icons/fa';
 
-const Footer = () => {
+const ProFooter = () => {
   return (
     <footer className="relative text-gray-800 pt-16 pb-8 px-6 sm:px-10 md:px-20 overflow-hidden bg-transparent">
       {/* Decorative Half Circle */}
@@ -27,7 +27,7 @@ const Footer = () => {
         
         {/* Left Links */}
         <div
-          className="flex md:flex-col gap-8 text-3xl sm:text-3xl font-medium text-gray-500 items-center md:items-start"
+          className="flex md:flex-col gap-8 text-3xl sm:text-3xl font-medium text-white items-center md:items-start"
           style={{ fontFamily: 'Rofane' }}
         >
           <a href="#" className="hover:underline">Media</a>
@@ -36,7 +36,7 @@ const Footer = () => {
         </div>
 
         {/* Address Block */}
-        <div className="text-sm sm:text-base text-gray-500 max-w-sm text-center md:text-left">
+        <div className="text-sm sm:text-base text-white max-w-sm text-center md:text-left">
           <p>The Histare Group</p>
           <p>Histare Concepts Private Limited</p>
           <br />
@@ -48,7 +48,7 @@ const Footer = () => {
         </div>
 
         {/* Social Icons */}
-        <div className="flex flex-row md:flex-col justify-center md:justify-start items-center gap-4 text-xl text-gray-700">
+        <div className="flex flex-row md:flex-col justify-center md:justify-start items-center gap-4 text-xl text-white">
           <a href="#"><FaTwitter /></a>
           <a href="#"><FaLinkedin /></a>
           <a href="#"><FaYoutube /></a>
@@ -60,7 +60,7 @@ const Footer = () => {
       <hr className="w-full border-gray-300" />
 
       {/* Bottom Row */}
-      <div className="relative z-10 mt-10 flex flex-col md:flex-row justify-between items-center text-xs sm:text-sm text-gray-500 gap-4">
+      <div className="relative z-10 mt-10 flex flex-col md:flex-row justify-between items-center text-xs sm:text-sm text-white gap-4">
         <span>Privacy Policy | Terms & Conditions</span>
         <p className="text-lg sm:text-xl">2024</p>
       </div>
@@ -68,4 +68,6 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default ProFooter;
+
+

@@ -3,19 +3,21 @@
 import React from 'react'
 import Image from 'next/image'
 import Navbar from '../components/navbar'
+import ProFooter from '../components/profooter'
 
 export default function TheVitrinePage() {
   return (
-    <div className="bg-[#0E2B4C] min-h-screen text-white px-4 py-12 flex flex-col items-center">
+    <div className='bg-[#0E2B4C]'>
+    <div className=" min-h-screen text-white px-4 py-12 flex flex-col items-center">
       <Navbar />
 
       {/* Top Logo */}
       <div className="flex flex-col items-center text-center mb-10">
         <Image
-          src="/images/landing/vitrine.png"
+          src="/images/program/vitrine.png"
           alt="The Vitrine Logo"
-          width={200}
-          height={200}
+          width={500}
+          height={500}
           className="mb-6"
         />
         <p className="text-sm md:text-base text-gray-300 leading-tight">
@@ -111,6 +113,6 @@ export default function TheVitrinePage() {
           className="w-full h-auto"
         />
       </div>
-    </div>
+    </div><ProFooter/></div>
   )
 }

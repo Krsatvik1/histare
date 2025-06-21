@@ -3,16 +3,18 @@
 import React from 'react'
 import Image from 'next/image'
 import Navbar from '../components/navbar'
+import ProFooter from '../components/profooter'
 
 export default function CollectorsAffaire() {
   return (
-    <div className="bg-[#2B3730] min-h-screen text-gray-100 px-4 py-12 flex flex-col items-center">
+    <div className='bg-[#2B3730] '>
+    <div className="min-h-screen text-gray-100 px-4 py-12 flex flex-col items-center">
       <Navbar />
 
       {/* Logo Image */}
       <div className="flex flex-col items-center text-center mb-10">
         <Image
-          src="/images/landing/collectors.png"
+          src="/images/program/collectors.png"
           alt="Collectors' Affaire"
           width={500}
           height={500}
@@ -82,6 +84,8 @@ export default function CollectorsAffaire() {
           <p>Size: 91.4 W x 152.4 H x 0.5 D cm</p>
         </div>
       </div>
+    </div>
+    <ProFooter/>
     </div>
   )
 }

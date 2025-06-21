@@ -1,17 +1,19 @@
 import React from 'react'
 import Image from 'next/image'
 import Navbar from '../components/navbar'
+import ProFooter from '../components/profooter'
 
 export default function ErbeLandingSection() {
   return (
-    <div className="bg-[#6B2134] min-h-screen text-white px-4 md:px-8 py-12 flex flex-col items-center">
+    <div className='bg-[#6B2134]'>
+    <div className=" min-h-screen text-white px-4 md:px-8 py-12 flex flex-col items-center">
       {/* Navbar */}
       <Navbar />
 
       {/* Logo + Caption */}
       <div className="mb-12 mt-6 flex flex-col items-center ">
         <Image
-          src="/images/landing/erbe.png"
+          src="/images/program/erbe.png"
           alt="The ERBE Project"
           width={500}
           height={500}
@@ -71,6 +73,7 @@ The Erbe Project unfolds as a testament to India's artisan families across gener
   <hr className="border-t border-gray-400 mt-6" />
 </div>
 
+    </div><ProFooter/>
     </div>
   )
 }
