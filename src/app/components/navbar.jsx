@@ -10,7 +10,7 @@ const Navbar = () => {
   return (
     <>
       {/* Navbar */}
-      <nav className="fixed top-0 left-0 w-full flex items-center justify-between p-6 z-50 ">
+      <nav className="fixed top-0 left-0 w-full  flex items-center justify-between p-6 z-50 ">
         <div>
           <a href="/"><img src="/images/navbar/logo.png" alt="Histare Logo" className="h-16 w-auto" /></a>
           
@@ -33,7 +33,7 @@ const Navbar = () => {
             animate={{ x: 0 }}
             exit={{ x: '100%' }}
             transition={{ duration: 0.5, ease: 'easeInOut' }}
-            className="fixed top-0 right-0 h-full w-full bg-[#fdfaf7] z-40 shadow-xl flex flex-col justify-end"
+            className="fixed top-0 right-0 h-full w-full md:w-96 bg-[#fdfaf7] z-40 shadow-xl flex flex-col justify-end"
           >
             {/* Background Circle */}
             <div className="absolute bottom-0 right-0 w-[700px] h-[700px] z-0 pointer-events-none overflow-hidden">
