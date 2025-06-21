@@ -4,50 +4,94 @@ import Image from "next/image";
 
 const workItems = [
   {
+    id: 1,
     img: "/images/landing/w1.png",
+    title: "Transcendent Peace",
+    category: "Artistic Design Innovation",
+    author: "",
+  },
+  {
+    id: 2,
+    img: "/images/landing/w2.png",
+    title: "Girl With Water Hyacinth",
+    category: "Collection Building",
+    author: "A. Ramachandran",
+  },
+  {
+    id: 3,
+    img: "/images/landing/w3.png",
+    title: "The Vitrine",
+    category: "Smart Programmes",
+    author: "Mercedes | T&T Motors",
+  },
+  {
+    id: 4,
+    img: "/images/landing/w4.png",
     title: "Untitled",
     category: "Collection Building",
     author: "F. N. Souza",
   },
   {
-    img: "/images/landing/w2.png",
+    id: 5,
+    img: "/images/landing/w5.png",
     title: "Pathways to Liberation",
-    category: "Artistic Design Innovation",
+    category: "Product Innovation",
+    author: "",
   },
   {
-    img: "/images/landing/w3.png",
-    title: "Collectors' Affaire",
-    category: "Smart Programme",
-    author: "Rajiv Kumar",
+    id: 6,
+    img: "/images/landing/w6.png",
+    title: "Collectors’ Affaire",
+    category: "Smart Programmes",
+    author: "Rajiv Kumar - Maya",
   },
   {
-    img: "/images/landing/w4.png",
+    id: 7,
+    img: "/images/landing/w7.png",
     title: "Dominus Aeris Coleus - XIII",
     category: "Collection Building",
     author: "Thukral & Tagra",
   },
   {
-    img: "/images/landing/w5.png",
+    id: 8,
+    img: "/images/landing/w8.png",
     title: "Untitled",
     category: "Collection Building",
     author: "Paramjit Singh",
   },
   {
-    img: "/images/landing/w6.png",
-    title: "Generational Wisdom: The Mandalic Renaissance",
-    category: "Artistic Design Innovation",
+    id: 9,
+    img: "/images/landing/w9.png",
+    title: "The Mandalic Renaissance",
+    category: "Product Innovation",
+    author: "",
+  },
+  {
+    id: 10,
+    img: "/images/landing/w10.png",
+    title: "Art and the Metaverse",
+    category: "Knowledge Sharing",
+    author: "",
+  },
+  {
+    id: 11,
+    img: "/images/landing/w11.png",
+    title: "IGNCA, Ministry of Culture",
+    category: "Artistic Product Innovation",
+    author: "",
   },
 ];
 
+
 function CardContent({ item, reversed }) {
   const Info = (
-    <>
-      <div className="text-sm text-gray-700 mt-8">{item.category}</div>
+    <div>
+      <div className="text-sm text-gray-700 mt-10">{item.category}</div>
       <div className="text-md text-black">{item.title}</div>
       {item.author && (
         <div className="text-sm text-gray-600">{item.author}</div>
       )}
-    </>
+    </div>
   );
 
   const Art = (
