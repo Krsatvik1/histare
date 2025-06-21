@@ -11,13 +11,13 @@ export default function ErbeLandingSection() {
       <Navbar />
 
       {/* Logo + Caption */}
-      <div className="mb-12 mt-6 flex flex-col items-center ">
+      <div className="mb-12 mt-6 flex flex-col items-center justify-center min-h-screen ">
         <Image
           src="/images/program/erbe.png"
           alt="The ERBE Project"
           width={500}
           height={500}
-          className="x"
+          className="mb-4 p-14"
         />
         <p
           className="text-sm text-center text-gray-200 "

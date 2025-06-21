@@ -12,13 +12,13 @@ export default function CollectorsAffaire() {
       <Navbar />
 
       {/* Logo Image */}
-      <div className="flex flex-col items-center text-center mb-10">
+      <div className="flex flex-col items-center text-center mb-10 min-h-screen justify-center">
         <Image
           src="/images/program/collectors.png"
           alt="Collectors' Affaire"
           width={500}
           height={500}
-          className="mb-6"
+          className="mb-4"
         />
         <p className="text-sm md:text-base text-gray-300 tracking-wide">
           Find. Collect. Admire.

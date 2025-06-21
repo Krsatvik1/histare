@@ -15,13 +15,13 @@ export default function NowAndBeyondSection() {
         <Navbar />
 
         {/* Logo & Tagline */}
-        <div className="flex flex-col items-center text-center mb-12">
+        <div className="flex flex-col items-center text-center mb-12 min-h-screen justify-center">
           <Image
             src="/images/program/now.png"
             alt="Now and Beyond"
             width={500}
             height={500}
-            className="mb-4"
+            className="mb-4 p-14"
           />
           <div className="text-sm md:text-base font-light text-black">
             <p>A window into different worlds</p>
