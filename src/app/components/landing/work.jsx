@@ -23,6 +23,7 @@ const workItems = [
     title: "The Vitrine",
     category: "Smart Programmes",
     author: "Mercedes | T&T Motors",
+    explore: "https://www.youtube.com/watch?v=t_nMhVOHaBE",
   },
   {
     id: 4,
@@ -91,6 +92,12 @@ function CardContent({ item, reversed }) {
       {item.author && (
         <div className="text-sm text-gray-600">{item.author}</div>
       )}
+      {item.explore && (
+        <a href={item.explore} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline mt-2 inline-block">
+          <button className=" border border-[#3c597B] text-[#3c597B] px-5 py-2 rounded-full hover:bg-[#3c597B] hover:text-white transition duration-300">
+          Explore more !
+        </button>
+          </a>)}
     </div>
   );
 
