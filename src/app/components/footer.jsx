@@ -62,7 +62,7 @@ const Footer = () => {
       {/* Bottom Row */}
       <div className="relative z-10 mt-10 flex flex-col md:flex-row justify-between items-center text-xs sm:text-sm text-gray-500 gap-4">
         <span>Privacy Policy | Terms & Conditions</span>
-        <p className="text-lg sm:text-xl">2024</p>
+        <p className="text-lg sm:text-xl">2025</p>
       </div>
     </footer>
   );
