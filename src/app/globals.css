@@ -98,7 +98,32 @@ body {
   background: #2b4260; /* darker on hover */
 }
 
-@keyframes scrollInfinite {
+.marquee {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.track {
+  display: flex;
+  width: max-content;
+  animation: scroll-left 30s linear infinite;
+}
+
+.marquee-right .track {
+  animation: scroll-right 30s linear infinite;
+}
+
+.logo {
+  flex: none;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Left scroll (top row) */
+@keyframes scroll-left {
   0% {
     transform: translateX(0%);
   }
@@ -107,6 +132,12 @@ body {
   }
 }
 
-.animate-scrollInfinite {
-  animation: scrollInfinite 30s linear infinite;
+/* Right scroll (bottom row) */
+@keyframes scroll-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
 }

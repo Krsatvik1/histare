@@ -20,7 +20,7 @@ const interests = [
 
 export default function Interest() {
   return (
-    <div className="px-6 py-12 text-center">
+    <div className="px-6 py-12 text-center min-h-screen">
       <h2
         className="text-4xl md:text-5xl mb-12 text-[#3c597B]"
         style={{ fontFamily: 'Rofane' }}

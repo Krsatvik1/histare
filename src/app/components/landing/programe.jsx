@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 function Programe() {
   return (
-    <div className=" py-16 px-4 md:px-20 text-center">
+    <div className=" py-16 px-4 md:px-20 text-center min-h-screen justify-center ">
       <h2
         className="text-4xl md:text-5xl mb-12 text-[#3c597B]"
         style={{ fontFamily: 'Rofane' }}
@@ -12,7 +12,7 @@ function Programe() {
         <span className="non-italic font-normal">Smart Programs</span>
       </h2>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-6 justify-center">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-6 justify-center items-center pt-10">
 <a href='/collectors'>
         <div className="rounded-xl overflow-hidden shadow-md cursor-pointer">
           <Image

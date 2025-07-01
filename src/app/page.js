@@ -31,7 +31,7 @@ function Home() {
       <div className="snap-start">
         <Programe />
       </div>
-      <div className="snap-start">
+      <div className="snap-start ">
         <Partnership />
       </div>
       <div className="snap-start">
