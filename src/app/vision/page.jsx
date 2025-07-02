@@ -8,7 +8,7 @@ export default function Vision() {
   return (
     <div>
       <Navbar />
-      <div className="px-6 md:px-20 py-28 text-[#1e1e1e] font-sans max-w-5xl mx-auto">
+      <div className="px-6 md:px-20 py-32 text-[#1e1e1e] font-sans max-w-5xl mx-auto">
         <h2
           className="text-4xl md:text-5xl mt-24 mb-32 text-[#3c597B] text-center"
           style={{ fontFamily: 'Rofane' }}

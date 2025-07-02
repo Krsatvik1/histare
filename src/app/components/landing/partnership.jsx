@@ -1,13 +1,37 @@
 import React from 'react';
-import Image from 'next/image';
 
 const logos = [
-  '/images/landing/google.png',
-  '/images/landing/pinterest.png',
-  '/images/landing/stripe.png',
-  '/images/landing/reddit.png',
-  '/images/landing/spotify.png',
-  // Add more if needed
+  'https://dev-histare.netlify.app/images/partnerLogos/forbes.png',
+  'https://dev-histare.netlify.app/images/partnerLogos/iaf.png',
+  'https://dev-histare.netlify.app/images/partnerLogos/lazy_cocktails.png',
+  'https://dev-histare.netlify.app/images/partnerLogos/gff.png',
+  'https://dev-histare.netlify.app/images/partnerLogos/marwah_studios.png',
+  'https://dev-histare.netlify.app/images/partnerLogos/mirage.png',
+  'https://dev-histare.netlify.app/images/partnerLogos/mercedes.png',
+  'https://dev-histare.netlify.app/images/partnerLogos/zee_5.png',
+  'https://dev-histare.netlify.app/images/partnerLogos/toi.png',
+  'https://dev-histare.netlify.app/images/partnerLogos/yahoo.png',
+  'https://dev-histare.netlify.app/images/partnerLogos/hindustan_times.png',
+  'https://dev-histare.netlify.app/images/partnerLogos/taksim.png',
+  'https://dev-histare.netlify.app/images/partnerLogos/my_money.png',
+  'https://dev-histare.netlify.app/images/partnerLogos/rampur.png',
+  'https://dev-histare.netlify.app/images/partnerLogos/domov.png',
+  'https://dev-histare.netlify.app/images/partnerLogos/lex_favios.png',
+  'https://dev-histare.netlify.app/images/partnerLogos/swan_chambers.png',
+  'https://dev-histare.netlify.app/images/partnerLogos/the_asian_age.png',
+  'https://dev-histare.netlify.app/images/partnerLogos/iiad.png',
+  'https://dev-histare.netlify.app/images/partnerLogos/live_mint.png',
+  'https://dev-histare.netlify.app/images/partnerLogos/ani.png',
+  'https://dev-histare.netlify.app/images/partnerLogos/the_print.png',
+  'https://dev-histare.netlify.app/images/partnerLogos/economic_times.png',
+  'https://dev-histare.netlify.app/images/partnerLogos/johnny_walker.png',
+  'https://dev-histare.netlify.app/images/partnerLogos/deccan_chronicle.png',
+  'https://dev-histare.netlify.app/images/partnerLogos/veritaz.png',
+  'https://dev-histare.netlify.app/images/partnerLogos/pot.png',
+  'https://dev-histare.netlify.app/images/partnerLogos/jicg.png',
+  'https://dev-histare.netlify.app/images/partnerLogos/ignca.png',
+  'https://dev-histare.netlify.app/images/partnerLogos/intach.png',
+  'https://dev-histare.netlify.app/images/partnerLogos/asavari.png',
 ];
 
 function Partnership() {
@@ -28,7 +52,7 @@ function Partnership() {
         <div className="track">
           {[...logos, ...logos].map((src, index) => (
             <div className="logo" key={`top-${index}`}>
-              <Image src={src} alt={`Partner ${index}`} width={160} height={80} />
+              <img src={src} alt={`Partner ${index}`} width={160} height={80} />
             </div>
           ))}
         </div>
@@ -39,7 +63,7 @@ function Partnership() {
         <div className="track">
           {[...logos, ...logos].map((src, index) => (
             <div className="logo" key={`bottom-${index}`}>
-              <Image src={src} alt={`Partner ${index}`} width={160} height={80} />
+              <img src={src} alt={`Partner ${index}`} width={160} height={80} />
             </div>
           ))}
         </div>
