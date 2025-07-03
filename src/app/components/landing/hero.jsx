@@ -5,7 +5,7 @@ const Hero = () => (
     <h1 className="md:text-9xl text-6xl font-serif text-[#3c5978] mb-4 text-center max-w-5xl" style={{ fontFamily: 'Rofane' }}>
       Envisioning <br></br>Artistic Mastery
     </h1>
-    <p className="text-lg text-gray-700 text-center max-w-2xl">
+    <p className="text-lg text-gray-700 bg-red text-center --max-w-2xl">
       Histare nurtures India’s primitive and prospective expressions through cultural evolution.
     </p>
   </section>
