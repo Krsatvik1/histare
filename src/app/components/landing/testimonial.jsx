@@ -57,7 +57,7 @@ function Testimonial() {
         </h2>
 
         {/* Testimonial Card */}
-        <div className="relative min-h-[350px] overflow-hidden">
+        <div className="relative min-h-[450px] overflow-hidden">
           <AnimatePresence custom={direction} mode="wait">
             <motion.div
               key={index}

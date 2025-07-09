@@ -28,15 +28,15 @@ export default function Interest() {
       <i>  Our </i>Spectrum <i> of</i> Interests
       </h2>
 
-      <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-5 gap-8 max-w-5xl mx-auto">
+      <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-5 lg:gap-8 gap-2 max-w-5xl mx-auto">
         {interests.map((title, index) => (
           <div key={index} className="flex flex-col items-center text-sm text-[#3c597B]">
             <img
               src={`/images/landing/i${index + 1}.png`}
               alt={title}
-              className="w-16 h-16 mb-4"
+              className="lg:w-16 w-8 h-8 lg:h-16 lg:mb-8 mb-4"
             />
-            <p className="max-w-[150px]">{title}</p>
+            <p className="md:max-w-[150px] max-w-64">{title}</p>
           </div>
         ))}
       </div>
