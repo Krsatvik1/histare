@@ -107,11 +107,11 @@ body {
 .track {
   display: flex;
   width: max-content;
-  animation: scroll-left 30s linear infinite;
+  animation: scroll-left 60s linear infinite;
 }
 
 .marquee-right .track {
-  animation: scroll-right 30s linear infinite;
+  animation: scroll-right 60s linear infinite;
 }
 
 .logo {

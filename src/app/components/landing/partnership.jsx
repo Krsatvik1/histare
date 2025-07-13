@@ -1,6 +1,6 @@
 import React from 'react';
 
-const logos = [
+const logoUp = [
   'https://dev-histare.netlify.app/images/partnerLogos/forbes.png',
   'https://dev-histare.netlify.app/images/partnerLogos/iaf.png',
   'https://dev-histare.netlify.app/images/partnerLogos/lazy_cocktails.png',
@@ -14,7 +14,10 @@ const logos = [
   'https://dev-histare.netlify.app/images/partnerLogos/hindustan_times.png',
   'https://dev-histare.netlify.app/images/partnerLogos/taksim.png',
   'https://dev-histare.netlify.app/images/partnerLogos/my_money.png',
-  'https://dev-histare.netlify.app/images/partnerLogos/rampur.png',
+  'https://dev-histare.netlify.app/images/partnerLogos/rampur.png'
+];
+
+const logoDown = [
   'https://dev-histare.netlify.app/images/partnerLogos/domov.png',
   'https://dev-histare.netlify.app/images/partnerLogos/lex_favios.png',
   'https://dev-histare.netlify.app/images/partnerLogos/swan_chambers.png',
@@ -31,7 +34,7 @@ const logos = [
   'https://dev-histare.netlify.app/images/partnerLogos/jicg.png',
   'https://dev-histare.netlify.app/images/partnerLogos/ignca.png',
   'https://dev-histare.netlify.app/images/partnerLogos/intach.png',
-  'https://dev-histare.netlify.app/images/partnerLogos/asavari.png',
+  'https://dev-histare.netlify.app/images/partnerLogos/asavari.png'
 ];
 
 function Partnership() {
@@ -50,7 +53,7 @@ function Partnership() {
       {/* Top Row (Scroll Right to Left) */}
       <div className="marquee marquee-left">
         <div className="track">
-          {[...logos, ...logos].map((src, index) => (
+          {[...logoUp, ...logoUp].map((src, index) => (
             <div className="logo" key={`top-${index}`}>
               <img src={src} alt={`Partner ${index}`} width={160} height={80} />
             </div>
@@ -61,7 +64,7 @@ function Partnership() {
       {/* Bottom Row (Scroll Left to Right) */}
       <div className="marquee marquee-right mt-8">
         <div className="track">
-          {[...logos, ...logos].map((src, index) => (
+          {[...logoDown, ...logoDown].map((src, index) => (
             <div className="logo" key={`bottom-${index}`}>
               <img src={src} alt={`Partner ${index}`} width={160} height={80} />
             </div>
