@@ -4,7 +4,7 @@ const Hero = () => (
   <section className="relative h-screen flex items-center justify-center px-6 py-20 overflow-hidden">
     {/* Background Video */}
     <video
-      className="absolute top-0 left-0 w-full h-full object-cover z-0 filter blur-sm"
+      className="absolute top-0 left-0 w-full h-full object-cover z-0 filter blur-[5px] opacity-70"
       src="/bg.mp4"
       autoPlay
       muted
@@ -23,7 +23,7 @@ const Hero = () => (
       >
         Envisioning <br /> Artistic Mastery
       </h1>
-      <p className="text-lg  text-[#3c5978] max-w-2xl">
+      <p className="text-lg  text-[#333333] --max-w-2xl">
         Histare nurtures India’s primitive and prospective expressions through cultural evolution.
       </p>
     </div>
