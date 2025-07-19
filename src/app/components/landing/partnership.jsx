@@ -39,7 +39,7 @@ const logoDown = [
 
 function Partnership() {
   return (
-    <div className="py-16 px-4 md:px-20 min-h-screen flex flex-col items-center justify-center text-center overflow-hidden">
+    <div className="py-16 px-4 md:px-0 min-h-screen flex flex-col items-center justify-center text-center overflow-hidden">
       <h2
         className="text-3xl sm:text-4xl md:text-5xl mb-12 text-[#3c597B]"
         style={{ fontFamily: 'Rofane' }}

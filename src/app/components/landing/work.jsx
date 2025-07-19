@@ -83,21 +83,26 @@ const workItems = [
   },
 ];
 
-
 function CardContent({ item, reversed }) {
   const Info = (
-    <div>
-      <div className="text-sm text-gray-700 mt-10">{item.category}</div>
-      <div className="text-md text-black">{item.title}</div>
+    <div className="mt-20">
+      <div className="text-sm text-gray-700">{item.category}</div>
+      <div className="text-md text-black mt-1">{item.title}</div>
       {item.author && (
-        <div className="text-sm text-gray-600">{item.author}</div>
+        <div className="text-sm text-gray-600 mt-1">{item.author}</div>
       )}
       {item.explore && (
-        <a href={item.explore} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline mt-2 inline-block">
-          <button className=" border border-[#3c597B] text-[#3c597B] px-5 py-2 rounded-full hover:bg-[#3c597B] hover:text-white transition duration-300">
-          Explore more !
-        </button>
-          </a>)}
+        <a
+          href={item.explore}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-blue-500 hover:underline mt-2 inline-block"
+        >
+          <button className="border border-[#3c597B] text-[#3c597B] px-5 py-2 rounded-full hover:bg-[#3c597B] hover:text-white transition duration-300">
+            Explore more!
+          </button>
+        </a>
+      )}
     </div>
   );
 
@@ -123,6 +128,7 @@ function CardContent({ item, reversed }) {
     </>
   );
 }
+
 
 export default function Work() {
   return (

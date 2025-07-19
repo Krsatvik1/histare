@@ -12,17 +12,17 @@ export default function TheVitrinePage() {
       <Navbar />
 
       {/* Top Logo */}
-      <div className="flex flex-col items-center text-center mb-10 h-lvh justify-center">
+      <div className="flex flex-col items-center text-center mb-0 h-lvh justify-center">
         <Image
           src="/images/program/vitrine.png"
           alt="The Vitrine Logo"
           width={500}
           height={500}
-          className="mb-4 p-14"
+          className="mb-0 p-14 pb-0"
         />
-        <p className="text-sm md:text-base text-gray-300 leading-tight">
-          Crafting a Legacy of Indian Art <br />
-          Pre Modern, Modern & Contemporary
+        <p className="text-sm md:text-base text-gray-300 leading-tight text-center">
+          Crafting a Legacy of Indian Art  Pre Modern,<br />
+          Modern & Contemporary
         </p>
       </div>
 
