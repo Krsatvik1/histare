@@ -57,13 +57,13 @@ export default function CollectorsAffaire() {
 
           <div className="relative w-full max-w-4xl">
             {/* First paragraph */}
-            <p className="text-sm md:text-base text-gray-300 leading-relaxed pr-12" style={{ textAlign: 'justify' }}>
-              In May 2017, the Collectors' Affaire was launched in a collaborative effort hosted by Dolly Jain Singh and Namrata Mumtaz Singh. This exhibition showcased a stunning display of rare pashmina shawls and exquisite chintzes, complemented by contemporary artworks that celebrated the richness of Indian craftsmanship.
-            </p>
+            <p className="text-sm md:text-base text-gray-300 leading-relaxed pr-20 md:pr-30 lg:pr-70 xl:pr-70" style={{ textAlign: 'justify' }}>
+  In May 2017, the Collectors' Affaire was launched in a collaborative effort hosted by Dolly Jain Singh and Namrata Mumtaz Singh. This exhibition showcased a stunning display of rare pashmina shawls and exquisite chintzes, complemented by contemporary artworks that celebrated the richness of Indian craftsmanship.
+</p>
 
             {/* Toggle Button */}
             <button
-              className=" absolute top-0 right-0  text-gray-400 hover:text-white hover:scale-110 transition-all duration-200 z-20"
+              className=" absolute top-10 right-0  text-gray-400 hover:text-white hover:scale-110 transition-all duration-200 z-20"
               aria-label={expanded ? "Collapse" : "Expand"}
               onClick={handleToggle}
             >
@@ -87,7 +87,7 @@ export default function CollectorsAffaire() {
                   viewBox="0 0 24 24"
                   strokeWidth="2"
                   stroke="currentColor"
-                  className="w-7 h-7"
+                  className="w-7 h-7 sm: pl-0"
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
                 </svg>
@@ -98,18 +98,19 @@ export default function CollectorsAffaire() {
             {expanded && (
               <div className="mt-6 animate-fadeIn">
                 {/* Second paragraph */}
-                <p className="text-sm md:text-base text-gray-300 leading-relaxed mb-6 pr-12" style={{ textAlign: 'justify' }}>
+                <p className="text-sm md:text-base text-gray-300 leading-relaxed pr-20 md:pr-30 lg:pr-60 xl:pr-70" style={{ textAlign: 'justify' }}>
                   A special highlight of the evening was the preview of 'Maya,' a captivating piece by artist Rajiv Kumar, housed under the patronage of Rakesh Malhotra. This striking piece brought together art enthusiasts and collectors, fostering an atmosphere of appreciation for the intricate beauty of traditional and modern artistry.
                 </p>
 
                 {/* Artwork section */}
-                <div className="flex flex-col md:flex-row items-start gap-6">
+                <hr className="border-t  mt-10" />
+                <div className="flex flex-col md:flex-row items-start gap-10 pt-10 lg:pl-20">
                   <Image
                     src="/images/program/maya-red.png"
                     alt="Maya by Rajiv Kumar"
-                    width={200}
-                    height={300}
-                    className="object-contain"
+                    width={250}
+                    height={350}
+                    className="object-contain "
                   />
                   <div className="text-sm text-gray-300 flex flex-col gap-2">
                     <p><span className="font-semibold">Artist:</span> Rajiv Kumar</p>
@@ -119,7 +120,7 @@ export default function CollectorsAffaire() {
                   </div>
                 </div>
 
-                <hr className="border-t border-gray-500 mt-8" />
+                {/* <hr className="border-t border-gray-500 mt-8" /> */}
               </div>
             )}
           </div>
