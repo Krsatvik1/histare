@@ -28,7 +28,7 @@ export default function CollectorsAffaire() {
             height={500}
             className="mb-4"
           />
-          <p className="text-sm-4x1 md:text-base text-gray-300 sm:text-4xl md:text-3xl lg:text-3xl tracking-wide"style={{ fontFamily: 'Rofane' }}>
+          <p className="text-sm-4x1 md:text-base text-gray-300 sm:text-4xl md:text-2xl lg:text-2xl tracking-wide"style={{ fontFamily: 'Rofane' }}>
             Find. Collect. Admire.
           </p>
         </div>
