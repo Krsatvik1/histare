@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link'
 import {
   FaInstagram,
   FaLinkedin,
@@ -61,7 +62,9 @@ const Footer = () => {
 
       {/* Bottom Row */}
       <div className="relative z-10 mt-10 flex flex-col md:flex-row justify-between items-center text-xs sm:text-sm text-gray-500 gap-4">
-        <span>Privacy Policy | Terms & Conditions</span>
+      <Link href="/term" className="text-sm text-gray-400 hover:text-white transition-colors">
+         Privacy Policy | Terms & Conditions
+    </Link>
         <p className="text-lg sm:text-xl">2025</p>
       </div>
     </footer>
