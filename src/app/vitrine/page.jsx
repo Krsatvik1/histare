@@ -42,8 +42,8 @@ export default function TheVitrinePage() {
 
       {/* Section 2 - Intro Paragraph */}
       <div className="snap-start min-h-screen w-full flex items-center justify-center px-4 md:px-8">
-        <div className="max-w-4xl text-sm md:text-base text-gray-300 leading-relaxed">
-          <p style={{ textAlign: 'justify' }}>
+        <div className="max-w-5xl text-sm md:text-xl text-gray-300 leading-relaxed">
+          <p className='text-center'>
             The Vitrine emerges as a visionary platform, seamlessly weaving together India's rich tapestry of pre-modern,
             modern and contemporary art. This curated space fosters dialogue between generations of artists through
             diverse mediums, providing a window into the transformation of India's aesthetic sensibility. From

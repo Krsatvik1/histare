@@ -28,7 +28,7 @@ export default function CollectorsAffaire() {
             height={500}
             className="mb-4"
           />
-          <p className="text-sm-4x1 md:text-base text-gray-300 sm:text-4xl md:text-2xl lg:text-2xl tracking-wide"style={{ fontFamily: 'Rofane' }}>
+          <p className="text-sm-4x1 text-base text-gray-300 sm:text-4xl md:text-2xl lg:text-2xl tracking-wide"style={{ fontFamily: 'Rofane' }}>
             Find. Collect. Admire.
           </p>
         </div>
@@ -36,8 +36,8 @@ export default function CollectorsAffaire() {
 
       {/* Section 2 - Intro Paragraph */}
       <div className="snap-start min-h-screen w-full flex items-center justify-center px-4">
-        <div className="max-w-4xl text-sm md:text-base text-gray-300 text-center leading-relaxed">
-          <p style={{ textAlign: 'justify' }}>
+        <div className="max-w-5xl text-sm md:text-xl text-gray-300 text-center leading-relaxed">
+          <p className='justify-center'>
             Collectors' Affaire stands as a tribute to the guardians of art, whether individual collectors or esteemed institutions. It is a heartfelt homage to those who preserve and share their collections with boundless passion. Step into a world where distinguished art collectors command attention, showcasing masterpieces curated over lifetimes. This is an odyssey of collection, revelation, and research, as they continue to inspire. The platform spotlights seasoned collectors, artists, and enthusiasts, delving into the rich stories and cultural significance within each piece. Join us in honoring these custodians of creativity — the keepers of meaning and legacy within every stroke and sculpture. Together, we celebrate their unwavering commitment and the enduring spirit that enriches our collective artistic journey.
           </p>
         </div>

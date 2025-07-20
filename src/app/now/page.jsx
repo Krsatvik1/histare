@@ -5,33 +5,35 @@ import Image from 'next/image'
 import Navbar from '../components/navbar'
 import Footer from '../components/footer'
 
-
-// Main Page Component
 export default function NowAndBeyondSection() {
   return (
-    <div className='bg-white'>
-      <div className="min-h-screen text-black px-4 py-12 flex flex-col items-center">
-        {/* Navbar */}
-        <Navbar />
+    <div className="bg-white text-black h-screen snap-y snap-mandatory overflow-y-scroll scroll-smooth w-full">
+      
+      {/* Section 1 - Navbar + Logo + Caption */}
+      <div className="snap-start min-h-screen w-full flex flex-col items-center justify-center px-4 md:px-8">
+        <div className="w-full">
+          <Navbar />
+        </div>
 
-        {/* Logo & Tagline */}
-        <div className="flex flex-col items-center text-center mb-12 min-h-screen justify-center">
+        <div className="flex flex-col items-center text-center">
           <Image
             src="/images/program/now.png"
-            alt="Now and Beyond"
+            alt="Now and Beyond Logo"
             width={500}
             height={500}
-            className="mb-4 p-14"
+            className="mb-4 p-14 w-80 h-80 md:w-[500px] md:h-[500px] object-contain"
           />
-          <div className="text-sm md:text-base font-light text-black">
+          <div className="text-sm md:text-base font-light">
             <p>A window into different worlds</p>
             <p>The ultimate postmodernism</p>
           </div>
         </div>
+      </div>
 
-        {/* Description */}
-        <div className="max-w-4xl text-sm md:text-base font-light leading-relaxed text-black px-4">
-          <p>
+      {/* Section 2 - Description Paragraph */}
+      <div className="snap-start min-h-screen w-full flex items-center justify-center px-4 md:px-8">
+        <div className="max-w-5xl text-sm md:text-xl font-light text-black leading-relaxed">
+          <p className="text-center">
             Now and Beyond emerges as a visionary platform dedicated to nurturing creators of tomorrow through
             tech-based artistic expressions. This smart program celebrates complete artistic independence,
             empowering artists to explore new frontiers in New Media, Digital Art, Sonic Art, Interactive Art,
@@ -47,7 +49,10 @@ export default function NowAndBeyondSection() {
         </div>
       </div>
 
-      <Footer />
+      {/* Section 3 - Footer */}
+      <div className="snap-start w-full mt-auto">
+        <Footer />
+      </div>
     </div>
   )
 }
