@@ -19,7 +19,7 @@ export default function ErbeLandingSection() {
             alt="The ERBE Project"
             width={500}
             height={500}
-            className="mb-4 w-80 h-80 md:w-[500px] md:h-[500px] object-contain"
+            className="w-80 h-80 md:w-[500px] md:h-[500px] object-contain"
           />
           <p
             className="text-lg md:text-xl lg:text-2xl text-center text-gray-200 tracking-wide"
@@ -84,10 +84,7 @@ export default function ErbeLandingSection() {
           </div>
         </div>
 
-        {/* Footer at bottom */}
-        <div className="w-full mt-auto">
-          <ProFooter />
-        </div>
+       <ProFooter />
       </div>
 
       {/* Custom CSS for smooth scrolling */}
@@ -104,6 +101,7 @@ export default function ErbeLandingSection() {
           }
         }
       `}</style>
+      
     </div>
   )
 }

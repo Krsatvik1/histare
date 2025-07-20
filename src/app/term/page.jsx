@@ -2,6 +2,7 @@
 import React from 'react'
 import Navbar from '../components/navbar'
 import ProFooter from '../components/profooter'
+import Footer from '../components/footer'
 
 export default function TermsOfUsePage() {
   return (
@@ -209,7 +210,7 @@ export default function TermsOfUsePage() {
 
       {/* Footer */}
       <div className="mt-16 [&_*]:text-black [&_a]:text-grey-600 [&_a:hover]:text-gray-800">
-        <ProFooter />
+        <Footer />
       </div>
     </div>
   )

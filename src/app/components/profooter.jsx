@@ -10,9 +10,9 @@ import {
 
 const ProFooter = () => {
   return (
-    <footer className="relative  text-[#3c5978] pt-16 pb-8 px-6 sm:px-10 md:px-20 overflow-hidden bg-transparent">
+    <footer className="relative text-gray-800 pt-16 pb-8 px-6 sm:px-10 md:px-20 overflow-hidden bg-transparent">
       {/* Decorative Half Circle */}
-      <div className="absolute bottom-0 left-0 z-10 w-[1200px] h-[900px] overflow-hidden pointer-events-none">
+      <div className="absolute bottom-0 left-0 z-0 w-[1200px] h-[900px] overflow-hidden pointer-events-none">
         <Image
           src="/images/landing/circle.png"
           alt="Decorative Circle"
@@ -27,7 +27,7 @@ const ProFooter = () => {
         
         {/* Left Links */}
         <div
-          className="flex md:flex-col gap-8 text-3xl sm:text-3xl font-medium items-center md:items-start"
+          className="flex md:flex-col gap-8 text-3xl sm:text-3xl font-medium text-white items-center md:items-start"
           style={{ fontFamily: 'Rofane' }}
         >
           <a href="#" className="hover:underline">Media</a>
