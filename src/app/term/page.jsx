@@ -5,16 +5,16 @@ import ProFooter from '../components/profooter'
 
 export default function TermsOfUsePage() {
   return (
-    <div className="bg-white text-black w-full min-h-screen">
+    <div className=" w-full min-h-screen  text-gray-700">
       {/* Header with Navbar */}
       <div className="w-full px-4 md:px-8 py-8">
         <Navbar />
       </div>
 
       {/* Main Content */}
-      <div className="max-w-6xl mx-auto px-4 md:px-8 py-8">
+      <div className="max-w-8xl mx-auto px-4 md:px-28 py-8">
         {/* Page Title */}
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black text-center mb-12"
+        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold  text-[#3c5978]  text-center mb-12"
             style={{ fontFamily: 'Rofane' }}>
           Terms Of Use
         </h1>
@@ -24,9 +24,9 @@ export default function TermsOfUsePage() {
           
           {/* Section 1 - Introduction */}
           <section>
-            <h2 className="text-xl md:text-2xl font-semibold text-black mb-4">1. Introduction</h2>
+            <h2 className="text-xl md:text-2xl font-semibold  text-[#3c5978]  mb-4"  style={{ fontFamily: 'Rofane' }}>1. Introduction</h2>
             
-            <div className="space-y-4 text-gray-800 text-justify">
+            <div className="space-y-4  text-justify">
               <div>
                 <span className="font-medium">1.1</span> Please read these terms of use ("Terms of Use") carefully before using this website ("Website"). Accessing and using the Website indicates that you accept and agree to comply with the Terms of Use. If you do not agree with these terms, do not use the Website.
               </div>
@@ -43,9 +43,9 @@ export default function TermsOfUsePage() {
 
           {/* Section 2 - Purpose and Content */}
           <section>
-            <h2 className="text-xl md:text-2xl font-semibold text-black mb-4">2. Purpose and Content of the Website</h2>
+            <h2 className="text-xl md:text-2xl font-semibold  text-[#3c5978]  mb-4" style={{ fontFamily: 'Rofane' }}>2. Purpose and Content of the Website</h2>
             
-            <div className="space-y-4 text-gray-800 text-justify">
+            <div className="space-y-4  text-justify">
               <div>
                 <span className="font-medium">2.1</span> All information and materials on the Website are presented solely for the purpose of providing general information on and promoting products and services of and/or promoted by Histare. Such information and materials do not constitute offers for products and/or services of Histare or official retailers or other third parties, nor do they constitute advice or other instructions on the use of products and/or services of Histare.
               </div>
@@ -58,9 +58,9 @@ export default function TermsOfUsePage() {
 
           {/* Section 3 - User Content */}
           <section>
-            <h2 className="text-xl md:text-2xl font-semibold text-black mb-4">3. User Content</h2>
+            <h2 className="text-xl md:text-2xl font-semibold  text-[#3c5978] mb-4" style={{ fontFamily: 'Rofane' }}>3. User Content</h2>
             
-            <div className="space-y-4 text-gray-800 text-justify">
+            <div className="space-y-4  text-justify">
               <div>
                 <span className="font-medium">3.1</span> Please be aware that any information you post on the Website (e.g., in a forum or guestbook) may be accessible to other users. Therefore, you should carefully choose the information you post and share with others.
               </div>
@@ -89,9 +89,9 @@ export default function TermsOfUsePage() {
 
           {/* Section 4 - Intellectual Property Rights */}
           <section>
-            <h2 className="text-xl md:text-2xl font-semibold text-black mb-4">4. Intellectual Property Rights</h2>
+            <h2 className="text-xl md:text-2xl font-semibold  text-[#3c5978]  mb-4" style={{ fontFamily: 'Rofane' }}>4. Intellectual Property Rights</h2>
             
-            <div className="space-y-4 text-gray-800 text-justify">
+            <div className="space-y-4 text-justify">
               <div>
                 <span className="font-medium">4.1</span> The Website together with any information, text, images, photographs, audio, and video clips, designs, graphics, logos, symbols, names, product, and corporate designations, as well as all software contained in the Website and all other files, and their selection and arrangement ("the website content"), are subject to legal protection, in particular copyright, trademarks and design rights held by Histare, its affiliates, its users or its licensors with all rights reserved. No Website Content may be modified, copied, distributed, framed, reproduced, republished, downloaded, displayed, posted, transmitted, or sold in any form or by any means, in whole or in part, without Our prior written permission, except that the foregoing does not apply to your own User Content that you legally post on the Website. In addition, no digital content whatsoever may be copied into other programs without the prior written approval of Histare.
               </div>
@@ -108,9 +108,9 @@ export default function TermsOfUsePage() {
 
           {/* Section 5 - Disclaimer */}
           <section>
-            <h2 className="text-xl md:text-2xl font-semibold text-black mb-4">5. Disclaimer</h2>
+            <h2 className="text-xl md:text-2xl font-semibold  text-[#3c5978]  mb-4" style={{ fontFamily: 'Rofane' }}>5. Disclaimer</h2>
             
-            <div className="space-y-4 text-gray-800 text-justify">
+            <div className="space-y-4  text-justify">
               <div>
                 <span className="font-medium">5.1</span> While Histare uses reasonable efforts to include accurate and up-to-date information on the Website, it makes no warranties or representations with respect to the Website Content, which is provided "as is". In particular, Histare neither warrants nor represents that your use of the Website Content will not infringe the rights of third parties not owned by or affiliated with Histare.
               </div>
@@ -131,9 +131,9 @@ export default function TermsOfUsePage() {
 
           {/* Section 6 - Links to and from other websites */}
           <section>
-            <h2 className="text-xl md:text-2xl font-semibold text-black mb-4">6. Links to and from other websites</h2>
+            <h2 style={{ fontFamily: 'Rofane' }} className="text-xl md:text-2xl font-semibold  text-[#3c5978]  mb-4">6. Links to and from other websites</h2>
             
-            <div className="space-y-4 text-gray-800 text-justify">
+            <div className="space-y-4  text-justify">
               <div>
                 <span className="font-medium">6.1</span> Because Histare has no control over and does not endorse any of the sites to which the Website is linked and because Histare has not reviewed any or all of the sites to which the Website is linked, you acknowledge that Histare is not responsible for the content of any off-site pages or any other sites linked to the Website. Responsibility for access to off-site pages and linked third-party sites rests solely with you.
               </div>
@@ -150,9 +150,9 @@ export default function TermsOfUsePage() {
 
           {/* Section 7 - Service Access */}
           <section>
-            <h2 className="text-xl md:text-2xl font-semibold text-black mb-4">7. Service Access</h2>
+            <h2 style={{ fontFamily: 'Rofane' }} className="text-xl md:text-2xl font-semibold  text-[#3c5978]  mb-4">7. Service Access</h2>
             
-            <div className="space-y-4 text-gray-800 text-justify">
+            <div className="space-y-4  text-justify">
               <div>
                 <span className="font-medium">7.1</span> While Histare endeavors to ensure that the Website is normally available 24 hours a day, it will not be liable if for any reason it is unavailable at any time or for any period.
               </div>
@@ -165,9 +165,9 @@ export default function TermsOfUsePage() {
 
           {/* Section 8 - Limitation of liability */}
           <section>
-            <h2 className="text-xl md:text-2xl font-semibold text-black mb-4">8. Limitation of liability</h2>
+            <h2 style={{ fontFamily: 'Rofane' }} className="text-xl md:text-2xl font-semibold  text-[#3c5978]  mb-4">8. Limitation of liability</h2>
             
-            <div className="space-y-4 text-gray-800 text-justify">
+            <div className="space-y-4  text-justify">
               <div>
                 <span className="font-medium">8.1</span> In as much as permitted by law, and except for damage caused by intent or gross negligence, Histare, and any other company of Histare., including the officers, directors, employees, shareholders or agents of any of them, exclude all liability and responsibility for any amount or kind of loss or damage that may result to you or a third party (including without limitation, any direct, indirect, or consequential loss or damage, or any loss of income, profits, goodwill or data) in connection with the Website in any way or in connection with the use, inability to use or the results of use of the Website, any websites linked to the Website or the material on such websites, including but not limited to loss or damage due to viruses that may infect your computer equipment, software, data or other property on account of your access to, use of or browsing of the Website or your downloading of any material from the Website or any websites linked to the Website.
               </div>
@@ -176,9 +176,9 @@ export default function TermsOfUsePage() {
 
           {/* Section 9 - Privacy */}
           <section>
-            <h2 className="text-xl md:text-2xl font-semibold text-black mb-4">9. Privacy</h2>
+            <h2 style={{ fontFamily: 'Rofane' }} className="text-xl md:text-2xl font-semibold  text-[#3c5978]  mb-4">9. Privacy</h2>
             
-            <div className="space-y-4 text-gray-800 text-justify">
+            <div className="space-y-4 text-justify">
               <div>
                 <span className="font-medium">9.1</span> We care about your privacy and the protection of your personal data.
               </div>
@@ -187,9 +187,9 @@ export default function TermsOfUsePage() {
 
           {/* Section 10 - Miscellaneous */}
           <section>
-            <h2 className="text-xl md:text-2xl font-semibold text-black mb-4">10. Miscellaneous</h2>
+            <h2 style={{ fontFamily: 'Rofane' }} className="text-xl md:text-2xl font-semibold text-[#3c5978] mb-4">10. Miscellaneous</h2>
             
-            <div className="space-y-4 text-gray-800 text-justify">
+            <div className="space-y-4 text-justify">
               <div>
                 <span className="font-medium">10.1</span> The failure of Histare to exercise or enforce any right or provision of the Terms of Use will not operate as a waiver of any such right or provision. The section titles in the Terms of Use are for convenience only and have no legal or contractual effect. The invalidity or unenforceability of any provision of the Terms of Use does not affect or impair in any way the validity, legality, and enforceability of the remaining provisions contained herein.
               </div>
@@ -208,7 +208,7 @@ export default function TermsOfUsePage() {
       </div>
 
       {/* Footer */}
-      <div className="mt-16 [&_*]:text-black [&_a]:text-grey-600 [&_a:hover]:text-blue-800">
+      <div className="mt-16 [&_*]:text-black [&_a]:text-grey-600 [&_a:hover]:text-gray-800">
         <ProFooter />
       </div>
     </div>
