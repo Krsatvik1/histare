@@ -32,8 +32,8 @@ export default function ErbeLandingSection() {
 
       {/* Section 2 - Description Paragraph */}
       <div className="snap-start min-h-screen w-full flex items-center justify-center px-4 md:px-8">
-        <div className="max-w-4xl text-sm md:text-base text-gray-200 leading-relaxed text-center">
-          <p style={{ textAlign: 'justify' }}>
+        <div className="max-w-5xl text-sm md:text-xl text-gray-200 leading-relaxed text-center">
+          <p className='justify-center'>
             The Erbe Project unfolds as a testament to India's artisan families across generations, revealing their profound stories through a rare collection of masterpieces crafted with sustainable materials and ancient techniques. This smart initiative aims to redefine the narrative surrounding these families, transforming perceived helplessness into recognition as custodians of India's oldest creative traditions. By re-evaluating Indian craft and folk arts, curating master artisans, and integrating contemporary design interventions, the project fosters a deep appreciation for visual and performing folk art and craft. It aspires to cultivate a new generation of connoisseurs who honor and preserve the cultural richness embodied in every stitch, stroke, and melody, thus perpetuating the enduring legacy of India's artistic heritage.
           </p>
         </div>
