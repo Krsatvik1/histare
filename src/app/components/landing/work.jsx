@@ -85,7 +85,7 @@ const workItems = [
 
 function CardContent({ item, reversed }) {
   const Info = (
-    <div className="mt-20">
+    <div className={reversed ? "mt-28" : "mb-28"}>
       <div className="text-sm text-gray-700">{item.category}</div>
       <div className="text-md text-black mt-1">{item.title}</div>
       {item.author && (
@@ -117,22 +117,32 @@ function CardContent({ item, reversed }) {
   );
 
   return reversed ? (
-    <>
+    <div>
+      <div>
+        <div className="min-h-40">
+        </div>
       {Info}
       {Art}
-    </>
+      </div>
+    </div>
   ) : (
-    <>
+    <div>
+      <div>
       {Art}
       {Info}
-    </>
+      </div>
+      <div className="min-h-40">
+      
+      </div>
+    </div>
   );
 }
 
 
+
 export default function Work() {
   return (
-    <div className="py-16">
+    <div className="py-16 min-h-screen">
       <h2
         className="text-4xl md:text-5xl mb-12 text-[#3c597B] text-center"
         style={{ fontFamily: "Rofane", fontStyle: "italic" }}
@@ -146,7 +156,7 @@ export default function Work() {
           {workItems.concat(workItems).map((item, i) => (
             <div
               key={i}
-              className="work-card flex flex-col justify-between px-6"
+              className="work-card flex flex-col justify-around px-6" 
             >
               <CardContent item={item} reversed={i % 2 === 1} />
             </div>
