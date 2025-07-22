@@ -119,7 +119,7 @@ function CardContent({ item, reversed }) {
   return reversed ? (
     <div>
       <div>
-        <div className="md:min-h-40">
+        <div className="md:min-h-14">
         </div>
       {Info}
       {Art}
@@ -131,7 +131,7 @@ function CardContent({ item, reversed }) {
       {Art}
       {Info}
       </div>
-      <div className="md:min-h-40">
+      <div className="md:min-h-14">
       
       </div>
     </div>
