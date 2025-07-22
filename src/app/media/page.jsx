@@ -294,7 +294,7 @@ export default function MediaPage() {
       </div>
 
       {/* Footer CTA */}
-      <div className="bg-[#3c597B] text-white py-16 mt-16">
+      {/* <div className="bg-[#3c597B] text-white py-16 mt-16">
         <div className="max-w-4xl mx-auto text-center px-4">
           <h2 className="text-3xl font-bold mb-4">Stay Updated with Our Latest Initiatives</h2>
           <p className="text-xl text-blue-100 mb-8">
@@ -311,7 +311,7 @@ export default function MediaPage() {
             </button>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
