@@ -152,11 +152,11 @@ export default function Work() {
       </h2>
 
       <div className="work-scroll-container">
-        <div className="work-scroll-track">
+        <div className="work-scroll-track py-0">
           {workItems.concat(workItems).map((item, i) => (
             <div
               key={i}
-              className="work-card flex flex-col justify-around px-6" 
+              className="work-card flex flex-col justify-around px-6 py-0" 
             >
               <CardContent item={item} reversed={i % 2 === 1} />
             </div>
