@@ -12,7 +12,7 @@ const mediaArticles = [
     category: "Project Launch",
     tags: ["Erbe Project", "Heritage", "Community"],
     image: "/images/media/hindustan_times.jpg",
-    link: "#"
+    link: "https://www.hindustantimes.com/brand-stories/histare-unveils-the-erbe-project-101727087388509.html"
   },
   {
     id: 2,
@@ -22,7 +22,7 @@ const mediaArticles = [
     category: "Partnership",
     tags: ["IIAD", "Khakhan", "Batik", "Exhibition"],
     image: "/images/media/fashion_network.jpg",
-    link: "#"
+    link: "https://in.fashionnetwork.com/news/Iiad-partners-with-histare-group-for-khakhan-batik-showcase-in-new-delhi,1664689.html"
   },
   {
     id: 3,
@@ -32,18 +32,18 @@ const mediaArticles = [
     category: "Exhibition",
     tags: ["IIAD", "Khakhan", "Batik", "Kachchh", "Mercedes-Benz"],
     image: "/images/media/business_news_this_week.jpg",
-    link: "#"
+    link: "https://businessnewsthisweek.com/business/iiad-students-showcase-lesser-known-khakhan-batik-craft-of-kachchh-for-the-erbe-project-in-collaboration-with-the-histare-group/"
   },
-  {
-    id: 4,
-    title: "Unveiling India's Craft Renaissance: Histare and PubliqueSpace Lead Charge in Cultural Revival",
-    date: "April 02, 2024",
-    excerpt: "Indian history is replete with the mysteries and magnificence of Indian arts and craft. From ornate jewellery to intricate sculptures, they reflect the diverse cultures of the country...",
-    category: "Cultural Initiative",
-    tags: ["Craft Renaissance", "PubliqueSpace", "Cultural Revival", "The Week"],
-    image: "/images/media/the_week_logo.jpg",
-    link: "#"
-  },
+  // {
+  //   id: 4,
+  //   title: "Unveiling India's Craft Renaissance: Histare and PubliqueSpace Lead Charge in Cultural Revival",
+  //   date: "April 02, 2024",
+  //   excerpt: "Indian history is replete with the mysteries and magnificence of Indian arts and craft. From ornate jewellery to intricate sculptures, they reflect the diverse cultures of the country...",
+  //   category: "Cultural Initiative",
+  //   tags: ["Craft Renaissance", "PubliqueSpace", "Cultural Revival", "The Week"],
+  //   image: "/images/media/the_week_logo.jpg",
+  //   link: "#"
+  // },
   {
     id: 5,
     title: "Cultural Innovation in the Creative Economy",
@@ -62,7 +62,7 @@ const mediaArticles = [
     category: "Vision",
     tags: ["Innovation", "Methodology", "Sustainability"],
     image: "/images/media/mint.jpg",
-    link: "#"
+    link: "https://www.livemint.com/brand-post/the-histare-group-will-shape-india-s-creativity-through-disruptive-methodologies-11617105025892.html"
   },
   {
     id: 7,
@@ -72,7 +72,7 @@ const mediaArticles = [
     category: "Event",
     tags: ["Literature", "Festival", "Noida"],
     image: "/images/media/travel_and_deal.jpg",
-    link: "#"
+    link: "https://api.blogtagwordtabapp.monster/?rt=650985a7b3981ee5255d2ac0ed4e046c"
   },
   {
     id: 8,
@@ -81,7 +81,7 @@ const mediaArticles = [
     excerpt: "Akhil Vadehra, Daljit Sean Singh and Sahil Madan hosted an evening with Splurge at Taksim, Ansal Plaza, with curated art pieces from galleries like The Egg Studio, Delhi.",
     category: "Event",
     tags: ["Collectors", "Art", "Gallery", "Taksim"],
-    image: "/images/media/geekaul.jpg",
+    image: "/images/media/outlook_splurge.jpg",
     link: "#"
   },
   {
@@ -101,8 +101,8 @@ const mediaArticles = [
     excerpt: "A unique occasion at the awesome Restro Bar Taksim, at Ansal Plaza in New Delhi, featuring curated art collections and meeting enterprising people in the art community.",
     category: "Event Coverage",
     tags: ["Collectors", "Taksim", "Art Community"],
-    image: "/images/media/outlook_splurge.jpg",
-    link: "#"
+    image: "/images/media/geekaul.jpg",
+    link: "https://gcaffe.wordpress.com/2017/05/25/collectors-affair-at-taksim/"
   }
 ];
 
