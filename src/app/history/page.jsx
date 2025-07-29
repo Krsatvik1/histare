@@ -8,7 +8,8 @@ export default function History() {
   return (
     <div>
       <Navbar />
-      <div className="px-6 md:px-20 py-24 text-[#1e1e1e] font-sans max-w-5xl mx-auto">
+      <div className="px-6 md:px-20 --py-24 text-[#1e1e1e] font-sans max-w-5xl mx-auto">
+        <div className='flex items-center justify-center h-[100vh]'>
         <h2
           className="text-4xl md:text-5xl mt-24 mb-32 text-[#3c597B] text-center"
           style={{ fontFamily: 'Rofane', fontStyle: 'italic' }}
@@ -16,8 +17,9 @@ export default function History() {
           <span className="italic font-normal">Our </span>
           <span className="not-italic font-normal">History</span>
         </h2>
+        </div>
 
-        <div className="text-base md:text-lg leading-relaxed   text-[#1e1e1e] space-y-6">
+        <div className="text-base md:text-lg leading-relaxed h-[100vh]  text-[#1e1e1e] space-y-6">
           <p>
             The Histare Group revives the legacy of ‘Roshan Lal Sita Ram,’ founded in the 1930s by the family of Late
             Smt. Roop Rani Seth Vadehra and Late Shri Sita Ram Vadehra. Established in 2019 by the late Smt. Simran

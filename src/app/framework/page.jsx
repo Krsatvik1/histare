@@ -10,9 +10,9 @@ export default function Frameworks() {
       <Navbar />
        
       <div className="px-6 md:px-20 py-16 justify-center text-[#1e1e1e] font-sans max-w-5xl mx-auto p-16">
-        <div className=''>
+        <div className='h-[100vh] flex items-center justify-center'>
           <h2
-            className="text-4xl md:text-5xl mt-24 mb-32 text-[#3c597B] text-center"
+            className="text-4xl md:text-5xl --mt-24 mb-32 text-[#3c597B] text-center"
           style={{ fontFamily: "Rofane", fontStyle: "italic" }}
           >
             <span className="italic font-normal">Our </span>

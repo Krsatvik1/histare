@@ -9,24 +9,26 @@ const icons = Array.from({ length: 10 }, (_, i) => `/images/essence/e${i + 1}.pn
 
 export default function FullPageEssence() {
   return (
-    <div className="min-h-screen gap-5 flex flex-col justify-between text-[#3c597B] overflow-hidden">
-      {/* Navbar */}
-      <Navbar />
+    <div className="overflow-hidden">
+      {/* Fixed Navbar */}
+      <div className="fixed top-0 left-0 right-0 z-50">
+        <Navbar />
+      </div>
 
-      {/* Main Content */}
-      <main className="flex flex-col items-center justify-start px-4 py-16 space-y-20">
-
-        {/* Title */}
+      {/* Section 1: Title */}
+      <section className="h-screen flex items-center justify-center text-[#3c597B] px-4">
         <h1
-          className="text-4xl md:text-5xl mt-24 mb-32 text-[#3c597B] text-center"
+          className="text-4xl md:text-5xl text-[#3c597B] text-center"
           style={{ fontFamily: 'Rofane' }}
         >
           <span className="font-normal italic">Our </span>
           <span>Essence</span>
         </h1>
+      </section>
 
-        {/* Ethical World Section */}
-        <div className="w-full  max-w-5xl mx-auto flex flex-col-reverse md:flex-row justify-between items-start text-center md:text-left gap-10 px-4">
+      {/* Section 2: Ethical World */}
+      <section className="h-screen flex items-center justify-center text-[#3c597B] px-4">
+        <div className="w-full max-w-5xl mx-auto flex flex-col-reverse md:flex-row justify-between items-center text-center md:text-left gap-10">
           {/* Left Side - Text */}
           <div className="md:w-1/2 space-y-4">
             <h3 className="uppercase text-[#2c3e50] font-medium text-sm md:text-base">
@@ -47,25 +49,29 @@ export default function FullPageEssence() {
             <span className="font-normal">Existence</span>
           </div>
         </div>
+      </section>
 
-        {/* Icons Section */}
-        <div className="w-full py-14 ">
-          <div className="flex animate-scrollInfinite space-x-12 w-max px-4">
+      {/* Section 3: Icons */}
+      <section className="h-screen flex items-center justify-center text-[#3c597B]">
+        <div className="w-full py-14">
+          <div className="flex animate-scrollInfinite space-x-20 w-max px-4">
             {[...icons, ...icons].map((src, index) => (
               <Image
                 key={index}
                 src={src}
                 alt={`icon-${index}`}
-                width={80}
-                height={40}
-                className="min-w-[80px] h-auto"
+                width={120}
+                height={60}
+                className="min-w-[120px] h-auto"
               />
             ))}
           </div>
         </div>
+      </section>
 
-        {/* Enduring Balance Section */}
-        <div className="w-full max-w-5xl flex flex-col md:flex-row justify-between items-start text-center md:text-left gap-10 px-4">
+      {/* Section 4: Enduring Balance */}
+      <section className="h-screen flex items-center justify-center text-[#3c597B] px-4">
+        <div className="w-full max-w-5xl flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-10">
           {/* Left - Title */}
           <div className="md:w-1/2">
             <h2
@@ -83,15 +89,17 @@ export default function FullPageEssence() {
               Indian Culture for a Sustainable Future
             </h3>
             <p className="text-[#2c3e50]">
-              Histare incorporates India’s cultural inheritance within the SDG framework.
+              Histare incorporates India's cultural inheritance within the SDG framework.
               A cultural model is valuable for the creation of collective narratives and has
               the ability to bind people.
             </p>
           </div>
         </div>
+      </section>
 
-        {/* Bottom Image */}
-        <div className="w-full max-w-4xl px-4 mt-6">
+      {/* Section 5: Bottom Image */}
+      <section className="h-screen flex items-center justify-center text-[#3c597B] px-4">
+        <div className="w-full max-w-4xl">
           <Image
             src="/images/essence/bottom.png"
             alt="Cultural Innovation"
@@ -100,10 +108,12 @@ export default function FullPageEssence() {
             className="w-full h-auto"
           />
         </div>
-      </main>
+      </section>
 
-      {/* Footer */}
-      <Footer />
+      {/* Section 6: Footer */}
+      <section className="h-screen flex items-end justify-center">
+        <Footer />
+      </section>
     </div>
   );
 }

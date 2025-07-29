@@ -2,6 +2,8 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { Search, Calendar, ExternalLink, Tag, Filter } from 'lucide-react';
+import Navbar from '../components/navbar';
+import Footer from '../components/footer';
 
 const mediaArticles = [
   {
@@ -192,10 +194,12 @@ export default function MediaPage() {
   );
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <>
+    <Navbar/>
+    <div className="min-h-screen --bg-gray-50">
       {/* Header */}
-      <div className="bg-white shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 py-12">
+      <div className="h-[100vh] --bg-red-200 --bg-white --shadow-sm flex align-center items-center">
+        <div className="max-w-7xl mx-auto px-4 py-12 --bg-blue-200">
           <div className="text-center">
             <h1 
               className="text-5xl font-bold text-[#3c597B] mb-4"
@@ -204,9 +208,9 @@ export default function MediaPage() {
               <span className="italic">In The</span>{' '}
               <span className="not-italic">Spotlight</span>
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            {/* <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Discover our latest initiatives, partnerships, and cultural projects that celebrate India's rich heritage and drive creative innovation
-            </p>
+            </p> */}
           </div>
         </div>
       </div>
@@ -313,5 +317,7 @@ export default function MediaPage() {
         </div>
       </div> */}
     </div>
+    <Footer/>
+    </>
   );
 }

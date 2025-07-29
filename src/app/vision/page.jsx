@@ -8,7 +8,8 @@ export default function Vision() {
   return (
     <div>
       <Navbar />
-      <div className="px-6 md:px-20 py-32 text-[#1e1e1e] font-sans max-w-5xl mx-auto">
+      <div className="px-6 md:px-20 --py-32 text-[#1e1e1e] font-sans max-w-5xl mx-auto">
+        <div className='h-[100vh] flex items-center justify-center'>
         <h2
           className="text-4xl md:text-5xl mt-24 mb-32 text-[#3c597B] text-center"
           style={{ fontFamily: 'Rofane' }}
@@ -16,8 +17,9 @@ export default function Vision() {
           <span className="italic font-normal">Our </span>Vision
           <span className="italic font-normal"> in </span>Action
         </h2>
+        </div>
 
-        <div className="text-base md:text-lg leading-relaxed  text-[#1e1e1e] space-y-6">
+        <div className="text-base md:text-lg leading-relaxed  text-[#1e1e1e] space-y-6 h-[100vh]">
           <p>
             At Histare, we harmonize diverse artistic viewpoints with a profound understanding of our patrons' tastes,
             creating a seamless blend of tradition and innovation. This core philosophy underpins every dimension of our

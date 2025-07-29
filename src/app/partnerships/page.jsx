@@ -8,7 +8,8 @@ export default function Partnerships() {
   return (
     <div>
       <Navbar />
-      <div className="px-6 md:px-20 py-24 text-[#1e1e1e] font-sans max-w-5xl mx-auto">
+      <div className="px-6 md:px-20 --py-24 text-[#1e1e1e] font-sans max-w-5xl mx-auto">
+        <div className='flex items-center justify-center h-[100vh]'>
         <h2
           className="text-4xl md:text-5xl mt-24 mb-32 text-[#3c597B] text-center"
           style={{ fontFamily: 'Rofane' }}
@@ -16,8 +17,9 @@ export default function Partnerships() {
           <span className="italic font-normal">The </span>Value
           <span className="italic font-normal"> of </span>Partnerships
         </h2>
+        </div>
 
-        <div className="text-base md:text-lg leading-relaxed text-[#1e1e1e] space-y-6">
+        <div className="text-base md:text-lg leading-relaxed text-[#1e1e1e] space-y-6 h-[100vh]">
           <p>
             Histare bridges the divide between tradition and innovation in the art world, reshaping the conversation
             around cultural heritage and creativity.
