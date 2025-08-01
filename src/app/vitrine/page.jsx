@@ -42,17 +42,9 @@ export default function TheVitrinePage() {
 
       {/* Section 2 - Intro Paragraph */}
       <div className="snap-start min-h-screen w-full flex items-center justify-center px-4 md:px-8">
-        <div className="max-w-5xl text-sm md:text-xl text-gray-300 leading-relaxed">
-          <p className='text-center'>
-            The Vitrine emerges as a visionary platform, seamlessly weaving together India's rich tapestry of pre-modern,
-            modern and contemporary art. This curated space fosters dialogue between generations of artists through
-            diverse mediums, providing a window into the transformation of India's aesthetic sensibility. From
-            traditional masterpieces to cutting-edge digital expressions, The Vitrine places emphasis on contextual
-            appreciation and scholarly engagement. The initiative brings together collectors, historians, and emerging
-            voices to contribute to a holistic understanding of Indian art's past, present, and evolving future. Whether
-            showcasing archival treasures or avant-garde interpretations, The Vitrine is a testament to the enduring
-            vitality and relevance of artistic expression. It is an evolving visual diary that informs, provokes, and
-            redefines the personal and cultural narratives embedded within India's artistic journey.
+        <div className="max-w-6xl text-sm md:text-xl text-gray-300 leading-relaxed">
+          <p className='text-justify'>
+          The Vitrine emerges as a visionary platform, seamlessly weaving together India’s rich tapestry of pre-modern, modern, and contemporary art. This smart program transcends time and genre, curating a vibrant narrative that celebrates the evolution of Indian artistry. From the pioneering movements of Group 1890 and the Bengal School to the avant-garde expressions of Neo Tantric and Narrative Group artists, it explores diverse artistic landscapes. Embracing post-independent movements like the Bombay Progressive Artists’ Group and Delhi Silpi Chakra, The Vitrine amplifies the intersection of art and activism. It illuminates late 19th-century academic realists and their nationalist ethos, alongside the spiritual essence of Chola mandala art. Through curated exhibitions and dialogues, The Vitrine fosters a deeper understanding and appreciation of India’s artistic heritage, uniting past and present voices in a harmonious dialogue. This initiative invites audiences to reflect, engage, and rediscover the profound cultural narratives embedded within India’s artistic journey.
           </p>
         </div>
       </div>
@@ -72,7 +64,7 @@ export default function TheVitrinePage() {
 
           {/* First Story Paragraph + Toggle Button */}
           <div className="relative w-full max-w-4xl mb-8">
-            <p className="text-sm md:text-base text-gray-300 leading-relaxed pr-8 md:pr-16 lg:pr-60" style={{ textAlign: 'justify' }}>
+            <p className="text-sm md:text-base text-gray-300 leading-relaxed pr-8 md:pr-16 lg:pr-60"style={{ textAlign: 'justify' ,fontFamily:'Optima'}}>
               In December 2019, a pivotal chapter emerged with the introduction of The Vitrine. Its presentation
               showcased rare expressions from modern Indian artists. The immersive experience encouraged art
               appreciators to delve into storytelling and discipline, guided by contextual knowledge and
@@ -113,11 +105,7 @@ export default function TheVitrinePage() {
                 </svg>
               )}
             </button>
-
-            <hr className="border-t border-gray-500 mt-6" />
-          </div>
-
-          {/* First Expandable Content - Middle Event Image */}
+            {/* First Expandable Content - Middle Event Image */}
           {firstExpanded && (
             <div className="w-full max-w-4xl mb-8 animate-fadeIn">
               <Image
@@ -125,17 +113,22 @@ export default function TheVitrinePage() {
                 alt="Event Ceremony"
                 width={900}
                 height={600}
-                className="w-full h-auto rounded-lg"
+                className="w-full h-auto rounded-lg mt-5"
               />
             </div>
           )}
 
+            <hr className="border-t border-gray-500 mt-6" />
+          </div>
+
+          
+
           {/* Second Story Paragraph + Toggle Button */}
           <div className="relative w-full max-w-4xl mb-8">
-            <p className="text-sm md:text-base text-gray-300 leading-relaxed pr-8 md:pr-16 lg:pr-60" style={{ textAlign: 'justify' }}>
+            <p className="text-sm md:text-base text-gray-300 leading-relaxed pr-8 md:pr-16 lg:pr-60" style={{ textAlign: 'justify' ,fontFamily:'Optima'}}>
               September 2021 heralded a transformative moment with the unveiling of The Vitrine in collaboration
               with Modern Masters. This event spotlighted previously unseen collections from across India and
-              celebrated the coexistence of heritage and innovation. Rare archival gems met freshly curated
+              celebrated the coexistence of heritage and innovation. Rare archival gems met  curated
               contemporary works, showcasing a vibrant archive that channels a diverse array of expression and
               aspiration.
             </p>
@@ -173,26 +166,27 @@ export default function TheVitrinePage() {
                 </svg>
               )}
             </button>
-
-            <hr className="border-t border-gray-500 mt-6" />
-          </div>
-
-          {/* Second Expandable Content - Bottom Image Grid */}
-          {secondExpanded && (
+            {secondExpanded && (
             <div className="w-full max-w-4xl mb-8 animate-fadeIn">
               <Image
                 src="/images/program/bottom.png"
                 alt="Art Grid"
                 width={900}
                 height={600}
-                className="w-full h-auto rounded-lg"
+                className="w-full h-auto rounded-lg mt-5"
               />
             </div>
           )}
+
+            <hr className="border-t border-gray-500 mt-6" />
+          </div>
+
+          {/* Second Expandable Content - Bottom Image Grid */}
+          
         </div>
 
         {/* Footer at bottom */}
-        <div className="w-full mt-auto">
+        <div className="w-full mt-auto -ml-8">
           <ProFooter />
         </div>
       </div>

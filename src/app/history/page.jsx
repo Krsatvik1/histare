@@ -6,35 +6,57 @@ import Footer from '../components/footer';
 
 export default function History() {
   return (
-    <div>
-      <Navbar />
-      <div className="px-6 md:px-20 --py-24 text-[#1e1e1e] font-sans max-w-5xl mx-auto">
-        <div className='flex items-center justify-center h-[100vh]'>
-        <h2
-          className="text-4xl md:text-5xl mt-24 mb-32 text-[#3c597B] text-center"
-          style={{ fontFamily: 'Rofane', fontStyle: 'italic' }}
-        >
-          <span className="italic font-normal">Our </span>
-          <span className="not-italic font-normal">History</span>
-        </h2>
+    <div className="bg-white snap-y snap-mandatory overflow-y-scroll scroll-smooth h-screen w-full">
+      
+      {/* Section 1 - Header */}
+      <div className="snap-start min-h-screen w-full flex flex-col">
+        <Navbar />
+        <div className="flex-1 flex items-center justify-center px-6 md:px-20">
+          <h2
+            className="text-4xl md:text-5xl text-[#3c597B] text-center"
+            style={{ fontFamily: "Rofane", fontStyle: "italic" }}
+          >
+            <span className="italic font-normal">Our </span>
+            <span className="not-italic font-normal">History</span>
+          </h2>
         </div>
+      </div>
 
-        <div className="text-base md:text-lg leading-relaxed h-[100vh]  text-[#1e1e1e] space-y-6">
-          <p>
-            The Histare Group revives the legacy of ‘Roshan Lal Sita Ram,’ founded in the 1930s by the family of Late
+      {/* Section 2 - Content */}
+      <div className="snap-start min-h-screen w-full flex items-center justify-center px-6 md:px-20">
+        <div className="max-w-5xl w-full">
+          <p className="text-base md:text-lg leading-relaxed text-[#1e1e1e] text-justify">
+            The Histare Group revives the legacy of 'Roshan Lal Sita Ram,' founded in the 1930s by the family of Late
             Smt. Roop Rani Seth Vadehra and Late Shri Sita Ram Vadehra. Established in 2019 by the late Smt. Simran
             Wahi Vadehra, Histare honours this profound cultural heritage while propelling it forward into the future.
-          </p>
-
-          <p>
             Histare is more than just a tribute to the past; it is a vibrant continuation of this rich legacy,
-            dedicated to ensuring the growth and preservation of India’s artisanal traditions. The organization is built
+            dedicated to ensuring the growth and preservation of India's artisanal traditions. The organization is built
             on the belief that tradition and innovation can coexist, allowing the artistry and creativity of past
             generations to remain both relevant and inspiring for future creators.
           </p>
         </div>
       </div>
-      <Footer />
+
+      {/* Section 3 - Footer */}
+      <div className="snap-start min-h-screen w-full flex flex-col justify-end">
+        <Footer />
+      </div>
+
+      {/* Custom CSS for smooth scrolling */}
+      <style jsx>{`
+        /* Ensure smooth scroll behavior */
+        html {
+          scroll-behavior: smooth;
+        }
+        
+        /* Mobile-specific improvements */
+        @media (max-width: 768px) {
+          .touch-manipulation {
+            touch-action: manipulation;
+          }
+        }
+      `}</style>
+      
     </div>
   );
 }
