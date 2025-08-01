@@ -43,7 +43,7 @@ export default function TheVitrinePage() {
       {/* Section 2 - Intro Paragraph */}
       <div className="snap-start min-h-screen w-full flex items-center justify-center px-4 md:px-8">
         <div className="max-w-5xl text-sm md:text-xl text-gray-300 leading-relaxed">
-          <p className='text-center'>
+          <p className='text-justify'>
             The Vitrine emerges as a visionary platform, seamlessly weaving together India's rich tapestry of pre-modern,
             modern and contemporary art. This curated space fosters dialogue between generations of artists through
             diverse mediums, providing a window into the transformation of India's aesthetic sensibility. From
@@ -72,7 +72,7 @@ export default function TheVitrinePage() {
 
           {/* First Story Paragraph + Toggle Button */}
           <div className="relative w-full max-w-4xl mb-8">
-            <p className="text-sm md:text-base text-gray-300 leading-relaxed pr-8 md:pr-16 lg:pr-60" style={{ textAlign: 'justify' }}>
+            <p className="text-sm md:text-base text-gray-300 leading-relaxed pr-8 md:pr-16 lg:pr-60"style={{ textAlign: 'justify' ,fontFamily:'Optima'}}>
               In December 2019, a pivotal chapter emerged with the introduction of The Vitrine. Its presentation
               showcased rare expressions from modern Indian artists. The immersive experience encouraged art
               appreciators to delve into storytelling and discipline, guided by contextual knowledge and
@@ -113,11 +113,7 @@ export default function TheVitrinePage() {
                 </svg>
               )}
             </button>
-
-            <hr className="border-t border-gray-500 mt-6" />
-          </div>
-
-          {/* First Expandable Content - Middle Event Image */}
+            {/* First Expandable Content - Middle Event Image */}
           {firstExpanded && (
             <div className="w-full max-w-4xl mb-8 animate-fadeIn">
               <Image
@@ -125,14 +121,19 @@ export default function TheVitrinePage() {
                 alt="Event Ceremony"
                 width={900}
                 height={600}
-                className="w-full h-auto rounded-lg"
+                className="w-full h-auto rounded-lg mt-5"
               />
             </div>
           )}
 
+            <hr className="border-t border-gray-500 mt-6" />
+          </div>
+
+          
+
           {/* Second Story Paragraph + Toggle Button */}
           <div className="relative w-full max-w-4xl mb-8">
-            <p className="text-sm md:text-base text-gray-300 leading-relaxed pr-8 md:pr-16 lg:pr-60" style={{ textAlign: 'justify' }}>
+            <p className="text-sm md:text-base text-gray-300 leading-relaxed pr-8 md:pr-16 lg:pr-60" style={{ textAlign: 'justify' ,fontFamily:'Optima'}}>
               September 2021 heralded a transformative moment with the unveiling of The Vitrine in collaboration
               with Modern Masters. This event spotlighted previously unseen collections from across India and
               celebrated the coexistence of heritage and innovation. Rare archival gems met freshly curated
@@ -173,22 +174,23 @@ export default function TheVitrinePage() {
                 </svg>
               )}
             </button>
-
-            <hr className="border-t border-gray-500 mt-6" />
-          </div>
-
-          {/* Second Expandable Content - Bottom Image Grid */}
-          {secondExpanded && (
+            {secondExpanded && (
             <div className="w-full max-w-4xl mb-8 animate-fadeIn">
               <Image
                 src="/images/program/bottom.png"
                 alt="Art Grid"
                 width={900}
                 height={600}
-                className="w-full h-auto rounded-lg"
+                className="w-full h-auto rounded-lg mt-5"
               />
             </div>
           )}
+
+            <hr className="border-t border-gray-500 mt-6" />
+          </div>
+
+          {/* Second Expandable Content - Bottom Image Grid */}
+          
         </div>
 
         {/* Footer at bottom */}
