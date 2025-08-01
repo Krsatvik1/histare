@@ -1,6 +1,7 @@
 'use client';
 import React from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const workItems = [
   {
@@ -119,7 +120,7 @@ function CardContent({ item, reversed }) {
   return reversed ? (
     <div>
       <div>
-        <div className="md:min-h-14">
+        <div className="md:min-h-12">
         </div>
       {Info}
       {Art}
@@ -131,7 +132,7 @@ function CardContent({ item, reversed }) {
       {Art}
       {Info}
       </div>
-      <div className="md:min-h-14">
+      <div className="md:min-h-12">
       
       </div>
     </div>
@@ -142,7 +143,7 @@ function CardContent({ item, reversed }) {
 
 export default function Work() {
   return (
-    <div className="py-16 min-h-screen">
+    <div className="py-8 min-h-screen">
       <h2
         className="text-4xl md:text-5xl mb-12 text-[#3c597B] text-center"
         style={{ fontFamily: "Rofane", fontStyle: "italic" }}

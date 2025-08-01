@@ -4,7 +4,7 @@ const Hero = () => (
   <section className="relative h-screen flex items-center justify-center px-6 py-20 overflow-hidden">
     {/* Background Video */}
     <video
-      className="absolute top-0 left-0 w-full h-full object-cover z-0 filter blur-[5px] opacity-70"
+      className="absolute justify-center items-center w-full h-full object-cover z-0 filter blur-[5px] opacity-70"
       src="/bg.mp4"
       autoPlay
       muted
