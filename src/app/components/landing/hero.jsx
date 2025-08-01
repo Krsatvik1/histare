@@ -1,16 +1,18 @@
+"use client"
 import React from 'react';
 
 const Hero = () => (
   <section className="relative h-screen flex items-center justify-center px-6 py-20 overflow-hidden">
     {/* Background Video */}
     <video
-      className="absolute justify-center items-center w-full h-full object-cover z-0 filter blur-[5px] opacity-70"
-      src="/bg.mp4"
-      autoPlay
-      muted
-      loop
-      playsInline
-    />
+  className="absolute w-full h-full object-cover object-center left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-0 filter blur-[5px] opacity-70"
+  src="/bg.mp4"
+  autoPlay
+  muted
+  loop
+  playsInline
+/>
+
 
     {/* Overlay for better text readability */}
     <div className="absolute top-0 left-0 w-full h-full z-10"></div>

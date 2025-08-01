@@ -43,7 +43,7 @@ const workItems = [
   {
     id: 6,
     img: "/images/landing/w6.png",
-    title: "Collectors’ Affaire",
+    title: "Collectors' Affaire",
     category: "Smart Programmes",
     author: "Rajiv Kumar - Maya",
   },
@@ -86,7 +86,7 @@ const workItems = [
 
 function CardContent({ item, reversed }) {
   const Info = (
-    <div className={reversed ? "mt-28" : "mb-28"}>
+    <div className={reversed ? "my-2" : "my-2"}>
       <div className="text-sm text-gray-700">{item.category}</div>
       <div className="text-md text-black mt-1">{item.title}</div>
       {item.author && (
@@ -119,33 +119,62 @@ function CardContent({ item, reversed }) {
 
   return reversed ? (
     <div>
-      <div>
-        <div className="md:min-h-12">
-        </div>
       {Info}
       {Art}
-      </div>
     </div>
   ) : (
     <div>
-      <div>
       {Art}
       {Info}
-      </div>
-      <div className="md:min-h-12">
-      
-      </div>
     </div>
   );
 }
 
-
-
 export default function Work() {
   return (
     <div className="py-8 min-h-screen">
+      <style jsx>{`
+        @keyframes scroll {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+        
+        .work-scroll-container {
+          overflow: hidden;
+          width: 100%;
+          padding: 100px; 
+        }
+        
+        .work-scroll-track {
+          display: flex;
+          animation: scroll 60s linear infinite;
+          width: fit-content;
+          align-items: flex-start; 
+        }
+        
+        .work-scroll-track:hover {
+          animation-play-state: paused;
+        }
+        
+        .work-card {
+          flex-shrink: 0;
+        }
+        
+        .work-card.card-up {
+          transform: translateY(-100px);
+        }
+        
+        .work-card.card-down {
+          transform: translateY(100px);
+        }
+      `}</style>
+
       <h2
-        className="text-4xl md:text-5xl mb-12 text-[#3c597B] text-center"
+        className="text-4xl md:text-5xl text-[#3c597B] text-center"
         style={{ fontFamily: "Rofane", fontStyle: "italic" }}
       >
         <span className="italic font-normal">Our </span>
@@ -153,11 +182,13 @@ export default function Work() {
       </h2>
 
       <div className="work-scroll-container">
-        <div className="work-scroll-track py-0">
+        <div className="work-scroll-track py-3">
           {workItems.concat(workItems).map((item, i) => (
             <div
               key={i}
-              className="work-card flex flex-col justify-around px-6 py-0" 
+              className={`work-card flex flex-col justify-around px-6 py-0 ${
+                i % 2 === 0 ? 'card-up' : 'card-down'
+              }`}
             >
               <CardContent item={item} reversed={i % 2 === 1} />
             </div>
