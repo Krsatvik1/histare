@@ -10,7 +10,7 @@ import {
 
 const ProFooter = () => {
   return (
-    <footer className="relative text-gray-800 pt-16 pb-8 px-6 sm:px-10 md:px-20 overflow-hidden bg-transparent">
+    <footer className="relative text-gray-800 pt-16 pb-8 px-6 sm:px-10 md:px-20 overflow-hidden bg-transparent w-full">
       {/* Decorative Half Circle */}
       <div className="absolute bottom-0 left-0 z-0 w-[1200px] h-[900px] overflow-hidden pointer-events-none">
         <Image

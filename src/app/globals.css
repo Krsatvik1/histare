@@ -5,13 +5,6 @@
   --foreground: #171717;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #F3F0ED;
@@ -19,10 +12,17 @@
   }
 }
 
+@font-face {
+  font-family: 'Optima';
+  src: url('/fonts/Optima.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Optima';
 }
 
 @font-face {
@@ -31,7 +31,8 @@ body {
   font-weight: normal;
   font-style: normal;
 }
-/* Container keeps overflow hidden so we don’t see the loop-back */
+
+/* Container keeps overflow hidden so we don't see the loop-back */
 .work-scroll-container {
   overflow-x: hidden;
 }
@@ -47,7 +48,7 @@ body {
 
 /* Each card has left+right border so the borders join into one long divider */
 .work-card {
-  flex: 0 0 300px;
+  flex: 0 0 260px;
   border-left: 1px solid #c7c7c7;
   border-right: 1px solid #c7c7c7;
 }
@@ -62,19 +63,39 @@ body {
     transform: translateX(0);
   }
   100% {
-    /* “-50%” works because we duplicated the list once */
+    /* "-50%" works because we duplicated the list once */
     transform: translateX(-50%);
   }
 }
+
 .scroll-container {
+  margin: 0;
+  padding: 0;
   scroll-snap-type: y mandatory;
+  scroll-padding-top: 500px; /* adds buffer zone for more natural snapping */
+  overscroll-behavior: contain;
   overflow-y: scroll;
   height: 100vh;
 }
 
 .section {
   scroll-snap-align: start;
+  scroll-snap-stop: always; /* makes sure scroll snaps only when section is fully in view */
   height: 100vh;
+}
+
+
+/* Alternative: Use different trigger points for different sections */
+.section:nth-child(1) {
+  scroll-margin-top: 15vh;
+}
+
+.section:nth-child(2) {
+  scroll-margin-top: 25vh;
+}
+
+.section:nth-child(3) {
+  scroll-margin-top: 30vh;
 }
 
 /* Custom Scrollbar Styling */

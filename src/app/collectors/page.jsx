@@ -16,7 +16,7 @@ export default function CollectorsAffaire() {
     <div className="bg-[#2B3730] h-screen snap-y snap-mandatory overflow-y-scroll scroll-smooth text-gray-100 w-full">
 
       {/* Section 1 - Navbar + Logo */}
-      <div className="snap-start min-h-screen w-full flex flex-col items-center justify-center px-4">
+      <div className="snap-start min-h-screen w-full flex flex-col items-center justify-center">
         <div className="w-full">
           <Navbar />
         </div>
@@ -131,7 +131,11 @@ export default function CollectorsAffaire() {
         </div>
         
         {/* Footer at bottom */}
+<<<<<<< HEAD
         <div className="w-full -ml-6">
+=======
+        <div className="w-full -mx-4">
+>>>>>>> 0fab929b550a082289f503996737ddae3a3b4c01
           <ProFooter />
         </div>
       </div>
