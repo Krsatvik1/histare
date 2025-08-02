@@ -133,11 +133,11 @@ function Testimonial() {
   };
 
   return (
-    <div className="h-screen flex items-center justify-center px-4">
+    <div className="h-screen flex items-center justify-center px-4 ">
       <div className="w-full max-w-4xl">
         <h2
           className="text-4xl md:text-5xl mb-12 text-[#3c597B] text-center"
-          style={{ fontFamily: 'Rofane' }}
+          style={{ fontFamily: 'Optima' }}
         >
           Testimonials
         </h2>
