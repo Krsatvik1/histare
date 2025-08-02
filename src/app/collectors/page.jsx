@@ -132,7 +132,8 @@ export default function CollectorsAffaire() {
         
         {/* Footer at bottom */}
        
-          <ProFooter />
+          <div className='-ml-8'>
+            <ProFooter /></div>
         </div>
         {/* Custom CSS for fade animation */}
       <style jsx>{`
