@@ -131,16 +131,10 @@ export default function CollectorsAffaire() {
         </div>
         
         {/* Footer at bottom */}
-<<<<<<< HEAD
-        <div className="w-full -ml-6">
-=======
-        <div className="w-full -mx-4">
->>>>>>> 0fab929b550a082289f503996737ddae3a3b4c01
+       
           <ProFooter />
         </div>
-      </div>
-
-      {/* Custom CSS for fade animation */}
+        {/* Custom CSS for fade animation */}
       <style jsx>{`
         @keyframes fadeIn {
           from {
@@ -156,6 +150,9 @@ export default function CollectorsAffaire() {
           animation: fadeIn 0.5s ease-in-out;
         }
       `}</style>
-    </div>
+      </div>
+
+
+
   )
 }
