@@ -43,7 +43,7 @@ const workItems = [
   {
     id: 6,
     img: "/images/landing/w6.png",
-    title: "Collectors’ Affaire",
+    title: "Collectors' Affaire",
     category: "Smart Programmes",
     author: "Rajiv Kumar - Maya",
   },
@@ -139,11 +139,39 @@ function CardContent({ item, reversed }) {
   );
 }
 
-
-
 export default function Work() {
   return (
     <div className="py-8 min-h-screen">
+      <style jsx>{`
+        @keyframes scroll {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+        
+        .work-scroll-container {
+          overflow: hidden;
+          width: 100%;
+        }
+        
+        .work-scroll-track {
+          display: flex;
+          animation: scroll 60s linear infinite;
+          width: fit-content;
+        }
+        
+        .work-scroll-track:hover {
+          animation-play-state: paused;
+        }
+        
+        .work-card {
+          flex-shrink: 0;
+        }
+      `}</style>
+
       <h2
         className="text-4xl md:text-5xl mb-12 text-[#3c597B] text-center"
         style={{ fontFamily: "Rofane", fontStyle: "italic" }}
