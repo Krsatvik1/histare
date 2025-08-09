@@ -3,7 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Navbar from '../components/navbar';
-import Footer from '../components/footer';
+import Footer from '../components/footerblank';
 
 const icons = Array.from({ length: 10 }, (_, i) => `/images/essence/e${i + 1}.png`);
 
@@ -52,7 +52,6 @@ export default function FullPageEssence() {
       </section>
 
       {/* Section 3: Icons */}
-{/* Section 3: Icons */}
 <section className="snap-start snap-always h-screen flex items-center justify-center text-[#3c597B] px-4">
   <style jsx>{`
     @keyframes scrollIcons {
@@ -85,21 +84,20 @@ export default function FullPageEssence() {
   `}</style>
 
   <div className="w-full py-14 icons-scroll-container">
-    <div className="icons-scroll-track space-x-20 px-4">
+    <div className="icons-scroll-track space-x-20 px-4 md:h-40">
       {[...icons, ...icons].map((src, index) => (
         <Image
           key={index}
           src={src}
           alt={`icon-${index}`}
-          width={120}
-          height={60}
-          className="icon-item min-w-[120px] h-auto"
+          width={140}
+          height={50}
+          className="icon-item min-w-[150px] h-auto"
         />
       ))}
     </div>
   </div>
 </section>
-
 
       {/* Section 4: Enduring Balance */}
       <section className="snap-start snap-always h-screen flex items-center justify-center text-[#3c597B] px-4">
@@ -129,23 +127,23 @@ export default function FullPageEssence() {
         </div>
       </section>
 
-      {/* Section 5: Bottom Image */}
-      <section className="snap-start snap-always h-screen flex items-center justify-center text-[#3c597B] px-4">
-        <div className="w-full max-w-4xl">
-          <Image
-            src="/images/essence/bottom.png"
-            alt="Cultural Innovation"
-            width={800}
-            height={400}
-            className="w-full h-auto"
-          />
+      {/* Section 5: Bottom Image with Footer */}
+      <section className="snap-start snap-always  flex flex-col px-0 pt-40">
+        <div className="flex-1 flex items-center justify-center">
+          <div className="w-full max-w-4xl">
+            <Image
+              src="/images/essence/bottom.png"
+              alt="Cultural Innovation"
+              width={800}
+              height={400}
+              className="w-full h-auto"
+            />
+          </div>
         </div>
-      </section>
-
-      {/* Section 6: Footer */}
-      <section className="snap-start ">
         <Footer />
       </section>
+
+      
     </div>
   );
 }
