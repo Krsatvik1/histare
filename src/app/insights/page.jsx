@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Navbar from '../components/navbar';
-import Footer from '../components/footer';
+import Footer from '../components/footerblank';
 
 const reports = [
   {
@@ -107,23 +107,26 @@ export default function Insights() {
         </section>
 
         {/* Section 3: Reports Grid with Footer */}
-        <section className="min-h-screen snap-start flex flex-col py-20 px-6 md:px-20">
+        <section className="min-h-screen snap-start flex flex-col py-20 px-6 md:px-20 md:pb-0">
           <div className="flex-1 flex items-center justify-center">
             <div className="max-w-7xl mx-auto w-full">
-              <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8 justify-items-center">
+              <div className="flex flex-wrap  gap-6 md:gap-12 justify-center ">
                 {reports.map((report) => (
                   <a
                     key={report.id}
                     href={report.pdfUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-light hover:underline transition-transform hover:scale-105"
+                    className="font-light hover:underline transition-transform hover:scale-105 flex justify-center items-center"
+                    style={{
+                      width: 'calc(50% - 12px)'
+                    }}
                   >
-                    <div className="flex flex-col items-center space-y-3 text-center max-w-[200px]">
+                    <div className="flex flex-col items-center space-y-3 text-center w-full mb-5 md:mb-0">
                       <img
                         src={report.imageUrl}
                         alt={report.title}
-                        className="w-32 h-32 md:w-40 md:h-40 object-cover rounded-lg shadow-md"
+                        className="w-full h-32 md:h-44 lg:h-[200px] object-cover rounded-lg shadow-md"
                       />
                       <h3 className="text-sm md:text-base font-medium text-[#1e1e1e] leading-tight">
                         {report.title}
@@ -135,10 +138,19 @@ export default function Insights() {
               </div>
             </div>
           </div>
+          <div className='-ml-20 mb-0 '>
           <Footer />
+          </div>
         </section>
 
-       
+        {/* Custom CSS for responsive layout */}
+        <style jsx>{`
+          @media (min-width: 640px) {
+            .flex-wrap > a {
+              width: calc(20% - 6px) !important;
+            }
+          }
+        `}</style>
       </div>
     </>
   );
