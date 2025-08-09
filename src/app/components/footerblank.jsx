@@ -19,45 +19,24 @@ const Footer = () => {
           alt="Decorative Circle"
           width={1200}
           height={1200}
-          className="md:translate-x-[-40%] md:translate-y-[50%] md:opacity-50 opacity-0"
+          className="md:translate-x-[-40%] md:translate-y-[50%] md:opacity-80 opacity-0"
         />
       </div>
 
       {/* Content Wrapper */}
       <div className="relative z-20 flex flex-col md:flex-row md:justify-between items-center md:items-end gap-10 mb-10 text-center md:text-left">
-        
-        {/* Left Links */}
-        {/* <div
-          className="flex md:flex-col gap-8 text-3xl sm:text-3xl font-medium text-gray-500 items-center md:items-start"
-          style={{ fontFamily: 'Rofane' }}
-        >
-          <a href="/media" className="hover:underline">Media</a>
-          <a href="/insights" className="hover:underline">Insights</a>
-          <a href="/goi" className="hover:underline">GOI</a>
-        </div>  */}
-
-        {/* Address Block */}
-        {/* <div className="text-sm sm:text-base text-gray-500 max-w-sm text-center md:text-left">
-          <p>The Histare Group</p>
-          <p>Histare Concepts Private Limited</p>
-          <br />
-          <p>
-            E 23, Right side, Lower Ground Floor, Poorvi Marg, Vasant Vihar, Delhi 110057
-          </p>
-          <p>+91-11-40158326</p>
-          <p>info@histare.in</p>
-        </div> */}
+      
 
         {/* Social Icons */}
         
        
       </div>
 
-      <hr className="w-full border-gray-300 relative z-20" />
+      <hr className="w-full border-black relative z-20" />
 
       {/* Bottom Row */}
       <div className="relative z-20 mt-10 flex flex-col md:flex-row justify-between items-center text-xs sm:text-sm text-gray-500 gap-4">
-      <Link href="/term" className="text-sm text-gray-400 hover:text-white transition-colors">
+      <Link href="/term" className="text-sm text-black hover:text-white transition-colors">
          Privacy Policy | Terms & Conditions
     </Link>
     <div className="flex flex-column md:flex-row justify-center md:justify-start items-center gap-4 text-xl text-gray-700">
@@ -67,7 +46,7 @@ const Footer = () => {
           <a href="#"><FaFacebook /></a>
           <a href="#"><FaInstagram /></a>
         </div>
-        <p className="text-lg sm:text-xl">2025</p>
+        <p className="text-lg text-black sm:text-xl">{new Date().getFullYear()}</p>
       </div>
     </footer>
   );

@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Navbar from '../components/navbar';
-import Footer from '../components/footer';
+import Footer from '../components/footerblank';
 
 export default function Frameworks() {
   return (
@@ -69,26 +69,18 @@ export default function Frameworks() {
         </div>
       </div>
 
-      {/* Section 4 - Purpose */}
-      <div className="snap-start min-h-screen w-full flex items-center justify-center px-6 md:px-20">
-        <div className="max-w-5xl w-full">
-          <div className="flex flex-col md:flex-row md:items-start">
-            <h2 className="md:w-1/3 text-3xl md:text-4xl font-serif italic text-[#3c597B] mb-4 md:mb-0">
-              The Purpose
-            </h2>
-            <p className="md:w-2/3 text-base md:text-lg leading-relaxed text-[#1e1e1e] text-justify">
-              Histare passionately preserves India's artistic legacy through traditional, contemporary, and modern art. It showcases creators' masterpieces globally while intertwining tradition with innovation, empowering future creators, and practicing a transformative legacy that resonates through generations.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      {/* Section 5 - Footer */}
+      {/* Section 4 - Purpose with Footer */}
       <div className="snap-start min-h-screen w-full flex flex-col">
         <div className="flex-1 flex items-center justify-center px-6 md:px-20">
-          <div className="text-center text-[#3c597B]">
-            <h3 className="text-2xl md:text-3xl font-serif italic mb-4">Ready to Begin?</h3>
-            <p className="text-lg text-[#1e1e1e]">Let's preserve and celebrate India's artistic heritage together.</p>
+          <div className="max-w-5xl w-full">
+            <div className="flex flex-col md:flex-row md:items-start">
+              <h2 className="md:w-1/3 text-3xl md:text-4xl font-serif italic text-[#3c597B] mb-4 md:mb-0">
+                The Purpose
+              </h2>
+              <p className="md:w-2/3 text-base md:text-lg leading-relaxed text-[#1e1e1e] text-justify">
+                Histare passionately preserves India's artistic legacy through traditional, contemporary, and modern art. It showcases creators' masterpieces globally while intertwining tradition with innovation, empowering future creators, and practicing a transformative legacy that resonates through generations.
+              </p>
+            </div>
           </div>
         </div>
         <Footer />
