@@ -6,7 +6,7 @@ import Footer from '../components/footerblank';
 
 export default function Frameworks() {
   return (
-    <div className="bg-white snap-y snap-mandatory overflow-y-scroll scroll-smooth h-screen w-full">
+    <div className="bg-F3F0ED snap-y snap-mandatory overflow-y-scroll scroll-smooth h-screen w-full">
       
       {/* Section 1 - Header */}
       <div className="snap-start min-h-screen w-full flex flex-col">

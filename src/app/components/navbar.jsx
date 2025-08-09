@@ -58,7 +58,10 @@ const Navbar = () => {
               <a href="/partnerships">The Value of Partnerships</a>
               <a href="/vision">Our Vision in Action</a>
               <a href="/essence">Our Essence</a>
-              <a href="/insights">Our Insights</a>
+              <a href="/insights"> Insights</a>
+              <a href="unveiling">In the Spotlight</a>
+              <a href="/goi"> G O I</a>
+              <a href="/contact">Contact Us</a>
             </motion.div>
           </motion.div>
         )}
