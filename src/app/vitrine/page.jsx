@@ -3,7 +3,7 @@
 import React, { useState } from 'react'
 import Image from 'next/image'
 import Navbar from '../components/navbar'
-import ProFooter from '../components/profooter'
+import ProFooter from '../components/profooterblank'
 
 export default function TheVitrinePage() {
   const [firstExpanded, setFirstExpanded] = useState(false)
@@ -65,11 +65,10 @@ export default function TheVitrinePage() {
           {/* First Story Paragraph + Toggle Button */}
           <div className="relative w-full max-w-4xl mb-8">
             <p className="text-sm md:text-base text-gray-300 leading-relaxed pr-8 md:pr-16 lg:pr-60"style={{ textAlign: 'justify' ,fontFamily:'Optima'}}>
-              In December 2019, a pivotal chapter emerged with the introduction of The Vitrine. Its presentation
-              showcased rare expressions from modern Indian artists. The immersive experience encouraged art
-              appreciators to delve into storytelling and discipline, guided by contextual knowledge and
-              curatorial precision, enriching each tapestry that resonated with multitude of voices and
-              articulations.
+            In December 2019, a pivotal chapter emerged with the introduction of The Vitrine. This occasion encouraged reflection and interaction, 
+            ushering in a realm of possibilities and discoveries that appealed to both the inquisitive and the perceptive. It became a vibrant
+             platform where contemporary Indian art converged with European-Indian fusion live performances, creating a rich tapestry that 
+             resonated with a multitude of stories and ambitions.
             </p>
 
             {/* First Toggle Button */}
@@ -109,7 +108,7 @@ export default function TheVitrinePage() {
           {firstExpanded && (
             <div className="w-full max-w-4xl mb-8 animate-fadeIn">
               <Image
-                src="/images/program/main.png"
+                src="/images/program/vitrine2019.png"
                 alt="Event Ceremony"
                 width={900}
                 height={600}
@@ -126,11 +125,10 @@ export default function TheVitrinePage() {
           {/* Second Story Paragraph + Toggle Button */}
           <div className="relative w-full max-w-4xl mb-8">
             <p className="text-sm md:text-base text-gray-300 leading-relaxed pr-8 md:pr-16 lg:pr-60" style={{ textAlign: 'justify' ,fontFamily:'Optima'}}>
-              September 2021 heralded a transformative moment with the unveiling of The Vitrine in collaboration
-              with Modern Masters. This event spotlighted previously unseen collections from across India and
-              celebrated the coexistence of heritage and innovation. Rare archival gems met  curated
-              contemporary works, showcasing a vibrant archive that channels a diverse array of expression and
-              aspiration.
+            September 2018 heralded a transformative moment with the unveiling of The Vitrine in collaboration with Marwah Studios. 
+            This event sparked introspection and dialogue, opening doors to a myriad of opportunities and insights that captivated 
+            the curious and the discerning. It transformed into a dynamic space where contemporary Indian art flourished, weaving 
+            together a rich narrative that echoed a diverse array of experiences and aspirations.
             </p>
 
             {/* Second Toggle Button */}
@@ -169,7 +167,7 @@ export default function TheVitrinePage() {
             {secondExpanded && (
             <div className="w-full max-w-4xl mb-8 animate-fadeIn">
               <Image
-                src="/images/program/bottom.png"
+                src="/images/program/vitrine2018.png"
                 alt="Art Grid"
                 width={900}
                 height={600}
@@ -186,7 +184,7 @@ export default function TheVitrinePage() {
         </div>
 
         {/* Footer at bottom */}
-        <div className="w-full mt-auto -ml-8">
+        <div className="w-full mt-auto -ml-8 text-white">
           <ProFooter />
         </div>
       </div>
