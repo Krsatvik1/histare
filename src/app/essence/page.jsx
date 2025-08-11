@@ -3,20 +3,20 @@
 import React from 'react';
 import Image from 'next/image';
 import Navbar from '../components/navbar';
-import Footer from '../components/footer';
+import Footer from '../components/footerblank';
 
 const icons = Array.from({ length: 10 }, (_, i) => `/images/essence/e${i + 1}.png`);
 
 export default function FullPageEssence() {
   return (
-    <div className="overflow-hidden">
+    <div className="h-screen overflow-y-scroll scroll-smooth snap-y snap-mandatory">
       {/* Fixed Navbar */}
       <div className="fixed top-0 left-0 right-0 z-50">
         <Navbar />
       </div>
 
       {/* Section 1: Title */}
-      <section className="h-screen flex items-center justify-center text-[#3c597B] px-4">
+      <section className="snap-start snap-always h-screen flex items-center justify-center text-[#3c597B] px-4">
         <h1
           className="text-4xl md:text-5xl text-[#3c597B] text-center"
           style={{ fontFamily: 'Rofane' }}
@@ -27,7 +27,7 @@ export default function FullPageEssence() {
       </section>
 
       {/* Section 2: Ethical World */}
-      <section className="h-screen flex items-center justify-center text-[#3c597B] px-4">
+      <section className="snap-start snap-always h-screen flex items-center justify-center text-[#3c597B] px-4">
         <div className="w-full max-w-5xl mx-auto flex flex-col-reverse md:flex-row justify-between items-center text-center md:text-left gap-10">
           {/* Left Side - Text */}
           <div className="md:w-1/2 space-y-4">
@@ -52,25 +52,55 @@ export default function FullPageEssence() {
       </section>
 
       {/* Section 3: Icons */}
-      <section className="h-screen flex items-center justify-center text-[#3c597B]">
-        <div className="w-full py-14">
-          <div className="flex animate-scrollInfinite space-x-20 w-max px-4">
-            {[...icons, ...icons].map((src, index) => (
-              <Image
-                key={index}
-                src={src}
-                alt={`icon-${index}`}
-                width={120}
-                height={60}
-                className="min-w-[120px] h-auto"
-              />
-            ))}
-          </div>
-        </div>
-      </section>
+<section className="snap-start snap-always h-screen flex items-center justify-center text-[#3c597B] px-4">
+  <style jsx>{`
+    @keyframes scrollIcons {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    .icons-scroll-container {
+      overflow: hidden;
+      width: 100%;
+    }
+
+    .icons-scroll-track {
+      display: flex;
+      animation: scrollIcons 60s linear infinite;
+      width: fit-content;
+    }
+
+    .icons-scroll-track:hover {
+      animation-play-state: paused;
+    }
+
+    .icon-item {
+      flex-shrink: 0;
+    }
+  `}</style>
+
+  <div className="w-full py-14 icons-scroll-container">
+    <div className="icons-scroll-track space-x-20 px-4 md:h-40">
+      {[...icons, ...icons].map((src, index) => (
+        <Image
+          key={index}
+          src={src}
+          alt={`icon-${index}`}
+          width={140}
+          height={50}
+          className="icon-item min-w-[150px] h-auto"
+        />
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* Section 4: Enduring Balance */}
-      <section className="h-screen flex items-center justify-center text-[#3c597B] px-4">
+      <section className="snap-start snap-always h-screen flex items-center justify-center text-[#3c597B] px-4">
         <div className="w-full max-w-5xl flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-10">
           {/* Left - Title */}
           <div className="md:w-1/2">
@@ -97,23 +127,23 @@ export default function FullPageEssence() {
         </div>
       </section>
 
-      {/* Section 5: Bottom Image */}
-      <section className="h-screen flex items-center justify-center text-[#3c597B] px-4">
-        <div className="w-full max-w-4xl">
-          <Image
-            src="/images/essence/bottom.png"
-            alt="Cultural Innovation"
-            width={800}
-            height={400}
-            className="w-full h-auto"
-          />
+      {/* Section 5: Bottom Image with Footer */}
+      <section className="snap-start snap-always  flex flex-col px-0 pt-40">
+        <div className="flex-1 flex items-center justify-center">
+          <div className="w-full max-w-4xl">
+            <Image
+              src="/images/essence/bottom.png"
+              alt="Cultural Innovation"
+              width={800}
+              height={400}
+              className="w-full h-auto"
+            />
+          </div>
         </div>
-      </section>
-
-      {/* Section 6: Footer */}
-      <section className="h-screen flex items-end justify-center">
         <Footer />
       </section>
+
+      
     </div>
   );
 }

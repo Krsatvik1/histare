@@ -133,11 +133,11 @@ function Testimonial() {
   };
 
   return (
-    <div className="h-screen flex items-center justify-center px-4">
+    <div className=" flex items-center justify-center px-4 md:pt-5  ">
       <div className="w-full max-w-4xl">
         <h2
-          className="text-4xl md:text-5xl mb-12 text-[#3c597B] text-center"
-          style={{ fontFamily: 'Rofane' }}
+          className="text-4xl md:text-5xl mb-12 text-[#3c597B] text-center md:pt-5"
+          style={{ fontFamily: 'Optima' }}
         >
           Testimonials
         </h2>
@@ -153,7 +153,7 @@ function Testimonial() {
               animate="center"
               exit="exit"
               transition={{ duration: 0.6, ease: 'easeInOut' }}
-              className="absolute w-full border-2 border-[#f1d394] rounded-lg md:p-16 p-8 text-[#333]"
+              className="absolute w-full h-90% border-2 border-[#f1d394] rounded-lg md:p-16 p-8 text-[#333]"
             >
               <p className="text-lg leading-relaxed mb-6">{testimonials[index].text}</p>
               <p className="md:text-right font-semibold text-[#1e1e1e] text-center">
@@ -168,7 +168,7 @@ function Testimonial() {
         </div>
 
         {/* Dot Indicators */}
-        <div className="flex justify-center mt-6 gap-2">
+        <div className="flex justify-center mt-0 gap-2">
           {testimonials.map((_, i) => (
             <button
               key={i}

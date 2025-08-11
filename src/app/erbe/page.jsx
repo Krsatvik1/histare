@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image'
 import Navbar from '../components/navbar'
-import ProFooter from '../components/profooter'
+import ProFooter from '../components/profooterblank'
 
 export default function CollectorsAffaire() {
   const [expanded, setExpanded] = useState(false)

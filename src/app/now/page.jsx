@@ -3,7 +3,7 @@
 import React from 'react'
 import Image from 'next/image'
 import Navbar from '../components/navbar'
-import Footer from '../components/footer'
+import Footer from '../components/footerblank'
 
 export default function NowAndBeyondSection() {
   return (
@@ -33,7 +33,7 @@ export default function NowAndBeyondSection() {
       {/* Section 2 - Description Paragraph */}
       <div className="snap-start min-h-screen w-full flex items-center justify-center px-4 md:px-8">
         <div className="max-w-5xl text-sm md:text-xl font-light text-black leading-relaxed">
-          <p className="text-center">
+          <p className="text-justify" style={{fontFamily:'Optima'}}>
             Now and Beyond emerges as a visionary platform dedicated to nurturing creators of tomorrow through
             tech-based artistic expressions. This smart program celebrates complete artistic independence,
             empowering artists to explore new frontiers in New Media, Digital Art, Sonic Art, Interactive Art,
