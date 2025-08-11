@@ -10,6 +10,7 @@ import Partnership from './components/landing/partnership';
 import Programe from './components/landing/programe';
 import Work from './components/landing/work';
 import Interest from './components/landing/interest';
+import Art from './components/landing/art';
 
 function Home() {
   return (
@@ -21,10 +22,14 @@ function Home() {
       </div>
       <div className="snap-start">
         <Elephant />
+        
         <div className="snap-start">
         <Programe />
       </div>
       </div>
+      <div className="snap-start">
+          <Art/>
+        </div>
       <div className="snap-start">
         <Work />
       </div>
