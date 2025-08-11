@@ -51,7 +51,7 @@ const Navbar = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.5 }}
-              className="relative z-10 px-10 py-16 text-[#3c597B] text-2xl font-[Rofane] space-y-6 flex flex-col"
+              className="relative z-10 px-10 py-16  text-[#333333] text-2xl font-[Rofane] space-y-4 flex flex-col"
             >
               <a href="/framework">Our Framework</a>
               <a href="/history">Our History</a>

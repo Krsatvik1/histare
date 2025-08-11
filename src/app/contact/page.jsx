@@ -55,7 +55,7 @@ const ContactPage = () => {
           {/* First Row - First Name and Last Name */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
-              <label className="block text-gray-600 mb-2 font-medium">
+              <label className="block text-[#3C597B] mb-2 font-medium">
                 First Name
               </label>
               <input
@@ -67,7 +67,7 @@ const ContactPage = () => {
               />
             </div>
             <div>
-              <label className="block text-gray-600 mb-2 font-medium">
+              <label className="block text-[#3C597B] mb-2 font-medium">
                 Last Name
               </label>
               <input
@@ -83,7 +83,7 @@ const ContactPage = () => {
           {/* Second Row - Email and Contact */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
-              <label className="block text-gray-600 mb-2 font-medium">
+              <label className="block text-[#3C597B] mb-2 font-medium">
                 Email
               </label>
               <input
@@ -95,7 +95,7 @@ const ContactPage = () => {
               />
             </div>
             <div>
-              <label className="block text-gray-600 mb-2 font-medium">
+              <label className="block text-[#3C597B] mb-2 font-medium">
                 Contact
               </label>
               <input
@@ -110,7 +110,7 @@ const ContactPage = () => {
 
           {/* Message Field */}
           <div>
-            <label className="block text-gray-600 mb-2 font-medium">
+            <label className="block text-[#3C597B] mb-2 font-medium">
               Message
             </label>
             <textarea
@@ -127,7 +127,7 @@ const ContactPage = () => {
           <div className="flex justify-center">
             <button
               onClick={handleSubmit}
-              className="bg-purple-600 hover:bg-purple-700 text-white font-medium py-3 px-8 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2"
+              className="bg-[#3C597B] hover:bg-[#3C59f0] text-white font-medium py-3 px-8 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2"
             >
               Send Message
             </button>

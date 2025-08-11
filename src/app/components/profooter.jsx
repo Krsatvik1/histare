@@ -31,7 +31,7 @@ const ProFooter = () => {
       <div className="relative z-20 flex flex-col md:flex-row md:justify-between items-center md:items-start gap-8 mb-10 text-center md:text-left">
         
         {/* Address Block */}
-        <div className="text-sm sm:text-base text-black max-w-sm text-center md:text-left md:mr-0 pr-0">
+        <div className="text-sm sm:text-base text-[#555555] max-w-sm text-center md:text-left md:mr-0 pr-0">
           <p>The Histare Group</p>
           <p>Histare Concepts Private Limited</p>
           <br />
@@ -54,7 +54,7 @@ const ProFooter = () => {
         </div>
 
         {/* Social Icons */}
-        <div className="flex flex-row md:flex-col justify-center md:justify-start items-center gap-4 text-xl text-black sm:pr-10">
+        <div className="flex flex-row md:flex-col justify-center md:justify-start items-center gap-4 text-xl text-[#555555] sm:pr-10">
           <a href="#"><FaTwitter /></a>
           <a href="#"><FaLinkedin /></a>
           <a href="#"><FaYoutube /></a>
