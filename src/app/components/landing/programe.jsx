@@ -3,57 +3,64 @@ import Image from 'next/image';
 
 function Programe() {
   return (
-    <div className=" py-16 px-4 md:px-20 pb-10 text-center min-h-screen justify-center ">
-      <h2
-        className="text-4xl md:text-5xl mb-12 text-[#3c597B]"
-        style={{ fontFamily: 'Rofane' }}
-      >
-        {/* <span className="italic font-normal">Our</span>{' '} */}
-        <span className="non-italic font-normal text-7xl md:text-7xl mb-3 text-[#3c597B]">Ranga Vistara</span>
-      </h2>
+    <div className="py-16 px-4 md:px-20 pb-10 text-center min-h-screen flex flex-col justify-center">
+      <div className="rounded-xl overflow-hidden   pt-5 mb-10">
+        <Image
+          src="/images/art/navankalpha.png"
+          alt="Collectors' Affair"
+          width={800}
+          height={200}
+          className="object-contain w-full h-[35px] sm:h-[45px] md:h-[70px] lg:h-[80px]"
+        />
+      </div>
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-6 justify-center items-center pt-10 md:pt-0">
-<a href='/collectors'>
-        <div className="rounded-xl overflow-hidden shadow-md cursor-pointer">
-          <Image
-            src="/images/landing/collectors.png"
-            alt="Collectors' Affair"
-            width={300}
-            height={400}
-            className="object-cover w-full h-auto md:h-[470px]"
-          />
-        </div>
-</a>
-<a href='/erbe'>
-        <div className="rounded-xl overflow-hidden shadow-md cursor-pointer">
-          <Image
-            src="/images/landing/erbe.png"
-            alt="The ERBE Project"
-            width={300}
-            height={400}
-            className="object-cover w-full h-auto md:h-[470px]"
-          />
-        </div>
-</a><a href='/vitrine'>
-        <div className="rounded-xl overflow-hidden shadow-md cursor-pointer">
-          <Image
-            src="/images/landing/vitrine.png"
-            alt="The Vitrine"
-            width={300}
-            height={400}
-            className="object-cover w-full h-auto md:h-[470px]"
-          />
-        </div>
-</a><a href='/now'>
-        <div className="rounded-xl overflow-hidden shadow-md cursor-pointer">
-          <Image
-            src="/images/landing/now.png"
-            alt="New and Beyond"
-            width={300}
-            height={400}
-            className="object-cover w-full h-auto md:h-[470px]"
-          />
-        </div>
+        <a href='/collectors'>
+          <div className="rounded-xl overflow-hidden   h-[200px] sm:h-[250px] md:h-[400px]">
+            <Image
+              src="/images/landing/collectors.png"
+              alt="Collectors' Affair"
+              width={100}
+              height={100}
+              className="object-cover w-full h-full"
+            />
+          </div>
+        </a>
+        
+        <a href='/erbe'>
+          <div className="rounded-xl overflow-hidden shadow-md cursor-pointer h-[200px] sm:h-[250px] md:h-[400px]">
+            <Image
+              src="/images/landing/erbe.png"
+              alt="The ERBE Project"
+              width={300}
+              height={470}
+              className="object-cover w-full h-full"
+            />
+          </div>
+        </a>
+        
+        <a href='/vitrine'>
+          <div className="rounded-xl overflow-hidden shadow-md cursor-pointer h-[200px] sm:h-[250px] md:h-[400px]">
+            <Image
+              src="/images/landing/vitrine.png"
+              alt="The Vitrine"
+              width={300}
+              height={450}
+              className="object-cover w-full h-full"
+            />
+          </div>
+        </a>
+        
+        <a href='/now'>
+          <div className="rounded-xl overflow-hidden shadow-md cursor-pointer h-[200px] sm:h-[250px] md:h-[400px]">
+            <Image
+              src="/images/landing/now.png"
+              alt="New and Beyond"
+              width={300}
+              height={470}
+              className="object-cover w-full h-full"
+            />
+          </div>
         </a>
       </div>
     </div>

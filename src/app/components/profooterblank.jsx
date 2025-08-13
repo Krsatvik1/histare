@@ -11,7 +11,7 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="relative text-gray-800 px-6 sm:px-10 md:px-20 overflow-hidden bg-transparent md:h-[400px] flex flex-col justify-end pb-8">
+    <footer className="relative text-gray-800 px-6 sm:px-10 md:px-20 overflow-hidden bg-transparent md:h-[400px] flex flex-col justify-end  pb-8">
       {/* Decorative Half Circle */}
       <div className="absolute bottom-0 left-0 z-0 w-[1200px] h-[900px] overflow-hidden pointer-events-none">
         <Image
@@ -32,7 +32,7 @@ const Footer = () => {
        
       </div>
 
-      <hr className="w-full border-black relative z-20" />
+      <hr className="w-full border-white relative z-20" />
 
       {/* Bottom Row */}
       <div className="relative z-20 mt-10 flex flex-col md:flex-row justify-between items-center text-xs sm:text-sm text-gray-500 gap-4">

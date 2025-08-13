@@ -21,8 +21,8 @@ export default function Vision() {
       </section>
 
       {/* Section 2 - Content with Footer */}
-      <section className="snap-start snap-always  flex flex-col px-6 md:px-20 pt-60">
-        <div className="flex-1 flex items-center justify">
+      <section className="snap-start snap-always min-h-screen flex flex-col">
+        <div className="flex-1 flex items-center justify-center px-6 md:px-20 pt-20">
           <div className="text-base md:text-lg leading-relaxed text-[#1e1e1e] space-y-6 max-w-5xl mx-auto font-sans">
             <p className='text-justify'>
               At Histare, we harmonize diverse artistic viewpoints with a profound understanding of our patrons' tastes,
@@ -35,12 +35,12 @@ export default function Vision() {
             </p>
           </div>
         </div>
-       <div className='md:-ml-20 pt-30'>
-       <Footer />
-       </div>
+        
+        {/* Footer aligned with content */}
+        <div className="px-6 md:px-20 md:-ml-20">
+          <Footer />
+        </div>
       </section>
-
-    
     </div>
   );
 }

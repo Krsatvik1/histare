@@ -21,7 +21,7 @@ export default function TheVitrinePage() {
     <div className="bg-[#0E2B4C] h-screen snap-y snap-mandatory overflow-y-scroll scroll-smooth text-white w-full">
       
       {/* Section 1 - Navbar + Logo + Caption */}
-      <div className="snap-start min-h-screen w-full flex flex-col items-center justify-center px-4 md:px-8">
+      <div className="snap-start min-h-screen w-full flex flex-col items-center justify-center px-4 md:px-8 md:pb-0">
         <div className="w-full">
           <Navbar />
         </div>
@@ -52,7 +52,7 @@ export default function TheVitrinePage() {
       {/* Section 3 - Chronicles + Expandable Content + Footer */}
       <div className="snap-start min-h-screen w-full flex flex-col px-4 md:px-8">
         {/* Main content area */}
-        <div className="flex-1 flex flex-col items-center justify-start py-8 md:py-16 overflow-y-auto">
+        <div className="flex-1 flex flex-col items-center justify-start py-8 md:py-16  md:pb-0 overflow-y-auto">
           {/* Section Heading */}
           <h2
             className="text-3xl md:text-4xl lg:text-5xl mb-8 text-white text-center"

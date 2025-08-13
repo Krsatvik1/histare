@@ -27,14 +27,14 @@ export default function FullPageEssence() {
       </section>
 
       {/* Section 2: Ethical World */}
-      <section className="snap-start snap-always h-screen flex items-center justify-center text-[#3c597B] px-4">
-        <div className="w-full max-w-5xl mx-auto flex flex-col-reverse md:flex-row justify-between items-center text-center md:text-left gap-10">
+      <section className="snap-start snap-always h-screen flex flex-col justify-center text-[#3c597B] px-4 pt-16">
+        <div className="w-full max-w-5xl mx-auto flex flex-col-reverse md:flex-row justify-between items-start text-center md:text-left gap-10">
           {/* Left Side - Text */}
-          <div className="md:w-1/2 space-y-4">
+          <div className="md:w-1/2 space-y-2">
             <h3 className="uppercase text-[#2c3e50] font-medium text-sm md:text-base">
               Creating an Ethical World
             </h3>
-            <p className="text-[#2c3e50] text-sm md:text-base leading-relaxed">
+            <p className="text-[#2c3e50] text-sm md:text-base leading-relaxed text-justify">
               The world requires to bring change within the principles of traditional trade practices
               and set up businesses that put people first to build a more sustainable future for all.
             </p>
@@ -52,56 +52,56 @@ export default function FullPageEssence() {
       </section>
 
       {/* Section 3: Icons */}
-<section className="snap-start snap-always h-screen flex items-center justify-center text-[#3c597B] px-4">
-  <style jsx>{`
-    @keyframes scrollIcons {
-      0% {
-        transform: translateX(0);
-      }
-      100% {
-        transform: translateX(-50%);
-      }
-    }
+      <section className="snap-start snap-always h-screen flex items-center justify-center text-[#3c597B] px-4">
+        <style jsx>{`
+          @keyframes scrollIcons {
+            0% {
+              transform: translateX(0);
+            }
+            100% {
+              transform: translateX(-50%);
+            }
+          }
 
-    .icons-scroll-container {
-      overflow: hidden;
-      width: 100%;
-    }
+          .icons-scroll-container {
+            overflow: hidden;
+            width: 100%;
+          }
 
-    .icons-scroll-track {
-      display: flex;
-      animation: scrollIcons 60s linear infinite;
-      width: fit-content;
-    }
+          .icons-scroll-track {
+            display: flex;
+            animation: scrollIcons 60s linear infinite;
+            width: fit-content;
+          }
 
-    .icons-scroll-track:hover {
-      animation-play-state: paused;
-    }
+          .icons-scroll-track:hover {
+            animation-play-state: paused;
+          }
 
-    .icon-item {
-      flex-shrink: 0;
-    }
-  `}</style>
+          .icon-item {
+            flex-shrink: 0;
+          }
+        `}</style>
 
-  <div className="w-full py-14 icons-scroll-container">
-    <div className="icons-scroll-track space-x-20 px-4 md:h-40">
-      {[...icons, ...icons].map((src, index) => (
-        <Image
-          key={index}
-          src={src}
-          alt={`icon-${index}`}
-          width={140}
-          height={50}
-          className="icon-item min-w-[150px] h-auto"
-        />
-      ))}
-    </div>
-  </div>
-</section>
+        <div className="w-full py-14 icons-scroll-container">
+          <div className="icons-scroll-track h-35 space-x-20 px-4 md:h-35 sm:h-30">
+            {[...icons, ...icons].map((src, index) => (
+              <Image
+                key={index}
+                src={src}
+                alt={`icon-${index}`}
+                width={140}
+                height={35}
+                className="icon-item min-w-[120px] h-auto"
+              />
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Section 4: Enduring Balance */}
-      <section className="snap-start snap-always h-screen flex items-center justify-center text-[#3c597B] px-4">
-        <div className="w-full max-w-5xl flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-10">
+      <section className="snap-start snap-always h-screen flex flex-col justify-center text-[#3c597B] px-4 pt-16">
+        <div className="w-full max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-start text-center md:text-left gap-10">
           {/* Left - Title */}
           <div className="md:w-1/2">
             <h2
@@ -118,7 +118,7 @@ export default function FullPageEssence() {
             <h3 className="uppercase font-medium text-sm md:text-base text-[#2c3e50]">
               Indian Culture for a Sustainable Future
             </h3>
-            <p className="text-[#2c3e50]">
+            <p className="text-[#2c3e50] text-justify">
               Histare incorporates India's cultural inheritance within the SDG framework.
               A cultural model is valuable for the creation of collective narratives and has
               the ability to bind people.
@@ -128,22 +128,22 @@ export default function FullPageEssence() {
       </section>
 
       {/* Section 5: Bottom Image with Footer */}
-      <section className="snap-start snap-always  flex flex-col px-0 pt-40">
-        <div className="flex-1 flex items-center justify-center">
-          <div className="w-full max-w-4xl">
+      <section className="snap-start snap-always min-h-screen flex flex-col">
+        <div className="flex-1 flex items-center justify-center px-4 pt-10">
+          <div className="w-full max-w-2xl">
             <Image
               src="/images/essence/bottom.png"
               alt="Cultural Innovation"
-              width={800}
-              height={400}
+              width={400}
+              height={250}
               className="w-full h-auto"
             />
           </div>
         </div>
-        <Footer />
+        <div className="px-4 -ml-10">
+          <Footer />
+        </div>
       </section>
-
-      
     </div>
   );
 }

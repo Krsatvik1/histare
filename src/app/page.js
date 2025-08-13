@@ -33,9 +33,9 @@ function Home() {
       <div className="snap-start">
         <Work />
       </div>
-      <div className="snap-start">
+      {/* <div className="snap-start">
         <Interest />
-      </div>
+      </div> */}
       
       <div className="snap-start ">
         <Partnership />
