@@ -77,7 +77,6 @@ const reports = [
   },
 ];
 
-
 export default function Insights() {
   return (
     <>
@@ -99,7 +98,7 @@ export default function Insights() {
 
         {/* Section 2: Description */}
         <section className="h-screen snap-start flex items-center text-[#1e1e1e] px-6 md:px-20">
-          <p className="text-base md:text-lg text-[#1e1e1e] max-w-3xl mx-auto leading-relaxed justify-self-auto text-justify">
+          <p className="text-base md:text-lg text-[#1e1e1e] max-w-3xl mx-auto leading-relaxed justify-self-auto text-justify" sytle={{fontFamily:'Optima'}}>
             Histare conducts extensive research to explore diverse aspects of the Indian creative industry, aiming to
             uncover innovative strategies for bolstering arts support with a targeted approach. Additionally, we generate
             studies, reports, and white papers to effectively showcase advancements in our developmental initiatives.
@@ -107,28 +106,27 @@ export default function Insights() {
         </section>
 
         {/* Section 3: Reports Grid with Footer */}
-        <section className="min-h-screen snap-start flex flex-col py-20 px-6 md:px-20 md:pb-0">
-          <div className="flex-1 flex items-center justify-center">
+        <section className="min-h-screen snap-start flex flex-col">
+          <div className="flex-1 flex items-center justify-center py-20 px-6 md:px-20 md:pb-0 md:pt-10">
             <div className="max-w-7xl mx-auto w-full">
-              <div className="flex flex-wrap  gap-6 md:gap-12 justify-center ">
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6 justify-items-center">
                 {reports.map((report) => (
                   <a
                     key={report.id}
                     href={report.pdfUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-light hover:underline transition-transform hover:scale-105 flex justify-center items-center"
-                    style={{
-                      width: 'calc(50% - 12px)'
-                    }}
+                    className="font-light transition-transform hover:scale-105 w-full max-w-[200px]"
                   >
-                    <div className="flex flex-col items-center space-y-3 text-center w-full mb-5 md:mb-0">
-                      <img
-                        src={report.imageUrl}
-                        alt={report.title}
-                        className="w-full h-32 md:h-44 lg:h-[200px] object-cover rounded-lg shadow-md"
-                      />
-                      <h3 className="text-sm md:text-base font-medium text-[#1e1e1e] leading-tight">
+                    <div className="flex flex-col items-center space-y-3 text-center w-full">
+                      <div className="w-full aspect-[4/4] relative overflow-hidden rounded-lg shadow-md bg-gray-100">
+                        <img
+                          src={report.imageUrl}
+                          alt={report.title}
+                          className="w-full h-full object-cover object-center"
+                        />
+                      </div>
+                      <h3 className="text-sm md:text-base font-medium text-[#1e1e1e] leading-tight px-1">
                         {report.title}
                       </h3>
                       <div className="text-gray-500 text-xs md:text-sm">{report.type}</div>
@@ -138,19 +136,12 @@ export default function Insights() {
               </div>
             </div>
           </div>
-          <div className='-ml-20 mb-0 '>
-          <Footer />
+          
+          {/* Footer aligned with content */}
+          <div className="px-6 md:px-20 -ml-20">
+            <Footer />
           </div>
         </section>
-
-        {/* Custom CSS for responsive layout */}
-        <style jsx>{`
-          @media (min-width: 640px) {
-            .flex-wrap > a {
-              width: calc(20% - 6px) !important;
-            }
-          }
-        `}</style>
       </div>
     </>
   );

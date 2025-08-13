@@ -1,13 +1,13 @@
 import React from 'react';
 import Navbar from '../components/navbar';
-import Footer from '../components/footer';
+import Footer from '../components/footerblank';
 
 const GOI = () => {
   return (
     <>
       <Navbar />
 
-      <section className="w-full py-32 ">
+      <section className="w-full pt-15 ">
         <div className="w-full flex flex-col items-center text-center space-y-12">
           <h2
             className="text-4xl md:text-5xl text-[#3c597B]"
@@ -31,10 +31,12 @@ const GOI = () => {
             alt="Startup India Logo"
             className="w-80 sm:w-72"
           />
+          
         </div>
+        <Footer />
       </section>
 
-      <Footer />
+     
     </>
   );
 };

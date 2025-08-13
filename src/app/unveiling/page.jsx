@@ -23,7 +23,7 @@ export default function Unveiling() {
       {/* Section 2 - Content with Footer */}
       <section className="snap-start snap-always flex flex-col">
         <div className="flex-1 flex items-center justify-center px-6 md:px-20 py-12 pb-0">
-          <div className="text-base md:text-lg leading-relaxed text-[#1e1e1e] space-y-6 max-w-5xl mx-auto font-sans text-justify md:pb-0">
+          <div className="text-base md:text-lg leading-relaxed text-[#1e1e1e] space-y-2 max-w-5xl mx-auto font-sans text-justify md:pb-0" style={{fontFamily:'Optima'}}>
             <p>
               At Histare, we <em>don't just curate art;</em> we nurture stories that span generations, weaving the fabric of our rich cultural heritage with the threads of today's boundless creativity. Our journey is more than a pursuit—it is a deep, heartfelt commitment to preserving the artistry that has shaped us and ensuring that it resonates with the future.
             </p>

@@ -64,7 +64,7 @@ const ContactPage = () => {
       <Navbar />
 
       {/* Title */}
-      <div className="flex items-center justify-center py-16 px-6 md:px-20">
+      <div className="flex items-center justify-center py-10 px-6 md:px-20">
         <h2
           className="text-4xl md:text-5xl text-[#3c597B] text-center"
           style={{ fontFamily: "Rofane", fontStyle: "italic" }}
@@ -74,8 +74,8 @@ const ContactPage = () => {
       </div>
 
       {/* Form */}
-      <div className="flex-1 max-w-4xl mx-auto w-full px-6 pb-12">
-        <form onSubmit={handleSubmit} className="space-y-8">
+      <div className="flex-1 max-w-4xl mx-auto w-full px-6 pb-8">
+        <form onSubmit={handleSubmit} className="space-y-4">
           {/* First Row */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
