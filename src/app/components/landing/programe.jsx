@@ -6,7 +6,7 @@ function Programe() {
     <div className="py-16 px-4 md:px-20 pb-10 text-center min-h-screen flex flex-col justify-center">
       <div className="rounded-xl overflow-hidden   pt-5 mb-10">
         <Image
-          src="/images/art/navankalpha.png"
+          src="/images/art/ranga.png"
           alt="Collectors' Affair"
           width={800}
           height={200}

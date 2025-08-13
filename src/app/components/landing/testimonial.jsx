@@ -153,7 +153,7 @@ function Testimonial() {
               animate="center"
               exit="exit"
               transition={{ duration: 0.6, ease: 'easeInOut' }}
-              className="absolute w-full h-90% border-2 border-[#f1d394] rounded-lg md:p-16 p-8 text-[#333]"
+              className="absolute w-full h-90% border-2 border-[#f1d394] rounded-lg md:p-8 p-6 text-[#333]"
             >
               <p className="text-lg leading-relaxed mb-6">{testimonials[index].text}</p>
               <p className="md:text-right font-semibold text-[#1e1e1e] text-center">

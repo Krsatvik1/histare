@@ -271,14 +271,24 @@ export default function Work() {
       `}</style>
 
       {/* Header - Taking about 20% of screen */}
-      <div className="flex-shrink-0 pt-8 pb-4">
+      {/* <div className="flex-shrink-0 pt-8 pb-4">
         <h2
           className="text-4xl pt-15 md:pt-0 md:text-6xl text-[#3c597B] text-center"
           style={{ fontFamily: "Rofane", fontStyle: "italic" }}
         >
           <span className="not-italic font-normal">Arthakhya</span>
         </h2>
-      </div>
+      </div> */}
+      <div className="rounded-xl overflow-hidden pt-5 mb-5">
+      <Image
+        src="/images/art/arthakaya.png"
+        alt="artthakya"
+        width={800}
+        height={250}
+        className="object-contain w-full h-[75px] sm:h-[60px] md:h-[90px] lg:h-[100px] xl:h-[120px]"
+      />
+    </div>
+
 
       {/* Scroll Container - Taking about 75% of screen */}
       <div className="flex-1 flex items-center">
