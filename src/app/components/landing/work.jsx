@@ -202,7 +202,7 @@ export default function Work() {
       </div> */}
       <div className="rounded-xl overflow-hidden pt-10 mb-5">
       <Image
-        src="/images/art/navankalpha.png"
+        src="/images/art/nav.svg"
         alt="artthakya"
         width={800}
         height={250}
