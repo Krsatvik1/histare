@@ -42,11 +42,11 @@ const Footer = () => {
         
         {/* Centered Social Icons */}
         <div className="flex justify-center items-center gap-4 text-xl text-gray-700 md:absolute md:left-1/2 md:transform md:-translate-x-1/2">
-          <a href="#"><FaTwitter /></a>
-          <a href="#"><FaLinkedin /></a>
-          <a href="#"><FaYoutube /></a>
+        <a href="#"><FaTwitter /></a>
+          <a href="https://www.linkedin.com/company/histare/"><FaLinkedin /></a>
+          <a href="https://www.youtube.com/@thehistaregroup7950"><FaYoutube /></a>
           <a href="#"><FaFacebook /></a>
-          <a href="#"><FaInstagram /></a>
+          <a href="https://www.instagram.com/histare.concepts/"><FaInstagram /></a>
         </div>
         
         <p className="text-lg text-black sm:text-xl">{new Date().getFullYear()}</p>

@@ -40,11 +40,11 @@ const Footer = () => {
          Privacy Policy | Terms & Conditions
     </Link>
     <div className="flex flex-column md:flex-row justify-center md:justify-start items-center gap-4 text-xl text-white">
-          <a href="#"><FaTwitter /></a>
-          <a href="#"><FaLinkedin /></a>
-          <a href="#"><FaYoutube /></a>
+    <a href="#"><FaTwitter /></a>
+          <a href="https://www.linkedin.com/company/histare/"><FaLinkedin /></a>
+          <a href="https://www.youtube.com/@thehistaregroup7950"><FaYoutube /></a>
           <a href="#"><FaFacebook /></a>
-          <a href="#"><FaInstagram /></a>
+          <a href="https://www.instagram.com/histare.concepts/"><FaInstagram /></a>
         </div>
         <p className="text-lg text-white sm:text-xl">{new Date().getFullYear()}</p>
       </div>
