@@ -42,15 +42,22 @@ const ProFooter = () => {
           <p>info@histare.in</p>
         </div>
 
-        {/* Map */}
+        {/* Clickable Map */}
         <div className="flex-shrink-0 mb-4 md:mb-0 md:mr-30">
-          <Image
-            src="/images/program/map.png"
-            alt="Location Map"
-            width={320}
-            height={200}
-            className="w-50 h-30 sm:w-50 sm:h-56 md:w-130 md:h-38 object-cover rounded-lg mx-auto md:pr-20 "
-          />
+          <a 
+            href="https://maps.app.goo.gl/3VqKz5Q8QcuWA2g67?g_st=aw" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="cursor-pointer transition-transform hover:scale-105"
+          >
+            <Image
+              src="/images/program/map.png"
+              alt="Location Map - Click to open in Google Maps"
+              width={320}
+              height={200}
+              className="w-50 h-30 sm:w-50 sm:h-56 md:w-130 md:h-38 object-cover rounded-lg mx-auto md:pr-20"
+            />
+          </a>
         </div>
 
         {/* Social Icons */}
