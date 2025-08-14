@@ -225,6 +225,7 @@ export default function Work() {
           overflow: hidden;
           width: 100vw;
           height: 550px;
+          
           position: relative;
           margin-left: calc(-50vw + 50%);
         }
@@ -285,7 +286,7 @@ export default function Work() {
         alt="artthakya"
         width={800}
         height={250}
-        className="object-contain w-full h-[75px] sm:h-[60px] md:h-[80px] lg:h-[90px] xl:h-[100px]"
+        className="object-contain w-full h-[75px] sm:h-[60px] md:h-[80px] lg:h-[90px] xl:h-[110px]"
       />
     </div>
 
