@@ -285,7 +285,7 @@ export default function Work() {
         alt="artthakya"
         width={800}
         height={250}
-        className="object-contain w-full h-[75px] sm:h-[60px] md:h-[90px] lg:h-[100px] xl:h-[120px]"
+        className="object-contain w-full h-[75px] sm:h-[60px] md:h-[80px] lg:h-[90px] xl:h-[100px]"
       />
     </div>
 
