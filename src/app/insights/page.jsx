@@ -9,70 +9,70 @@ const reports = [
     id: 1,
     title: 'A Reflection',
     type: 'Impact Report',
-    imageUrl: 'https://dev-histare.netlify.app/images/insightsImages/reflection_ir.png',
+    img: "/images/insights/reflection.png",
     pdfUrl: 'https://dev-histare.netlify.app/pdfs/erbe_project/impact_report.pdf',
   },
   {
     id: 2,
     title: 'The Art Gestalt',
     type: 'Craft practices Report',
-    imageUrl: 'https://dev-histare.netlify.app/images/insightsImages/art_gestalt_cpr.png',
+    img: "/images/insights/gestalt.png",
     pdfUrl: 'https://dev-histare.netlify.app/pdfs/erbe_project/art_gestalt.pdf',
   },
   {
     id: 3,
     title: 'Collection Building',
     type: 'Case Study',
-    imageUrl: 'https://dev-histare.netlify.app/images/insightsImages/collection_building_case_study.png',
+    img: "/images/insights/building.png",
     pdfUrl: 'https://dev-histare.netlify.app/pdfs/insights/collection_building_case_study.pdf',
   },
   {
     id: 4,
     title: 'Smart Programme',
     type: 'Case Study',
-    imageUrl: 'https://dev-histare.netlify.app/images/insightsImages/vitrine_case_study.png',
+    img: "/images/insights/smart.png",
     pdfUrl: 'https://dev-histare.netlify.app/pdfs/insights/vitrine_case_study.pdf',
   },
   {
     id: 5,
     title: 'The Art Gestalt',
     type: 'Market Research Report',
-    imageUrl: 'https://dev-histare.netlify.app/images/insightsImages/mrr_art_gestalt.png',
+    img: "/images/insights/art_gestalt.png",
     pdfUrl: 'https://dev-histare.netlify.app/pdfs/insights/mrr_art_gestalt.pdf',
   },
   {
     id: 6,
     title: 'How Sustainability Has Shaped Up In Traditional Culture',
     type: 'Exploratory Report',
-    imageUrl: 'https://dev-histare.netlify.app/images/insightsImages/nfi.png',
+    img: "/images/insights/sustainability.png",
     pdfUrl: 'https://example.com/sustainability1.pdf',
   },
   {
     id: 7,
     title: 'Digital Paintings',
     type: 'Exploratory Report',
-    imageUrl: 'https://dev-histare.netlify.app/images/insightsImages/digital_paintings.png',
+    img: "/images/insights/digital.png",
     pdfUrl: 'https://dev-histare.netlify.app/pdfs/insights/digital_paintings.pdf',
   },
   {
     id: 8,
     title: 'Abstract Expressionism',
     type: 'Exploratory Report',
-    imageUrl: 'https://dev-histare.netlify.app/images/insightsImages/nfi.png',
+    img: "/images/insights/abstract.png",
     pdfUrl: 'https://example.com/abstract-expressionism1.pdf',
   },
   {
     id: 9,
     title: 'Cubism',
     type: 'Exploratory Report',
-    imageUrl: 'https://dev-histare.netlify.app/images/insightsImages/cubism.png',
+    img: "/images/insights/cubism.png",
     pdfUrl: 'https://dev-histare.netlify.app/pdfs/insights/cubism.pdf',
   },
   {
     id: 10,
     title: 'Indian art and crafts',
     type: 'Market Research Report',
-    imageUrl: 'https://dev-histare.netlify.app/images/insightsImages/indian_arts_and_crafts.png',
+    img: "/images/insights/indian.png",
     pdfUrl: 'https://dev-histare.netlify.app/pdfs/insights/iac_mrr.pdf',
   },
 ];
@@ -121,7 +121,8 @@ export default function Insights() {
                     <div className="flex flex-col items-center space-y-3 text-center w-full">
                       <div className="w-full aspect-[4/4] relative overflow-hidden rounded-lg shadow-md bg-gray-100">
                         <img
-                          src={report.imageUrl}
+                          src={report.img}
+                          
                           alt={report.title}
                           className="w-full h-full object-cover object-center"
                         />
