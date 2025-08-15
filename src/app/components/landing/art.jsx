@@ -282,7 +282,7 @@ export default function Work() {
       </div> */}
       <div className="rounded-xl overflow-hidden pt-5 mb-5">
       <Image
-        src="/images/art/art.svg"
+        src="/images/art/arth.svg"
         alt="artthakya"
         width={800}
         height={250}
