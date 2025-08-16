@@ -118,40 +118,38 @@ export default function Insights() {
           </p>
         </section>
 
-        {/* Section 3: Reports Grid with Footer */}
-        <section className="min-h-screen snap-start flex flex-col">
-          <div className="flex-1 flex min-h-screen items-center justify-center py-20 px-6 md:px-20 md:pb-0 md:pt-10">
-            <div className="max-w-7xl mx-auto w-full">
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6 justify-items-center">
-                {reports.map((report) => (
-                  <button
-                    key={report.id}
-                    onClick={() => handleCardClick(report)}
-                    className="font-light transition-transform hover:scale-105 w-full max-w-[200px] cursor-pointer border-none bg-transparent p-0"
-                  >
-                    <div className="flex flex-col items-center space-y-3 text-center w-full">
-                      <div className="w-full aspect-[4/4] relative overflow-hidden rounded-lg shadow-md bg-gray-100">
-                        <img
-                          src={report.img}
-                          alt={report.title}
-                          className="w-full h-full object-cover object-center"
-                        />
-                      </div>
-                      <h3 className="text-sm md:text-base font-medium text-[#1e1e1e] leading-tight px-1">
-                        {report.title}
-                      </h3>
-                      <div className="text-gray-500 text-xs md:text-sm">{report.type}</div>
+        {/* Section 3: Reports Grid */}
+        <section className="min-h-screen snap-start flex items-center justify-center py-20 px-6 md:px-20">
+          <div className="max-w-7xl mx-auto w-full">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6 justify-items-center">
+              {reports.map((report) => (
+                <button
+                  key={report.id}
+                  onClick={() => handleCardClick(report)}
+                  className="font-light transition-transform hover:scale-105 w-full max-w-[200px] cursor-pointer border-none bg-transparent p-0"
+                >
+                  <div className="flex flex-col items-center space-y-3 text-center w-full">
+                    <div className="w-full aspect-[4/4] relative overflow-hidden rounded-lg shadow-md bg-gray-100">
+                      <img
+                        src={report.img}
+                        alt={report.title}
+                        className="w-full h-full object-cover object-center"
+                      />
                     </div>
-                  </button>
-                ))}
-              </div>
+                    <h3 className="text-sm md:text-base font-medium text-[#1e1e1e] leading-tight px-1">
+                      {report.title}
+                    </h3>
+                    <div className="text-gray-500 text-xs md:text-sm">{report.type}</div>
+                  </div>
+                </button>
+              ))}
             </div>
           </div>
-          
-          {/* Footer aligned with content */}
-          <div className="px-6 md:px-20 -ml-20">
-            <Footer />
-          </div>
+        </section>
+
+        {/* Section 4: Footer - No padding, full width */}
+        <section className="snap-start">
+          <Footer />
         </section>
       </div>
 

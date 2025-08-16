@@ -172,7 +172,7 @@ const workItems = [
 
 function CardContent({ item, reversed }) {
   const Info = (
-    <div className="p-4 rounded-lg w-52">
+    <div className="p-4 rounded-lg w-52"style={{fontFamily:'Optima'}}>
       {item.author && (
         <div className="text-sm md:text-base font-semibold text-gray-800 mb-1">{item.author}</div>
       )}
@@ -196,7 +196,7 @@ function CardContent({ item, reversed }) {
   );
 
   return reversed ? (
-    <div className="flex flex-col">
+    <div className="flex flex-col"style={{fontFamily:'Optima'}}>
       <div className="mb-4">{Info}</div>
       <div>{Art}</div>
     </div>
@@ -292,7 +292,7 @@ export default function Work() {
 
 
       {/* Scroll Container - Taking about 75% of screen */}
-      <div className="flex-1 flex items-center">
+      <div className="flex-1 flex items-center" style={{fontFamily:'Optima'}}>
         <div className="work-scroll-container">
           <div className="work-scroll-track">
             {workItems.concat(workItems).map((item, i) => (
