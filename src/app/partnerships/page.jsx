@@ -23,7 +23,7 @@ export default function Partnerships() {
       {/* Section 2 - Content with Footer */}
       <section className="snap-start snap-always min-h-screen flex flex-col">
         <div className="flex-1 flex items-center justify-center px-6 md:px-20 pt-9">
-          <div className="text-base md:text-lg leading-relaxed text-[#1e1e1e] space-y-2 max-w-5xl mx-auto font-sans text-justify pt-0"style={{ fontFamily: 'Optima' }}>
+          <div className="text-base md:text-lg leading-tight text-[#1e1e1e] space-y-2 max-w-5xl mx-auto font-sans text-justify pt-0"style={{ fontFamily: 'Optima' }}>
             <p>
               Histare bridges the divide between tradition and innovation in the art world, reshaping the conversation
               around cultural heritage and creativity.
