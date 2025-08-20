@@ -130,19 +130,19 @@ export default function FullPageEssence() {
       {/* Section 5: Bottom Image with Footer */}
       <section className="snap-start snap-always min-h-screen flex flex-col">
         <div className="flex-1 flex items-center justify-center px-4 pt-10">
-          <div className="w-full max-w-2xl">
+          <div className="w-full max-w-5xl">
             <Image
-              src="/images/essence/bottom.png"
+              src="/images/essence/bottom.svg"
               alt="Cultural Innovation"
-              width={400}
-              height={250}
+              width={500}
+              height={300}
               className="w-full h-auto"
             />
           </div>
         </div>
-        <div className="px-4 -ml-10">
+        {/* <div className="px-4 -ml-10">
           <Footer />
-        </div>
+        </div> */}
       </section>
     </div>
   );

@@ -21,14 +21,14 @@ const reports = [
   },
   {
     id: 3,
-    title: 'Collection Building',
+    title: 'Arthakya',
     type: 'Case Study',
     img: "/images/insights/building.png",
     pdf: "/pdf/collection_building_case_study.pdf",
   },
   {
     id: 4,
-    title: 'Smart Programme',
+    title: 'Rangavistara',
     type: 'Case Study',
     img: "/images/insights/smart.png",
     pdf: "/pdf/vitrine_case_study.pdf",
@@ -148,9 +148,9 @@ export default function Insights() {
         </section>
 
         {/* Section 4: Footer - No padding, full width */}
-        <section className="snap-start">
+        {/* <section className="snap-start">
           <Footer />
-        </section>
+        </section> */}
       </div>
 
       {/* PDF Modal */}
