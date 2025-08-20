@@ -10,7 +10,7 @@ const GOI = () => {
       <section className="w-full pt-15 ">
         <div className="w-full flex flex-col items-center text-center space-y-12">
           <h2
-            className="text-4xl md:text-5xl text-[#3c597B]"
+            className="text-4xl md:text-5xl text-[#3c597B] pb-20"
             style={{ fontFamily: 'Rofane', fontStyle: 'italic' }}
           >
             <span className="not-italic font-normal">
@@ -33,7 +33,7 @@ const GOI = () => {
           />
           
         </div>
-        <Footer />
+        {/* <Footer /> */}
       </section>
 
      

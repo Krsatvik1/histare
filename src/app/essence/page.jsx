@@ -34,7 +34,7 @@ export default function FullPageEssence() {
             <h3 className="uppercase text-[#2c3e50] font-medium text-sm md:text-base">
               Creating an Ethical World
             </h3>
-            <p className="text-[#2c3e50] text-sm md:text-base leading-relaxed text-justify">
+            <p className="text-[#2c3e50] text-sm md:text-base leading-tight text-justify">
               The world requires to bring change within the principles of traditional trade practices
               and set up businesses that put people first to build a more sustainable future for all.
             </p>
@@ -114,11 +114,11 @@ export default function FullPageEssence() {
           </div>
 
           {/* Right - Text */}
-          <div className="md:w-1/2 text-sm md:text-base leading-relaxed space-y-2">
+          <div className="md:w-1/2 text-sm md:text-base space-y-2">
             <h3 className="uppercase font-medium text-sm md:text-base text-[#2c3e50]">
               Indian Culture for a Sustainable Future
             </h3>
-            <p className="text-[#2c3e50] text-justify">
+            <p className="text-[#2c3e50] text-justify leading-tight" style={{fontFamily:'Optima'}}>
               Histare incorporates India's cultural inheritance within the SDG framework.
               A cultural model is valuable for the creation of collective narratives and has
               the ability to bind people.
