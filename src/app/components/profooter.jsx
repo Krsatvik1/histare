@@ -32,7 +32,6 @@ const ProFooter = () => {
         
         {/* Address Block */}
         <div className="text-sm sm:text-base text-[#555555] max-w-sm text-center md:text-left md:mr-0 pr-0">
-          <p>The Histare Group</p>
           <p>Histare Concepts Private Limited</p>
           <br />
           <p>

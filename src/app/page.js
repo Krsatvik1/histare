@@ -44,9 +44,9 @@ function Home() {
         <Testimonial />
        
       </div>
-      <div className="snap-start">
+      {/* <div className="snap-start">
       <Footer />
-      </div>
+      </div> */}
     </div>
   );
 }

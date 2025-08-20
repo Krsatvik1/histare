@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import { Search, Calendar, ExternalLink, Tag, Filter } from 'lucide-react';
 import Navbar from '../components/navbar';
-import Footer from '../components/footer';
 
 const mediaArticles = [
   {
@@ -198,7 +197,8 @@ export default function MediaPage() {
     <Navbar/>
     <div className="min-h-screen --bg-gray-50">
       {/* Header */}
-      <div className="h-[100vh] --bg-red-200 --bg-white --shadow-sm flex align-center items-center">
+     <section className='min-h-screen'>
+     <div className="h-[100vh] --bg-red-200 --bg-white --shadow-sm flex align-center items-center">
         <div className="max-w-7xl mx-auto px-4 py-12 --bg-blue-200">
           <div className="text-center">
             <h1 
@@ -214,9 +214,11 @@ export default function MediaPage() {
           </div>
         </div>
       </div>
+     </section>
 
       {/* Filters and Search */}
-      <div className="max-w-7xl mx-auto px-4 py-8">
+     <section>
+     <div className="max-w-7xl mx-auto px-4 py-8">
         <div className="flex flex-col md:flex-row gap-4 mb-8">
           {/* Search */}
           <div className="relative flex-1">
@@ -296,28 +298,10 @@ export default function MediaPage() {
           </div>
         )}
       </div>
+     </section>
 
-      {/* Footer CTA */}
-      {/* <div className="bg-[#3c597B] text-white py-16 mt-16">
-        <div className="max-w-4xl mx-auto text-center px-4">
-          <h2 className="text-3xl font-bold mb-4">Stay Updated with Our Latest Initiatives</h2>
-          <p className="text-xl text-blue-100 mb-8">
-            Join our community to receive updates about new projects, exhibitions, and cultural initiatives
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="flex-1 px-4 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-300"
-            />
-            <button className="bg-white text-[#3c597B] px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition-colors">
-              Subscribe
-            </button>
-          </div>
-        </div>
-      </div> */}
     </div>
-    <Footer/>
+    {/* <Footer/> */}
     </>
   );
 }
