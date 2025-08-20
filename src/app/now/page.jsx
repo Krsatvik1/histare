@@ -33,7 +33,7 @@ export default function NowAndBeyondSection() {
       {/* Section 2 - Description Paragraph with Footer */}
       <div className="snap-start min-h-screen w-full flex flex-col justify-center px-6 md:px-0">
         <div className="flex-1 flex items-center justify-center">
-          <div className="max-w-5xl text-sm md:text-xl font-light text-black leading-relaxed">
+          <div className="max-w-5xl text-sm md:text-xl font-light text-black leading-tight">
             <p className="text-justify" style={{fontFamily:'Optima'}}>
               Now and Beyond emerges as a visionary platform dedicated to nurturing creators of tomorrow through
               tech-based artistic expressions. This smart program celebrates complete artistic independence,
@@ -51,9 +51,9 @@ export default function NowAndBeyondSection() {
         </div>
         
         {/* Footer aligned with content */}
-        <div className="px-2 md:px-0 ">
+        {/* <div className="px-2 md:px-0 ">
           <Footer />
-        </div>
+        </div> */}
       </div>
 
     </div>

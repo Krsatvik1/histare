@@ -42,7 +42,7 @@ export default function TheVitrinePage() {
 
       {/* Section 2 - Intro Paragraph */}
       <div className="snap-start min-h-screen w-full flex items-center justify-center px-4 md:px-8">
-        <div className="max-w-6xl text-sm md:text-xl text-gray-300 leading-relaxed">
+        <div className="max-w-6xl text-sm md:text-xl text-gray-300 leading-tight">
           <p className='text-justify'>
           The Vitrine emerges as a visionary platform, seamlessly weaving together India’s rich tapestry of pre-modern, modern, and contemporary art. This smart program transcends time and genre, curating a vibrant narrative that celebrates the evolution of Indian artistry. From the pioneering movements of Group 1890 and the Bengal School to the avant-garde expressions of Neo Tantric and Narrative Group artists, it explores diverse artistic landscapes. Embracing post-independent movements like the Bombay Progressive Artists’ Group and Delhi Silpi Chakra, The Vitrine amplifies the intersection of art and activism. It illuminates late 19th-century academic realists and their nationalist ethos, alongside the spiritual essence of Chola mandala art. Through curated exhibitions and dialogues, The Vitrine fosters a deeper understanding and appreciation of India’s artistic heritage, uniting past and present voices in a harmonious dialogue. This initiative invites audiences to reflect, engage, and rediscover the profound cultural narratives embedded within India’s artistic journey.
           </p>
@@ -64,7 +64,7 @@ export default function TheVitrinePage() {
 
           {/* First Story Paragraph + Toggle Button */}
           <div className="relative w-full max-w-4xl mb-8">
-            <p className="text-sm md:text-base text-gray-300 leading-relaxed pr-8 md:pr-16 lg:pr-60"style={{ textAlign: 'justify' ,fontFamily:'Optima'}}>
+            <p className="text-sm md:text-base text-gray-300 leading-tight pr-8 md:pr-16 lg:pr-60"style={{ textAlign: 'justify' ,fontFamily:'Optima'}}>
             In December 2019, a pivotal chapter emerged with the introduction of The Vitrine. This occasion encouraged reflection and interaction, 
             ushering in a realm of possibilities and discoveries that appealed to both the inquisitive and the perceptive. It became a vibrant
              platform where contemporary Indian art converged with European-Indian fusion live performances, creating a rich tapestry that 
@@ -124,7 +124,7 @@ export default function TheVitrinePage() {
 
           {/* Second Story Paragraph + Toggle Button */}
           <div className="relative w-full max-w-4xl mb-8">
-            <p className="text-sm md:text-base text-gray-300 leading-relaxed pr-8 md:pr-16 lg:pr-60" style={{ textAlign: 'justify' ,fontFamily:'Optima'}}>
+            <p className="text-sm md:text-base text-gray-300 leading-tight pr-8 md:pr-16 lg:pr-60" style={{ textAlign: 'justify' ,fontFamily:'Optima'}}>
             September 2018 heralded a transformative moment with the unveiling of The Vitrine in collaboration with Marwah Studios. 
             This event sparked introspection and dialogue, opening doors to a myriad of opportunities and insights that captivated 
             the curious and the discerning. It transformed into a dynamic space where contemporary Indian art flourished, weaving 
@@ -184,9 +184,9 @@ export default function TheVitrinePage() {
         </div>
 
         {/* Footer at bottom */}
-        <div className="w-full mt-auto -ml-8 text-white">
+        {/* <div className="w-full mt-auto -ml-8 text-white">
           <ProFooter />
-        </div>
+        </div> */}
       </div>
 
       {/* Custom CSS for fade animation */}

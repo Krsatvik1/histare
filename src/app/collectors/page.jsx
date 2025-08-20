@@ -36,7 +36,7 @@ export default function CollectorsAffaire() {
 
       {/* Section 2 - Intro Paragraph */}
       <div className="snap-start min-h-screen w-full flex items-center justify-center px-3">
-        <div className="max-w-5xl text-sm md:text-xl text-gray-300 text-center leading-relaxed">
+        <div className="max-w-5xl text-sm md:text-xl text-gray-300 text-center leading-tight">
           <p className='text-justify' style={{fontFamily:'Optima'}}>
             Collectors' Affaire stands as a tribute to the guardians of art, whether individual collectors or esteemed institutions. It is a heartfelt homage to those who preserve and share their collections with boundless passion. Step into a world where distinguished art collectors command attention, showcasing masterpieces curated over lifetimes. This is an odyssey of collection, revelation, and research,they continue to inspire. The platform spotlights seasoned collectors, artists, and enthusiasts, delving into the rich stories and cultural significance within each piece. Join us in honoring these custodians of creativity — the keepers of meaning and legacy within every stroke and sculpture. Together, we celebrate their unwavering commitment and the enduring spirit that enriches our collective artistic journey.
           </p>

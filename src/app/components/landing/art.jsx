@@ -224,7 +224,7 @@ export default function Work() {
         .work-scroll-container {
           overflow: hidden;
           width: 100vw;
-          height: 500px;
+          height: 550px;
           
           position: relative;
           margin-left: calc(-50vw + 50%);
