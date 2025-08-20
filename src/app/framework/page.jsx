@@ -83,7 +83,7 @@ export default function Frameworks() {
             </div>
           </div>
         </div>
-        <Footer />
+        {/* <Footer /> */}
       </div>
 
       {/* Custom CSS for smooth scrolling */}

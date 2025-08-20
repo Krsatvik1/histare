@@ -27,24 +27,24 @@ export default function Partnerships() {
             <p>
               Histare bridges the divide between tradition and innovation in the art world, reshaping the conversation
               around cultural heritage and creativity.
-            </p>
+            </p><br />
 
             <p>
               With a vision that blends diverse art forms and modern design principles, Histare is deeply committed to
               sustainability and fair trade practices, ensuring that every creator's work is honored and valued.
-            </p>
+            </p><br />
 
             <p>
               Histare goes beyond to transform art into a powerful catalyst for change. By fostering collaboration among
               creators, designers, and visionaries, it creates a space where tradition evolves and contemporary creativity
               flourishes.
-            </p>
+            </p><br />
 
             <p>
               Rather than simply curating, Histare builds connections—linking the old with the new, the local with the
               global, and the creator with the patrons. It emphasizes the preservation of cultural heritage while
               welcoming new ideas and perspectives in the arts.
-            </p>
+            </p><br />
 
             <p>
               Histare stands out as the only organization in India that operates at the intersection of diverse art genres
@@ -54,9 +54,9 @@ export default function Partnerships() {
         </div>
         
         {/* Footer aligned with content */}
-        <div className="px-6 md:px-20 -ml-20 md:pt-0 md:pb-0" >
+        {/* <div className="px-6 md:px-20 -ml-20 md:pt-0 md:pb-0" >
           <Footer />
-        </div>
+        </div> */}
       </section>
     </div>
   );
