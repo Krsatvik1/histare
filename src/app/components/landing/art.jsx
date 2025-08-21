@@ -1,7 +1,8 @@
 'use client';
-import React from "react";
+import React, { useState, useRef } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const workItems = [
     {
@@ -112,35 +113,21 @@ const workItems = [
         size: "37 x 44.5 in",
         year: ""
       },
+      // Grouped Zareena Hashmi artworks
       {
-        id: 13,
-        img: "/images/art/blackheart.png",
+        id: 'grouped-13-14-15',
+        isGroup: true,
+        images: [
+          "/images/art/blackheart.png",
+          "/images/art/clover.png", 
+          "/images/art/cocnut.png"
+        ],
         author: "Zareena Hashmi",
-        title: "By The Mango Tree",
-        medium: "Woodcut on Paper",
+        title: "Tilka: By The Mango Tree",
+        medium: "Woodcut on paper",
         size: "12.5 x 9.75 in",
         year: ""
       },
-      {
-        id: 14,
-        img: "/images/art/clover.png",
-        author: "Zareena Hashmi",
-        title: "By The Mango Tree",
-        medium: "Woodcut on Paper",
-        size: "12.5 x 9.75 in",
-        year: ""
-      },
-      
-      {
-        id: 15,
-        img: "/images/art/cocnut.png",
-        author: "Zareena Hashmi",
-        title: "By The Mango Tree",
-        medium: "Woodcut on Paper",
-        size: "12.5 x 9.75 in",
-        year: ""
-      },
-      
       {
         id: 16,
         img: "/images/art/diamond.svg",
@@ -170,9 +157,57 @@ const workItems = [
       },
   ];
 
-function CardContent({ item, reversed }) {
+function GroupedCardContent({ item, reversed, onImageClick }) {
   const Info = (
-    <div className="p-4 pl-0 rounded-lg w-52"style={{fontFamily:'Optima'}}>
+    <div className="p-4 pl-0 rounded-lg --w-80" style={{fontFamily:'Optima'}}>
+      {item.author && (
+        <div className="text-sm md:text-base font-semibold text-gray-800 mb-1">{item.author}</div>
+      )}
+      {item.title && <div className="text-xs md:text-sm text-gray-600 mb-1">Title: {item.title}</div>}
+      {item.medium && <div className="text-xs md:text-sm text-gray-600 mb-1 leading-relaxed">Medium: {item.medium}</div>}
+      {item.size && <div className="text-xs md:text-sm text-gray-600 mb-1">Size: {item.size}</div>}
+      {item.year && <div className="text-xs md:text-sm text-gray-600">Year: {item.year}</div>}
+    </div>
+  );
+
+  const GroupedArt = (
+    <div className="p-0 ml-0 rounded-lg w-[max-content]">
+      <div className="flex gap-2 justify-center">
+        {item.images.map((imgSrc, index) => (
+          <Image
+            key={index}
+            src={imgSrc}
+            alt={`${item.title || "Artwork"} ${index + 1}`}
+            width={200}
+            height={350}
+            className="rounded-md object-cover cursor-pointer hover:opacity-80 transition-opacity"
+            onClick={() => onImageClick(item, index)}
+          />
+        ))}
+      </div>
+    </div>
+  );
+
+  return reversed ? (
+    <div className="flex flex-col" style={{fontFamily:'Optima'}}>
+      <div className="mb-4">{Info}</div>
+      <div>{GroupedArt}</div>
+    </div>
+  ) : (
+    <div className="flex flex-col">
+      <div className="mb-4">{GroupedArt}</div>
+      <div>{Info}</div>
+    </div>
+  );
+}
+
+function CardContent({ item, reversed, onImageClick }) {
+  if (item.isGroup) {
+    return <GroupedCardContent item={item} reversed={reversed} onImageClick={onImageClick} />;
+  }
+
+  const Info = (
+    <div className="p-4 pl-0 rounded-lg w-52" style={{fontFamily:'Optima'}}>
       {item.author && (
         <div className="text-sm md:text-base font-semibold text-gray-800 mb-1">{item.author}</div>
       )}
@@ -190,13 +225,14 @@ function CardContent({ item, reversed }) {
         alt={item.title || "Artwork"}
         width={200}
         height={350}
-        className="rounded-md object-cover mx-auto ml-0"
+        className="rounded-md object-cover mx-auto ml-0 cursor-pointer hover:opacity-80 transition-opacity"
+        onClick={() => onImageClick(item)}
       />
     </div>
   );
 
   return reversed ? (
-    <div className="flex flex-col"style={{fontFamily:'Optima'}}>
+    <div className="flex flex-col" style={{fontFamily:'Optima'}}>
       <div className="mb-4">{Info}</div>
       <div>{Art}</div>
     </div>
@@ -209,6 +245,116 @@ function CardContent({ item, reversed }) {
 }
 
 export default function Work() {
+  const [isHovered, setIsHovered] = useState(false);
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const [isManualControl, setIsManualControl] = useState(false);
+  const [selectedImage, setSelectedImage] = useState(null);
+  const scrollTrackRef = useRef(null);
+
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+    setIsManualControl(true);
+    
+    if (scrollTrackRef.current) {
+      // Get the current computed transform value
+      const computedStyle = window.getComputedStyle(scrollTrackRef.current);
+      const transform = computedStyle.getPropertyValue('transform');
+      
+      if (transform !== 'none') {
+        const matrix = transform.match(/matrix.*\((.+)\)/);
+        if (matrix) {
+          const values = matrix[1].split(', ');
+          const currentX = parseFloat(values[4]);
+          setScrollPosition(currentX);
+          
+          // Remove animation and set the current position
+          scrollTrackRef.current.style.animation = 'none';
+          scrollTrackRef.current.style.transform = `translateX(${currentX}px)`;
+        }
+      }
+    }
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+    setIsManualControl(false);
+    
+    if (scrollTrackRef.current) {
+      // Start continuous infinite animation from current position
+      const currentPosition = scrollPosition;
+      
+      // Create and apply infinite looping animation from current position
+      const animationName = `infinite-scroll-${Date.now()}`;
+      const keyframes = `
+        @keyframes ${animationName} {
+          0% { transform: translateX(${currentPosition}px); }
+          100% { transform: translateX(calc(${currentPosition}px - 25%)); }
+        }
+      `;
+      
+      // Remove existing style element if any
+      const existingStyle = document.getElementById('dynamic-scroll-animation');
+      if (existingStyle) {
+        existingStyle.remove();
+      }
+      
+      // Add new keyframe animation
+      const style = document.createElement('style');
+      style.id = 'dynamic-scroll-animation';
+      style.textContent = keyframes;
+      document.head.appendChild(style);
+      
+      // Apply the new infinite animation (maintaining original 80s duration)
+      scrollTrackRef.current.style.animation = `${animationName} 80s linear infinite`;
+    }
+  };
+
+  const handleImageClick = (item, imageIndex = null) => {
+    if (item.isGroup && imageIndex !== null) {
+      // For grouped images, show the specific image clicked
+      setSelectedImage({
+        ...item,
+        currentImage: item.images[imageIndex],
+        imageIndex
+      });
+    } else if (item.isGroup) {
+      // For grouped images without specific index, show first image
+      setSelectedImage({
+        ...item,
+        currentImage: item.images[0],
+        imageIndex: 0
+      });
+    } else {
+      // For single images
+      setSelectedImage({
+        ...item,
+        currentImage: item.img
+      });
+    }
+  };
+
+  const closePopup = () => {
+    setSelectedImage(null);
+  };
+
+  const handleArrowClick = (direction) => {
+    if (scrollTrackRef.current && isManualControl) {
+      const scrollAmount = 300;
+      
+      if (direction === 'right') {
+        // Always move right - no reset, true infinite scroll
+        const newPosition = scrollPosition - scrollAmount;
+        setScrollPosition(newPosition);
+        scrollTrackRef.current.style.transform = `translateX(${newPosition}px)`;
+      } else {
+        // Always move left - no reset, true infinite scroll  
+        const newPosition = scrollPosition + scrollAmount;
+        setScrollPosition(newPosition);
+        scrollTrackRef.current.style.transform = `translateX(${newPosition}px)`;
+      }
+    }
+  };
+
   return (
     <div className="h-screen bg-[#F3F0ED] overflow-x-hidden flex flex-col">
       <style jsx>{`
@@ -217,7 +363,7 @@ export default function Work() {
             transform: translateX(0);
           }
           100% {
-            transform: translateX(-50%);
+            transform: translateX(-25%);
           }
         }
 
@@ -225,9 +371,8 @@ export default function Work() {
           overflow: hidden;
           width: 100vw;
           height: 550px;
-          
           position: relative;
-          padding-bottom:30
+          padding-bottom: 30px;
           margin-left: calc(-50vw + 50%);
         }
         
@@ -237,10 +382,7 @@ export default function Work() {
           width: fit-content;
           align-items: flex-end;
           height: 100%;
-        }
-        
-        .work-scroll-track:hover {
-          animation-play-state: paused;
+          transition: transform 0.3s ease-out;
         }
         
         .work-card {
@@ -248,17 +390,21 @@ export default function Work() {
           margin: 0 0px;
           height: 100%;
           display: flex;
-          justify-content:center;
+          justify-content: center;
           flex-direction: column;
           border-right: 1px solid #003677;
-          padding-left:30px;
+          padding-left: 30px;
           border-left: none;
+        }
+
+        .work-card.grouped {
+          padding-left: 30px;
+          width: auto;
         }
         
         .work-card.card-up {
           justify-content: flex-start;
           padding-top: 0px;
-          
         }
         
         .work-card.card-down {
@@ -266,49 +412,196 @@ export default function Work() {
           padding-bottom: 0px;
         }
 
-        /* Ensure no horizontal scroll */
+        .arrow-button {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          background: rgba(0, 54, 119, 0.8);
+          color: white;
+          border: none;
+          border-radius: 50%;
+          width: 50px;
+          height: 50px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          opacity: 0;
+          pointer-events: none;
+          z-index: 10;
+        }
+        
+        .arrow-button.visible {
+          opacity: 1;
+          pointer-events: auto;
+        }
+        
+        .arrow-button:hover {
+          background: rgba(0, 54, 119, 1);
+          transform: translateY(-50%) scale(1.1);
+        }
+        
+        .arrow-left {
+          left: 20px;
+        }
+        
+        .arrow-right {
+          right: 20px;
+        }
+
         body {
           overflow-x: hidden;
         }
       `}</style>
 
-      {/* Header - Taking about 20% of screen */}
-      {/* <div className="flex-shrink-0 pt-8 pb-4">
-        <h2
-          className="text-4xl pt-15 md:pt-0 md:text-6xl text-[#3c597B] text-center"
-          style={{ fontFamily: "Rofane", fontStyle: "italic" }}
-        >
-          <span className="not-italic font-normal">Arthakhya</span>
-        </h2>
-      </div> */}
       <div className="rounded-xl overflow-hidden pt-5 mb-5">
-      <Image
-        src="/images/art/arth.svg"
-        alt="artthakya"
-        width={800}
-        height={250}
-        className="object-contain w-full h-[75px] sm:h-[60px] md:h-[80px] lg:h-[90px] xl:h-[110px]"
-      />
-    </div>
+        <Image
+          src="/images/art/arth.svg"
+          alt="artthakya"
+          width={800}
+          height={250}
+          className="object-contain w-full h-[75px] sm:h-[60px] md:h-[80px] lg:h-[90px] xl:h-[110px]"
+        />
+      </div>
 
-
-      {/* Scroll Container - Taking about 75% of screen */}
       <div className="flex-1 flex items-center" style={{fontFamily:'Optima'}}>
-        <div className="work-scroll-container">
-          <div className="work-scroll-track">
-            {workItems.concat(workItems).map((item, i) => (
+        <div 
+          className="work-scroll-container"
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        >
+          {/* Left Arrow */}
+          <button
+            className={`arrow-button arrow-left ${isHovered ? 'visible' : ''}`}
+            onClick={() => handleArrowClick('left')}
+          >
+            <ChevronLeft size={24} />
+          </button>
+
+          {/* Right Arrow */}
+          <button
+            className={`arrow-button arrow-right ${isHovered ? 'visible' : ''}`}
+            onClick={() => handleArrowClick('right')}
+          >
+            <ChevronRight size={24} />
+          </button>
+
+          <div 
+            ref={scrollTrackRef}
+            className="work-scroll-track"
+          >
+            {/* Create multiple copies for true infinite scroll */}
+            {[...workItems, ...workItems, ...workItems, ...workItems].map((item, i) => (
               <div
                 key={i}
-                className={`work-card ${
+                className={`work-card ${item.isGroup ? 'grouped' : ''} ${
                   i % 2 === 0 ? 'card-up' : 'card-down'
                 }`}
               >
-                <CardContent item={item} reversed={i % 2 === 1} />
+                <CardContent item={item} reversed={i % 2 === 1} onImageClick={handleImageClick} />
               </div>
             ))}
           </div>
         </div>
       </div>
+
+      {/* Image Popup Modal */}
+      {selectedImage && (
+        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+        <div 
+          className="fixed inset-0 bg-blur bg-opacity-80 flex items-center justify-center z-50 p-4"
+          onClick={closePopup}
+        >
+          <div 
+            className="relative max-w-4xl max-h-[90vh] bg-white rounded-lg overflow-hidden"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Close button */}
+            <button
+              onClick={closePopup}
+              className="absolute top-4 right-4 bg-black bg-opacity-50 text-white rounded-full w-8 h-8 flex items-center justify-center hover:bg-opacity-70 transition-all z-10"
+            >
+              ×
+            </button>
+            
+            {/* Image */}
+            <div className="flex flex-col lg:flex-row bg-[#F3F0ED]">
+              <div className="flex-1 flex items-center justify-center p-4">
+                <Image
+                  src={selectedImage.currentImage || selectedImage.img}
+                  alt={selectedImage.title || "Artwork"}
+                  width={600}
+                  height={800}
+                  className="max-w-full max-h-[70vh] object-contain rounded-md"
+                />
+              </div>
+              
+              {/* Info Panel */}
+              <div className="lg:w-80 p-6 --bg-gray-50" style={{fontFamily:'Optima'}}>
+                {selectedImage.author && (
+                  <div className="text-xl font-bold text-gray-800 mb-3">{selectedImage.author}</div>
+                )}
+                {selectedImage.title && (
+                  <div className="text-lg text-gray-700 mb-2">
+                    <span className="font-semibold">Title:</span> {selectedImage.title}
+                  </div>
+                )}
+                {selectedImage.medium && (
+                  <div className="text-base text-gray-600 mb-2 leading-relaxed">
+                    <span className="font-semibold">Medium:</span> {selectedImage.medium}
+                  </div>
+                )}
+                {selectedImage.size && (
+                  <div className="text-base text-gray-600 mb-2">
+                    <span className="font-semibold">Size:</span> {selectedImage.size}
+                  </div>
+                )}
+                {selectedImage.year && (
+                  <div className="text-base text-gray-600">
+                    <span className="font-semibold">Year:</span> {selectedImage.year}
+                  </div>
+                )}
+                
+                {/* For grouped images, show navigation */}
+                {selectedImage.isGroup && (
+                  <div className="mt-6 pt-4 border-t border-gray-300">
+                    <div className="text-sm text-gray-600 mb-3">
+                      Image {(selectedImage.imageIndex || 0) + 1} of {selectedImage.images.length}
+                    </div>
+                    <div className="flex gap-2">
+                      {selectedImage.images.map((imgSrc, index) => (
+                        <button
+                          key={index}
+                          onClick={() => setSelectedImage({
+                            ...selectedImage,
+                            currentImage: imgSrc,
+                            imageIndex: index
+                          })}
+                          className={`relative overflow-hidden rounded border-2 transition-all ${
+                            index === selectedImage.imageIndex 
+                              ? 'border-blue-500 ring-2 ring-blue-200' 
+                              : 'border-gray-300 hover:border-gray-400'
+                          }`}
+                        >
+                          <Image
+                            src={imgSrc}
+                            alt={`${selectedImage.title} ${index + 1}`}
+                            width={60}
+                            height={80}
+                            className="object-cover"
+                          />
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+      )}
     </div>
   );
 }
