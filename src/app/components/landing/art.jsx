@@ -159,7 +159,7 @@ const workItems = [
 
 function GroupedCardContent({ item, reversed, onImageClick }) {
   const Info = (
-    <div className="p-4 pl-0 rounded-lg --w-80" style={{fontFamily:'Optima'}}>
+    <div className="p-4 pl-0 pb-0 rounded-lg --w-80" style={{fontFamily:'Optima'}}>
       {item.author && (
         <div className="text-sm md:text-base font-semibold text-gray-800 mb-1">{item.author}</div>
       )}
@@ -171,7 +171,7 @@ function GroupedCardContent({ item, reversed, onImageClick }) {
   );
 
   const GroupedArt = (
-    <div className="p-0 ml-0 rounded-lg w-[max-content]">
+    <div className="p-0 ml-0 pr-4  rounded-lg w-[max-content]">
       <div className="flex gap-2 justify-center">
         {item.images.map((imgSrc, index) => (
           <Image
@@ -190,7 +190,7 @@ function GroupedCardContent({ item, reversed, onImageClick }) {
 
   return reversed ? (
     <div className="flex flex-col" style={{fontFamily:'Optima'}}>
-      <div className="mb-4">{Info}</div>
+      <div className="--mb-4">{Info}</div>
       <div>{GroupedArt}</div>
     </div>
   ) : (
@@ -207,7 +207,7 @@ function CardContent({ item, reversed, onImageClick }) {
   }
 
   const Info = (
-    <div className="p-4 pl-0 rounded-lg w-52" style={{fontFamily:'Optima'}}>
+    <div className="p-4 pl-0 pb-0 rounded-lg w-52" style={{fontFamily:'Optima'}}>
       {item.author && (
         <div className="text-sm md:text-base font-semibold text-gray-800 mb-1">{item.author}</div>
       )}
