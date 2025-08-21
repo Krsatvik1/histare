@@ -22,12 +22,12 @@ export default function Vision() {
 
       {/* Section 2 - Content with Footer */}
       <section className="snap-start snap-always min-h-screen flex flex-col">
-        <div className="flex-1 flex items-center justify-center px-6 md:px-20 pt-20">
-          <div className="text-base md:text-lg leading-relaxed text-[#1e1e1e] space-y-6 max-w-5xl mx-auto font-sans">
-            <p className='text-justify'>
+        <div className="flex-1 flex items-center justify-center px-6 md:px-20 pt-0">
+          <div className="text-base md:text-lg leading-tight text-[#1e1e1e] space-y-6 max-w-5xl mx-auto font-sans">
+            <p className='text-justify' style={{fontFamily:'Optima'}}>
               At Histare, we harmonize diverse artistic viewpoints with a profound understanding of our patrons' tastes,
               creating a seamless blend of tradition and innovation. This core philosophy underpins every dimension of our
-              work—ranging from the curation of immersive displays to the innovation in design and the development of art
+              work-ranging from the curation of immersive displays to the innovation in design and the development of art
               collections. Through sustainable practices and strategic partnerships, we cultivate cultural narratives that are both
               enduring and progressive. Our approach ensures that art not only honors the past but also actively shapes
               the future, fostering transformative, meaningful cultural experiences that leave a lasting impact across
@@ -37,9 +37,9 @@ export default function Vision() {
         </div>
         
         {/* Footer aligned with content */}
-        <div className="px-6 md:px-20 md:-ml-20">
+        {/* <div className="px-6 md:px-20 md:-ml-20">
           <Footer />
-        </div>
+        </div> */}
       </section>
     </div>
   );

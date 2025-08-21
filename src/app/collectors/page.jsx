@@ -36,17 +36,17 @@ export default function CollectorsAffaire() {
 
       {/* Section 2 - Intro Paragraph */}
       <div className="snap-start min-h-screen w-full flex items-center justify-center px-3">
-        <div className="max-w-5xl text-sm md:text-xl text-gray-300 text-center leading-relaxed">
+        <div className="max-w-5xl text-sm md:text-xl text-gray-300 text-center leading-tight">
           <p className='text-justify' style={{fontFamily:'Optima'}}>
             Collectors' Affaire stands as a tribute to the guardians of art, whether individual collectors or esteemed institutions. It is a heartfelt homage to those who preserve and share their collections with boundless passion. Step into a world where distinguished art collectors command attention, showcasing masterpieces curated over lifetimes. This is an odyssey of collection, revelation, and research,they continue to inspire. The platform spotlights seasoned collectors, artists, and enthusiasts, delving into the rich stories and cultural significance within each piece. Join us in honoring these custodians of creativity — the keepers of meaning and legacy within every stroke and sculpture. Together, we celebrate their unwavering commitment and the enduring spirit that enriches our collective artistic journey.
           </p>
         </div>
       </div>
 
-      {/* Section 3 & 4 - Chronicles + Expandable Artwork + Footer */}
+      {/* Section 3 - Chronicles + Expandable Artwork */}
       <div className="snap-start min-h-screen w-full flex flex-col px-4">
         {/* Main content area */}
-        <div className="flex-1 flex flex-col items-center justify-start py-16">
+        <div className="flex-1 flex flex-col items-center justify-start py-16 pb-0"> 
           <h2
             className="text-4xl md:text-5xl mb-8 text-white text-center"
             style={{ fontFamily: 'Rofane' }}
@@ -57,7 +57,7 @@ export default function CollectorsAffaire() {
 
           <div className="relative w-full max-w-4xl">
             {/* First paragraph */}
-            <p className="text-sm md:text-base text-gray-300 leading-relaxed pr-20 md:pr-30 lg:pr-70 xl:pr-70" style={{ textAlign: 'justify',fontFamily:'Optima' }}>
+            <p className="text-sm md:text-base text-gray-300 leading-tight pr-20 md:pr-30 lg:pr-70 xl:pr-70" style={{ textAlign: 'justify',fontFamily:'Optima' }}>
   In May 2017, the Collectors' Affaire was launched in a collaborative effort hosted by Dolly Jain Singh and Namrata Mumtaz Singh. This exhibition showcased a stunning display of rare pashmina shawls and exquisite chintzes, complemented by contemporary artworks that celebrated the richness of Indian craftsmanship.
 </p>
 
@@ -96,7 +96,7 @@ export default function CollectorsAffaire() {
 
             {/* Expanded content with smooth animation */}
             {expanded && (
-              <div className="mt-6 animate-fadeIn">
+              <div className="mt-3 animate-fadeIn">
                 {/* Second paragraph */}
                 <p className="text-sm md:text-base text-gray-300 leading-relaxed pr-20 md:pr-30 lg:pr-60 xl:pr-70" style={{ textAlign: 'justify',fontFamily:'Optima' }}>
                   A special highlight of the evening was the preview of 'Maya,' a captivating piece by artist Rajiv Kumar, housed under the patronage of Rakesh Malhotra. This striking piece brought together art enthusiasts and collectors, fostering an atmosphere of appreciation for the intricate beauty of traditional and modern artistry.
@@ -104,7 +104,7 @@ export default function CollectorsAffaire() {
 
                 {/* Artwork section */}
                
-                <div className="flex flex-col md:flex-row items-start gap-10 pt-10 lg:pl-20">
+                <div className="flex flex-col md:flex-row items-start gap-10 pt-5 lg:pl-20">
                   <Image
                     src="/images/program/maya-red.png"
                     alt="Maya by Rajiv Kumar"
@@ -121,21 +121,15 @@ export default function CollectorsAffaire() {
                   </div>
 
                 </div>
-                
-                {/* <hr className="border-t border-gray-500 mt-8" /> */}
               </div>
             )}
              <hr className="border-t  mt-10" />
           </div>
          
         </div>
-        
-        {/* Footer at bottom */}
-       
-          <div className='-ml-8'>
-            <ProFooter /></div>
-        </div>
-        {/* Custom CSS for fade animation */}
+      </div>
+
+      {/* Custom CSS for fade animation */}
       <style jsx>{`
         @keyframes fadeIn {
           from {
@@ -151,9 +145,6 @@ export default function CollectorsAffaire() {
           animation: fadeIn 0.5s ease-in-out;
         }
       `}</style>
-      </div>
-
-
-
+    </div>
   )
 }

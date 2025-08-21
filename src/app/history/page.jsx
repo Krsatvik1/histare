@@ -6,7 +6,7 @@ import Footer from '../components/footerblank';
 
 export default function History() {
   return (
-    <div className="bg-white snap-y snap-mandatory overflow-y-scroll scroll-smooth h-screen w-full">
+    <div className=" snap-y snap-mandatory overflow-y-scroll scroll-smooth h-screen w-full">
       
       {/* Section 1 - Header */}
       <div className="snap-start min-h-screen w-full flex flex-col">
@@ -26,18 +26,18 @@ export default function History() {
       <div className="snap-start min-h-screen w-full flex flex-col">
         <div className="flex-1 flex items-center justify-center px-6 md:px-20">
           <div className="max-w-5xl w-full">
-            <p className="text-base md:text-lg leading-relaxed text-[#1e1e1e] text-justify "style={{ fontFamily: 'Optima' }}>
+            <p className="text-base md:text-lg leading-tight text-[#1e1e1e] text-justify "style={{ fontFamily: 'Optima' }}>
               The Histare Group revives the legacy of 'Roshan Lal Sita Ram,' founded in the 1930s by the family of Late
               Smt. Roop Rani Seth Vadehra and Late Shri Sita Ram Vadehra. Established in 2019 by the late Smt. Simran
               Wahi Vadehra, Histare honours this profound cultural heritage while propelling it forward into the future.
-              Histare is more than just a tribute to the past; it is a vibrant continuation of this rich legacy,
+             <br /><br /> Histare is more than just a tribute to the past; it is a vibrant continuation of this rich legacy,
               dedicated to ensuring the growth and preservation of India's artisanal traditions. The organization is built
               on the belief that tradition and innovation can coexist, allowing the artistry and creativity of past
               generations to remain both relevant and inspiring for future creators.
             </p>
           </div>
         </div>
-        <Footer />
+        {/* <Footer /> */}
       </div>
       
       {/* Custom CSS for smooth scrolling */}

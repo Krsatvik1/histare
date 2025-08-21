@@ -55,21 +55,21 @@ const workItems = [
       author: "Sudhir Bhagat",
       title: "Live Life To The Fullest",
       medium: "Oil on canvas",
-      size: "30 x 22 in",
-      year: "2005"
+      size: "",
+      year: "2017"
     },
     {
       id: 7,
-      img: "/images/art/shell.png",
+      img: "/images/art/shell.svg",
       author: "Thukral & Tagra",
       title: "Dominus Aeris Coleus -XIII",
-      medium: "",
+      medium: "Oil on Canvas",
       size: "",
-      year: ""
+      year: "2017"
     },
     {
       id: 8,
-      img: "/images/art/green.png",
+      img: "/images/art/green.svg",
       author: "Paramjeet Singh",
       title: "Untitled",
       medium: "Oil on Canvas",
@@ -143,7 +143,7 @@ const workItems = [
       
       {
         id: 16,
-        img: "/images/art/dimond.png",
+        img: "/images/art/diamond.svg",
         author: "Sada Shiv Jivya Mashe",
         title: "",
         medium: "Cow dung and acrylic on raw canvas",
@@ -172,7 +172,7 @@ const workItems = [
 
 function CardContent({ item, reversed }) {
   const Info = (
-    <div className="p-4 rounded-lg w-52">
+    <div className="p-4 pl-0 rounded-lg w-52"style={{fontFamily:'Optima'}}>
       {item.author && (
         <div className="text-sm md:text-base font-semibold text-gray-800 mb-1">{item.author}</div>
       )}
@@ -184,19 +184,19 @@ function CardContent({ item, reversed }) {
   );
 
   const Art = (
-    <div className="p-0 rounded-lg w-52">
+    <div className="p-0 ml-0 rounded-lg w-52">
       <Image
         src={item.img}
         alt={item.title || "Artwork"}
         width={200}
         height={350}
-        className="rounded-md object-cover mx-auto"
+        className="rounded-md object-cover mx-auto ml-0"
       />
     </div>
   );
 
   return reversed ? (
-    <div className="flex flex-col">
+    <div className="flex flex-col"style={{fontFamily:'Optima'}}>
       <div className="mb-4">{Info}</div>
       <div>{Art}</div>
     </div>
@@ -225,6 +225,7 @@ export default function Work() {
           overflow: hidden;
           width: 100vw;
           height: 550px;
+          
           position: relative;
           padding-bottom:30
           margin-left: calc(-50vw + 50%);
@@ -250,7 +251,7 @@ export default function Work() {
           justify-content:center;
           flex-direction: column;
           border-right: 1px solid #003677;
-          padding-left:26px;
+          padding-left:30px;
           border-left: none;
         }
         
@@ -282,17 +283,17 @@ export default function Work() {
       </div> */}
       <div className="rounded-xl overflow-hidden pt-5 mb-5">
       <Image
-        src="/images/art/art.svg"
+        src="/images/art/arth.svg"
         alt="artthakya"
         width={800}
         height={250}
-        className="object-contain w-full h-[75px] sm:h-[60px] md:h-[80px] lg:h-[90px] xl:h-[100px]"
+        className="object-contain w-full h-[75px] sm:h-[60px] md:h-[80px] lg:h-[90px] xl:h-[110px]"
       />
     </div>
 
 
       {/* Scroll Container - Taking about 75% of screen */}
-      <div className="flex-1 flex items-center">
+      <div className="flex-1 flex items-center" style={{fontFamily:'Optima'}}>
         <div className="work-scroll-container">
           <div className="work-scroll-track">
             {workItems.concat(workItems).map((item, i) => (

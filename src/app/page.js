@@ -42,11 +42,11 @@ function Home() {
       </div>
       <div className="snap-start">
         <Testimonial />
-        <Footer />
+       
       </div>
-      <div className="snap-start">
-        
-      </div>
+      {/* <div className="snap-start">
+      <Footer />
+      </div> */}
     </div>
   );
 }

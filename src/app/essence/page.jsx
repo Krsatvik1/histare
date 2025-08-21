@@ -34,7 +34,7 @@ export default function FullPageEssence() {
             <h3 className="uppercase text-[#2c3e50] font-medium text-sm md:text-base">
               Creating an Ethical World
             </h3>
-            <p className="text-[#2c3e50] text-sm md:text-base leading-relaxed text-justify">
+            <p className="text-[#2c3e50] text-sm md:text-base leading-tight text-justify">
               The world requires to bring change within the principles of traditional trade practices
               and set up businesses that put people first to build a more sustainable future for all.
             </p>
@@ -114,11 +114,11 @@ export default function FullPageEssence() {
           </div>
 
           {/* Right - Text */}
-          <div className="md:w-1/2 text-sm md:text-base leading-relaxed space-y-2">
+          <div className="md:w-1/2 text-sm md:text-base space-y-2">
             <h3 className="uppercase font-medium text-sm md:text-base text-[#2c3e50]">
               Indian Culture for a Sustainable Future
             </h3>
-            <p className="text-[#2c3e50] text-justify">
+            <p className="text-[#2c3e50] text-justify leading-tight" style={{fontFamily:'Optima'}}>
               Histare incorporates India's cultural inheritance within the SDG framework.
               A cultural model is valuable for the creation of collective narratives and has
               the ability to bind people.
@@ -130,19 +130,19 @@ export default function FullPageEssence() {
       {/* Section 5: Bottom Image with Footer */}
       <section className="snap-start snap-always min-h-screen flex flex-col">
         <div className="flex-1 flex items-center justify-center px-4 pt-10">
-          <div className="w-full max-w-2xl">
+          <div className="w-full max-w-5xl">
             <Image
-              src="/images/essence/bottom.png"
+              src="/images/essence/bottom.svg"
               alt="Cultural Innovation"
-              width={400}
-              height={250}
+              width={500}
+              height={300}
               className="w-full h-auto"
             />
           </div>
         </div>
-        <div className="px-4 -ml-10">
+        {/* <div className="px-4 -ml-10">
           <Footer />
-        </div>
+        </div> */}
       </section>
     </div>
   );

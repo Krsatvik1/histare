@@ -36,7 +36,7 @@ export default function CollectorsAffaire() {
 
       {/* Section 2 - Intro Paragraph */}
       <div className="snap-start min-h-screen w-full flex items-center justify-center px-3">
-        <div className="max-w-5xl text-sm md:text-xl text-gray-300 text-center leading-relaxed">
+        <div className="max-w-5xl text-sm md:text-xl text-gray-300 text-center leading-tight">
           <p className='text-justify'style={{ textAlign: 'justify' ,fontFamily:'Optima'}}>
           The Erbe Project unfolds as a testament to India's artisan families across generations, revealing their profound stories through a rare collection of masterpieces crafted with sustainable materials and ancient techniques. This smart initiative aims to redefine the narrative surrounding these families, transforming perceived helplessness into recognition as custodians of India's oldest creative traditions. By re-evaluating Indian craft and folk arts, curating master artisans, and integrating contemporary design interventions, the project fosters a deep appreciation for visual and performing folk art and craft. It aspires to cultivate a new generation of connoisseurs who honor and preserve the cultural richness embodied in every stitch, stroke, and melody, thus perpetuating the enduring legacy of India's artistic heritage.
           </p>
@@ -101,9 +101,9 @@ export default function CollectorsAffaire() {
         </div>
          
         {/* Footer at bottom */}
-        <div className="w-full -ml-4">
+        {/* <div className="w-full -ml-4">
           <ProFooter />
-        </div>
+        </div> */}
       </div>
 
       {/* Custom CSS for fade animation */}

@@ -1,47 +1,48 @@
 import React from 'react';
+import Image from 'next/image';
 
 const logoUp = [
-  'https://dev-histare.netlify.app/images/partnerLogos/forbes.png',
-  'https://dev-histare.netlify.app/images/partnerLogos/iaf.png',
-  'https://dev-histare.netlify.app/images/partnerLogos/lazy_cocktails.png',
-  'https://dev-histare.netlify.app/images/partnerLogos/gff.png',
-  'https://dev-histare.netlify.app/images/partnerLogos/marwah_studios.png',
-  'https://dev-histare.netlify.app/images/partnerLogos/mirage.png',
-  'https://dev-histare.netlify.app/images/partnerLogos/mercedes.png',
-  'https://dev-histare.netlify.app/images/partnerLogos/zee_5.png',
-  'https://dev-histare.netlify.app/images/partnerLogos/toi.png',
-  'https://dev-histare.netlify.app/images/partnerLogos/yahoo.png',
-  'https://dev-histare.netlify.app/images/partnerLogos/hindustan_times.png',
-  'https://dev-histare.netlify.app/images/partnerLogos/taksim.png',
-  'https://dev-histare.netlify.app/images/partnerLogos/my_money.png',
-  'https://dev-histare.netlify.app/images/partnerLogos/rampur.png'
+  'forbes.png',
+  'iaf.png',
+  'lazy_cocktails.png',
+  'gff.png',
+  'marwah_studios.png',
+  'mirage.png',
+  'mercedes.png',
+  'zee_5.png',
+  'toi.png',
+  'yahoo.png',
+  'hindustan_times.png',
+  'taksim.png',
+  'my_money.png',
+  'rampur.png',
 ];
 
 const logoDown = [
-  'https://dev-histare.netlify.app/images/partnerLogos/domov.png',
-  'https://dev-histare.netlify.app/images/partnerLogos/lex_favios.png',
-  'https://dev-histare.netlify.app/images/partnerLogos/swan_chambers.png',
-  'https://dev-histare.netlify.app/images/partnerLogos/the_asian_age.png',
-  'https://dev-histare.netlify.app/images/partnerLogos/iiad.png',
-  'https://dev-histare.netlify.app/images/partnerLogos/live_mint.png',
-  'https://dev-histare.netlify.app/images/partnerLogos/ani.png',
-  'https://dev-histare.netlify.app/images/partnerLogos/the_print.png',
-  'https://dev-histare.netlify.app/images/partnerLogos/economic_times.png',
-  'https://dev-histare.netlify.app/images/partnerLogos/johnny_walker.png',
-  'https://dev-histare.netlify.app/images/partnerLogos/deccan_chronicle.png',
-  'https://dev-histare.netlify.app/images/partnerLogos/veritaz.png',
-  'https://dev-histare.netlify.app/images/partnerLogos/pot.png',
-  'https://dev-histare.netlify.app/images/partnerLogos/jicg.png',
-  'https://dev-histare.netlify.app/images/partnerLogos/ignca.png',
-  'https://dev-histare.netlify.app/images/partnerLogos/intach.png',
-  'https://dev-histare.netlify.app/images/partnerLogos/asavari.png'
+  'domov.png',
+  'lex_favios.png',
+  'swan_chambers.png',
+  'the_asian_age.png',
+  'iiad.png',
+  'live_mint.png',
+  'ani.png',
+  'the_print.png',
+  'economic_times.png',
+  'johnny_walker.png',
+  'deccan_chronicle.png',
+  'veritaz.png',
+  'pot.png',
+  'jicg.png',
+  'ignca.png',
+  'intach.png',
+  'asavari.png',
 ];
 
 function Partnership() {
   return (
-    <div className="py-16 px-4 md:px-0 min-h-screen flex flex-col items-center justify-center text-center overflow-hidden">
+    <div className=" bg-[#F3F0ED] py-16 px-4 md:px-0 min-h-screen flex flex-col items-center justify-center text-center overflow-hidden">
       <h2
-        className="text-3xl sm:text-4xl md:text-5xl mb-12 text-[#3c597B]"
+        className="text-3xl pb-20 sm:text-4xl md:text-5xl mb-12 text-[#3c597B]"
         style={{ fontFamily: 'Rofane' }}
       >
         <span className="italic font-normal">Our</span>{' '}
@@ -55,7 +56,17 @@ function Partnership() {
         <div className="track">
           {[...logoUp, ...logoUp].map((src, index) => (
             <div className="logo" key={`top-${index}`}>
-              <img src={src} alt={`Partner ${index}`} width={160} height={80} />
+              <Image 
+                src={`/images/partnership/${src}`} 
+                alt={`Partner ${index}`} 
+                width={160} 
+                height={80}
+                className="object-contain"
+                onError={(e) => {
+                  console.log(`Failed to load image: /images/partnership/${src}`);
+                  e.target.src = '/images/placeholder.png'; // fallback
+                }}
+              />
             </div>
           ))}
         </div>
@@ -66,11 +77,75 @@ function Partnership() {
         <div className="track">
           {[...logoDown, ...logoDown].map((src, index) => (
             <div className="logo" key={`bottom-${index}`}>
-              <img src={src} alt={`Partner ${index}`} width={160} height={80} />
+              <Image 
+                src={`/images/partnership/${src}`} 
+                alt={`Partner ${index}`} 
+                width={160} 
+                height={80}
+                className="object-contain"
+                onError={(e) => {
+                  console.log(`Failed to load image: /images/partnership/${src}`);
+                  e.target.src = '/images/placeholder.png'; // fallback
+                }}
+              />
             </div>
           ))}
         </div>
       </div>
+
+      <style jsx>{`
+        .marquee {
+          width: 100%;
+          overflow: hidden;
+          position: relative;
+        }
+
+        .track {
+          display: flex;
+          animation-duration: 60s;
+          animation-timing-function: linear;
+          animation-iteration-count: infinite;
+        }
+
+        .marquee-left .track {
+          animation-name: scroll-left;
+        }
+
+        .marquee-right .track {
+          animation-name: scroll-right;
+        }
+
+        .logo {
+          flex-shrink: 0;
+          margin: 0 2rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        @keyframes scroll-left {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+
+        @keyframes scroll-right {
+          0% {
+            transform: translateX(-50%);
+          }
+          100% {
+            transform: translateX(0);
+          }
+        }
+
+        /* Pause animation on hover */
+        // .marquee:hover .track {
+        //   animation-play-state: paused;
+        // }
+      `}</style>
     </div>
   );
 }

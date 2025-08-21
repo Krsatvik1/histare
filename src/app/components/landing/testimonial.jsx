@@ -133,10 +133,10 @@ function Testimonial() {
   };
 
   return (
-    <div className=" flex items-center justify-center px-4 md:pt-5  ">
+    <div className=" flex items-center min-h-screen justify-center px-4 md:pt-5  ">
       <div className="w-full max-w-4xl">
         <h2
-          className="text-4xl md:text-5xl mb-12 text-[#3c597B] text-center md:pt-5"
+          className="text-4xl md:text-5xl mb-12 pb-20 text-[#3c597B] text-center md:pt-5"
           style={{ fontFamily: 'Optima' }}
         >
           Testimonials

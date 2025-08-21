@@ -23,7 +23,7 @@ const Elephant = () => {
         >
           Unveiling Histare
         </h2>
-        <p className="text-base md:text-lg leading-relaxed max-w-md mx-auto md:mx-0">
+        <p className="text-base md:text-lg leading-tight max-w-md mx-auto md:mx-0">
           A Comprehensive Cultural Arts Organization Crafting Solutions To Empower The People,
           Planet And Ensuring Significant Advancements With A Focus On The Diverse Heritage Of India.
         </p>

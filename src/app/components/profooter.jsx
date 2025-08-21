@@ -32,7 +32,6 @@ const ProFooter = () => {
         
         {/* Address Block */}
         <div className="text-sm sm:text-base text-[#555555] max-w-sm text-center md:text-left md:mr-0 pr-0">
-          <p>The Histare Group</p>
           <p>Histare Concepts Private Limited</p>
           <br />
           <p>
@@ -42,24 +41,31 @@ const ProFooter = () => {
           <p>info@histare.in</p>
         </div>
 
-        {/* Map */}
+        {/* Clickable Map */}
         <div className="flex-shrink-0 mb-4 md:mb-0 md:mr-30">
-          <Image
-            src="/images/program/map.png"
-            alt="Location Map"
-            width={320}
-            height={200}
-            className="w-50 h-30 sm:w-50 sm:h-56 md:w-130 md:h-38 object-cover rounded-lg mx-auto md:pr-20 "
-          />
+          <a 
+            href="https://maps.app.goo.gl/3VqKz5Q8QcuWA2g67?g_st=aw" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="cursor-pointer transition-transform hover:scale-105"
+          >
+            <Image
+              src="/images/program/map.png"
+              alt="Location Map - Click to open in Google Maps"
+              width={320}
+              height={200}
+              className="w-50 h-30 sm:w-50 sm:h-56 md:w-130 md:h-38 object-cover rounded-lg mx-auto md:pr-20"
+            />
+          </a>
         </div>
 
         {/* Social Icons */}
         <div className="flex flex-row md:flex-col justify-center md:justify-start items-center gap-4 text-xl text-[#555555] sm:pr-10">
           <a href="#"><FaTwitter /></a>
-          <a href="#"><FaLinkedin /></a>
-          <a href="#"><FaYoutube /></a>
+          <a href="https://www.linkedin.com/company/histare/"><FaLinkedin /></a>
+          <a href="https://www.youtube.com/@thehistaregroup7950"><FaYoutube /></a>
           <a href="#"><FaFacebook /></a>
-          <a href="#"><FaInstagram /></a>
+          <a href="https://www.instagram.com/histare.concepts/"><FaInstagram /></a>
         </div>
       </div>
 

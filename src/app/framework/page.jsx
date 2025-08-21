@@ -6,7 +6,7 @@ import Footer from '../components/footerblank';
 
 export default function Frameworks() {
   return (
-    <div className="bg-F3F0ED snap-y snap-mandatory overflow-y-scroll scroll-smooth h-screen w-full">
+    <div className=" snap-y snap-mandatory overflow-y-scroll scroll-smooth h-screen w-full">
       
       {/* Section 1 - Header */}
       <div className="snap-start min-h-screen w-full flex flex-col">
@@ -29,7 +29,7 @@ export default function Frameworks() {
             <h2 className="md:w-1/3 text-3xl md:text-4xl font-serif italic text-[#3c597B] mb-4 md:mb-0">
               The Vision
             </h2>
-            <p className="md:w-2/3 text-base md:text-lg leading-relaxed text-[#1e1e1e] text-justify">
+            <p className="md:w-2/3 text-base md:text-lg leading-tight text-[#1e1e1e] text-justify">
               Histare envisions becoming a global leader in the business of art and design by preserving, celebrating, and reimagining India's artistic and cultural legacy with the aim to inspire a global appreciation of India's cultural wealth while driving its relevance in contemporary and future contexts.
             </p>
           </div>
@@ -43,7 +43,7 @@ export default function Frameworks() {
             <h2 className="md:w-1/3 text-3xl md:text-4xl font-serif italic text-[#3c597B] mb-4 md:mb-0">
               The Mission
             </h2>
-            <div className="md:w-2/3 text-base md:text-lg leading-relaxed text-[#1e1e1e] space-y-4 text-justify">
+            <div className="md:w-2/3 text-base md:text-lg leading-tight text-[#1e1e1e] space-y-4 text-justify">
               <p>
                 Our mission is to connect India's vast artistic heritage with discerning patrons worldwide, fostering an ecosystem where creativity thrives and creators are empowered. Through innovative design principles, sustainable methodologies, and meaningful collaborations, Histare seeks to transform the landscape of art and culture. We aim to:
               </p>
@@ -77,13 +77,13 @@ export default function Frameworks() {
               <h2 className="md:w-1/3 text-3xl md:text-4xl font-serif italic text-[#3c597B] mb-4 md:mb-0">
                 The Purpose
               </h2>
-              <p className="md:w-2/3 text-base md:text-lg leading-relaxed text-[#1e1e1e] text-justify">
+              <p className="md:w-2/3 text-base md:text-lg leading-tight text-[#1e1e1e] text-justify">
                 Histare passionately preserves India's artistic legacy through traditional, contemporary, and modern art. It showcases creators' masterpieces globally while intertwining tradition with innovation, empowering future creators, and practicing a transformative legacy that resonates through generations.
               </p>
             </div>
           </div>
         </div>
-        <Footer />
+        {/* <Footer /> */}
       </div>
 
       {/* Custom CSS for smooth scrolling */}

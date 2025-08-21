@@ -99,8 +99,8 @@ function CardContent({ item, reversed }) {
         <div className="text-sm md:text-base font-semibold text-gray-800 mb-1">{item.author}</div>
       )}
       {item.title && <div className="text-xs md:text-sm text-gray-600 mb-1">Title: {item.title}</div>}
-      {item.size && <div className="text-xs md:text-sm text-gray-600 mb-1">Size: {item.size}</div>}
       {item.material && <div className="text-xs md:text-sm text-gray-600 mb-1 leading-relaxed">Material: {item.material}</div>}
+      {item.size && <div className="text-xs md:text-sm text-gray-600 mb-1">Size: {item.size}</div>}
     </div>
   );
 
