@@ -226,6 +226,7 @@ export default function Work() {
           width: 100vw;
           height: 550px;
           position: relative;
+          padding-bottom:30
           margin-left: calc(-50vw + 50%);
         }
         
