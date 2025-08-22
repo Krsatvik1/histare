@@ -14,6 +14,13 @@ const workItems = [
      
       
     },
+      {
+        id: 12,
+        img: "/images/nava/plantarium.png",
+        author: "Pathways To Liberation",
+        material: "Stainless steel ,High quality Oil based paint",
+      size: "12 H Ft.",
+      },
     {
       id: 2,
       img: "/images/nava/flower.png",
@@ -84,13 +91,7 @@ const workItems = [
         material: "Charcoal and acrylic color on archival paper",
       size: "",
       },
-      {
-        id: 12,
-        img: "/images/nava/plantarium.png",
-        author: "Pathways To Liberation",
-        material: "Stainless steel ,High quality Oil based paint",
-      size: "12 H Ft.",
-      },
+    
   ];
 
 function CardContent({ item, reversed, onImageClick }) {

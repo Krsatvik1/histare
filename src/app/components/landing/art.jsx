@@ -16,7 +16,7 @@ const workItems = [
     },
     {
       id: 2,
-      img: "/images/art/lily.png",
+      img: "/images/art/lily.svg",
       author: "A. Ramachandran",
       title: "Girl with water Hyacinth",
       medium: "Oil on Canvas",
@@ -65,7 +65,7 @@ const workItems = [
       author: "Thukral & Tagra",
       title: "Dominus Aeris Coleus -XIII",
       medium: "Oil on Canvas",
-      size: "",
+      size: "60 x 60 in",
       year: "2017"
     },
     {
@@ -74,7 +74,7 @@ const workItems = [
       author: "Paramjeet Singh",
       title: "Untitled",
       medium: "Oil on Canvas",
-      size: '42" x 24"',
+      size: '42 x 24 in',
       year: "2015"
     },
     {
