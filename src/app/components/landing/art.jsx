@@ -25,7 +25,7 @@ const workItems = [
     },
     {
         id: 3,
-        img: "/images/art/Red.png",
+        img: "/images/art/Red.svg",
         author: "Ritu Kapoor Kamanth",
         title: "Ready",
         medium: "Oil on Canvas",
