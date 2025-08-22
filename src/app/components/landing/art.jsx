@@ -356,7 +356,7 @@ export default function Work() {
   };
 
   return (
-    <div className="h-screen bg-[#F3F0ED] overflow-x-hidden flex flex-col">
+    <div className="h-screen bg-[#F3F0ED] overflow-x-hidden flex flex-col bg-red-200">
       <style jsx>{`
         @keyframes scroll {
           0% {
@@ -370,7 +370,7 @@ export default function Work() {
         .work-scroll-container {
           overflow: hidden;
           width: 100vw;
-          height: 550px;
+          height: 85%;
           position: relative;
 
           margin-left: calc(-50vw + 50%);
@@ -464,11 +464,11 @@ export default function Work() {
           alt="artthakya"
           width={800}
           height={250}
-          className="object-contain w-full h-[75px] sm:h-[60px] md:h-[80px] lg:h-[90px] xl:h-[110px]"
+          className="object-contain w-full --h-[75px] sm:h-[60px] md:h-[80px] lg:h-[90px] xl:h-[110px] bg-blue-200"
         />
       </div>
 
-      <div className="flex-1 flex items-center" style={{fontFamily:'Optima'}}>
+      <div className="flex-1 flex items-center bg-green-200" style={{fontFamily:'Optima'}}>
         <div 
           className="work-scroll-container"
           onMouseEnter={handleMouseEnter}
