@@ -16,7 +16,7 @@ const workItems = [
     },
       {
         id: 12,
-        img: "/images/nava/plantarium.png",
+        img: "/images/nava/lily.svg",
         author: "Pathways To Liberation",
         material: "Stainless steel ,High quality Oil based paint",
       size: "12 H Ft.",
