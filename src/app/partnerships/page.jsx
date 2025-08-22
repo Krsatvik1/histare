@@ -15,9 +15,9 @@ export default function Partnerships() {
           className="text-4xl md:text-5xl text-[#3c597B] text-center"
           style={{ fontFamily: 'Playfair Display' }}
         >
-          <span className="italic font-normal" style={{ fontFamily: 'Rofane' }}>The </span>Value
-          <span className="italic font-normal " style={{ fontFamily: 'Rofane' }}> of </span>
-          <span style={{ fontFamily: 'Rofane' }}>Partnerships</span>
+          <span className="italic font-normal" style={{ fontFamily: 'Playfair Display' }}>The </span>Value
+          <span className="italic font-normal " style={{ fontFamily: 'Playfair Display' }}> of </span>
+          <span style={{ fontFamily: 'Playfair Display' }}>Partnerships</span>
         </h2>
       </section>
 

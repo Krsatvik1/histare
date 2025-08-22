@@ -241,7 +241,7 @@ export default function Work() {
         .work-scroll-container {
           overflow: hidden;
           width: 100vw;
-          height: 85%;
+          height: 100%;
           position: relative;
         
           margin-left: calc(-50vw + 50%);
@@ -252,7 +252,7 @@ export default function Work() {
           animation: scroll 80s linear infinite;
           width: fit-content;
           align-items: flex-end;
-          height: 100%;
+          height: 85%;
           transition: transform 0.3s ease-out;
         }
         
@@ -327,11 +327,11 @@ export default function Work() {
           alt="navankalpa"
           width={800}
           height={250}
-          className="object-contain w-full --h-[50px] sm:h-[60px] md:h-[75px] lg:h-[75px] xl:h-[75px] --bg-blue-200"
+          className="!pb-0 object-contain w-full --h-[50px] sm:h-[60px] md:h-[75px] lg:h-[75px] xl:h-[75px] --bg-blue-200"
         />
       </div>
 
-      <div className="flex-1 flex items-center -bg-red-200" style={{fontFamily:'Optima'}}>
+      <div className="flex-1 flex items-center !h-24 --bg-green-200 !mt-0" style={{fontFamily:'Optima'}}>
         <div 
           className="work-scroll-container"
           onMouseEnter={handleMouseEnter}
