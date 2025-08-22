@@ -18,11 +18,11 @@ const Navbar = () => {
   return (
     <>
       {/* Navbar */}
-      <nav className="fixed top-0 left-0 w-full flex items-center justify-between p-6 z-50">
-        <div>
+      <nav className="fixed top-0 left-0 w-full flex items-center justify-between p-6 z-50 pointer-events-none">
+        <div className="pointer-events-auto">
           <a href="/"><img src="/images/navbar/logo.png" alt="Histare Logo" className="h-16 w-auto" /></a>
         </div>
-        <div>
+        <div className="pointer-events-auto">
           <button
             onClick={() => setMenuOpen(!menuOpen)}
             className="focus:outline-none text-gray-600 text-2xl p-10 cursor-pointer transition-transform duration-300"
