@@ -11,92 +11,136 @@ const workItems = [
       author: "Dancing Across Time",
       material: "Statuario Marble, Semi-precious Lapis, Merino Wool, Mother of Pearl and Silk Threads",
       size: "8 H Ft.",
-     
-      
     },
-      {
-        id: 12,
-        img: "/images/nava/lily.svg",
-        author: "Pathways To Liberation",
-        material: "Stainless steel ,High quality Oil based paint",
+    {
+      id: 12,
+      img: "/images/nava/lily.svg",
+      author: "Pathways To Liberation",
+      material: "Stainless steel ,High quality Oil based paint",
       size: "12 H Ft.",
-      },
+    },
     {
       id: 2,
-      img: "/images/nava/flower2.png",
+      img: "/images/nava/flower.svg",
       author: "Ethereal Echoes",
       material: "Brass and Bronze",
       size: "18 H Ft.",
     },
     {
-        id: 3,
-        img: "/images/nava/white.png",
-        author: "Respledent Vistas",
-        material: "Pashmina Wool and Muga Silk",
-        size: "9 L Ft. x 11 B Ft.",
-      },
+      id: 3,
+      img: "/images/nava/white.png",
+      author: "Respledent Vistas",
+      material: "Pashmina Wool and Muga Silk",
+      size: "9 L Ft. x 11 B Ft.",
+    },
     {
       id: 4,
       img: "/images/nava/black.png",
       author: "Symphonic Splendour",
       material: "Nero Marquina Marble,Pure brass wire",
-        size: "10 L Ft. x 8 B Ft.",
+      size: "10 L Ft. x 8 B Ft.",
     },
     {
-        id: 5,
-        img: "/images/nava/gold.png",
-        author: "Generational Wisdom",
-        material: "Copper-Brass wire on marble",
+      id: 5,
+      img: "/images/nava/gold.png",
+      author: "Generational Wisdom",
+      material: "Copper-Brass wire on marble",
       size: "9 H Ft. x 5 B Ft.",
-      },
+    },
     {
       id: 6,
       img: "/images/nava/w1.png",
       author: "Transcendent Peace",
       material: "Bianco Laza GL Marble",
-    size: "6 H Ft. x 4 B Ft.",
+      size: "6 H Ft. x 4 B Ft.",
     },
     {
       id: 7,
       img: "/images/nava/overview.png",
       author: "Euphoric Revelry",
       material: "Nero Marquina marble,Pure brass Wire,Lapis Lauzuli",
-    size: "8 H Ft. x 4 B Ft.",
+      size: "8 H Ft. x 4 B Ft.",
     },
     {
       id: 8,
       img: "/images/nava/red.png",
       author: "Euphoric Revelry",
       material: "Natural dyes with pigments ground from stones,leaves,flowers and roots ",
-    size: "10 L Ft. x 10 B Ft.",
+      size: "10 L Ft. x 10 B Ft.",
     },
     {
       id: 9,
       img: "/images/nava/tree.png",
       author: "The Moments of Opulence",
       material: "Copper-Brass wire on marble",
-    size: "6 H Ft. x 10 B Ft.",
+      size: "6 H Ft. x 10 B Ft.",
     },
     {
-        id: 10,
-        img: "/images/nava/w11.png",
-        author: "Temporal Drift",
-        material: "Hand-scupted natural driftwood produced for the 5th Nadi Utsav 2024",
+      id: 10,
+      img: "/images/nava/w11.png",
+      author: "Temporal Drift",
+      material: "Hand-scupted natural driftwood produced for the 5th Nadi Utsav 2024",
       size: "10 in",
-      },
-      {
-        id: 11,
-        img: "/images/nava/mockup.png",
-        author: "The Dining & Banqueting Culture",
-        material: "Charcoal and acrylic color on archival paper",
+    },
+    {
+      id: 11,
+      img: "/images/nava/mockup.png",
+      author: "The Dining & Banqueting Culture",
+      material: "Charcoal and acrylic color on archival paper",
       size: "",
-      },
-    
-  ];
+    },
+];
+
+function GroupedCardContent({ item, reversed, onImageClick }) {
+  const Info = (
+    <div className="p-4 pl-0 pb-0 rounded-lg" style={{fontFamily:'Optima'}}>
+      {item.author && (
+        <div className="text-sm md:text-base font-semibold text-gray-800 mb-1 break-words line-clamp-2">{item.author}</div>
+      )}
+      {item.title && <div className="text-xs md:text-sm text-gray-600 mb-1 break-words">Title: {item.title}</div>}
+      {item.material && <div className="text-xs md:text-sm text-gray-600 mb-1 leading-relaxed break-words line-clamp-2">Material: {item.material}</div>}
+      {item.size && <div className="text-xs md:text-sm text-gray-600 mb-1 break-words">Size: {item.size}</div>}
+    </div>
+  );
+
+  const GroupedArt = (
+    <div className="p-0 ml-0 rounded-lg">
+      <div className="flex gap-2 justify-center">
+        {item.images.map((imgSrc, index) => (
+          <Image
+            key={index}
+            src={imgSrc}
+            alt={`${item.title || "Artwork"} ${index + 1}`}
+            width={200}
+            height={350}
+            className="rounded-md object-cover cursor-pointer hover:opacity-80 transition-opacity"
+            onClick={() => onImageClick(item, index)}
+          />
+        ))}
+      </div>
+    </div>
+  );
+
+  return reversed ? (
+    <div className="flex flex-col" style={{fontFamily:'Optima'}}>
+      <div className="mb-4">{Info}</div>
+      <div>{GroupedArt}</div>
+    </div>
+  ) : (
+    <div className="flex flex-col">
+      <div className="mb-4">{GroupedArt}</div>
+      <div>{Info}</div>
+    </div>
+  );
+}
 
 function CardContent({ item, reversed, onImageClick }) {
+  if (item.isGroup) {
+    return <GroupedCardContent item={item} reversed={reversed} onImageClick={onImageClick} />;
+  }
+
   const Info = (
-    <div className="p-4 pl-0 rounded-lg w-52 md:w-52 w-36" style={{fontFamily:'Optima'}}>
+    <div className="p-4 pl-0 pb-0 rounded-lg w-52" style={{fontFamily:'Optima'}}>
       {item.author && (
         <div className="text-sm md:text-base font-semibold text-gray-800 mb-1 break-words line-clamp-2">{item.author}</div>
       )}
@@ -107,25 +151,25 @@ function CardContent({ item, reversed, onImageClick }) {
   );
 
   const Art = (
-    <div className="p-0 ml-0 rounded-lg w-52 md:w-52 w-36">
+    <div className="p-0 ml-0 rounded-lg w-52">
       <Image
         src={item.img}
         alt={item.title || "Artwork"}
         width={200}
         height={350}
-        className="rounded-md object-cover mx-auto ml-0 cursor-pointer hover:opacity-80 transition-opacity w-36 h-52 md:w-52 md:h-80"
+        className="rounded-md object-cover mx-auto ml-0 cursor-pointer hover:opacity-80 transition-opacity"
         onClick={() => onImageClick(item)}
       />
     </div>
   );
 
   return reversed ? (
-    <div className="!mb-0 flex flex-col" style={{fontFamily:'Optima'}}>
+    <div className="!mb-0 flex flex-col justify-end --bg-red-200 h-[100%]" style={{fontFamily:'Optima'}}>
       <div className="mb-4">{Info}</div>
       <div>{Art}</div>
     </div>
   ) : (
-    <div className="flex flex-col">
+    <div className="flex flex-col h-[100%]">
       <div className="mb-4">{Art}</div>
       <div>{Info}</div>
     </div>
@@ -197,11 +241,28 @@ export default function Work() {
     }
   };
 
-  const handleImageClick = (item) => {
-    setSelectedImage({
-      ...item,
-      currentImage: item.img
-    });
+  const handleImageClick = (item, imageIndex = null) => {
+    if (item.isGroup && imageIndex !== null) {
+      // For grouped images, show the specific image clicked
+      setSelectedImage({
+        ...item,
+        currentImage: item.images[imageIndex],
+        imageIndex
+      });
+    } else if (item.isGroup) {
+      // For grouped images without specific index, show first image
+      setSelectedImage({
+        ...item,
+        currentImage: item.images[0],
+        imageIndex: 0
+      });
+    } else {
+      // For single images
+      setSelectedImage({
+        ...item,
+        currentImage: item.img
+      });
+    }
   };
 
   const closePopup = () => {
@@ -227,7 +288,7 @@ export default function Work() {
   };
 
   return (
-    <div className="h-screen bg-[#F3F0ED] overflow-x-hidden flex flex-col">
+    <div className="h-screen bg-[#F3F0ED] overflow-x-hidden flex flex-col --bg-red-200">
       <style jsx>{`
         @keyframes scroll {
           0% {
@@ -243,7 +304,7 @@ export default function Work() {
           width: 100vw;
           height: 100%;
           position: relative;
-        
+
           margin-left: calc(-50vw + 50%);
         }
         
@@ -264,14 +325,22 @@ export default function Work() {
         
         .work-card {
           flex-shrink: 0;
-          margin: 0 0px;
+          margin: 0 0px !important;
           height: 100%;
           display: flex;
-          justify-content: center;
+ 
+          padding-bottom: 0px !important;
+          margin-bottom : 0px !important ;
           flex-direction: column;
           border-right: 1px solid #003677;
           padding-left: 30px;
           border-left: none;
+        }
+
+        .work-card.grouped {
+          padding-left: 30px;
+          padding-right: 30px;
+          min-width: fit-content;
         }
         
         .work-card.card-up {
@@ -327,17 +396,20 @@ export default function Work() {
         }
       `}</style>
 
-      <div className="rounded-xl overflow-hidden pt-32 md:pt-10 mb-5">
-        <Image
+      <div className="rounded-xl overflow-hidden pt-5 md:pt-5 pt-32 mb-5">
+
+           <Image
           src="/images/art/nav.svg"
           alt="navankalpa"
           width={800}
           height={250}
           className="!pb-0 object-contain w-full h-[38px] sm:h-[45px] md:h-[75px] lg:h-[75px] xl:h-[75px]"
         />
+      
+    
       </div>
 
-      <div className="flex-1 flex items-center !h-24 --bg-green-200 !mt-0" style={{fontFamily:'Optima'}}>
+      <div className="flex-1 flex items-center !h-24  --bg-green-200 !mt-0" style={{fontFamily:'Optima'}}>
         <div 
           className="work-scroll-container"
           onMouseEnter={handleMouseEnter}
@@ -367,7 +439,7 @@ export default function Work() {
             {[...workItems, ...workItems, ...workItems, ...workItems].map((item, i) => (
               <div
                 key={i}
-                className={`work-card ${
+                className={`work-card ${item.isGroup ? 'grouped' : ''} ${
                   i % 2 === 0 ? 'card-up' : 'card-down'
                 }`}
               >
@@ -382,11 +454,11 @@ export default function Work() {
       {selectedImage && (
         <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4">
         <div 
-          className="fixed inset-0 bg bg-opacity-20 backdrop-blur-md flex items-center justify-center z-50 p-4"
+          className="fixed inset-0 bg-blur bg-opacity-80 flex items-center justify-center z-50 p-4"
           onClick={closePopup}
         >
           <div 
-            className="relative max-w-4xl max-h-[90vh] bg-white rounded-lg overflow-hidden bg-[#F3F0ED]"
+            className="relative max-w-4xl max-h-[90vh] bg-white rounded-lg overflow-hidden"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close button */}
@@ -398,7 +470,7 @@ export default function Work() {
             </button>
             
             {/* Image */}
-            <div className="flex flex-col lg:flex-row ">
+            <div className="flex flex-col lg:flex-row bg-[#F3F0ED]">
               <div className="flex-1 flex items-center justify-center p-4">
                 <Image
                   src={selectedImage.currentImage || selectedImage.img}
@@ -410,7 +482,7 @@ export default function Work() {
               </div>
               
               {/* Info Panel */}
-              <div className="lg:w-80 p-6 --bg-gray-50" style={{fontFamily:'Optima'}}>
+              <div className="lg:w-80 p-6" style={{fontFamily:'Optima'}}>
                 {selectedImage.author && (
                   <div className="text-xl font-bold text-gray-800 mb-3">{selectedImage.author}</div>
                 )}
@@ -427,6 +499,40 @@ export default function Work() {
                 {selectedImage.size && (
                   <div className="text-base text-gray-600 mb-2">
                     <span className="font-semibold">Size:</span> {selectedImage.size}
+                  </div>
+                )}
+                
+                {/* For grouped images, show navigation */}
+                {selectedImage.isGroup && (
+                  <div className="mt-6 pt-4 border-t border-gray-300">
+                    <div className="text-sm text-gray-600 mb-3">
+                      Image {(selectedImage.imageIndex || 0) + 1} of {selectedImage.images.length}
+                    </div>
+                    <div className="flex gap-2">
+                      {selectedImage.images.map((imgSrc, index) => (
+                        <button
+                          key={index}
+                          onClick={() => setSelectedImage({
+                            ...selectedImage,
+                            currentImage: imgSrc,
+                            imageIndex: index
+                          })}
+                          className={`relative overflow-hidden rounded border-2 transition-all ${
+                            index === selectedImage.imageIndex 
+                              ? 'border-blue-500 ring-2 ring-blue-200' 
+                              : 'border-gray-300 hover:border-gray-400'
+                          }`}
+                        >
+                          <Image
+                            src={imgSrc}
+                            alt={`${selectedImage.title} ${index + 1}`}
+                            width={60}
+                            height={80}
+                            className="object-cover"
+                          />
+                        </button>
+                      ))}
+                    </div>
                   </div>
                 )}
               </div>

@@ -21,7 +21,7 @@ export default function Unveiling() {
       </section>
 
       {/* Section 2 - Content with Footer */}
-      <section className="snap-start snap-always flex flex-col">
+      <section className="snap-start snap-always flex flex-col pb-[50px]">
         <div className="flex-1 flex items-center justify-center px-6 md:px-20 py-12 pb-0">
           <div className="text-base md:text-lg leading-relaxed text-[#1e1e1e] space-y-2 max-w-5xl mx-auto font-sans text-justify md:pb-0" style={{fontFamily:'Optima'}}>
             <p>
@@ -49,7 +49,7 @@ export default function Unveiling() {
             </p>
           </div>
         </div>
-        <Footer />
+        {/* <Footer /> */}
       </section>
     </div>
   );

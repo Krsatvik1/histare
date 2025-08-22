@@ -7,8 +7,8 @@ const GOI = () => {
     <>
       <Navbar />
 
-      <section className="w-full pt-15 ">
-        <div className="w-full flex flex-col items-center text-center space-y-12">
+      <section className="h-[100vh] w-full pt-15 --bg-red-200 flex flex-col justify-center">
+        <div className="w-full flex flex-col items-center text-center space-y-12 --bg-blue-200">
           <h2
             className="text-4xl md:text-5xl text-[#3c597B] pb-20"
             style={{ fontFamily: 'Rofane', fontStyle: 'italic' }}
