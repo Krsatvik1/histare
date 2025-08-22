@@ -98,11 +98,11 @@ function CardContent({ item, reversed, onImageClick }) {
   const Info = (
     <div className="p-4 pl-0 rounded-lg w-52 md:w-52 w-36" style={{fontFamily:'Optima'}}>
       {item.author && (
-        <div className="text-sm md:text-base font-semibold text-gray-800 mb-1">{item.author}</div>
+        <div className="text-sm md:text-base font-semibold text-gray-800 mb-1 break-words line-clamp-2">{item.author}</div>
       )}
-      {item.title && <div className="text-xs md:text-sm text-gray-600 mb-1">Title: {item.title}</div>}
-      {item.material && <div className="text-xs md:text-sm text-gray-600 mb-1 leading-relaxed">Material: {item.material}</div>}
-      {item.size && <div className="text-xs md:text-sm text-gray-600 mb-1">Size: {item.size}</div>}
+      {item.title && <div className="text-xs md:text-sm text-gray-600 mb-1 break-words">Title: {item.title}</div>}
+      {item.material && <div className="text-xs md:text-sm text-gray-600 mb-1 leading-relaxed break-words line-clamp-2">Material: {item.material}</div>}
+      {item.size && <div className="text-xs md:text-sm text-gray-600 mb-1 break-words">Size: {item.size}</div>}
     </div>
   );
 
@@ -333,7 +333,7 @@ export default function Work() {
           alt="navankalpa"
           width={800}
           height={250}
-          className="!pb-0 object-contain w-full h-[45px] sm:h-[50px] md:h-[75px] lg:h-[75px] xl:h-[75px]"
+          className="!pb-0 object-contain w-full h-[38px] sm:h-[55px] md:h-[75px] lg:h-[75px] xl:h-[75px]"
         />
       </div>
 
