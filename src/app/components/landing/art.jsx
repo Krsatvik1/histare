@@ -464,11 +464,11 @@ export default function Work() {
           alt="artthakya"
           width={800}
           height={250}
-          className="object-contain w-full --h-[75px] sm:h-[60px] md:h-[80px] lg:h-[90px] xl:h-[110px] bg-blue-200"
+          className="object-contain w-full --h-[75px] sm:h-[60px] md:h-[80px] lg:h-[90px] xl:h-[110px] --bg-blue-200"
         />
       </div>
 
-      <div className="flex-1 flex items-center bg-green-200" style={{fontFamily:'Optima'}}>
+      <div className="flex-1 flex items-center --bg-green-200" style={{fontFamily:'Optima'}}>
         <div 
           className="work-scroll-container"
           onMouseEnter={handleMouseEnter}
