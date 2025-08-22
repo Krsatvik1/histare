@@ -161,12 +161,12 @@ function GroupedCardContent({ item, reversed, onImageClick }) {
   const Info = (
     <div className="p-4 pl-0 pb-0 rounded-lg" style={{fontFamily:'Optima'}}>
       {item.author && (
-        <div className="text-sm md:text-base font-semibold text-gray-800 mb-1">{item.author}</div>
+        <div className="text-sm md:text-base font-semibold text-gray-800 mb-1 break-words line-clamp-2">{item.author}</div>
       )}
-      {item.title && <div className="text-xs md:text-sm text-gray-600 mb-1">Title: {item.title}</div>}
-      {item.medium && <div className="text-xs md:text-sm text-gray-600 mb-1 leading-relaxed">Medium: {item.medium}</div>}
-      {item.size && <div className="text-xs md:text-sm text-gray-600 mb-1">Size: {item.size}</div>}
-      {item.year && <div className="text-xs md:text-sm text-gray-600">Year: {item.year}</div>}
+      {item.title && <div className="text-xs md:text-sm text-gray-600 mb-1 break-words">Title: {item.title}</div>}
+      {item.medium && <div className="text-xs md:text-sm text-gray-600 mb-1 leading-relaxed break-words line-clamp-2">Medium: {item.medium}</div>}
+      {item.size && <div className="text-xs md:text-sm text-gray-600 mb-1 break-words">Size: {item.size}</div>}
+      {item.year && <div className="text-xs md:text-sm text-gray-600 break-words">Year: {item.year}</div>}
     </div>
   );
 
@@ -209,12 +209,12 @@ function CardContent({ item, reversed, onImageClick }) {
   const Info = (
     <div className="p-4 pl-0 pb-0 rounded-lg w-52" style={{fontFamily:'Optima'}}>
       {item.author && (
-        <div className="text-sm md:text-base font-semibold text-gray-800 mb-1">{item.author}</div>
+        <div className="text-sm md:text-base font-semibold text-gray-800 mb-1 break-words line-clamp-2">{item.author}</div>
       )}
-      {item.title && <div className="text-xs md:text-sm text-gray-600 mb-1">Title: {item.title}</div>}
-      {item.medium && <div className="text-xs md:text-sm text-gray-600 mb-1 leading-relaxed">Medium: {item.medium}</div>}
-      {item.size && <div className="text-xs md:text-sm text-gray-600 mb-1">Size: {item.size}</div>}
-      {item.year && <div className="text-xs md:text-sm text-gray-600">Year: {item.year}</div>}
+      {item.title && <div className="text-xs md:text-sm text-gray-600 mb-1 break-words">Title: {item.title}</div>}
+      {item.medium && <div className="text-xs md:text-sm text-gray-600 mb-1 leading-relaxed break-words line-clamp-2">Medium: {item.medium}</div>}
+      {item.size && <div className="text-xs md:text-sm text-gray-600 mb-1 break-words">Size: {item.size}</div>}
+      {item.year && <div className="text-xs md:text-sm text-gray-600 break-words">Year: {item.year}</div>}
     </div>
   );
 
