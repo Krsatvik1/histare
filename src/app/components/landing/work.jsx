@@ -23,7 +23,7 @@ const workItems = [
       },
     {
       id: 2,
-      img: "/images/nava/flower.png",
+      img: "/images/nava/flower2.png",
       author: "Ethereal Echoes",
       material: "Brass and Bronze",
       size: "18 H Ft.",
