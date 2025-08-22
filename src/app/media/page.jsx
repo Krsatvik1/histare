@@ -221,7 +221,7 @@ export default function MediaPage() {
      <div className="max-w-7xl mx-auto px-4 py-8">
         <div className="flex flex-col md:flex-row gap-4 mb-8">
           {/* Search */}
-          <div className="relative flex-1">
+          {/* <div className="relative flex-1">
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
             <input
               type="text"
@@ -231,10 +231,10 @@ export default function MediaPage() {
               className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#3c597B] focus:border-transparent text-lg"
               suppressHydrationWarning={true}
             />
-          </div>
+          </div> */}
 
           {/* Category Filter */}
-          <div className="flex items-center space-x-2 min-w-max">
+          {/* <div className="flex items-center space-x-2 min-w-max">
             <Filter className="text-gray-400 w-5 h-5" />
             <select
               value={selectedCategory}
@@ -246,11 +246,11 @@ export default function MediaPage() {
                 <option key={category} value={category}>{category}</option>
               ))}
             </select>
-          </div>
+          </div> */}
         </div>
 
         {/* Results count */}
-        <div className="flex justify-between items-center mb-8">
+        {/* <div className="flex justify-between items-center mb-8">
           <p className="text-gray-600 text-lg">
             Showing {filteredArticles.length} of {mediaArticles.length} articles
           </p>
@@ -266,7 +266,7 @@ export default function MediaPage() {
               Clear all filters
             </button>
           )}
-        </div>
+        </div> */}
 
         {/* Articles Grid */}
         {filteredArticles.length > 0 ? (

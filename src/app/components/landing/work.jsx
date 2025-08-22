@@ -119,7 +119,7 @@ function CardContent({ item, reversed, onImageClick }) {
   );
 
   return reversed ? (
-    <div className="flex flex-col" style={{fontFamily:'Optima'}}>
+    <div className="!mb-0 flex flex-col" style={{fontFamily:'Optima'}}>
       <div className="mb-4">{Info}</div>
       <div>{Art}</div>
     </div>
@@ -242,7 +242,7 @@ export default function Work() {
           width: 100vw;
           height: 550px;
           position: relative;
-          padding-bottom: 30px;
+        
           margin-left: calc(-50vw + 50%);
         }
         

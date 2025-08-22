@@ -232,12 +232,12 @@ function CardContent({ item, reversed, onImageClick }) {
   );
 
   return reversed ? (
-    <div className="flex flex-col" style={{fontFamily:'Optima'}}>
+    <div className="!mb-0 flex flex-col justify-end --bg-red-200 h-[100%]" style={{fontFamily:'Optima'}}>
       <div className="mb-4">{Info}</div>
       <div>{Art}</div>
     </div>
   ) : (
-    <div className="flex flex-col">
+    <div className="flex flex-col h-[100%]">
       <div className="mb-4">{Art}</div>
       <div>{Info}</div>
     </div>
@@ -372,7 +372,7 @@ export default function Work() {
           width: 100vw;
           height: 550px;
           position: relative;
-          padding-bottom: 30px;
+
           margin-left: calc(-50vw + 50%);
         }
         
@@ -387,10 +387,12 @@ export default function Work() {
         
         .work-card {
           flex-shrink: 0;
-          margin: 0 0px;
+          margin: 0 0px !important;
           height: 100%;
           display: flex;
-          justify-content: center;
+ 
+          padding-bottom: 0px !important;
+          margin-bottom : 0px !important ;
           flex-direction: column;
           border-right: 1px solid #003677;
           padding-left: 30px;
