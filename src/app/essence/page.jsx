@@ -72,6 +72,7 @@ export default function FullPageEssence() {
             display: flex;
             animation: scrollIcons 60s linear infinite;
             width: fit-content;
+            align-items: center;
           }
 
           .icons-scroll-track:hover {
@@ -80,11 +81,28 @@ export default function FullPageEssence() {
 
           .icon-item {
             flex-shrink: 0;
+            width: 140px;
+            height: 35px;
+            object-fit: contain;
+          }
+
+          @media (max-width: 768px) {
+            .icon-item {
+              width: 100px;
+              height: 25px;
+            }
+          }
+
+          @media (max-width: 480px) {
+            .icon-item {
+              width: 80px;
+              height: 20px;
+            }
           }
         `}</style>
 
         <div className="w-full py-14 icons-scroll-container">
-          <div className="icons-scroll-track h-35 space-x-20 px-4 md:h-35 sm:h-30">
+          <div className="icons-scroll-track space-x-8 md:space-x-20 px-4">
             {[...icons, ...icons].map((src, index) => (
               <Image
                 key={index}
@@ -92,7 +110,8 @@ export default function FullPageEssence() {
                 alt={`icon-${index}`}
                 width={140}
                 height={35}
-                className="icon-item min-w-[120px] h-auto"
+                className="icon-item"
+                style={{ objectFit: 'contain' }}
               />
             ))}
           </div>
