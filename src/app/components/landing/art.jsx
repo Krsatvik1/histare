@@ -384,6 +384,12 @@ export default function Work() {
           height: 85%;
           transition: transform 0.3s ease-out;
         }
+
+        @media (max-width: 768px) {
+          .work-scroll-track {
+            height: 75%;
+          }
+        }
         
         .work-card {
           flex-shrink: 0;
@@ -458,13 +464,13 @@ export default function Work() {
         }
       `}</style>
 
-      <div className="rounded-xl overflow-hidden pt-5 mb-5">
+      <div className="rounded-xl overflow-hidden pt-5 md:pt-5 pt-32 mb-5">
         <Image
           src="/images/art/arth.svg"
           alt="artthakya"
           width={800}
           height={250}
-          className="!m-0 object-contain w-full --h-[75px] sm:h-[60px] md:h-[80px] lg:h-[90px] xl:h-[110px] --bg-blue-200"
+          className="!m-0 object-contain w-full h-[55px] sm:h-[60px] md:h-[80px] lg:h-[90px] xl:h-[110px]"
         />
       </div>
 

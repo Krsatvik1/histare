@@ -96,7 +96,7 @@ const workItems = [
 
 function CardContent({ item, reversed, onImageClick }) {
   const Info = (
-    <div className="p-4 pl-0 rounded-lg w-52" style={{fontFamily:'Optima'}}>
+    <div className="p-4 pl-0 rounded-lg w-52 md:w-52 w-36" style={{fontFamily:'Optima'}}>
       {item.author && (
         <div className="text-sm md:text-base font-semibold text-gray-800 mb-1">{item.author}</div>
       )}
@@ -107,13 +107,13 @@ function CardContent({ item, reversed, onImageClick }) {
   );
 
   const Art = (
-    <div className="p-0 ml-0 rounded-lg w-52">
+    <div className="p-0 ml-0 rounded-lg w-52 md:w-52 w-36">
       <Image
         src={item.img}
         alt={item.title || "Artwork"}
         width={200}
         height={350}
-        className="rounded-md object-cover mx-auto ml-0 cursor-pointer hover:opacity-80 transition-opacity"
+        className="rounded-md object-cover mx-auto ml-0 cursor-pointer hover:opacity-80 transition-opacity w-36 h-52 md:w-52 md:h-80"
         onClick={() => onImageClick(item)}
       />
     </div>
@@ -255,6 +255,12 @@ export default function Work() {
           height: 85%;
           transition: transform 0.3s ease-out;
         }
+
+        @media (max-width: 768px) {
+          .work-scroll-track {
+            height: 75%;
+          }
+        }
         
         .work-card {
           flex-shrink: 0;
@@ -321,13 +327,13 @@ export default function Work() {
         }
       `}</style>
 
-      <div className="rounded-xl overflow-hidden pt-10 mb-5">
+      <div className="rounded-xl overflow-hidden pt-32 md:pt-10 mb-5">
         <Image
           src="/images/art/nav.svg"
           alt="navankalpa"
           width={800}
           height={250}
-          className="!pb-0 object-contain w-full --h-[50px] sm:h-[60px] md:h-[75px] lg:h-[75px] xl:h-[75px] --bg-blue-200"
+          className="!pb-0 object-contain w-full h-[45px] sm:h-[50px] md:h-[75px] lg:h-[75px] xl:h-[75px]"
         />
       </div>
 
