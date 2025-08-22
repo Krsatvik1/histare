@@ -159,7 +159,7 @@ const workItems = [
 
 function GroupedCardContent({ item, reversed, onImageClick }) {
   const Info = (
-    <div className="p-4 pl-0 pb-0 rounded-lg --w-80" style={{fontFamily:'Optima'}}>
+    <div className="p-4 pl-0 pb-0 rounded-lg" style={{fontFamily:'Optima'}}>
       {item.author && (
         <div className="text-sm md:text-base font-semibold text-gray-800 mb-1">{item.author}</div>
       )}
@@ -171,7 +171,7 @@ function GroupedCardContent({ item, reversed, onImageClick }) {
   );
 
   const GroupedArt = (
-    <div className="p-0 ml-0 pr-4  rounded-lg w-[max-content]">
+    <div className="p-0 ml-0 rounded-lg">
       <div className="flex gap-2 justify-center">
         {item.images.map((imgSrc, index) => (
           <Image
@@ -190,7 +190,7 @@ function GroupedCardContent({ item, reversed, onImageClick }) {
 
   return reversed ? (
     <div className="flex flex-col" style={{fontFamily:'Optima'}}>
-      <div className="--mb-4">{Info}</div>
+      <div className="mb-4">{Info}</div>
       <div>{GroupedArt}</div>
     </div>
   ) : (
@@ -399,7 +399,8 @@ export default function Work() {
 
         .work-card.grouped {
           padding-left: 30px;
-          width: auto;
+          padding-right: 30px;
+          min-width: fit-content;
         }
         
         .work-card.card-up {
@@ -538,7 +539,7 @@ export default function Work() {
               </div>
               
               {/* Info Panel */}
-              <div className="lg:w-80 p-6 --bg-gray-50" style={{fontFamily:'Optima'}}>
+              <div className="lg:w-80 p-6" style={{fontFamily:'Optima'}}>
                 {selectedImage.author && (
                   <div className="text-xl font-bold text-gray-800 mb-3">{selectedImage.author}</div>
                 )}
