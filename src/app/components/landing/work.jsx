@@ -333,7 +333,7 @@ export default function Work() {
           alt="navankalpa"
           width={800}
           height={250}
-          className="!pb-0 object-contain w-full h-[38px] sm:h-[55px] md:h-[75px] lg:h-[75px] xl:h-[75px]"
+          className="!pb-0 object-contain w-full h-[38px] sm:h-[45px] md:h-[75px] lg:h-[75px] xl:h-[75px]"
         />
       </div>
 
