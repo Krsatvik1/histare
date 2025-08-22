@@ -356,7 +356,7 @@ export default function Work() {
   };
 
   return (
-    <div className="h-screen bg-[#F3F0ED] overflow-x-hidden flex flex-col bg-red-200">
+    <div className="h-screen bg-[#F3F0ED] overflow-x-hidden flex flex-col --bg-red-200">
       <style jsx>{`
         @keyframes scroll {
           0% {
