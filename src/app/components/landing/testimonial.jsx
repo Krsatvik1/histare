@@ -137,7 +137,7 @@ function Testimonial() {
       <div className="w-full max-w-4xl --bg-blue-200 flex flex-col align-center">
         <h2
           className="text-4xl md:text-5xl --mb-12 pb-16 text-[#3c597B] text-center md:pt-5"
-          style={{ fontFamily: 'Optima' }}
+          style={{ fontFamily: 'Playfair Display' }}
         >
           Testimonials
         </h2>

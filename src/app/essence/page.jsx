@@ -51,7 +51,7 @@ export default function FullPageEssence() {
         </div>
       </section>
 
-      {/* Section 3: Icons */}
+      {/* Section 3: Enhanced Icons Carousel */}
       <section className="snap-start snap-always h-screen flex items-center justify-center text-[#3c597B] px-4">
         <style jsx>{`
           @keyframes scrollIcons {
@@ -66,13 +66,28 @@ export default function FullPageEssence() {
           .icons-scroll-container {
             overflow: hidden;
             width: 100%;
+            mask: linear-gradient(
+              90deg,
+              transparent,
+              white 10%,
+              white 90%,
+              transparent
+            );
+            -webkit-mask: linear-gradient(
+              90deg,
+              transparent,
+              white 10%,
+              white 90%,
+              transparent
+            );
           }
 
           .icons-scroll-track {
             display: flex;
-            animation: scrollIcons 60s linear infinite;
+            animation: scrollIcons 40s linear infinite;
             width: fit-content;
             align-items: center;
+            gap: 80px;
           }
 
           .icons-scroll-track:hover {
@@ -81,35 +96,81 @@ export default function FullPageEssence() {
 
           .icon-item {
             flex-shrink: 0;
-            width: 140px;
-            height: 35px;
+            width: 480px;
+            height: 150px;
             object-fit: contain;
+            transition: transform 0.3s ease;
+          }
+
+          .icon-item:hover {
+            transform: scale(1.1);
+          }
+
+          @media (max-width: 1024px) {
+            .icon-item {
+              width: 420px;
+              height: 120px;
+            }
+            .icons-scroll-track {
+              gap: 70px;
+            }
           }
 
           @media (max-width: 768px) {
             .icon-item {
-              width: 100px;
-              height: 25px;
+              width: 300px;
+              height: 90px;
+            }
+            .icons-scroll-track {
+              gap: 60px;
             }
           }
 
           @media (max-width: 480px) {
             .icon-item {
-              width: 80px;
-              height: 20px;
+              width: 225px;
+              height: 68px;
+            }
+            .icons-scroll-track {
+              gap: 45px;
             }
           }
         `}</style>
 
-        <div className="w-full py-14 icons-scroll-container">
-          <div className="icons-scroll-track space-x-8 md:space-x-20 px-4">
-            {[...icons, ...icons].map((src, index) => (
+        <div className="w-full py-8 icons-scroll-container bg-red-200">
+          <div className="icons-scroll-track">
+            {/* First set of icons */}
+            {icons.map((src, index) => (
               <Image
-                key={index}
+                key={`first-${index}`}
                 src={src}
-                alt={`icon-${index}`}
-                width={140}
-                height={35}
+                alt={`icon-${index + 1}`}
+                width={960}
+                height={300}
+                className="icon-item"
+                style={{ objectFit: 'contain' }}
+              />
+            ))}
+            {/* Second set of icons for seamless loop */}
+            {icons.map((src, index) => (
+              <Image
+                key={`second-${index}`}
+                src={src}
+                alt={`icon-${index + 1}`}
+                width={960}
+                height={300}
+                className="icon-item"
+                style={{ objectFit: 'contain' }}
+              />
+            ))}
+            {/* Third set for extra smoothness */}
+            {icons.map((src, index) => (
+              <Image
+                key={`third-${index}`}
+                src={src}
+                alt={`icon-${index + 1}`}
+                width={480}
+                height={150}
                 className="icon-item"
                 style={{ objectFit: 'contain' }}
               />
