@@ -137,7 +137,7 @@ export default function FullPageEssence() {
           }
         `}</style>
 
-        <div className="w-full py-8 icons-scroll-container bg-red-200">
+        <div className="w-full py-8 icons-scroll-container --bg-red-200">
           <div className="icons-scroll-track">
             {/* First set of icons */}
             {icons.map((src, index) => (
