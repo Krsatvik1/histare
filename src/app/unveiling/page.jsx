@@ -21,9 +21,9 @@ export default function Unveiling() {
       </section>
 
       {/* Section 2 - Content with Footer */}
-      <section className="snap-start snap-always flex flex-col pb-[50px]">
-        <div className="flex-1 flex items-center justify-center px-6 md:px-20 py-12 pb-0">
-          <div className="text-base md:text-lg leading-relaxed text-[#1e1e1e] space-y-2 max-w-5xl mx-auto font-sans text-justify md:pb-0" style={{fontFamily:'Optima'}}>
+      <section className="snap-start snap-always h-screen --bg-green-200 flex items-center justify-center px-6 md:px-20">
+        {/* <div className="h-[100vh] bg-blue-200 flex-1 flex items-center justify-center px-6 md:px-20 py-12 pb-0 "> */}
+          <div className="--bg-red-200 text-base md:text-lg leading-relaxed text-[#1e1e1e] space-y-2 max-w-5xl mx-auto font-sans text-justify" style={{fontFamily:'Optima'}}>
             <p>
               At Histare, we <em>don't just curate art;</em> we nurture stories that span generations, weaving the fabric of our rich cultural heritage with the threads of today's boundless creativity. Our journey is more than a pursuit—it is a deep, heartfelt commitment to preserving the artistry that has shaped us and ensuring that it resonates with the future.
             </p>
@@ -47,7 +47,7 @@ export default function Unveiling() {
             <p>
               With every display, every design, and every collection we nurture, we hope to leave behind a legacy—not just of art, but of love, respect, and the unwavering belief that the stories of our past deserve to be carried forward with the same passion and care that brought them into being.
             </p>
-          </div>
+          {/* </div> */}
         </div>
         {/* <Footer /> */}
       </section>
