@@ -126,9 +126,9 @@ export default function Insights() {
                 <button
                   key={report.id}
                   onClick={() => handleCardClick(report)}
-                  className="font-light transition-transform hover:scale-105 w-full max-w-[200px] cursor-pointer border-none bg-transparent p-0"
+                  className="--bg-red-200 p-[20px] --h-[400px] flex flex-col justify-start font-light transition-transform hover:scale-105 w-full max-w-[200px] cursor-pointer border-none --bg-transparent p-0"
                 >
-                  <div className="flex flex-col items-center space-y-3 text-center w-full">
+                  <div className="--bg-blue-200 flex flex-col items-center justify-start space-y-3 text-center w-full">
                     <div className="w-full aspect-[4/4] relative overflow-hidden rounded-lg shadow-md bg-gray-100">
                       <img
                         src={report.img}
