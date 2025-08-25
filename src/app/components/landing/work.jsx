@@ -14,7 +14,7 @@ const workItems = [
     },
     {
       id: 12,
-      img: "/images/nava/lily.svg",
+      img: "/images/nava/flower5.svg",
       author: "Pathways To Liberation",
       material: "Stainless steel ,High quality Oil based paint",
       size: "12 H Ft.",
@@ -57,6 +57,7 @@ const workItems = [
     {
       id: 7,
       img: "/images/nava/overview.png",
+     
       author: "Euphoric Revelry",
       material: "Nero Marquina marble,Pure brass Wire,Lapis Lauzuli",
       size: "8 H Ft. x 4 B Ft.",
@@ -64,6 +65,7 @@ const workItems = [
     {
       id: 8,
       img: "/images/nava/red.png",
+       popup_image:   "/images/nava/overview2.svg",
       author: "Euphoric Revelry",
       material: "Natural dyes with pigments ground from stones,leaves,flowers and roots ",
       size: "10 L Ft. x 10 B Ft.",
@@ -92,6 +94,12 @@ const workItems = [
 ];
 
 function GroupedCardContent({ item, reversed, onImageClick }) {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const handleThumbnailClick = (index) => {
+    setCurrentImageIndex(index);
+  };
+
   const Info = (
     <div className="p-4 pl-0 pb-0 rounded-lg" style={{fontFamily:'Optima'}}>
       {item.author && (
@@ -104,18 +112,44 @@ function GroupedCardContent({ item, reversed, onImageClick }) {
   );
 
   const GroupedArt = (
-    <div className="p-0 ml-0 rounded-lg">
-      <div className="flex gap-2 justify-center">
+    <div className="p-0 ml-0 rounded-lg w-52">
+      {/* Main Image */}
+      <div className="mb-3">
+        <Image
+          src={item.images[currentImageIndex]}
+          alt={`${item.title || "Artwork"} ${currentImageIndex + 1}`}
+          width={200}
+          height={350}
+          className="rounded-md object-cover cursor-pointer hover:opacity-80 transition-opacity w-full"
+          onClick={() => onImageClick(item, currentImageIndex)}
+        />
+      </div>
+      
+      {/* Image Counter */}
+      {/* <div className="text-xs text-gray-600 text-center mb-2" style={{fontFamily:'Optima'}}>
+        {currentImageIndex + 1}/{item.images.length}
+      </div> */}
+      
+      {/* Thumbnails */}
+      <div className="flex gap-1 justify-center">
         {item.images.map((imgSrc, index) => (
-          <Image
+          <button
             key={index}
-            src={imgSrc}
-            alt={`${item.title || "Artwork"} ${index + 1}`}
-            width={200}
-            height={350}
-            className="rounded-md object-cover cursor-pointer hover:opacity-80 transition-opacity"
-            onClick={() => onImageClick(item, index)}
-          />
+            onClick={() => handleThumbnailClick(index)}
+            className={`relative overflow-hidden rounded border transition-all ${
+              index === currentImageIndex 
+                ? 'border-blue-500 ring-1 ring-blue-200' 
+                : 'border-gray-300 hover:border-gray-400'
+            }`}
+          >
+            <Image
+              src={imgSrc}
+              alt={`${item.title || "Artwork"} ${index + 1}`}
+              width={30}
+              height={40}
+              className="object-cover"
+            />
+          </button>
         ))}
       </div>
     </div>
@@ -241,7 +275,31 @@ export default function Work() {
     }
   };
 
-  const handleImageClick = (item, imageIndex = null) => {
+  // const handleImageClick = (item, imageIndex = null) => {
+  //   if (item.isGroup && imageIndex !== null) {
+  //     // For grouped images, show the specific image clicked
+  //     setSelectedImage({
+  //       ...item,
+  //       currentImage: item.images[imageIndex],
+  //       imageIndex
+  //     });
+  //   } else if (item.isGroup) {
+  //     // For grouped images without specific index, show first image
+  //     setSelectedImage({
+  //       ...item,
+  //       currentImage: item.images[0],
+  //       imageIndex: 0
+  //     });
+  //   } else {
+  //     // For single images
+  //     setSelectedImage({
+  //       ...item,
+  //       currentImage: item.img
+  //     });
+  //   }
+  // };
+
+   const handleImageClick = (item, imageIndex = null) => {
     if (item.isGroup && imageIndex !== null) {
       // For grouped images, show the specific image clicked
       setSelectedImage({
@@ -257,10 +315,12 @@ export default function Work() {
         imageIndex: 0
       });
     } else {
-      // For single images
+      // For single images, use popup_image if available, otherwise use img
+      console.log(item.popup_image)
+      console.log(item)
       setSelectedImage({
         ...item,
-        currentImage: item.img
+        currentImage: item.popup_image || item.img
       });
     }
   };

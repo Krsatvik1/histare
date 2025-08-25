@@ -47,9 +47,9 @@ const mediaArticles = [
   // },
   {
     id: 5,
-    title: "Cultural Innovation in the Creative Economy",
+    title: "Celebrating India's 75th Republic day",
     date: "January 26, 2024",
-    excerpt: "Mr. Akhil Vadehra, CEO of Histare, was invited to the Republic Day Celebrations as a part of cultural innovation initiatives in the creative economy.",
+    excerpt: "Histare, represented by Akhil Vadehra, got a chance to become a part of the republic day parade and participate in a motivating exchange of ideas with Shri. Piyush Goyal, Hon'ble Minister of Commerce and Industry,  Consumer Affairs, Food and Public Distribution and Textiles.",
     category: "Recognition",
     tags: ["Republic Day", "Akhil Vadehra", "Creative Economy"],
     image: "/images/media/republic_day_celebrations.jpg",
@@ -144,9 +144,9 @@ export default function MediaPage() {
           className="object-cover group-hover:scale-105 transition-transform duration-300"
         />
         <div className="absolute top-4 left-4">
-          <span className="bg-[#3c597B] text-white px-3 py-1 rounded-full text-xs font-medium">
+          {/* <span className="bg-[#3c597B] text-white px-3 py-1 rounded-full text-xs font-medium">
             {article.category}
-          </span>
+          </span> */}
         </div>
       </div>
       
@@ -176,7 +176,8 @@ export default function MediaPage() {
         </div>
         
         <div className="flex justify-between items-center">
-          <a
+          { article.link != "#" &&
+              <a
             href={article.link}
             className="inline-flex items-center text-[#3c597B] font-medium hover:text-[#2a4261] transition-colors"
           >
@@ -184,12 +185,15 @@ export default function MediaPage() {
             <ExternalLink className="w-4 h-4 ml-1" />
           </a>
           
+          }
+        
+          
           <button className="text-gray-400 hover:text-gray-600 transition-colors" suppressHydrationWarning={true}>
-            <Tag className="w-4 h-4" />
+            {/* <Tag className="w-4 h-4" /> */}
           </button>
         </div>
       </div>
-    </div>
+    </div>  
   );
 
   return (

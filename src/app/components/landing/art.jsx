@@ -158,6 +158,12 @@ const workItems = [
   ];
 
 function GroupedCardContent({ item, reversed, onImageClick }) {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const handleThumbnailClick = (index) => {
+    setCurrentImageIndex(index);
+  };
+
   const Info = (
     <div className="p-4 pl-0 pb-0 rounded-lg" style={{fontFamily:'Optima'}}>
       {item.author && (
@@ -171,19 +177,45 @@ function GroupedCardContent({ item, reversed, onImageClick }) {
   );
 
   const GroupedArt = (
-    <div className="p-0 ml-0 rounded-lg">
-      <div className="flex gap-2 justify-center">
-        {item.images.map((imgSrc, index) => (
-          <Image
-            key={index}
-            src={imgSrc}
-            alt={`${item.title || "Artwork"} ${index + 1}`}
-            width={200}
-            height={350}
-            className="rounded-md object-cover cursor-pointer hover:opacity-80 transition-opacity"
-            onClick={() => onImageClick(item, index)}
-          />
-        ))}
+    <div className="p-0 ml-0 rounded-lg w-52">
+      {/* Main Image */}
+      <div className="mb-3">
+        <Image
+          src={item.images[currentImageIndex]}
+          alt={`${item.title || "Artwork"} ${currentImageIndex + 1}`}
+          width={200}
+          height={350}
+          className="rounded-md object-cover cursor-pointer hover:opacity-80 transition-opacity w-full"
+          onClick={() => onImageClick(item, currentImageIndex)}
+        />
+      </div>
+      
+      {/* Image Counter and Navigation */}
+      <div className="mt-2 pt-2 border-t border-gray-200">
+        {/* <div className="text-xs text-gray-600 text-left mb-3 ---bg-red-200" style={{fontFamily:'Optima'}}>
+          Image {currentImageIndex + 1} of {item.images.length}
+        </div> */}
+        <div className="flex gap-2 justify-start">
+          {item.images.map((imgSrc, index) => (
+            <button
+              key={index}
+              onClick={() => handleThumbnailClick(index)}
+              className={`relative overflow-hidden rounded border-2 transition-all ${
+                index === currentImageIndex 
+                  ? 'border-blue-500 ring-2 ring-blue-200' 
+                  : 'border-gray-300 hover:border-gray-400'
+              }`}
+            >
+              <Image
+                src={imgSrc}
+                alt={`${item.title || "Artwork"} ${index + 1}`}
+                width={35}
+                height={50}
+                className="object-cover"
+              />
+            </button>
+          ))}
+        </div>
       </div>
     </div>
   );
@@ -195,7 +227,7 @@ function GroupedCardContent({ item, reversed, onImageClick }) {
     </div>
   ) : (
     <div className="flex flex-col">
-      <div className="mb-4">{GroupedArt}</div>
+      <div className="">{GroupedArt}</div>
       <div>{Info}</div>
     </div>
   );
