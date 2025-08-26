@@ -44,7 +44,7 @@ const reports = [
     id: 6,
     title: 'How Sustainability Has Shaped Up In Traditional Culture',
     type: 'Exploratory Report',
-    img: "/images/insights/Sustainability.png",
+    img: "/images/insights/sustainability.png",
     pdf: "/pdf/Sustainability.pdf",
   },
   {
