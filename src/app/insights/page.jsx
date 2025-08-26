@@ -11,6 +11,7 @@ const reports = [
     type: 'Impact Report',
     img: "/images/insights/reflection.png",
     pdf: "/pdf/impact.pdf",
+    pdf_title : "impact.pdf"
   },
   {
     id: 2,
@@ -18,6 +19,7 @@ const reports = [
     type: 'Craft practices Report',
     img: "/images/insights/gestalt.png",
     pdf: "/pdf/gestalt.pdf",
+      pdf_title : "gestalt.pdf"
   },
   {
     id: 3,
@@ -66,7 +68,7 @@ const reports = [
     title: 'Cubism',
     type: 'Exploratory Report',
     img: "/images/insights/cubism.png",
-    pdf: "/pdf/exploratory_report.pdf",
+    pdf: "/pdf/Sustainability.pdf",
   },
   {
     id: 10,
