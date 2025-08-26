@@ -44,7 +44,7 @@ const reports = [
     id: 6,
     title: 'How Sustainability Has Shaped Up In Traditional Culture',
     type: 'Exploratory Report',
-    img: "/images/insights/sustainability.png",
+    img: "/images/insights/Sustainability.png",
     pdf: "/pdf/sustainability.pdf",
   },
   {
@@ -66,7 +66,7 @@ const reports = [
     title: 'Cubism',
     type: 'Exploratory Report',
     img: "/images/insights/cubism.png",
-    pdf: "/pdf/cubism.pdf",
+    pdf: "/pdf/newname.pdf",
   },
   {
     id: 10,
