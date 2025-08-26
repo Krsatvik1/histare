@@ -38,7 +38,7 @@ const reports = [
     title: 'The Art Gestalt',
     type: 'Market Research Report',
     img: "/images/insights/art_gestalt.png",
-    pdf: "/pdf/art.pdf",
+    pdf: "/pdf/Art.pdf",
   },
   {
     id: 6,
