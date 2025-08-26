@@ -68,7 +68,7 @@ const reports = [
     title: 'Cubism',
     type: 'Exploratory Report',
     img: "/images/insights/cubism.png",
-    pdf: "/pdf/Sustainability.pdf",
+    pdf: "/pdf/Cubism.pdf",
   },
   {
     id: 10,
