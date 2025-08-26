@@ -17,7 +17,7 @@ const reports = [
     title: 'The Art Gestalt',
     type: 'Craft practices Report',
     img: "/images/insights/gestalt.png",
-    pdf: "/pdf/gestalt1.pdf",
+    pdf: "/pdf/gestalt.pdf",
   },
   {
     id: 3,
@@ -45,7 +45,7 @@ const reports = [
     title: 'How Sustainability Has Shaped Up In Traditional Culture',
     type: 'Exploratory Report',
     img: "/images/insights/Sustainability.png",
-    pdf: "/pdf/sustainability.pdf",
+    pdf: "/pdf/Sustainability.pdf",
   },
   {
     id: 7,
@@ -66,7 +66,7 @@ const reports = [
     title: 'Cubism',
     type: 'Exploratory Report',
     img: "/images/insights/cubism.png",
-    pdf: "/pdf/newname.pdf",
+    pdf: "/pdf/Exploratory_report.pdf",
   },
   {
     id: 10,
