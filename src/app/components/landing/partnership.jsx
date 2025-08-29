@@ -117,7 +117,7 @@ function Partnership() {
 
         .logo {
           flex-shrink: 0;
-          margin: 0 2rem;
+          margin: 0.15rem;
           display: flex;
           align-items: center;
           justify-content: center;

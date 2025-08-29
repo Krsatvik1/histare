@@ -30,7 +30,8 @@ const workItems = [
         title: "Ready",
         medium: "Oil on Canvas",
         size: '36" x 60"',
-        year: ""
+        year: "",
+        orientation: 'landscape'
       },
     {
       id: 4,
@@ -57,7 +58,8 @@ const workItems = [
       title: "Live Life To The Fullest",
       medium: "Oil on canvas",
       size: "",
-      year: "2017"
+      year: "2017",
+      orientation : "landscape"
     },
     {
       id: 7,
@@ -153,7 +155,9 @@ const workItems = [
         title: "Peacocks",
         medium: "Natural earth ochre colors on handmade paper",
         size: "40 x 56 in",
-        year: ""
+        year: "",
+        year: "",
+        orientation: "landscape"
       },
   ];
 
@@ -170,9 +174,8 @@ function GroupedCardContent({ item, reversed, onImageClick }) {
         <div className="text-sm md:text-base font-semibold text-gray-800 mb-1 break-words line-clamp-2">{item.author}</div>
       )}
       {item.title && <div className="text-xs md:text-sm text-gray-600 mb-1 break-words">Title: {item.title}</div>}
-      {item.medium && <div className="text-xs md:text-sm text-gray-600 mb-1 leading-relaxed break-words line-clamp-2">Medium: {item.medium}</div>}
+      {item.material && <div className="text-xs md:text-sm text-gray-600 mb-1 leading-relaxed break-words line-clamp-2">Material: {item.material}</div>}
       {item.size && <div className="text-xs md:text-sm text-gray-600 mb-1 break-words">Size: {item.size}</div>}
-      {item.year && <div className="text-xs md:text-sm text-gray-600 break-words">Year: {item.year}</div>}
     </div>
   );
 
@@ -180,7 +183,7 @@ function GroupedCardContent({ item, reversed, onImageClick }) {
     <div className="p-0 ml-0 rounded-lg w-52">
       {/* Main Image */}
       <div className="mb-3">
-        <Image
+       <Image
           src={item.images[currentImageIndex]}
           alt={`${item.title || "Artwork"} ${currentImageIndex + 1}`}
           width={200}
@@ -190,32 +193,32 @@ function GroupedCardContent({ item, reversed, onImageClick }) {
         />
       </div>
       
-      {/* Image Counter and Navigation */}
-      <div className="mt-2 pt-2 border-t border-gray-200">
-        {/* <div className="text-xs text-gray-600 text-left mb-3 ---bg-red-200" style={{fontFamily:'Optima'}}>
-          Image {currentImageIndex + 1} of {item.images.length}
-        </div> */}
-        <div className="flex gap-2 justify-start">
-          {item.images.map((imgSrc, index) => (
-            <button
-              key={index}
-              onClick={() => handleThumbnailClick(index)}
-              className={`relative overflow-hidden rounded border-2 transition-all ${
-                index === currentImageIndex 
-                  ? 'border-blue-500 ring-2 ring-blue-200' 
-                  : 'border-gray-300 hover:border-gray-400'
-              }`}
-            >
-              <Image
-                src={imgSrc}
-                alt={`${item.title || "Artwork"} ${index + 1}`}
-                width={35}
-                height={50}
-                className="object-cover"
-              />
-            </button>
-          ))}
-        </div>
+      {/* Image Counter */}
+      {/* <div className="text-xs text-gray-600 text-center mb-2" style={{fontFamily:'Optima'}}>
+        {currentImageIndex + 1}/{item.images.length}
+      </div> */}
+      
+      {/* Thumbnails */}
+      <div className="flex gap-1 justify-center">
+        {item.images.map((imgSrc, index) => (
+          <button
+            key={index}
+            onClick={() => handleThumbnailClick(index)}
+            className={`relative overflow-hidden rounded border transition-all ${
+              index === currentImageIndex 
+                ? 'border-blue-500 ring-1 ring-blue-200' 
+                : 'border-gray-300 hover:border-gray-400'
+            }`}
+          >
+            <Image
+              src={imgSrc}
+              alt={`${item.title || "Artwork"} ${index + 1}`}
+              width={30}
+              height={40}
+              className="object-cover"
+            />
+          </button>
+        ))}
       </div>
     </div>
   );
@@ -227,7 +230,7 @@ function GroupedCardContent({ item, reversed, onImageClick }) {
     </div>
   ) : (
     <div className="flex flex-col">
-      <div className="">{GroupedArt}</div>
+      <div className="mb-4">{GroupedArt}</div>
       <div>{Info}</div>
     </div>
   );
@@ -238,26 +241,30 @@ function CardContent({ item, reversed, onImageClick }) {
     return <GroupedCardContent item={item} reversed={reversed} onImageClick={onImageClick} />;
   }
 
+  // Determine if this is a landscape orientation card
+  const isLandscape = item.orientation === "landscape";
+  
   const Info = (
-    <div className="p-4 pl-0 pb-0 rounded-lg w-52" style={{fontFamily:'Optima'}}>
+    <div className={`p-4 pl-0 pb-0 rounded-lg ${isLandscape ? 'w-full' : 'w-52'}`} style={{fontFamily:'Optima'}}>
       {item.author && (
         <div className="text-sm md:text-base font-semibold text-gray-800 mb-1 break-words line-clamp-2">{item.author}</div>
       )}
       {item.title && <div className="text-xs md:text-sm text-gray-600 mb-1 break-words">Title: {item.title}</div>}
-      {item.medium && <div className="text-xs md:text-sm text-gray-600 mb-1 leading-relaxed break-words line-clamp-2">Medium: {item.medium}</div>}
+      {item.material && <div className="text-xs md:text-sm text-gray-600 mb-1 leading-relaxed break-words line-clamp-2">Material: {item.material}</div>}
       {item.size && <div className="text-xs md:text-sm text-gray-600 mb-1 break-words">Size: {item.size}</div>}
-      {item.year && <div className="text-xs md:text-sm text-gray-600 break-words">Year: {item.year}</div>}
     </div>
   );
 
   const Art = (
-    <div className="p-0 ml-0 rounded-lg w-52">
+    <div className={`p-0 ml-0 rounded-lg ${isLandscape ? 'w-full' : 'w-52'}`}>
       <Image
         src={item.img}
         alt={item.title || "Artwork"}
-        width={200}
-        height={350}
-        className="rounded-md object-cover mx-auto ml-0 cursor-pointer hover:opacity-80 transition-opacity"
+        width={isLandscape ? 400 : 200}
+        height={isLandscape ? 250 : 350}
+        className={`rounded-md object-cover mx-auto ml-0 cursor-pointer hover:opacity-80 transition-opacity ${
+          isLandscape ? 'w-full h-auto' : ''
+        }`}
         onClick={() => onImageClick(item)}
       />
     </div>
@@ -341,7 +348,7 @@ export default function Work() {
     }
   };
 
-  const handleImageClick = (item, imageIndex = null) => {
+   const handleImageClick = (item, imageIndex = null) => {
     if (item.isGroup && imageIndex !== null) {
       // For grouped images, show the specific image clicked
       setSelectedImage({
@@ -357,10 +364,12 @@ export default function Work() {
         imageIndex: 0
       });
     } else {
-      // For single images
+      // For single images, use popup_image if available, otherwise use img
+      console.log(item.popup_image)
+      console.log(item)
       setSelectedImage({
         ...item,
-        currentImage: item.img
+        currentImage: item.popup_image || item.img
       });
     }
   };
@@ -404,7 +413,6 @@ export default function Work() {
           width: 100vw;
           height: 100%;
           position: relative;
-
           margin-left: calc(-50vw + 50%);
         }
         
@@ -428,11 +436,11 @@ export default function Work() {
           margin: 0 0px !important;
           height: 100%;
           display: flex;
- 
           padding-bottom: 0px !important;
           margin-bottom : 0px !important ;
           flex-direction: column;
           border-right: 1px solid #003677;
+          border-right: 1px solid #f1d394;
           padding-left: 30px;
           border-left: none;
         }
@@ -441,6 +449,12 @@ export default function Work() {
           padding-left: 30px;
           padding-right: 30px;
           min-width: fit-content;
+        }
+
+        .work-card.landscape {
+          padding-left: 30px;
+          padding-right: 30px;
+          min-width: 450px;
         }
         
         .work-card.card-up {
@@ -496,13 +510,26 @@ export default function Work() {
         }
       `}</style>
 
-      <div className="rounded-xl overflow-hidden pt-5 md:pt-5 pt-32 mb-5">
-        <Image
+      {/* <div className="rounded-xl overflow-hidden pt-5 md:pt-5 pt-32 mb-5">
+
+           <Image
           src="/images/art/arth.svg"
-          alt="artthakya"
+          alt="navankalpa"
           width={800}
           height={250}
-          className="!m-0 object-contain w-full h-[55px] sm:h-[60px] md:h-[80px] lg:h-[90px] xl:h-[110px]"
+          className="!pb-0 object-contain w-full h-[38px] sm:h-[45px] md:h-[75px] lg:h-[75px] xl:h-[75px]"
+        />
+      
+    
+      </div> */}
+
+       <div className="rounded-xl overflow-hidden pt-5 md:pt-5 pt-32 mb-5 --bg-red-200 flex items-center justify-center">
+        <Image
+          src="/images/art/arth2.svg"
+          alt="artthakya"
+          width={750}
+          height={250}
+          className="!m-0 object-contain w-full pt-[34px] --bg-red-200 h-[55px] sm:h-[60px] md:h-[80px] lg:h-[90px] xl:h-[110px]"
         />
       </div>
 
@@ -537,6 +564,8 @@ export default function Work() {
               <div
                 key={i}
                 className={`work-card ${item.isGroup ? 'grouped' : ''} ${
+                  item.orientation === 'landscape' ? 'landscape' : ''
+                } ${
                   i % 2 === 0 ? 'card-up' : 'card-down'
                 }`}
               >
@@ -588,19 +617,14 @@ export default function Work() {
                     <span className="font-semibold">Title:</span> {selectedImage.title}
                   </div>
                 )}
-                {selectedImage.medium && (
+                {selectedImage.material && (
                   <div className="text-base text-gray-600 mb-2 leading-relaxed">
-                    <span className="font-semibold">Medium:</span> {selectedImage.medium}
+                    <span className="font-semibold">Material:</span> {selectedImage.material}
                   </div>
                 )}
                 {selectedImage.size && (
                   <div className="text-base text-gray-600 mb-2">
                     <span className="font-semibold">Size:</span> {selectedImage.size}
-                  </div>
-                )}
-                {selectedImage.year && (
-                  <div className="text-base text-gray-600">
-                    <span className="font-semibold">Year:</span> {selectedImage.year}
                   </div>
                 )}
                 

@@ -3,14 +3,14 @@ import Image from 'next/image';
 
 function Programe() {
   return (
-    <div className="py-16 px-4 md:px-20 pb-10 text-center min-h-screen flex flex-col justify-center">
-      <div className="rounded-xl overflow-hidden pt-5 mb-1 md:mb-10">
+    <div className="py-16 px-4 md:px-20 pb-10 text-center min-h-screen flex flex-col justify-center ">
+      <div className="rounded-xl overflow-hidden pt-5 mb-1 md:mb-3 --bg-red-200">
         <Image
           src="/images/art/rang.svg"
           alt="Collectors' Affair"
           width={800}
           height={200}
-          className="object-contain w-full h-[35px] sm:h-[45px] md:h-[70px] lg:h-[80px]"
+          className="object-contain w-full h-[35px] sm:h-[45px] md:h-[70px] lg:h-[80px] --bg-red-200 pt-[7px]"
         />
       </div>
        

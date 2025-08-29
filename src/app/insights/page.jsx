@@ -104,7 +104,7 @@ export default function Insights() {
         {/* Section 1: Title */}
         <section className="h-screen snap-start flex items-center justify-center text-[#1e1e1e] px-6 md:px-20">
           <h2
-            className="text-4xl md:text-5xl text-[#3c597B] text-center"
+            className="text-4xl md:text-8xl text-[#3c597B] text-center"
             style={{ fontFamily: 'Rofane', fontStyle: 'italic' }}
           >
             <span className="not-italic font-normal">Insights</span>

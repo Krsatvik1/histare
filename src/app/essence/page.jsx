@@ -18,7 +18,7 @@ export default function FullPageEssence() {
       {/* Section 1: Title */}
       <section className="snap-start snap-always h-screen flex items-center justify-center text-[#3c597B] px-4">
         <h1
-          className="text-4xl md:text-5xl text-[#3c597B] text-center"
+          className="text-4xl md:text-8xl text-[#3c597B] text-center"
           style={{ fontFamily: 'Rofane' }}
         >
           <span className="font-normal italic">Our </span>

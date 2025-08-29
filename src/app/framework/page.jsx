@@ -13,7 +13,7 @@ export default function Frameworks() {
         <Navbar />
         <div className="flex-1 flex items-center justify-center px-6 md:px-20">
           <h2
-            className="text-4xl md:text-5xl text-[#3c597B] text-center"
+            className="text-4xl md:text-8xl text-[#3c597B] text-center"
             style={{ fontFamily: "Rofane", fontStyle: "italic" }}
           >
             <span className="italic font-normal">Our </span>

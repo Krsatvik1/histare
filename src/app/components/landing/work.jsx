@@ -25,6 +25,7 @@ const workItems = [
       author: "Ethereal Echoes",
       material: "Brass and Bronze",
       size: "18 H Ft.",
+      orientation: "landscape"
     },
     {
       id: 3,
@@ -76,6 +77,7 @@ const workItems = [
       author: "The Moments of Opulence",
       material: "Copper-Brass wire on marble",
       size: "6 H Ft. x 10 B Ft.",
+      orientation: "landscape"
     },
     {
       id: 10,
@@ -173,8 +175,11 @@ function CardContent({ item, reversed, onImageClick }) {
     return <GroupedCardContent item={item} reversed={reversed} onImageClick={onImageClick} />;
   }
 
+  // Determine if this is a landscape orientation card
+  const isLandscape = item.orientation === "landscape";
+  
   const Info = (
-    <div className="p-4 pl-0 pb-0 rounded-lg w-52" style={{fontFamily:'Optima'}}>
+    <div className={`p-4 pl-0 pb-0 rounded-lg ${isLandscape ? 'w-full' : 'w-52'}`} style={{fontFamily:'Optima'}}>
       {item.author && (
         <div className="text-sm md:text-base font-semibold text-gray-800 mb-1 break-words line-clamp-2">{item.author}</div>
       )}
@@ -185,13 +190,15 @@ function CardContent({ item, reversed, onImageClick }) {
   );
 
   const Art = (
-    <div className="p-0 ml-0 rounded-lg w-52">
+    <div className={`p-0 ml-0 rounded-lg ${isLandscape ? 'w-full' : 'w-52'}`}>
       <Image
         src={item.img}
         alt={item.title || "Artwork"}
-        width={200}
-        height={350}
-        className="rounded-md object-cover mx-auto ml-0 cursor-pointer hover:opacity-80 transition-opacity"
+        width={isLandscape ? 400 : 200}
+        height={isLandscape ? 250 : 350}
+        className={`rounded-md object-cover mx-auto ml-0 cursor-pointer hover:opacity-80 transition-opacity ${
+          isLandscape ? 'w-full h-auto' : ''
+        }`}
         onClick={() => onImageClick(item)}
       />
     </div>
@@ -275,30 +282,6 @@ export default function Work() {
     }
   };
 
-  // const handleImageClick = (item, imageIndex = null) => {
-  //   if (item.isGroup && imageIndex !== null) {
-  //     // For grouped images, show the specific image clicked
-  //     setSelectedImage({
-  //       ...item,
-  //       currentImage: item.images[imageIndex],
-  //       imageIndex
-  //     });
-  //   } else if (item.isGroup) {
-  //     // For grouped images without specific index, show first image
-  //     setSelectedImage({
-  //       ...item,
-  //       currentImage: item.images[0],
-  //       imageIndex: 0
-  //     });
-  //   } else {
-  //     // For single images
-  //     setSelectedImage({
-  //       ...item,
-  //       currentImage: item.img
-  //     });
-  //   }
-  // };
-
    const handleImageClick = (item, imageIndex = null) => {
     if (item.isGroup && imageIndex !== null) {
       // For grouped images, show the specific image clicked
@@ -364,7 +347,6 @@ export default function Work() {
           width: 100vw;
           height: 100%;
           position: relative;
-
           margin-left: calc(-50vw + 50%);
         }
         
@@ -388,11 +370,11 @@ export default function Work() {
           margin: 0 0px !important;
           height: 100%;
           display: flex;
- 
           padding-bottom: 0px !important;
           margin-bottom : 0px !important ;
           flex-direction: column;
           border-right: 1px solid #003677;
+          border-right: 1px solid #f1d394;
           padding-left: 30px;
           border-left: none;
         }
@@ -401,6 +383,12 @@ export default function Work() {
           padding-left: 30px;
           padding-right: 30px;
           min-width: fit-content;
+        }
+
+        .work-card.landscape {
+          padding-left: 30px;
+          padding-right: 30px;
+          min-width: 450px;
         }
         
         .work-card.card-up {
@@ -500,6 +488,8 @@ export default function Work() {
               <div
                 key={i}
                 className={`work-card ${item.isGroup ? 'grouped' : ''} ${
+                  item.orientation === 'landscape' ? 'landscape' : ''
+                } ${
                   i % 2 === 0 ? 'card-up' : 'card-down'
                 }`}
               >

@@ -59,12 +59,24 @@ const ContactPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#F3F0ED] flex flex-col">
+    <>
+    <div className="--min-h-screen h-[100vh] --bg-[#F3F0ED] flex flex-col justify-center align-center --bg-red-200">
       {/* Header */}
       <Navbar />
 
       {/* Title */}
-      <div className="flex items-center justify-center py-10 px-6 md:px-20 mt-[80px]">
+      {/* <div className="flex items-center justify-center py-10 px-6 md:px-20 --mt-[80px]">
+        <h2
+          className="text-4xl md:text-5xl text-[#3c597B] text-center"
+          style={{ fontFamily: "Rofane", fontStyle: "italic" }}
+        >
+          <span className="not-italic font-normal">Contact Us</span>
+        </h2>
+      </div> */}
+
+      {/* Form */}
+      <div className="flex-1 max-w-4xl mx-auto w-full px-6 --pb-8 --bg-blue-200">
+              <div className="flex items-center justify-center py-10 px-6 md:px-20 --mt-[80px]">
         <h2
           className="text-4xl md:text-5xl text-[#3c597B] text-center"
           style={{ fontFamily: "Rofane", fontStyle: "italic" }}
@@ -72,9 +84,6 @@ const ContactPage = () => {
           <span className="not-italic font-normal">Contact Us</span>
         </h2>
       </div>
-
-      {/* Form */}
-      <div className="flex-1 max-w-4xl mx-auto w-full px-6 pb-8">
         <form onSubmit={handleSubmit} className="space-y-4">
           {/* First Row */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -165,8 +174,9 @@ const ContactPage = () => {
       </div>
 
       {/* Footer */}
-      <Footer />
     </div>
+      <Footer />
+    </>
   );
 };
 

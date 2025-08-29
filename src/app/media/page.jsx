@@ -206,7 +206,7 @@ export default function MediaPage() {
         <div className="max-w-7xl mx-auto px-4 py-12 --bg-blue-200">
           <div className="text-center">
             <h1 
-              className="text-5xl --font-bold text-[#3c597B] mb-4"
+              className="text-8xl --font-bold text-[#3c597B] mb-4"
               style={{ fontFamily: "Rofane", fontStyle: "italic" }}
             >
               <span className="italic">In The</span>{' '}
