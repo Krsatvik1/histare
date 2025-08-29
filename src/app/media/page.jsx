@@ -134,67 +134,70 @@ export default function MediaPage() {
     setFilteredArticles(filtered);
   }, [selectedCategory, searchQuery]);
 
-  const ArticleCard = ({ article }) => (
-    <div className="bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden group">
-      <div className="relative h-48 overflow-hidden">
-        <Image
-          src={article.image}
-          alt={article.title}
-          fill
-          className="object-cover group-hover:scale-105 transition-transform duration-300"
-        />
-        <div className="absolute top-4 left-4">
-          {/* <span className="bg-[#3c597B] text-white px-3 py-1 rounded-full text-xs font-medium">
-            {article.category}
-          </span> */}
-        </div>
-      </div>
-      
-      <div className="p-6">
-        <div className="flex items-center text-gray-500 text-sm mb-3">
-          <Calendar className="w-4 h-4 mr-2" />
-          {article.date}
+  const ArticleCard = ({ article }) => {
+    // Check if this article should show full description instead of "Read more"
+    const showFullDescription = [5, 8, 9].includes(article.id);
+    
+    return (
+      <div className="bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden group">
+        <div className="relative h-48 overflow-hidden">
+          <Image
+            src={article.image}
+            alt={article.title}
+            fill
+            className="object-cover group-hover:scale-105 transition-transform duration-300"
+          />
+          <div className="absolute top-4 left-4">
+            {/* <span className="bg-[#3c597B] text-white px-3 py-1 rounded-full text-xs font-medium">
+              {article.category}
+            </span> */}
+          </div>
         </div>
         
-        <h3 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2 group-hover:text-[#3c597B] transition-colors">
-          {article.title}
-        </h3>
-        
-        <p className="text-gray-600 mb-4 line-clamp-3">
-          {article.excerpt}
-        </p>
-        
-        <div className="flex flex-wrap gap-2 mb-4">
-          {article.tags.slice(0, 3).map(tag => (
-            <span key={tag} className="bg-gray-100 text-gray-600 px-2 py-1 rounded text-xs">
-              #{tag}
-            </span>
-          ))}
-          {article.tags.length > 3 && (
-            <span className="text-gray-400 text-xs">+{article.tags.length - 3} more</span>
-          )}
-        </div>
-        
-        <div className="flex justify-between items-center">
-          { article.link != "#" &&
+        <div className="p-6">
+          <div className="flex items-center text-gray-500 text-sm mb-3">
+            <Calendar className="w-4 h-4 mr-2" />
+            {article.date}
+          </div>
+          
+          <h3 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2 group-hover:text-[#3c597B] transition-colors">
+            {article.title}
+          </h3>
+          
+          <p className={`text-gray-600 mb-4 ${showFullDescription ? '' : 'line-clamp-3'}`}>
+            {article.excerpt}
+          </p>
+          
+          <div className="flex flex-wrap gap-2 mb-4">
+            {article.tags.slice(0, 3).map(tag => (
+              <span key={tag} className="bg-gray-100 text-gray-600 px-2 py-1 rounded text-xs">
+                #{tag}
+              </span>
+            ))}
+            {article.tags.length > 3 && (
+              <span className="text-gray-400 text-xs">+{article.tags.length - 3} more</span>
+            )}
+          </div>
+          
+          <div className="flex justify-between items-center">
+            {article.link !== "#" && !showFullDescription && (
               <a
-            href={article.link}
-            className="inline-flex items-center text-[#3c597B] font-medium hover:text-[#2a4261] transition-colors"
-          >
-            Read more
-            <ExternalLink className="w-4 h-4 ml-1" />
-          </a>
-          
-          }
-        
-          
-          <button className="text-gray-400 hover:text-gray-600 transition-colors" suppressHydrationWarning={true}>
-            {/* <Tag className="w-4 h-4" /> */}
-          </button>
+                href={article.link}
+                className="inline-flex items-center text-[#3c597B] font-medium hover:text-[#2a4261] transition-colors"
+              >
+                Read more
+                <ExternalLink className="w-4 h-4 ml-1" />
+              </a>
+            )}
+            
+            <button className="text-gray-400 hover:text-gray-600 transition-colors" suppressHydrationWarning={true}>
+              {/* <Tag className="w-4 h-4" /> */}
+            </button>
+          </div>
         </div>
       </div>
-    </div>  
-  );
+    );
+  };
 
   return (
     <>
