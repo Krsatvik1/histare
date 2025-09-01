@@ -40,9 +40,9 @@ const logoDown = [
 
 function Partnership() {
   return (
-    <div className=" bg-[#F3F0ED] py-16 px-4 md:px-0 min-h-screen flex flex-col items-center justify-center text-center overflow-hidden">
+    <div className="--bg-green-200 bg-[#F3F0ED] py-16 px-4 md:px-0 min-h-screen flex flex-col items-center justify-center text-center overflow-hidden">
       <h2
-        className="text-3xl pb-20 sm:text-4xl md:text-5xl mb-12 text-[#3c597B]"
+        className="text-3xl md:pb-20 sm:text-4xl md:text-5xl mb-6 md:mb-12 text-[#3c597B] --bg-red-200"
         style={{ fontFamily: 'Rofane' }}
       >
         <span className="italic font-normal">Our</span>{' '}
@@ -52,7 +52,7 @@ function Partnership() {
       </h2>
 
       {/* Top Row (Scroll Right to Left) */}
-      <div className="marquee marquee-left">
+      <div className="marquee marquee-left --bg-red-200">
         <div className="track">
           {[...logoUp, ...logoUp].map((src, index) => (
             <div className="logo" key={`top-${index}`}>
@@ -73,7 +73,7 @@ function Partnership() {
       </div>
 
       {/* Bottom Row (Scroll Left to Right) */}
-      <div className="marquee marquee-right mt-8">
+      <div className="marquee marquee-right mt-4">
         <div className="track">
           {[...logoDown, ...logoDown].map((src, index) => (
             <div className="logo" key={`bottom-${index}`}>

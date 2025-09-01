@@ -15,7 +15,7 @@ const testimonials = [
     role: "Head of the Department of Art and Design, Sharda University"
   },
   {
-    text: "Histare’s innovative implementation of AI assisted tools for advanced systemizations shall be of great value to creative specialists for populating art in the digital environment.",
+    text: "Histare's innovative implementation of AI assisted tools for advanced systemizations shall be of great value to creative specialists for populating art in the digital environment.",
     name: "Sanjeev Chopra",
     role: "CEO, Electroporate Park, Ministry of Electronics and Information Technology, GOI"
   },
@@ -55,17 +55,17 @@ const testimonials = [
     role: "Managing Partner, Lex Favios\nLegal expert in Capital Markets & Corporate Finance"
   },
   {
-    text: "I am enthused with Histare Group’s inventive explorations as a single-source integrated setup created based on the opportunities and risks in the given working environment in India. I believe that the same will assist them with staying focussed on developing the business and setting up their market position, while setting a way for long term sustainability and expanding value for all partners in the universe of sustainable creativity. I wish the Histare Group every success in their endeavours to showcase Indian art globally through a wide range of sustainable methodologies.",
+    text: "I am enthused with Histare Group's inventive explorations as a single-source integrated setup created based on the opportunities and risks in the given working environment in India. I believe that the same will assist them with staying focussed on developing the business and setting up their market position, while setting a way for long term sustainability and expanding value for all partners in the universe of sustainable creativity. I wish the Histare Group every success in their endeavours to showcase Indian art globally through a wide range of sustainable methodologies.",
     name: "Kritika Goel",
     role: "Ardent"
   },
   {
-    text: "Histare Group’s unique Smart Programmes show a blend of development, boldness and a sharp eye for detail, initiated by youthful exceptional cultural strategists who are on top of present day times and quick to address the challenges of the future. An organization like Histare transforming the social frameworks is one of the most effective to combat the future crisis. We are delighted for their new endeavours and wish them the best.",
+    text: "Histare Group's unique Smart Programmes show a blend of development, boldness and a sharp eye for detail, initiated by youthful exceptional cultural strategists who are on top of present day times and quick to address the challenges of the future. An organization like Histare transforming the social frameworks is one of the most effective to combat the future crisis. We are delighted for their new endeavours and wish them the best.",
     name: "Sanyam Tyagi",
     role: "Aston Martin"
   },
   {
-    text: "I am truly enthused with Akhil Vadehra and the Histare team’s belief and concerted endeavours in promoting a globalised arena in which artists have a right to their work's value and transparency in the art market.",
+    text: "I am truly enthused with Akhil Vadehra and the Histare team's belief and concerted endeavours in promoting a globalised arena in which artists have a right to their work's value and transparency in the art market.",
     name: "Yamini Kumar Jaipuria",
     role: "Indian Philanthropist | Cosmo Foundation | Former VP, General Electrics Capital Europe, Asia and India"
   },
@@ -80,7 +80,7 @@ const testimonials = [
     role: "Casa Vida, Domov Housing"
   },
   {
-    text: "It was a privilege to witness such a well-conceived tribute to Indian artisans. The Erbe Project went beyond mere exhibition, encapsulating the essence of India’s artistic traditions. From the captivating Kathak performances to the rich tapestry of artworks on display, the event was a beautiful blend of history, art, and modern innovation. It was also a dream project of Simran Aunty, and my family is thrilled to see it come to life. The focus on sustainability and innovation in craft is what truly sets this movement apart.",
+    text: "It was a privilege to witness such a well-conceived tribute to Indian artisans. The Erbe Project went beyond mere exhibition, encapsulating the essence of India's artistic traditions. From the captivating Kathak performances to the rich tapestry of artworks on display, the event was a beautiful blend of history, art, and modern innovation. It was also a dream project of Simran Aunty, and my family is thrilled to see it come to life. The focus on sustainability and innovation in craft is what truly sets this movement apart.",
     name: "Kavita Aneja",
     role: "Art Aficionado"
   },
@@ -133,17 +133,17 @@ function Testimonial() {
   };
 
   return (
-    <div className=" flex items-center min-h-screen justify-center px-4 md:pt-5  ">
+    <div className="flex items-center min-h-screen md:min-h-screen justify-center px-4 py-8 md:py-16">
       <div className="w-full max-w-4xl --bg-blue-200 flex flex-col align-center">
         <h2
-          className="text-4xl md:text-5xl --mb-12 pb-16 text-[#3c597B] text-center md:pt-5"
+          className="text-3xl md:text-5xl mb-8 md:mb-16 text-[#3c597B] text-center"
           style={{ fontFamily: 'Playfair Display' }}
         >
           Testimonials
         </h2>
 
         {/* Testimonial Card */}
-        <div className="relative min-h-[450px] overflow-hidden">
+        <div className="relative min-h-[300px] md:min-h-[450px] overflow-hidden">
           <AnimatePresence custom={direction} mode="wait">
             <motion.div
               key={index}
@@ -153,13 +153,13 @@ function Testimonial() {
               animate="center"
               exit="exit"
               transition={{ duration: 0.6, ease: 'easeInOut' }}
-              className="absolute w-full h-90% border-2 border-[#f1d394] rounded-lg md:p-8 p-6 text-[#333]"
+              className="absolute w-full border-2 border-[#f1d394] rounded-lg p-4 md:p-8 text-[#333]"
             >
-              <p className="text-lg leading-relaxed mb-6">{testimonials[index].text}</p>
-              <p className="md:text-right font-semibold text-[#1e1e1e] text-center">
+              <p className="text-sm md:text-lg leading-relaxed mb-4 md:mb-6">{testimonials[index].text}</p>
+              <p className="text-right font-semibold text-[#1e1e1e] text-xs md:text-base">
                 {testimonials[index].name}
                 <br />
-                <span className="font-normal text-sm whitespace-pre-line">
+                <span className="font-normal text-xs whitespace-pre-line">
                   {testimonials[index].role}
                 </span>
               </p>
@@ -168,7 +168,7 @@ function Testimonial() {
         </div>
 
         {/* Dot Indicators */}
-        <div className="flex justify-center mt-0 gap-2">
+        <div className="flex justify-center mt-4 md:mt-0 gap-2">
           {testimonials.map((_, i) => (
             <button
               key={i}

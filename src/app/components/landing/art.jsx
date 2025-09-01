@@ -529,7 +529,7 @@ export default function Work() {
           alt="artthakya"
           width={750}
           height={250}
-          className="!m-0 object-contain w-full pt-[34px] --bg-red-200 h-[55px] sm:h-[60px] md:h-[80px] lg:h-[90px] xl:h-[110px]"
+          className="!m-0 object-contain w-full pt-[34px] --bg-red-200 h-[75px] sm:h-[60px] md:h-[80px] lg:h-[90px] xl:h-[110px]"
         />
       </div>
 
