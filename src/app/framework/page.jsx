@@ -41,10 +41,10 @@ export default function Frameworks() {
       <div className="snap-start min-h-screen w-full flex items-center justify-center px-6 md:px-20 pt-24">
         <div className="max-w-5xl w-full">
           <div className="flex flex-col md:flex-row md:items-start items-center h-full">
-            <h2 className="md:w-1/3 text-3xl md:text-4xl font-serif italic text-[#3c597B] mb-6 md:mb-0 text-center md:text-left flex-shrink-0">
+            <h2 className="md:w-1/3 text-3xl md:text-4xl font-serif italic text-[#3c597B] border-black bt-1px mb-6 md:mb-0 text-center md:text-left flex-shrink-0">
               The Mission
             </h2>
-            <div className="--bg-green-200 md:w-2/3 text-base md:text-lg leading-relaxed text-[#1e1e1e] max-w-4xl md:max-w-none flex-1 max-h-[70vh] overflow-y-scroll scrollbar-hide">
+            <div className="--bg-green-200 md:w-2/3 text-base md:text-lg leading-relaxed text-[#1e1e1e] max-w-4xl md:max-w-none flex-1 max-h-[55vh] overflow-y-scroll scrollbar-hide">
               <div className="space-y-4">
                 <p className="text-justify">
                   Our mission is to connect India's vast artistic heritage with discerning patrons worldwide, fostering an ecosystem where creativity thrives and creators are empowered. Through innovative design principles, sustainable methodologies, and meaningful collaborations, Histare seeks to transform the landscape of art and culture. We aim to:
