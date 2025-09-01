@@ -182,7 +182,7 @@ const Navbar = () => {
                       className="hover:text-gray-800 transition-colors text-sm sm:text-sm"
                       style={{ fontFamily: 'Optima' }}
                     >
-                      Privacy Policy | Terms & Conditions
+                      Terms & Conditions
                     </Link>
                   </motion.div>
                 </div>

@@ -22,7 +22,7 @@ export default function FullPageEssence() {
           className="text-4xl md:text-8xl text-[#3c597B] text-center"
           style={{ fontFamily: 'Rofane' }}
         >
-          <span className="font-normal italic">Our </span>
+          <span className="font-normal italic">Our</span>
           <span>Essence</span>
         </h1>
       </section>
@@ -203,7 +203,7 @@ export default function FullPageEssence() {
             </div>
 
             {/* Right - Text */}
-            <div className="md:w-1/2 text-base md:text-lg space-y-2">
+            <div className="md:w-1/2 text-base md:text-lg space-y-2 mb-4">
               <h3 className="uppercase font-medium text-base md:text-lg text-[#2c3e50]">
                 Indian Culture for a Sustainable Future
               </h3>
