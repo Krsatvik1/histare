@@ -22,7 +22,7 @@ export default function FullPageEssence() {
           className="text-4xl md:text-8xl text-[#3c597B] text-center"
           style={{ fontFamily: 'Rofane' }}
         >
-          <span className="font-normal italic">Our</span>
+          <span className="font-normal italic">Our&nbsp;</span>
           <span>Essence</span>
         </h1>
       </section>
@@ -139,7 +139,7 @@ export default function FullPageEssence() {
         </div>
 
         {/* Bottom Half - Icons Carousel */}
-        <div className=" --bg-green-200 --flex-1 flex items-start md:items-center justify-center pt-0 md:pt-0">
+        <div className=" --bg-green-200 --flex-1 flex items-start md:items-center justify-center pt-0 md:pt-0 max-w-[90vw] p-0">
           <div className="w-full py-1 md:py-8 icons-scroll-container">
             <div className="icons-scroll-track">
               {/* First set of icons */}
