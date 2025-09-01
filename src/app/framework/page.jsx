@@ -74,7 +74,7 @@ export default function Frameworks() {
 
       {/* Section 4 - Purpose with Footer */}
       <div className="snap-start min-h-screen w-full flex flex-col">
-        <div className="flex-1 flex items-center justify-center px-6 md:px-20 pt-24">
+        <div className="flex-1 flex items-center justify-center px-6 md:px-20 --pt-24">
           <div className="max-w-5xl w-full">
             <div className="flex flex-col md:flex-row md:items-start items-center">
               <h2 className="md:w-1/3 text-3xl md:text-4xl font-serif italic text-[#3c597B] mb-6 md:mb-0 text-center md:text-left">
