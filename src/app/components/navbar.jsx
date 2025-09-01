@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -14,18 +14,57 @@ import {
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Only apply scroll effect on mobile (screens smaller than 768px)
+      const isMobile = window.innerWidth < 768;
+      if (isMobile) {
+        const scrollHeight = window.scrollY;
+        const viewportHeight = window.innerHeight;
+        setScrolled(scrollHeight > viewportHeight);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    const handleResize = () => {
+      // Reset scroll state when resizing
+      handleScroll();
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('resize', handleResize);
+    
+    // Check initial state
+    handleScroll();
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   return (
     <>
       {/* Navbar */}
-      <nav className="fixed top-0 left-0 w-full flex items-center justify-between p-6 z-50 pointer-events-none">
+      <nav className={`fixed top-0 left-0 w-full flex items-center justify-between p-5 sm:p-6 z-50 pointer-events-none transition-all duration-300 ${
+        scrolled ? 'bg-white/95 backdrop-blur-sm shadow-sm' : ''
+      }`}>
         <div className="pointer-events-auto">
-          <a href="/"><img src="/images/navbar/logo.png" alt="Histare Logo" className="h-16 w-auto" /></a>
+          <a href="/">
+            <img 
+              src="/images/navbar/logo.png" 
+              alt="Histare Logo" 
+              className="h-12 sm:h-14 md:h-16 w-auto" 
+            />
+          </a>
         </div>
         <div className="pointer-events-auto">
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="focus:outline-none text-gray-600 text-2xl p-10 cursor-pointer transition-transform duration-300"
+            className="focus:outline-none text-gray-600 text-xl sm:text-2xl p-6 sm:p-8 md:p-10 cursor-pointer transition-transform duration-300"
           >
             {menuOpen ? '✕' : '⋮'}
           </button>
@@ -43,7 +82,7 @@ const Navbar = () => {
             className="fixed top-0 right-0 h-full w-full bg-[#fdfaf7] z-40 shadow-xl flex flex-col"
           >
             {/* Background Circle */}
-            <div className="absolute bottom-0 right-0 w-[700px] h-[700px] z-0 pointer-events-none overflow-hidden">
+            <div className="absolute bottom-0 right-0 w-[500px] sm:w-[600px] md:w-[700px] h-[500px] sm:h-[600px] md:h-[700px] z-0 pointer-events-none overflow-hidden">
               <Image
                 src="/images/landing/circle.png"
                 alt="Decorative Circle"
@@ -53,19 +92,17 @@ const Navbar = () => {
               />
             </div>
 
-            
-
             {/* Social Media Icons - Vertical Stack on Right - Aligned with bottom content */}
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.4, duration: 0.5 }}
-              className="absolute bottom-[30%] right-10 z-20"
+              className="absolute bottom-[30%] right-4 sm:right-6 md:right-10 z-20"
             >
-              <div className="flex flex-col gap-6 ">
+              <div className="flex flex-col gap-3 sm:gap-4 md:gap-6">
                 <motion.a 
                   href="#" 
-                  className="text-gray-700 hover:text-gray-900 text-2xl transition-colors"
+                  className="text-gray-700 hover:text-gray-900 text-xl sm:text-xl md:text-2xl transition-colors"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                 >
@@ -73,7 +110,7 @@ const Navbar = () => {
                 </motion.a>
                 <motion.a 
                   href="https://www.linkedin.com/company/histare/" 
-                  className="text-gray-700 hover:text-gray-900 text-2xl transition-colors"
+                  className="text-gray-700 hover:text-gray-900 text-xl sm:text-xl md:text-2xl transition-colors"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                 >
@@ -81,7 +118,7 @@ const Navbar = () => {
                 </motion.a>
                 <motion.a 
                   href="https://www.youtube.com/@thehistaregroup7950" 
-                  className="text-gray-700 hover:text-gray-900 text-2xl transition-colors"
+                  className="text-gray-700 hover:text-gray-900 text-xl sm:text-xl md:text-2xl transition-colors"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                 >
@@ -89,7 +126,7 @@ const Navbar = () => {
                 </motion.a>
                 <motion.a 
                   href="#" 
-                  className="text-gray-700 hover:text-gray-900 text-2xl transition-colors"
+                  className="text-gray-700 hover:text-gray-900 text-xl sm:text-xl md:text-2xl transition-colors"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                 >
@@ -97,7 +134,7 @@ const Navbar = () => {
                 </motion.a>
                 <motion.a 
                   href="https://www.instagram.com/histare.concepts/" 
-                  className="text-gray-700 hover:text-gray-900 text-2xl transition-colors"
+                  className="text-gray-700 hover:text-gray-900 text-lg sm:text-xl md:text-2xl transition-colors"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                 >
@@ -114,7 +151,7 @@ const Navbar = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3, duration: 0.5 }}
-                className="flex flex-col justify-end px-10 text-[#333333] text-2xl font-[Rofane] space-y-4 pb-16 h-full"
+                className="flex flex-col justify-end px-6 sm:px-8 md:px-10 text-[#333333] text-xl sm:text-xl md:text-2xl font-[Rofane] space-y-3 sm:space-y-3 md:space-y-4 pb-10 sm:pb-14 md:pb-16 h-full"
               >
                 <a href="/framework" className="hover:text-gray-600 transition-colors">Our Framework</a>
                 <a href="/history" className="hover:text-gray-600 transition-colors">Our History</a>
@@ -132,15 +169,16 @@ const Navbar = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.6, duration: 0.5 }}
-                    className="flex flex-col items-end text-sm text-gray-600 gap-1"
+                    className="flex flex-col items-end text-sm sm:text-sm text-gray-600 gap-1"
                   >
-                     <p className="text-lg text-gray-800" style={{fontFamily:'Optima'}}>
+                     <p className="text-base sm:text-base md:text-lg text-gray-800" style={{fontFamily:'Optima'}}>
                       {new Date().getFullYear()}
                     </p>
                     
                     <Link 
                       href="/term" 
-                      className="hover:text-gray-800 transition-colors"style={{fontFamily:'Optima'}}
+                      className="hover:text-gray-800 transition-colors text-sm sm:text-sm"
+                      style={{fontFamily:'Optima'}}
                     >
                       Privacy Policy | Terms & Conditions
                     </Link>

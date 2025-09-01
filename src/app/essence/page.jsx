@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
+
 import Navbar from '../components/navbar';
 import Footer from '../components/footerblank';
 
@@ -16,7 +17,7 @@ export default function FullPageEssence() {
       </div>
 
       {/* Section 1: Title */}
-      <section className="snap-start snap-always h-screen flex items-center justify-center text-[#3c597B] px-4">
+      <section className="snap-start snap-always h-screen flex items-center  justify-center text-[#3c597B] px-4">
         <h1
           className="text-4xl md:text-8xl text-[#3c597B] text-center"
           style={{ fontFamily: 'Rofane' }}
@@ -27,7 +28,7 @@ export default function FullPageEssence() {
       </section>
 
       {/* Section 2: Ethical World + Carousel */}
-      <section className="snap-start snap-always h-screen flex flex-col justify-center text-[#3c597B] px-4 pt-16">
+      <section className="snap-start snap-always h-screen flex flex-col --bg-red-200 justify-center items-center text-[#3c597B] px-4 pt-16">
         <style jsx>{`
           @keyframes scrollIcons {
             0% {
@@ -113,9 +114,9 @@ export default function FullPageEssence() {
         `}</style>
 
         {/* Top Half - Ethical World Content */}
-        <div className="flex-1 flex items-center justify-center mb-2">
-          <div className="w-full max-w-5xl mx-auto flex flex-col-reverse md:flex-row justify-between items-start text-center md:text-left gap-10">
-            {/* Left Side - Text */}
+        <div className="md:flex-1 flex mb-16 min-height items-center justify-center mb-0 md:mb-2 --bg-blue-200 !py-0">
+          <div className="--bg-blue-400 w-full max-w-5xl mx-auto flex flex-col-reverse md:flex-row justify-between items-center md:items-start text-center md:text-left gap-10">
+            {/* Left Side - Text */}  
             <div className="md:w-1/2 space-y-2">
               <h3 className="uppercase text-[#2c3e50] font-medium text-base md:text-lg">
                 Creating an Ethical World
@@ -138,8 +139,8 @@ export default function FullPageEssence() {
         </div>
 
         {/* Bottom Half - Icons Carousel */}
-        <div className="flex-1 flex items-center justify-center">
-          <div className="w-full py-8 icons-scroll-container">
+        <div className=" --bg-green-200 --flex-1 flex items-start md:items-center justify-center pt-0 md:pt-0">
+          <div className="w-full py-1 md:py-8 icons-scroll-container">
             <div className="icons-scroll-track">
               {/* First set of icons */}
               {icons.map((src, index) => (
@@ -183,17 +184,20 @@ export default function FullPageEssence() {
       </section>
 
       {/* Section 3: Enduring Balance + Bottom Image */}
-      <section className="snap-start snap-always h-screen flex flex-col justify-center text-[#3c597B] px-4 pt-16">
+      <section className="--bg-red-200 snap-start snap-always h-screen flex flex-col items-center justify-center text-[#3c597B] px-4 pt-16">
         {/* Top Half - Enduring Balance Content */}
-        <div className="flex-1 flex items-center justify-center mb-8">
-          <div className="w-full max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-start text-center md:text-left gap-10">
+        <div className="md:flex-1 flex items-center justify-center mb-2 md:mb-8 --bg-blue-200">
+          <div className="w-full max-w-5xl mx-auto flex flex-col md:flex-row justify-between align-center md:items-start text-center md:text-left gap-6 md:gap-10">
             {/* Left - Title */}
             <div className="md:w-1/2">
               <h2
                 className="text-4xl md:text-5xl font-light text-[#3c597B]"
                 style={{ fontFamily: 'Rofane', fontStyle: 'italic' }}
               >
-                <span className="italic">Enduring</span><br />
+                <span className="italic">Enduring&nbsp;</span>
+                  <span className="hidden md:inline"><br /></span>
+
+               
                 <span className="not-italic">Balance</span>
               </h2>
             </div>
@@ -213,14 +217,14 @@ export default function FullPageEssence() {
         </div>
 
         {/* Bottom Half - Bottom Image */}
-        <div className="flex-1 flex items-center justify-center pb-4 md:pb-12">
+        <div className="md:flex-1 flex items-start md:items-center justify-center pb-4 md:pb-12 --bg-green-200">
           <div className="w-full max-w-5xl px-4">
             <Image
               src="/images/essence/bottom.svg"
               alt="Cultural Innovation"
               width={500}
               height={300}
-              className="w-full h-auto max-h-[40vh] md:max-h-[50vh] object-contain"
+              className="w-full h-auto max-h-[30vh] md:max-h-[50vh] object-contain"
             />
           </div>
         </div>

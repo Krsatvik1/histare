@@ -203,13 +203,13 @@ export default function MediaPage() {
     <>
     <Navbar/>
     <div className="min-h-screen --bg-gray-50">
-      {/* Header */}
+      {/* Header - Made Responsive */}
      <section className='min-h-screen'>
-     <div className="h-[100vh] --bg-red-200 --bg-white --shadow-sm flex align-center items-center">
-        <div className="max-w-7xl mx-auto px-4 py-12 --bg-blue-200">
+     <div className="min-h-screen w-screen --bg-white --shadow-sm flex align-center items-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 --bg-blue-200">
           <div className="text-center">
             <h1 
-              className="text-8xl --font-bold text-[#3c597B] mb-4"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl --font-bold text-[#3c597B] mb-4 leading-tight"
               style={{ fontFamily: "Rofane", fontStyle: "italic" }}
             >
               <span className="italic">In The</span>{' '}
