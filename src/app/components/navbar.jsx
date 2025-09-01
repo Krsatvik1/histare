@@ -18,25 +18,25 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Only apply scroll effect on mobile (screens smaller than 768px)
+      // ✅ Only apply scroll effect on mobile (screens smaller than 768px)
       const isMobile = window.innerWidth < 768;
+      // console.log(window.innerWidth , is)
       if (isMobile) {
         const scrollHeight = window.scrollY;
-        const viewportHeight = window.innerHeight;
-        setScrolled(scrollHeight > viewportHeight);
+        console.log(scrollHeight)
+        setScrolled(scrollHeight > 0); // turn opaque as soon as scrolling starts
       } else {
         setScrolled(false);
       }
     };
 
     const handleResize = () => {
-      // Reset scroll state when resizing
-      handleScroll();
+      handleScroll(); // recalc on resize
     };
 
     window.addEventListener('scroll', handleScroll);
     window.addEventListener('resize', handleResize);
-    
+
     // Check initial state
     handleScroll();
 
@@ -49,22 +49,24 @@ const Navbar = () => {
   return (
     <>
       {/* Navbar */}
-      <nav className={`fixed top-0 left-0 w-full flex items-center justify-between p-5 sm:p-6 z-50 pointer-events-none transition-all duration-300 ${
-        scrolled ? 'bg-white/95 backdrop-blur-sm shadow-sm' : ''
-      }`}>
+      <nav
+        className={`fixed top-0 left-0 w-full flex items-center justify-between p-5 bg-red-200 py-0 sm:p-6 z-50 pointer-events-none transition-all duration-300 ${
+          scrolled ? 'bg-[#F3F0ED] --backdrop-blur-sm --shadow-sm' : 'bg-transparent'
+        }`}
+      >
         <div className="pointer-events-auto">
           <a href="/">
-            <img 
-              src="/images/navbar/logo.png" 
-              alt="Histare Logo" 
-              className="h-12 sm:h-14 md:h-16 w-auto" 
+            <img
+              src="/images/navbar/logo.png"
+              alt="Histare Logo"
+              className="h-12 sm:h-14 md:h-16 w-auto"
             />
           </a>
         </div>
         <div className="pointer-events-auto">
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="focus:outline-none text-gray-600 text-xl sm:text-2xl p-6 sm:p-8 md:p-10 cursor-pointer transition-transform duration-300"
+            className="focus:outline-none text-gray-600 text-xl sm:text-2xl p-5 sm:p-8 md:p-10 cursor-pointer transition-transform duration-300"
           >
             {menuOpen ? '✕' : '⋮'}
           </button>
@@ -79,7 +81,7 @@ const Navbar = () => {
             animate={{ x: 0 }}
             exit={{ x: '100%' }}
             transition={{ duration: 0.5, ease: 'easeInOut' }}
-            className="fixed top-0 right-0 h-full w-full bg-[#fdfaf7] z-40 shadow-xl flex flex-col"
+            className="fixed top-0 right-0 h-full w-full --bg-[#fdfaf7] backdrop-blur-sm shadow-sm  bg-[#F3F0ED] z-40 shadow-xl flex flex-col"
           >
             {/* Background Circle */}
             <div className="absolute bottom-0 right-0 w-[500px] sm:w-[600px] md:w-[700px] h-[500px] sm:h-[600px] md:h-[700px] z-0 pointer-events-none overflow-hidden">
@@ -92,7 +94,7 @@ const Navbar = () => {
               />
             </div>
 
-            {/* Social Media Icons - Vertical Stack on Right - Aligned with bottom content */}
+            {/* Social Media Icons */}
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -100,40 +102,40 @@ const Navbar = () => {
               className="absolute bottom-[30%] right-4 sm:right-6 md:right-10 z-20"
             >
               <div className="flex flex-col gap-3 sm:gap-4 md:gap-6">
-                <motion.a 
-                  href="#" 
+                <motion.a
+                  href="#"
                   className="text-gray-700 hover:text-gray-900 text-xl sm:text-xl md:text-2xl transition-colors"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                 >
                   <FaTwitter />
                 </motion.a>
-                <motion.a 
-                  href="https://www.linkedin.com/company/histare/" 
+                <motion.a
+                  href="https://www.linkedin.com/company/histare/"
                   className="text-gray-700 hover:text-gray-900 text-xl sm:text-xl md:text-2xl transition-colors"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                 >
                   <FaLinkedin />
                 </motion.a>
-                <motion.a 
-                  href="https://www.youtube.com/@thehistaregroup7950" 
+                <motion.a
+                  href="https://www.youtube.com/@thehistaregroup7950"
                   className="text-gray-700 hover:text-gray-900 text-xl sm:text-xl md:text-2xl transition-colors"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                 >
                   <FaYoutube />
                 </motion.a>
-                <motion.a 
-                  href="#" 
+                <motion.a
+                  href="#"
                   className="text-gray-700 hover:text-gray-900 text-xl sm:text-xl md:text-2xl transition-colors"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                 >
                   <FaFacebook />
                 </motion.a>
-                <motion.a 
-                  href="https://www.instagram.com/histare.concepts/" 
+                <motion.a
+                  href="https://www.instagram.com/histare.concepts/"
                   className="text-gray-700 hover:text-gray-900 text-lg sm:text-xl md:text-2xl transition-colors"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
@@ -143,10 +145,8 @@ const Navbar = () => {
               </div>
             </motion.div>
 
-            {/* Menu Content Container */}
+            {/* Menu Content */}
             <div className="relative z-10 flex flex-col h-full">
-              
-              {/* Navigation Links - Main Content - Moved to bottom */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -161,8 +161,8 @@ const Navbar = () => {
                 <a href="/insights" className="hover:text-gray-600 transition-colors">Insights</a>
                 <a href="/media" className="hover:text-gray-600 transition-colors">In the Spotlight</a>
                 <a href="/goi" className="hover:text-gray-600 transition-colors">G O I</a>
-                
-                {/* Contact Us with Privacy Policy on separate lines */}
+
+                {/* Contact + Privacy */}
                 <div className="flex justify-between items-start">
                   <a href="/contact" className="hover:text-gray-600 transition-colors">Contact Us</a>
                   <motion.div
@@ -171,14 +171,16 @@ const Navbar = () => {
                     transition={{ delay: 0.6, duration: 0.5 }}
                     className="flex flex-col items-end text-sm sm:text-sm text-gray-600 gap-1"
                   >
-                     <p className="text-base sm:text-base md:text-lg text-gray-800" style={{fontFamily:'Optima'}}>
+                    <p
+                      className="text-base sm:text-base md:text-lg text-gray-800"
+                      style={{ fontFamily: 'Optima' }}
+                    >
                       {new Date().getFullYear()}
                     </p>
-                    
-                    <Link 
-                      href="/term" 
+                    <Link
+                      href="/term"
                       className="hover:text-gray-800 transition-colors text-sm sm:text-sm"
-                      style={{fontFamily:'Optima'}}
+                      style={{ fontFamily: 'Optima' }}
                     >
                       Privacy Policy | Terms & Conditions
                     </Link>
@@ -186,7 +188,7 @@ const Navbar = () => {
                 </div>
               </motion.div>
             </div>
-          </motion.div>
+          </motion.div> 
         )}
       </AnimatePresence>
     </>
