@@ -8,7 +8,7 @@ import Footer from '../components/footerblank';
 export default function Frameworks() {
   return (
     <div className="snap-y snap-mandatory overflow-y-scroll scroll-smooth h-screen w-full">
-      
+
       {/* Section 1 - Header */}
       <div className="snap-start min-h-screen w-full flex flex-col">
         <Navbar />
@@ -38,13 +38,13 @@ export default function Frameworks() {
       </div>
 
       {/* Section 3 - Mission */}
-      <div className="--bg-blue-200  snap-start min-h-screen w-full flex items-center justify-center px-6 md:px-20 --pt-24">
+      <div className="hidden sm:flex --bg-blue-200  snap-start min-h-screen w-full flex items-center justify-center px-6 md:px-20 --pt-24">
         <div className="max-w-5xl w-full ">
           <div className="flex flex-col md:flex-row md:items-start items-center h-full --bg-green-200">
             <h2 className="md:w-1/3 text-3xl md:text-4xl font-serif italic text-[#3c597B] border-black bt-1px mb-6 md:mb-0 text-center md:text-left flex-shrink-0">
               The Mission
             </h2>
-            <div className="--bg-green-200 md:w-2/3 text-base md:text-lg leading-relaxed text-[#1e1e1e] max-w-4xl md:max-w-none flex-1 max-h-[55vh] overflow-y-scroll scrollbar-hide">
+            <div className="--bg-green-200 md:w-2/3 text-base md:text-lg leading-relaxed text-[#1e1e1e] max-w-4xl md:max-w-none flex-1 --max-h-[55vh] --overflow-y-scroll --scrollbar-hide">
               <div className="space-y-4">
                 <p className="text-justify">
                   Our mission is to connect India's vast artistic heritage with discerning patrons worldwide, fostering an ecosystem where creativity thrives and creators are empowered. Through innovative design principles, sustainable methodologies, and meaningful collaborations, Histare seeks to transform the landscape of art and culture. We aim to:
@@ -71,6 +71,73 @@ export default function Frameworks() {
           </div>
         </div>
       </div>
+
+      {/* Section 3 - Mission */}
+      <div className="sm:hidden --bg-blue-200  snap-start min-h-screen w-full flex items-center justify-center px-6 md:px-20 --pt-24">
+        <div className="max-w-5xl w-full ">
+          <div className="flex flex-col md:flex-row md:items-start items-center h-full --bg-green-200">
+            <h2 className="md:w-1/3 text-3xl md:text-4xl font-serif italic text-[#3c597B] border-black bt-1px mb-6 md:mb-0 text-center md:text-left flex-shrink-0">
+              The Mission
+            </h2>
+            <div className="--bg-green-200 md:w-2/3 text-base md:text-lg leading-relaxed text-[#1e1e1e] max-w-4xl md:max-w-none flex-1 --max-h-[55vh] --overflow-y-scroll --scrollbar-hide">
+              <div className="space-y-4">
+                <p className="text-justify">
+                  Our mission is to connect India's vast artistic heritage with discerning patrons worldwide, fostering an ecosystem where creativity thrives and creators are empowered. Through innovative design principles, sustainable methodologies, and meaningful collaborations, Histare seeks to transform the landscape of art and culture. We aim to:
+                </p>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Section 3 - Mission */}
+      <div className="sm:hidden -bg-blue-200  snap-start min-h-screen w-full flex items-center justify-center px-6 md:px-20 --pt-24">
+        <div className="max-w-5xl w-full ">
+          <div className="flex flex-col md:flex-row md:items-start items-center h-full --bg-green-200">
+           
+            <div className="--bg-green-200 md:w-2/3 text-base md:text-lg leading-relaxed text-[#1e1e1e] max-w-4xl md:max-w-none flex-1 --max-h-[55vh] --overflow-y-scroll --scrollbar-hide">
+              <div className="space-y-4">
+
+                <ol className="list-decimal --space-y-3 pl-5 text-left">
+                  <li>
+                    <strong>Promote Innovation:</strong> Reimagine traditional art forms through contemporary design interventions to ensure their continued relevance.
+                  </li>
+                  <li>
+                    <strong>Empower Creators:</strong> Offer platforms and resources to artisans and designers, enabling them to sustain their practices and achieve global recognition.
+                  </li>
+                  <li>
+                    <strong>Foster Sustainability:</strong> Embed environmentally conscious practices into every aspect of our work, from art production to curation.
+                  </li>
+                  <li>
+                    <strong>Drive Collaboration:</strong> Build partnerships with stakeholders across industries to expand the reach and impact of Indian art and design.
+                  </li>
+                </ol>
+               
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+            {/* Section 3 - Mission */}
+      <div className="sm:hidden -bg-blue-200  snap-start min-h-screen w-full flex items-center justify-center px-6 md:px-20 --pt-24">
+        <div className="max-w-5xl w-full ">
+          <div className="flex flex-col md:flex-row md:items-start items-center h-full --bg-green-200">
+          
+            <div className="--bg-green-200 md:w-2/3 text-base md:text-lg leading-relaxed text-[#1e1e1e] max-w-4xl md:max-w-none flex-1 --max-h-[55vh] --overflow-y-scroll --scrollbar-hide">
+              <div className="space-y-4">
+
+               
+                <p className="text-justify">
+                  Through this comprehensive approach, Histare is committed to creating a lasting impact on the art and design world, shaping a future where tradition and innovation harmoniously coexist.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
 
       {/* Section 4 - Purpose with Footer */}
       <div className="snap-start min-h-screen w-full flex flex-col">
@@ -113,7 +180,7 @@ export default function Frameworks() {
           }
         }
       `}</style>
-      
+
     </div>
   );
 }
