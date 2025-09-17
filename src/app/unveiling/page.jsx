@@ -10,9 +10,9 @@ export default function Unveiling() {
       <Navbar />
 
       {/* Section 1 - Heading */}
-      <section className="--bg-red-200 h-screen snap-start snap-always flex items-center justify-center px-6 md:px-20">
+      <section className="--bg-red-200 min-h-screen snap-start snap-always flex items-center justify-center px-6 md:px-20">
         <h2
-          className="text-4xl md:text-5xl text-[#3c597B] text-center"
+          className="text-7xl md:text-7x1 text-[#3c597B] text-center"
           style={{ fontFamily: 'Rofane', fontStyle: 'italic' }}
         >
           <span className="italic font-normal">Unveiling </span>
@@ -21,7 +21,7 @@ export default function Unveiling() {
       </section>
 
       {/* Section 2 - Content with Footer */}
-      <section className="hidden --bg-blue-200 snap-start snap-always h-screen sm:flex items-center justify-center px-6 md:px-20">
+      <section className="hidden --bg-blue-200 snap-start snap-always min-h-screen sm:flex items-center justify-center px-6 md:px-20">
         <div className="text-base md:text-lg leading-relaxed text-[#1e1e1e] space-y-2 max-w-5xl mx-auto font-sans text-justify" style={{fontFamily:'Optima'}}>
           <p>
             At Histare, we <em>don't just curate art;</em> we nurture stories that span generations, weaving the fabric of our rich cultural heritage with the threads of today's boundless creativity. Our journey is more than a pursuit—it is a deep, heartfelt commitment to preserving the artistry that has shaped us and ensuring that it resonates with the future.
