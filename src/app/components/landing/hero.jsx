@@ -24,7 +24,7 @@ const Hero = () => (
       >
         Envisioning <br /> Artistic Mastery
       </h1>
-      <p className="text-[16px] sm:text-[24px] md:text-[28px] text-[#333333] max-w-lg sm:max-w-2xl !p-0 w-full">
+      <p className="text-[16px] sm:text-[18px] md:text-[22px] text-[#333333] max-w-lg sm:max-w-2xl !p-0 w-full">
   Histare nurtures India's primitive and prospective expressions
   <br className="hidden sm:inline" />
   through cultural evolution.
