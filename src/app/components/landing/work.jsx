@@ -14,14 +14,14 @@ const workItems = [
     },
     {
       id: 12,
-      img: "/images/nava/flower5.svg",
+      img: "/images/nava/flower5.png",
       author: "Pathways To Liberation",
       material: "Stainless steel ,High quality Oil based paint",
       size: "12 H Ft.",
     },
     {
       id: 2,
-      img: "/images/nava/flower.svg",
+      img: "/images/nava/flower.png",
       author: "Ethereal Echoes",
       material: "Brass and Bronze",
       size: "18 H Ft.",
@@ -66,7 +66,7 @@ const workItems = [
     {
       id: 8,
       img: "/images/nava/red.png",
-       popup_image:   "/images/nava/overview2.svg",
+       popup_image:   "/images/nava/overview2.png",
       author: "Euphoric Revelry",
       material: "Natural dyes with pigments ground from stones,leaves,flowers and roots ",
       size: "10 L Ft. x 10 B Ft.",

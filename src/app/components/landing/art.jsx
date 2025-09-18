@@ -25,7 +25,7 @@ const workItems = [
     },
     {
         id: 3,
-        img: "/images/art/Red.svg",
+        img: "/images/art/red.png",
         author: "Ritu Kapoor Kamanth",
         title: "Ready",
         medium: "Oil on Canvas",
@@ -63,7 +63,7 @@ const workItems = [
     },
     {
       id: 7,
-      img: "/images/art/shell.svg",
+      img: "/images/art/shell.png",
       author: "Thukral & Tagra",
       title: "Dominus Aeris Coleus -XIII",
       medium: "Oil on Canvas",
@@ -72,7 +72,7 @@ const workItems = [
     },
     {
       id: 8,
-      img: "/images/art/green.svg",
+      img: "/images/art/green.png",
       author: "Paramjeet Singh",
       title: "Untitled",
       medium: "Oil on Canvas",
@@ -132,7 +132,7 @@ const workItems = [
       },
       {
         id: 16,
-        img: "/images/art/diamond.svg",
+        img: "/images/art/diamond.png",
         author: "Sada Shiv Jivya Mashe",
         title: "",
         medium: "Cow dung and acrylic on raw canvas",
