@@ -535,7 +535,7 @@ export default function Work() {
 
       <div className="flex-1 flex items-center !h-24  -bg-green-200 !mt-0" style={{fontFamily:'Optima'}}>
         <div 
-          className="work-scroll-container bg-blue-200"
+          className="work-scroll-container --bg-blue-200"
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
