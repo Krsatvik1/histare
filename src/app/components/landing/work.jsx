@@ -451,13 +451,13 @@ export default function Work() {
           alt="navankalpa"
           width={800}
           height={250}
-          className="!pb-0 object-contain w-full h-[38px] sm:h-[45px] md:h-[75px] lg:h-[75px] xl:h-[75px]"
+          className="!pb-0 object-contain mt-[34px] w-full h-[38px] sm:h-[45px] md:h-[75px] lg:h-[75px] xl:h-[75px]"
         />
       
     
       </div>
 
-      <div className="flex-1 flex items-center !h-24  --bg-green-200 !mt-0" style={{fontFamily:'Optima'}}>
+      <div className="flex-1 flex items-center !h-24  bg-green-200 !mt-0" style={{fontFamily:'Optima'}}>
         <div 
           className="work-scroll-container"
           onMouseEnter={handleMouseEnter}
