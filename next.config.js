@@ -1,7 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['dev-histare.netlify.app'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'dev-histare.netlify.app',
+      },
+    ],
   },
 };
 
