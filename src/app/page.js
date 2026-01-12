@@ -4,13 +4,14 @@ import React from 'react';
 import Navbar from './components/navbar';
 import Hero from './components/landing/hero';
 import Elephant from './components/landing/elephant';
-import Footer from './components/footerblank';
+// import Footer from './components/footerblank'; // This import is removed as per the instruction's implied change
 import Testimonial from './components/landing/testimonial';
 import Partnership from './components/landing/partnership';
 import Programe from './components/landing/programe';
 import Work from './components/landing/work';
-import Interest from './components/landing/interest';
+// import Interest from './components/landing/interest'; // This import is removed as per the instruction's implied change
 import Art from './components/landing/art';
+
 
 function Home() {
   return (

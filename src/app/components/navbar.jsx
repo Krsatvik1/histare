@@ -46,13 +46,31 @@ const Navbar = () => {
     };
   }, []);
 
+  const [isHovered, setIsHovered] = useState(false);
+  const [isHinting, setIsHinting] = useState(false);
+
+  useEffect(() => {
+    // Trigger hint animation after loader finishes (2000ms + delay)
+    const startTimer = setTimeout(() => {
+      setIsHinting(true);
+
+      // Revert back to dots after a short duration
+      const endTimer = setTimeout(() => {
+        setIsHinting(false);
+      }, 1200); // Stay expanded for 1.2s
+
+      return () => clearTimeout(endTimer);
+    }, 2800); // Start at 2.8s (Loader is 2s + 0.8s buffer)
+
+    return () => clearTimeout(startTimer);
+  }, []);
+
   return (
     <>
       {/* Navbar */}
       <nav
-        className={`fixed top-0 left-0 w-full flex items-center justify-between p-5 --bg-red-200 py-0 sm:p-6 z-50 pointer-events-none transition-all duration-300 ${
-          scrolled ? 'bg-[#F3F0ED] --backdrop-blur-sm --shadow-sm' : 'bg-transparent'
-        }`}
+        className={`fixed top-0 left-0 w-full flex items-center justify-between p-5 --bg-red-200 py-0 sm:p-6 z-50 pointer-events-none transition-all duration-300 ${scrolled ? 'bg-[#F3F0ED] --backdrop-blur-sm --shadow-sm' : 'bg-transparent'
+          }`}
       >
         <div className="pointer-events-auto">
           <a href="/">
@@ -66,9 +84,30 @@ const Navbar = () => {
         <div className="pointer-events-auto">
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="focus:outline-none text-gray-600 text-xl sm:text-2xl p-5 sm:p-8 md:p-10 cursor-pointer transition-transform duration-300"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+            className="focus:outline-none text-gray-600 p-5 sm:p-8 md:p-10 cursor-pointer transition-transform duration-300 flex items-center justify-center"
           >
-            {menuOpen ? '✕' : '⋮'}
+            {menuOpen ? (
+              <span className="text-xl sm:text-2xl">✕</span>
+            ) : (
+              // Animated Hamburger (Dots <-> Lines)
+              <div className="flex flex-col gap-[5px] items-end w-[24px]">
+                {[0, 1, 2].map((i) => (
+                  <motion.div
+                    key={i}
+                    className="h-[4px] bg-gray-600 rounded-full"
+                    initial={{ width: "4px" }}
+                    animate={{ width: (isHovered || isHinting) ? "24px" : "4px" }}
+                    transition={{
+                      duration: 0.5,
+                      ease: [0.22, 1, 0.36, 1], // Premium "out-quart" feel
+                      delay: i * 0.1 // Stagger effect for "left to right" feel
+                    }}
+                  />
+                ))}
+              </div>
+            )}
           </button>
         </div>
       </nav>
@@ -188,7 +227,7 @@ const Navbar = () => {
                 </div>
               </motion.div>
             </div>
-          </motion.div> 
+          </motion.div>
         )}
       </AnimatePresence>
     </>

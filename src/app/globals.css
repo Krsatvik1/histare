@@ -140,6 +140,7 @@ body {
   display: flex;
   animation: scroll-x 8s linear infinite;
 }
+
 .work-scroll-container:hover .work-scroll-track {
   animation-play-state: paused;
 }
@@ -152,7 +153,7 @@ body {
 }
 
 /* little breathing space between content and boundaries */
-.work-card > * {
+.work-card>* {
   margin-bottom: 0.75rem;
 }
 
@@ -160,6 +161,7 @@ body {
   0% {
     transform: translateX(0);
   }
+
   100% {
     /* "-50%" works because we duplicated the list once */
     transform: translateX(-50%);
@@ -170,7 +172,8 @@ body {
   margin: 0;
   padding: 0;
   scroll-snap-type: y mandatory;
-  scroll-padding-top: 500px; /* adds buffer zone for more natural snapping */
+  scroll-padding-top: 500px;
+  /* adds buffer zone for more natural snapping */
   overscroll-behavior: contain;
   overflow-y: scroll;
   height: 100vh;
@@ -178,7 +181,8 @@ body {
 
 .section {
   scroll-snap-align: start;
-  scroll-snap-stop: always; /* makes sure scroll snaps only when section is fully in view */
+  scroll-snap-stop: always;
+  /* makes sure scroll snaps only when section is fully in view */
   height: 100vh;
 }
 
@@ -203,18 +207,21 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #F3F0ED; /* light track */
+  background: #F3F0ED;
+  /* light track */
   border-radius: 100vh;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #3c597B; /* your brand dark blue */
+  background: #3c597B;
+  /* your brand dark blue */
   border-radius: 100vh;
   border: 2px solid #F3F0ED;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #2b4260; /* darker on hover */
+  background: #2b4260;
+  /* darker on hover */
 }
 
 .marquee {
@@ -246,6 +253,7 @@ body {
   0% {
     transform: translateX(0%);
   }
+
   100% {
     transform: translateX(-50%);
   }
@@ -256,6 +264,7 @@ body {
   0% {
     transform: translateX(-50%);
   }
+
   100% {
     transform: translateX(0%);
   }

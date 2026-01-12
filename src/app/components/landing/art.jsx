@@ -1,167 +1,171 @@
 'use client';
 import React, { useState, useRef } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const workItems = [
-    {
-      id: 1,
-      img: "/images/art/hourse.png",
-      author: "Sunil Das",
-      title: "Untitled",
-      medium: "Mixed Media on Paper",
-      size: "30 x 22 in",
-      year: "2005"
-    },
-    {
-      id: 2,
-      img: "/images/art/lily.png",
-      author: "A. Ramachandran",
-      title: "Girl with water Hyacinth",
-      medium: "Oil on Canvas",
-      size: "46 x 36 in",
-      year: "2012"
-    },
-    {
-        id: 3,
-        img: "/images/art/red.png",
-        author: "Ritu Kapoor Kamanth",
-        title: "Ready",
-        medium: "Oil on Canvas",
-        size: '36" x 60"',
-        year: "",
-        orientation: 'landscape'
-      },
-    {
-      id: 4,
-      img: "/images/landing/w4.png",
-      author: "F.N Souza",
-      title: "Untitled",
-      medium: "Gouache on paper pasted on board",
-      size: '21.5" x 14.5"',
-      year: "1950"
-    },
-    {
-        id: 5,
-        img: "/images/art/Resonance.png",
-        author: "Kanchan Chander",
-        title: "Abhivyakti",
-        medium: "Acrylic oil and sequins on canvas",
-        size: "48 x 15 in",
-        year: ""
-      },
-    {
-      id: 6,
-      img: "/images/art/bird.png",
-      author: "Sudhir Bhagat",
-      title: "Live Life To The Fullest",
-      medium: "Oil on canvas",
-      size: "",
-      year: "2017",
-      orientation : "landscape"
-    },
-    {
-      id: 7,
-      img: "/images/art/shell.png",
-      author: "Thukral & Tagra",
-      title: "Dominus Aeris Coleus -XIII",
-      medium: "Oil on Canvas",
-      size: "60 x 60 in",
-      year: "2017"
-    },
-    {
-      id: 8,
-      img: "/images/art/green.png",
-      author: "Paramjeet Singh",
-      title: "Untitled",
-      medium: "Oil on Canvas",
-      size: '42 x 24 in',
-      year: "2015"
-    },
-    {
-      id: 9,
-      img: "/images/art/man.png",
-      author: "Paramjeet Singh Dogra",
-      title: "Untitled",
-      medium: "Oil & Acrylic on Canvas",
-      size: "24 x 30 in",
-      year: ""
-    },
-    {
-        id: 10,
-        img: "/images/art/purple.png",
-        author: "Prem Singh",
-        title: "Lyrical Voices",
-        medium: "Oil on Canvas",
-        size: "35 x 50 in",
-        year: "2014"
-      },
-      {
-        id: 11,
-        img: "/images/art/brown.png",
-        author: "Vijay Sada Shiv Mashe",
-        title: "",
-        medium: "Cow dung & acrylic on raw canvas",
-        size: "36 x 45 in",
-        year: ""
-      },
-      {
-        id: 12,
-        img: "/images/art/browntwo.png",
-        author: "Vijay Sada Shiv Mashe",
-        title: "",
-        medium: "Cow dung & acrylic on raw canvas",
-        size: "37 x 44.5 in",
-        year: ""
-      },
-      // Grouped Zareena Hashmi artworks
-      {
-        id: 'grouped-13-14-15',
-        isGroup: true,
-        images: [
-          "/images/art/blackheart.png",
-          "/images/art/clover.png", 
-          "/images/art/cocnut.png"
-        ],
-        author: "Zareena Hashmi",
-        title: "Tilka: By The Mango Tree",
-        medium: "Woodcut on paper",
-        size: "12.5 x 9.75 in",
-        year: ""
-      },
-      {
-        id: 16,
-        img: "/images/art/diamond.png",
-        author: "Sada Shiv Jivya Mashe",
-        title: "",
-        medium: "Cow dung and acrylic on raw canvas",
-        size: "79.5 x 54 in",
-        year: ""
-      },
-      {
-        id: 17,
-        img: "/images/art/deer.png",
-        author: "Rudhan Devi",
-        title: "Peacocks",
-        medium: "Natural earth ochre colors on handmade paper",
-        size: "40 x 56 in",
-        year: ""
-      },
-      {
-        id: 18,
-        img: "/images/art/peacocks.png",
-        author: "Rudhan Devi",
-        title: "Peacocks",
-        medium: "Natural earth ochre colors on handmade paper",
-        size: "40 x 56 in",
-        year: "",
-        year: "",
-        orientation: "landscape"
-      },
-  ];
+  {
+    id: 1,
+    img: "/images/art/hourse.png",
+    author: "Sunil Das",
+    title: "Untitled",
+    medium: "Mixed Media on Paper",
+    size: "30 x 22 in",
+    year: "2005"
+  },
+  {
+    id: 2,
+    img: "/images/art/lily.png",
+    author: "A. Ramachandran",
+    title: "Girl with water Hyacinth",
+    medium: "Oil on Canvas",
+    size: "46 x 36 in",
+    year: "2012"
+  },
+  {
+    id: 3,
+    img: "/images/art/red.png",
+    author: "Ritu Kapoor Kamanth",
+    title: "Ready",
+    medium: "Oil on Canvas",
+    size: '36" x 60"',
+    year: "",
+    orientation: 'landscape'
+  },
+  {
+    id: 4,
+    img: "/images/landing/w4.png",
+    author: "F.N Souza",
+    title: "Untitled",
+    medium: "Gouache on paper pasted on board",
+    size: '21.5" x 14.5"',
+    year: "1950"
+  },
+  {
+    id: 5,
+    img: "/images/art/Resonance.png",
+    author: "Kanchan Chander",
+    title: "Abhivyakti",
+    medium: "Acrylic oil and sequins on canvas",
+    size: "48 x 15 in",
+    year: ""
+  },
+  {
+    id: 6,
+    img: "/images/art/bird.png",
+    author: "Sudhir Bhagat",
+    title: "Live Life To The Fullest",
+    medium: "Oil on canvas",
+    size: "",
+    year: "2017",
+    orientation: "landscape"
+  },
+  {
+    id: 7,
+    img: "/images/art/shell.png",
+    author: "Thukral & Tagra",
+    title: "Dominus Aeris Coleus -XIII",
+    medium: "Oil on Canvas",
+    size: "60 x 60 in",
+    year: "2017"
+  },
+  {
+    id: 8,
+    img: "/images/art/green.png",
+    author: "Paramjeet Singh",
+    title: "Untitled",
+    medium: "Oil on Canvas",
+    size: '42 x 24 in',
+    year: "2015"
+  },
+  {
+    id: 9,
+    img: "/images/art/man.png",
+    author: "Paramjeet Singh Dogra",
+    title: "Untitled",
+    medium: "Oil & Acrylic on Canvas",
+    size: "24 x 30 in",
+    year: ""
+  },
+  {
+    id: 10,
+    img: "/images/art/purple.png",
+    author: "Prem Singh",
+    title: "Lyrical Voices",
+    medium: "Oil on Canvas",
+    size: "35 x 50 in",
+    year: "2014"
+  },
+  {
+    id: 11,
+    img: "/images/art/brown.png",
+    author: "Vijay Sada Shiv Mashe",
+    title: "",
+    medium: "Cow dung & acrylic on raw canvas",
+    size: "36 x 45 in",
+    year: ""
+  },
+  {
+    id: 12,
+    img: "/images/art/browntwo.png",
+    author: "Vijay Sada Shiv Mashe",
+    title: "",
+    medium: "Cow dung & acrylic on raw canvas",
+    size: "37 x 44.5 in",
+    year: ""
+  },
+  // Grouped Zareena Hashmi artworks
+  {
+    id: 'grouped-13-14-15',
+    isGroup: true,
+    images: [
+      "/images/art/blackheart.png",
+      "/images/art/clover.png",
+      "/images/art/cocnut.png"
+    ],
+    author: "Zareena Hashmi",
+    title: "Tilka: By The Mango Tree",
+    medium: "Woodcut on paper",
+    size: "12.5 x 9.75 in",
+    year: ""
+  },
+  {
+    id: 16,
+    img: "/images/art/diamond.png",
+    author: "Sada Shiv Jivya Mashe",
+    title: "",
+    medium: "Cow dung and acrylic on raw canvas",
+    size: "79.5 x 54 in",
+    year: ""
+  },
+  {
+    id: 17,
+    img: "/images/art/deer.png",
+    author: "Rudhan Devi",
+    title: "Peacocks",
+    medium: "Natural earth ochre colors on handmade paper",
+    size: "40 x 56 in",
+    year: ""
+  },
+  {
+    id: 18,
+    img: "/images/art/peacocks.png",
+    author: "Rudhan Devi",
+    title: "Peacocks",
+    medium: "Natural earth ochre colors on handmade paper",
+    size: "40 x 56 in",
+    year: "",
+    year: "",
+    orientation: "landscape"
+  },
+];
 
-function GroupedCardContent({ item, reversed, onImageClick }) {
+const isVideo = (src) => {
+  if (!src) return false;
+  const ext = src.split('.').pop().toLowerCase();
+  return ext === 'mp4' || ext === 'webm';
+};
+
+function GroupedCardContent({ item, reversed, onImageClick, onHover, onLeave }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const handleThumbnailClick = (index) => {
@@ -169,7 +173,7 @@ function GroupedCardContent({ item, reversed, onImageClick }) {
   };
 
   const Info = (
-    <div className="p-4 pl-0 pb-0 rounded-lg" style={{fontFamily:'Optima'}}>
+    <div className="p-4 pl-0 pb-0 rounded-lg" style={{ fontFamily: 'Optima' }}>
       {item.author && (
         <div className="text-sm md:text-base font-semibold text-gray-800 mb-1 break-words line-clamp-2">{item.author}</div>
       )}
@@ -179,52 +183,78 @@ function GroupedCardContent({ item, reversed, onImageClick }) {
     </div>
   );
 
+  const currentSrc = item.images[currentImageIndex];
+  const isCurrentVideo = isVideo(currentSrc);
+
   const GroupedArt = (
     <div className="p-0 ml-0 rounded-lg w-52">
       {/* Main Image */}
-      <div className="mb-3">
-       <Image
-          src={item.images[currentImageIndex]}
-          alt={`${item.title || "Artwork"} ${currentImageIndex + 1}`}
-          width={200}
-          height={350}
-          className="rounded-md object-cover cursor-pointer hover:opacity-80 transition-opacity w-full"
-          onClick={() => onImageClick(item, currentImageIndex)}
-        />
+      <div className="mb-3" onClick={() => onImageClick(item, currentImageIndex)}>
+        {isCurrentVideo ? (
+          <video
+            src={currentSrc}
+            className="rounded-md object-cover cursor-pointer hover:opacity-80 transition-opacity w-full h-[350px]"
+            autoPlay
+            muted
+            loop
+            playsInline
+            onMouseEnter={onHover}
+            onMouseLeave={onLeave}
+          />
+        ) : (
+          <Image
+            src={currentSrc}
+            alt={`${item.title || "Artwork"} ${currentImageIndex + 1}`}
+            width={200}
+            height={350}
+            className="rounded-md object-cover cursor-pointer hover:opacity-80 transition-opacity w-full"
+            onMouseEnter={onHover}
+            onMouseLeave={onLeave}
+          />
+        )}
       </div>
-      
-      {/* Image Counter */}
-      {/* <div className="text-xs text-gray-600 text-center mb-2" style={{fontFamily:'Optima'}}>
-        {currentImageIndex + 1}/{item.images.length}
-      </div> */}
-      
+
       {/* Thumbnails */}
       <div className="flex gap-1 justify-center">
-        {item.images.map((imgSrc, index) => (
-          <button
-            key={index}
-            onClick={() => handleThumbnailClick(index)}
-            className={`relative overflow-hidden rounded border transition-all ${
-              index === currentImageIndex 
-                ? 'border-blue-500 ring-1 ring-blue-200' 
+        {item.images.map((imgSrc, index) => {
+          const isThumbVideo = isVideo(imgSrc);
+          return (
+            <button
+              key={index}
+              onClick={() => handleThumbnailClick(index)}
+              onMouseEnter={onHover}
+              onMouseLeave={onLeave}
+              className={`relative overflow-hidden rounded border transition-all ${index === currentImageIndex
+                ? 'border-blue-500 ring-1 ring-blue-200'
                 : 'border-gray-300 hover:border-gray-400'
-            }`}
-          >
-            <Image
-              src={imgSrc}
-              alt={`${item.title || "Artwork"} ${index + 1}`}
-              width={30}
-              height={40}
-              className="object-cover"
-            />
-          </button>
-        ))}
+                }`}
+            >
+              {isThumbVideo ? (
+                <video
+                  src={imgSrc}
+                  className="object-cover w-[30px] h-[40px]"
+                  muted
+                  loop
+                  playsInline
+                />
+              ) : (
+                <Image
+                  src={imgSrc}
+                  alt={`${item.title || "Artwork"} ${index + 1}`}
+                  width={30}
+                  height={40}
+                  className="object-cover"
+                />
+              )}
+            </button>
+          )
+        })}
       </div>
     </div>
   );
 
   return reversed ? (
-    <div className="flex flex-col" style={{fontFamily:'Optima'}}>
+    <div className="flex flex-col" style={{ fontFamily: 'Optima' }}>
       <div className="mb-4">{Info}</div>
       <div>{GroupedArt}</div>
     </div>
@@ -236,16 +266,17 @@ function GroupedCardContent({ item, reversed, onImageClick }) {
   );
 }
 
-function CardContent({ item, reversed, onImageClick }) {
+function CardContent({ item, reversed, onImageClick, onHover, onLeave }) {
   if (item.isGroup) {
-    return <GroupedCardContent item={item} reversed={reversed} onImageClick={onImageClick} />;
+    return <GroupedCardContent item={item} reversed={reversed} onImageClick={onImageClick} onHover={onHover} onLeave={onLeave} />;
   }
 
   // Determine if this is a landscape orientation card
   const isLandscape = item.orientation === "landscape";
-  
+  const isItemVideo = isVideo(item.img);
+
   const Info = (
-    <div className={`p-4 pl-0 pb-0 rounded-lg ${isLandscape ? 'w-full' : 'w-52'}`} style={{fontFamily:'Optima'}}>
+    <div className={`p-4 pl-0 pb-0 rounded-lg ${isLandscape ? 'w-full' : 'w-52'}`} style={{ fontFamily: 'Optima' }}>
       {item.author && (
         <div className="text-sm md:text-base font-semibold text-gray-800 mb-1 break-words line-clamp-2">{item.author}</div>
       )}
@@ -257,21 +288,37 @@ function CardContent({ item, reversed, onImageClick }) {
 
   const Art = (
     <div className={`p-0 ml-0 rounded-lg ${isLandscape ? 'w-full' : 'w-52'}`}>
-      <Image
-        src={item.img}
-        alt={item.title || "Artwork"}
-        width={isLandscape ? 400 : 200}
-        height={isLandscape ? 250 : 350}
-        className={`rounded-md object-cover mx-auto ml-0 cursor-pointer hover:opacity-80 transition-opacity ${
-          isLandscape ? 'w-full h-auto' : ''
-        }`}
-        onClick={() => onImageClick(item)}
-      />
+      {isItemVideo ? (
+        <video
+          src={item.img}
+          className={`rounded-md object-cover mx-auto ml-0 cursor-pointer hover:opacity-80 transition-opacity ${isLandscape ? 'w-full h-auto' : 'w-[200px] h-[350px]'
+            }`}
+          autoPlay
+          muted
+          loop
+          playsInline
+          onClick={() => onImageClick(item)}
+          onMouseEnter={onHover}
+          onMouseLeave={onLeave}
+        />
+      ) : (
+        <Image
+          src={item.img}
+          alt={item.title || "Artwork"}
+          width={isLandscape ? 400 : 200}
+          height={isLandscape ? 250 : 350}
+          className={`rounded-md object-cover mx-auto ml-0 cursor-pointer hover:opacity-80 transition-opacity ${isLandscape ? 'w-full h-auto' : ''
+            }`}
+          onClick={() => onImageClick(item)}
+          onMouseEnter={onHover}
+          onMouseLeave={onLeave}
+        />
+      )}
     </div>
   );
 
   return reversed ? (
-    <div className="!mb-0 flex flex-col justify-end --bg-red-200 h-[100%]" style={{fontFamily:'Optima'}}>
+    <div className="!mb-0 flex flex-col justify-end --bg-red-200 h-[100%]" style={{ fontFamily: 'Optima' }}>
       <div className="mb-4">{Info}</div>
       <div>{Art}</div>
     </div>
@@ -284,71 +331,19 @@ function CardContent({ item, reversed, onImageClick }) {
 }
 
 export default function Work() {
-  const [isHovered, setIsHovered] = useState(false);
-  const [scrollPosition, setScrollPosition] = useState(0);
-  const [isManualControl, setIsManualControl] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
   const scrollTrackRef = useRef(null);
 
   const handleMouseEnter = () => {
-    setIsHovered(true);
-    setIsManualControl(true);
-    
-    if (scrollTrackRef.current) {
-      // Get the current computed transform value
-      const computedStyle = window.getComputedStyle(scrollTrackRef.current);
-      const transform = computedStyle.getPropertyValue('transform');
-      
-      if (transform !== 'none') {
-        const matrix = transform.match(/matrix.*\((.+)\)/);
-        if (matrix) {
-          const values = matrix[1].split(', ');
-          const currentX = parseFloat(values[4]);
-          setScrollPosition(currentX);
-          
-          // Remove animation and set the current position
-          scrollTrackRef.current.style.animation = 'none';
-          scrollTrackRef.current.style.transform = `translateX(${currentX}px)`;
-        }
-      }
-    }
+    setIsPaused(true);
   };
 
   const handleMouseLeave = () => {
-    setIsHovered(false);
-    setIsManualControl(false);
-    
-    if (scrollTrackRef.current) {
-      // Start continuous infinite animation from current position
-      const currentPosition = scrollPosition;
-      
-      // Create and apply infinite looping animation from current position
-      const animationName = `infinite-scroll-${Date.now()}`;
-      const keyframes = `
-        @keyframes ${animationName} {
-          0% { transform: translateX(${currentPosition}px); }
-          100% { transform: translateX(calc(${currentPosition}px - 25%)); }
-        }
-      `;
-      
-      // Remove existing style element if any
-      const existingStyle = document.getElementById('dynamic-scroll-animation');
-      if (existingStyle) {
-        existingStyle.remove();
-      }
-      
-      // Add new keyframe animation
-      const style = document.createElement('style');
-      style.id = 'dynamic-scroll-animation';
-      style.textContent = keyframes;
-      document.head.appendChild(style);
-      
-      // Apply the new infinite animation (maintaining original 80s duration)
-      scrollTrackRef.current.style.animation = `${animationName} 80s linear infinite`;
-    }
+    setIsPaused(false);
   };
 
-   const handleImageClick = (item, imageIndex = null) => {
+  const handleImageClick = (item, imageIndex = null) => {
     if (item.isGroup && imageIndex !== null) {
       // For grouped images, show the specific image clicked
       setSelectedImage({
@@ -376,24 +371,6 @@ export default function Work() {
 
   const closePopup = () => {
     setSelectedImage(null);
-  };
-
-  const handleArrowClick = (direction) => {
-    if (scrollTrackRef.current && isManualControl) {
-      const scrollAmount = 300;
-      
-      if (direction === 'right') {
-        // Always move right - no reset, true infinite scroll
-        const newPosition = scrollPosition - scrollAmount;
-        setScrollPosition(newPosition);
-        scrollTrackRef.current.style.transform = `translateX(${newPosition}px)`;
-      } else {
-        // Always move left - no reset, true infinite scroll  
-        const newPosition = scrollPosition + scrollAmount;
-        setScrollPosition(newPosition);
-        scrollTrackRef.current.style.transform = `translateX(${newPosition}px)`;
-      }
-    }
   };
 
   return (
@@ -467,63 +444,12 @@ export default function Work() {
           padding-bottom: 0px;
         }
 
-        .arrow-button {
-          position: absolute;
-          top: 50%;
-          transform: translateY(-50%);
-          background: rgba(0, 54, 119, 0.8);
-          color: white;
-          border: none;
-          border-radius: 50%;
-          width: 50px;
-          height: 50px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          cursor: pointer;
-          transition: all 0.3s ease;
-          opacity: 0;
-          pointer-events: none;
-          z-index: 10;
-        }
-        
-        .arrow-button.visible {
-          opacity: 1;
-          pointer-events: auto;
-        }
-        
-        .arrow-button:hover {
-          background: rgba(0, 54, 119, 1);
-          transform: translateY(-50%) scale(1.1);
-        }
-        
-        .arrow-left {
-          left: 20px;
-        }
-        
-        .arrow-right {
-          right: 20px;
-        }
-
         body {
           overflow-x: hidden;
         }
       `}</style>
 
-      {/* <div className="rounded-xl overflow-hidden pt-5 md:pt-5 pt-32 mb-5">
-
-           <Image
-          src="/images/art/arth.svg"
-          alt="navankalpa"
-          width={800}
-          height={250}
-          className="!pb-0 object-contain w-full h-[38px] sm:h-[45px] md:h-[75px] lg:h-[75px] xl:h-[75px]"
-        />
-      
-    
-      </div> */}
-
-       <div className="rounded-xl overflow-hidden pt-5 md:pt-5 pt-32 mb-5 --bg-red-200 flex items-center justify-center">
+      <div className="rounded-xl overflow-hidden pt-5 md:pt-5 pt-32 mb-5 --bg-red-200 flex items-center justify-center">
         <Image
           src="/images/art/arth2.svg"
           alt="artthakya"
@@ -533,43 +459,30 @@ export default function Work() {
         />
       </div>
 
-      <div className="flex-1 flex items-center !h-24  -bg-green-200 !mt-0" style={{fontFamily:'Optima'}}>
-        <div 
+      <div className="flex-1 flex items-center !h-24  -bg-green-200 !mt-0" style={{ fontFamily: 'Optima' }}>
+        <div
           className="work-scroll-container --bg-blue-200"
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
         >
-          {/* Left Arrow */}
-          <button
-            className={`arrow-button arrow-left ${isHovered ? 'visible' : ''}`}
-            onClick={() => handleArrowClick('left')}
-          >
-            <ChevronLeft size={24} />
-          </button>
-
-          {/* Right Arrow */}
-          <button
-            className={`arrow-button arrow-right ${isHovered ? 'visible' : ''}`}
-            onClick={() => handleArrowClick('right')}
-          >
-            <ChevronRight size={24} />
-          </button>
-
-          <div 
+          <div
             ref={scrollTrackRef}
             className="work-scroll-track"
+            style={{ animationPlayState: isPaused ? 'paused' : 'running' }}
           >
             {/* Create multiple copies for true infinite scroll */}
             {[...workItems, ...workItems, ...workItems, ...workItems].map((item, i) => (
               <div
                 key={i}
-                className={`work-card ${item.isGroup ? 'grouped' : ''} ${
-                  item.orientation === 'landscape' ? 'landscape' : ''
-                } ${
-                  i % 2 === 0 ? 'card-up' : 'card-down'
-                }`}
+                className={`work-card ${item.isGroup ? 'grouped' : ''} ${item.orientation === 'landscape' ? 'landscape' : ''
+                  } ${i % 2 === 0 ? 'card-up' : 'card-down'
+                  }`}
               >
-                <CardContent item={item} reversed={i % 2 === 1} onImageClick={handleImageClick} />
+                <CardContent
+                  item={item}
+                  reversed={i % 2 === 1}
+                  onImageClick={handleImageClick}
+                  onHover={handleMouseEnter}
+                  onLeave={handleMouseLeave}
+                />
               </div>
             ))}
           </div>
@@ -579,92 +492,115 @@ export default function Work() {
       {/* Image Popup Modal */}
       {selectedImage && (
         <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-        <div 
-          className="fixed inset-0 bg-blur bg-opacity-80 flex items-center justify-center z-50 p-4"
-          onClick={closePopup}
-        >
-          <div 
-            className="relative max-w-4xl max-h-[90vh] bg-white rounded-lg overflow-hidden"
-            onClick={(e) => e.stopPropagation()}
+          <div
+            className="fixed inset-0 bg-blur bg-opacity-80 flex items-center justify-center z-50 p-4"
+            onClick={closePopup}
           >
-            {/* Close button */}
-            <button
-              onClick={closePopup}
-              className="absolute top-4 right-4 bg-black bg-opacity-50 text-white rounded-full w-8 h-8 flex items-center justify-center hover:bg-opacity-70 transition-all z-10"
+            <div
+              className="relative max-w-4xl max-h-[90vh] bg-white rounded-lg overflow-hidden"
+              onClick={(e) => e.stopPropagation()}
             >
-              ×
-            </button>
-            
-            {/* Image */}
-            <div className="flex flex-col lg:flex-row bg-[#F3F0ED]">
-              <div className="flex-1 flex items-center justify-center p-4">
-                <Image
-                  src={selectedImage.currentImage || selectedImage.img}
-                  alt={selectedImage.title || "Artwork"}
-                  width={600}
-                  height={800}
-                  className="max-w-full max-h-[70vh] object-contain rounded-md"
-                />
-              </div>
-              
-              {/* Info Panel */}
-              <div className="lg:w-80 p-6" style={{fontFamily:'Optima'}}>
-                {selectedImage.author && (
-                  <div className="text-xl font-bold text-gray-800 mb-3">{selectedImage.author}</div>
-                )}
-                {selectedImage.title && (
-                  <div className="text-lg text-gray-700 mb-2">
-                    <span className="font-semibold">Title:</span> {selectedImage.title}
-                  </div>
-                )}
-                {selectedImage.material && (
-                  <div className="text-base text-gray-600 mb-2 leading-relaxed">
-                    <span className="font-semibold">Material:</span> {selectedImage.material}
-                  </div>
-                )}
-                {selectedImage.size && (
-                  <div className="text-base text-gray-600 mb-2">
-                    <span className="font-semibold">Size:</span> {selectedImage.size}
-                  </div>
-                )}
-                
-                {/* For grouped images, show navigation */}
-                {selectedImage.isGroup && (
-                  <div className="mt-6 pt-4 border-t border-gray-300">
-                    <div className="text-sm text-gray-600 mb-3">
-                      Image {(selectedImage.imageIndex || 0) + 1} of {selectedImage.images.length}
+              {/* Close button */}
+              <button
+                onClick={closePopup}
+                className="absolute top-4 right-4 bg-black bg-opacity-50 text-white rounded-full w-8 h-8 flex items-center justify-center hover:bg-opacity-70 transition-all z-10"
+              >
+                ×
+              </button>
+
+              {/* Image */}
+              <div className="flex flex-col lg:flex-row bg-[#F3F0ED]">
+                <div className="flex-1 flex items-center justify-center p-4">
+                  {isVideo(selectedImage.currentImage || selectedImage.img) ? (
+                    <video
+                      src={selectedImage.currentImage || selectedImage.img}
+                      className="max-w-full max-h-[70vh] object-contain rounded-md"
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                    />
+                  ) : (
+                    <Image
+                      src={selectedImage.currentImage || selectedImage.img}
+                      alt={selectedImage.title || "Artwork"}
+                      width={600}
+                      height={800}
+                      className="max-w-full max-h-[70vh] object-contain rounded-md"
+                    />
+                  )}
+                </div>
+
+                {/* Info Panel */}
+                <div className="lg:w-80 p-6" style={{ fontFamily: 'Optima' }}>
+                  {selectedImage.author && (
+                    <div className="text-xl font-bold text-gray-800 mb-3">{selectedImage.author}</div>
+                  )}
+                  {selectedImage.title && (
+                    <div className="text-lg text-gray-700 mb-2">
+                      <span className="font-semibold">Title:</span> {selectedImage.title}
                     </div>
-                    <div className="flex gap-2">
-                      {selectedImage.images.map((imgSrc, index) => (
-                        <button
-                          key={index}
-                          onClick={() => setSelectedImage({
-                            ...selectedImage,
-                            currentImage: imgSrc,
-                            imageIndex: index
-                          })}
-                          className={`relative overflow-hidden rounded border-2 transition-all ${
-                            index === selectedImage.imageIndex 
-                              ? 'border-blue-500 ring-2 ring-blue-200' 
-                              : 'border-gray-300 hover:border-gray-400'
-                          }`}
-                        >
-                          <Image
-                            src={imgSrc}
-                            alt={`${selectedImage.title} ${index + 1}`}
-                            width={60}
-                            height={80}
-                            className="object-cover"
-                          />
-                        </button>
-                      ))}
+                  )}
+                  {selectedImage.material && (
+                    <div className="text-base text-gray-600 mb-2 leading-relaxed">
+                      <span className="font-semibold">Material:</span> {selectedImage.material}
                     </div>
-                  </div>
-                )}
+                  )}
+                  {selectedImage.size && (
+                    <div className="text-base text-gray-600 mb-2">
+                      <span className="font-semibold">Size:</span> {selectedImage.size}
+                    </div>
+                  )}
+
+                  {/* For grouped images, show navigation */}
+                  {selectedImage.isGroup && (
+                    <div className="mt-6 pt-4 border-t border-gray-300">
+                      <div className="text-sm text-gray-600 mb-3">
+                        Image {(selectedImage.imageIndex || 0) + 1} of {selectedImage.images.length}
+                      </div>
+                      <div className="flex gap-2">
+                        {selectedImage.images.map((imgSrc, index) => {
+                          const isThumbVideo = isVideo(imgSrc);
+                          return (
+                            <button
+                              key={index}
+                              onClick={() => setSelectedImage({
+                                ...selectedImage,
+                                currentImage: imgSrc,
+                                imageIndex: index
+                              })}
+                              className={`relative overflow-hidden rounded border-2 transition-all ${index === selectedImage.imageIndex
+                                ? 'border-blue-500 ring-2 ring-blue-200'
+                                : 'border-gray-300 hover:border-gray-400'
+                                }`}
+                            >
+                              {isThumbVideo ? (
+                                <video
+                                  src={imgSrc}
+                                  className="object-cover w-[60px] h-[80px]"
+                                  muted
+                                  loop
+                                  playsInline
+                                />
+                              ) : (
+                                <Image
+                                  src={imgSrc}
+                                  alt={`${selectedImage.title} ${index + 1}`}
+                                  width={60}
+                                  height={80}
+                                  className="object-cover"
+                                />
+                              )}
+                            </button>
+                          )
+                        })}
+                      </div>
+                    </div>
+                  )}
+                </div>
               </div>
             </div>
           </div>
-        </div>
         </div>
       )}
     </div>
