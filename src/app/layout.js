@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Loader from "./components/loader";
+import TransitionProvider from "./components/TransitionProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,8 +29,16 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {/* Critical Inline Loader */}
+        <div id="global-loader">
+          <div className="relative flex items-center justify-center">
+            <div className="loader-inner"></div>
+            <div className="loader-outer"></div>
+          </div>
+        </div>
         <Loader />
-        {children}
+        <TransitionProvider>
+          {children}
+        </TransitionProvider>
       </body>
     </html>
   );

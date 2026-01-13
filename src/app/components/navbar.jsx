@@ -11,19 +11,19 @@ import {
   FaTwitter,
   FaFacebook
 } from 'react-icons/fa';
+import { useTransition } from '../context/TransitionContext';
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { navigate } = useTransition();
 
   useEffect(() => {
     const handleScroll = () => {
       // ✅ Only apply scroll effect on mobile (screens smaller than 768px)
       const isMobile = window.innerWidth < 768;
-      // console.log(window.innerWidth , is)
       if (isMobile) {
         const scrollHeight = window.scrollY;
-        console.log(scrollHeight)
         setScrolled(scrollHeight > 0); // turn opaque as soon as scrolling starts
       } else {
         setScrolled(false);
@@ -64,6 +64,13 @@ const Navbar = () => {
 
     return () => clearTimeout(startTimer);
   }, []);
+
+  // Custom Navigation Handler
+  const handleNavigation = (e, path, text) => {
+    e.preventDefault();
+    setMenuOpen(false); // Close menu immediately
+    navigate(path, text);
+  };
 
   return (
     <>
@@ -211,18 +218,72 @@ const Navbar = () => {
                 transition={{ delay: 0.3, duration: 0.5 }}
                 className="flex flex-col justify-end px-6 sm:px-8 md:px-10 text-[#333333] text-xl sm:text-xl md:text-2xl font-[Rofane] space-y-3 sm:space-y-3 md:space-y-4 pb-10 sm:pb-14 md:pb-16 h-full"
               >
-                <a href="/framework" className="hover:text-gray-600 transition-colors">Our Framework</a>
-                <a href="/history" className="hover:text-gray-600 transition-colors">Our History</a>
-                <a href="/partnerships" className="hover:text-gray-600 transition-colors">The Value of Partnerships</a>
-                <a href="/vision" className="hover:text-gray-600 transition-colors">Our Vision in Action</a>
-                <a href="/essence" className="hover:text-gray-600 transition-colors">Our Essence</a>
-                <a href="/insights" className="hover:text-gray-600 transition-colors">Insights</a>
-                <a href="/media" className="hover:text-gray-600 transition-colors">In the Spotlight</a>
-                <a href="/goi" className="hover:text-gray-600 transition-colors">G O I</a>
+                <a
+                  href="/framework"
+                  onClick={(e) => handleNavigation(e, '/framework', 'Our Framework')}
+                  className="hover:text-gray-600 transition-colors"
+                >
+                  Our Framework
+                </a>
+                <a
+                  href="/history"
+                  onClick={(e) => handleNavigation(e, '/history', 'Our History')}
+                  className="hover:text-gray-600 transition-colors"
+                >
+                  Our History
+                </a>
+                <a
+                  href="/partnerships"
+                  onClick={(e) => handleNavigation(e, '/partnerships', 'The Value of Partnerships')}
+                  className="hover:text-gray-600 transition-colors"
+                >
+                  The Value of Partnerships
+                </a>
+                <a
+                  href="/vision"
+                  onClick={(e) => handleNavigation(e, '/vision', 'Our Vision in Action')}
+                  className="hover:text-gray-600 transition-colors"
+                >
+                  Our Vision in Action
+                </a>
+                <a
+                  href="/essence"
+                  onClick={(e) => handleNavigation(e, '/essence', 'Our Essence')}
+                  className="hover:text-gray-600 transition-colors"
+                >
+                  Our Essence
+                </a>
+                <a
+                  href="/insights"
+                  onClick={(e) => handleNavigation(e, '/insights', 'Insights')}
+                  className="hover:text-gray-600 transition-colors"
+                >
+                  Insights
+                </a>
+                <a
+                  href="/media"
+                  onClick={(e) => handleNavigation(e, '/media', 'In the Spotlight')}
+                  className="hover:text-gray-600 transition-colors"
+                >
+                  In the Spotlight
+                </a>
+                <a
+                  href="/goi"
+                  onClick={(e) => handleNavigation(e, '/goi', 'G O I')}
+                  className="hover:text-gray-600 transition-colors"
+                >
+                  G O I
+                </a>
 
                 {/* Contact + Privacy */}
                 <div className="flex justify-between items-start">
-                  <a href="/contact" className="hover:text-gray-600 transition-colors">Contact Us</a>
+                  <a
+                    href="/contact"
+                    onClick={(e) => handleNavigation(e, '/contact', 'Contact Us')}
+                    className="hover:text-gray-600 transition-colors"
+                  >
+                    Contact Us
+                  </a>
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -237,6 +298,7 @@ const Navbar = () => {
                     </p>
                     <Link
                       href="/term"
+                      onClick={(e) => handleNavigation(e, '/term', 'Terms & Conditions')}
                       className="hover:text-gray-800 transition-colors text-sm sm:text-sm"
                       style={{ fontFamily: 'Optima' }}
                     >
