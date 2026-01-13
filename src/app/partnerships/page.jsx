@@ -1,13 +1,14 @@
 'use client';
 
 import React from 'react';
-import Navbar from '../components/navbar';
+
+
 import Footer from '../components/footerblank';
 
 export default function Partnerships() {
   return (
     <div className="h-screen overflow-y-scroll scroll-smooth snap-y snap-mandatory">
-      <Navbar />
+
 
       {/* Section 1 - Title */}
       <section className="snap-start --bg-red-200 snap-always min-h-screen flex items-center justify-center px-6 md:px-20">
@@ -24,7 +25,7 @@ export default function Partnerships() {
       {/* Section 2 - Content with Footer */}
       <section className="hidden sm:flex snap-start snap-always min-h-screen flex flex-col">
         <div className="flex-1 flex items-center justify-center px-6 md:px-20 pt-9">
-          <div className="text-base md:text-lg leading-tight text-[#1e1e1e] space-y-2 max-w-5xl mx-auto font-sans text-justify pt-0"style={{ fontFamily: 'Optima' }}>
+          <div className="text-base md:text-lg leading-tight text-[#1e1e1e] space-y-2 max-w-5xl mx-auto font-sans text-justify pt-0" style={{ fontFamily: 'Optima' }}>
             <p>
               Histare bridges the divide between tradition and innovation in the art world, reshaping the conversation
               around cultural heritage and creativity.
@@ -53,16 +54,16 @@ export default function Partnerships() {
             </p>
           </div>
         </div>
-        
+
         {/* Footer aligned with content */}
         {/* <div className="px-6 md:px-20 -ml-20 md:pt-0 md:pb-0" >
           <Footer />
         </div> */}
       </section>
 
-        <section className="block sm:hidden  snap-start snap-always min-h-screen flex flex-col">
+      <section className="block sm:hidden  snap-start snap-always min-h-screen flex flex-col">
         <div className="flex-1 flex items-center justify-center px-6 md:px-20 pt-9">
-          <div className="text-base md:text-lg leading-tight text-[#1e1e1e] space-y-2 max-w-5xl mx-auto font-sans text-justify pt-0"style={{ fontFamily: 'Optima' }}>
+          <div className="text-base md:text-lg leading-tight text-[#1e1e1e] space-y-2 max-w-5xl mx-auto font-sans text-justify pt-0" style={{ fontFamily: 'Optima' }}>
             <p>
               Histare bridges the divide between tradition and innovation in the art world, reshaping the conversation
               around cultural heritage and creativity.
@@ -73,16 +74,16 @@ export default function Partnerships() {
               sustainability and fair trade practices, ensuring that every creator's work is honored and valued.
             </p><br />
 
-               <p>
+            <p>
               Histare goes beyond to transform art into a powerful catalyst for change. By fostering collaboration among
               creators, designers, and visionaries, it creates a space where tradition evolves and contemporary creativity
               flourishes.
             </p><br />
 
-           
+
           </div>
         </div>
-        
+
         {/* Footer aligned with content */}
         {/* <div className="px-6 md:px-20 -ml-20 md:pt-0 md:pb-0" >
           <Footer />
@@ -90,10 +91,10 @@ export default function Partnerships() {
       </section>
 
 
-        <section className="snap-start snap-always min-h-screen flex flex-col block sm:hidden">
+      <section className="snap-start snap-always min-h-screen flex flex-col block sm:hidden">
         <div className="flex-1 flex items-center justify-center px-6 md:px-20 pt-9">
-          <div className="text-base md:text-lg leading-tight text-[#1e1e1e] space-y-2 max-w-5xl mx-auto font-sans text-justify pt-0"style={{ fontFamily: 'Optima' }}>
-         
+          <div className="text-base md:text-lg leading-tight text-[#1e1e1e] space-y-2 max-w-5xl mx-auto font-sans text-justify pt-0" style={{ fontFamily: 'Optima' }}>
+
 
             <p>
               Rather than simply curating, Histare builds connections—linking the old with the new, the local with the
@@ -107,15 +108,15 @@ export default function Partnerships() {
             </p>
           </div>
         </div>
-        
+
         {/* Footer aligned with content */}
         {/* <div className="px-6 md:px-20 -ml-20 md:pt-0 md:pb-0" >
           <Footer />
         </div> */}
       </section>
-        
 
-      
+
+
 
 
     </div>

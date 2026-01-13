@@ -1,7 +1,6 @@
 'use client'
 import React, { useState } from 'react';
-import Navbar from '../components/navbar';
-import Footer from '../components/profooter';
+import Footer from '../components/footerblank';
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -55,7 +54,6 @@ const ContactPage = () => {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Header */}
-      <Navbar />
 
       {/* Main content flex-1 makes it take available space */}
       <main className="flex-1 w-full pt-24 sm:pt-28 md:pt-32 pb-8 px-4 sm:px-6 md:px-8 lg:px-12">
@@ -164,13 +162,12 @@ const ContactPage = () => {
               </button>
               {status && (
                 <p
-                  className={`text-sm text-center ${
-                    status.includes('successfully')
-                      ? 'text-green-600'
-                      : status.includes('Sending')
+                  className={`text-sm text-center ${status.includes('successfully')
+                    ? 'text-green-600'
+                    : status.includes('Sending')
                       ? 'text-blue-600'
                       : 'text-red-600'
-                  }`}
+                    }`}
                 >
                   {status}
                 </p>

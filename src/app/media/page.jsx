@@ -2,7 +2,6 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { Search, Calendar, ExternalLink, Tag, Filter } from 'lucide-react';
-import Navbar from '../components/navbar';
 
 const mediaArticles = [
   {
@@ -137,7 +136,7 @@ export default function MediaPage() {
   const ArticleCard = ({ article }) => {
     // Check if this article should show full description instead of "Read more"
     const showFullDescription = [5, 8, 9].includes(article.id);
-    
+
     return (
       <div className="bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden group">
         <div className="relative h-48 overflow-hidden">
@@ -153,21 +152,21 @@ export default function MediaPage() {
             </span> */}
           </div>
         </div>
-        
+
         <div className="p-6">
           <div className="flex items-center text-gray-500 text-sm mb-3">
             <Calendar className="w-4 h-4 mr-2" />
             {article.date}
           </div>
-          
+
           <h3 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2 group-hover:text-[#3c597B] transition-colors">
             {article.title}
           </h3>
-          
+
           <p className={`text-gray-600 mb-4 ${showFullDescription ? '' : 'line-clamp-3'}`}>
             {article.excerpt}
           </p>
-          
+
           <div className="flex flex-wrap gap-2 mb-4">
             {article.tags.slice(0, 3).map(tag => (
               <span key={tag} className="bg-gray-100 text-gray-600 px-2 py-1 rounded text-xs">
@@ -178,7 +177,7 @@ export default function MediaPage() {
               <span className="text-gray-400 text-xs">+{article.tags.length - 3} more</span>
             )}
           </div>
-          
+
           <div className="flex justify-between items-center">
             {article.link !== "#" && !showFullDescription && (
               <a
@@ -189,7 +188,7 @@ export default function MediaPage() {
                 <ExternalLink className="w-4 h-4 ml-1" />
               </a>
             )}
-            
+
             <button className="text-gray-400 hover:text-gray-600 transition-colors" suppressHydrationWarning={true}>
               {/* <Tag className="w-4 h-4" /> */}
             </button>
@@ -201,34 +200,34 @@ export default function MediaPage() {
 
   return (
     <>
-    <Navbar/>
-    <div className="min-h-screen --bg-gray-50">
-      {/* Header - Made Responsive */}
-     <section className='min-h-screen'>
-     <div className="min-h-screen w-screen --bg-white --shadow-sm flex align-center items-center">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 --bg-blue-200">
-          <div className="text-center">
-            <h1 
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl --font-bold text-[#3c597B] mb-4 leading-tight"
-              style={{ fontFamily: "Rofane", fontStyle: "italic" }}
-            >
-              <span className="italic">In The</span>{' '}
-              <span className="not-italic">Spotlight</span>
-            </h1>
-            {/* <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+
+      <div className="min-h-screen --bg-gray-50">
+        {/* Header - Made Responsive */}
+        <section className='min-h-screen'>
+          <div className="min-h-screen w-screen --bg-white --shadow-sm flex align-center items-center">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 --bg-blue-200">
+              <div className="text-center">
+                <h1
+                  className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl --font-bold text-[#3c597B] mb-4 leading-tight"
+                  style={{ fontFamily: "Rofane", fontStyle: "italic" }}
+                >
+                  <span className="italic">In The</span>{' '}
+                  <span className="not-italic">Spotlight</span>
+                </h1>
+                {/* <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Discover our latest initiatives, partnerships, and cultural projects that celebrate India's rich heritage and drive creative innovation
             </p> */}
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-     </section>
+        </section>
 
-      {/* Filters and Search */}
-     <section>
-     <div className="max-w-7xl mx-auto px-4 py-8">
-        <div className="flex flex-col md:flex-row gap-4 mb-8">
-          {/* Search */}
-          {/* <div className="relative flex-1">
+        {/* Filters and Search */}
+        <section>
+          <div className="max-w-7xl mx-auto px-4 py-8">
+            <div className="flex flex-col md:flex-row gap-4 mb-8">
+              {/* Search */}
+              {/* <div className="relative flex-1">
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
             <input
               type="text"
@@ -240,8 +239,8 @@ export default function MediaPage() {
             />
           </div> */}
 
-          {/* Category Filter */}
-          {/* <div className="flex items-center space-x-2 min-w-max">
+              {/* Category Filter */}
+              {/* <div className="flex items-center space-x-2 min-w-max">
             <Filter className="text-gray-400 w-5 h-5" />
             <select
               value={selectedCategory}
@@ -254,10 +253,10 @@ export default function MediaPage() {
               ))}
             </select>
           </div> */}
-        </div>
+            </div>
 
-        {/* Results count */}
-        {/* <div className="flex justify-between items-center mb-8">
+            {/* Results count */}
+            {/* <div className="flex justify-between items-center mb-8">
           <p className="text-gray-600 text-lg">
             Showing {filteredArticles.length} of {mediaArticles.length} articles
           </p>
@@ -275,40 +274,40 @@ export default function MediaPage() {
           )}
         </div> */}
 
-        {/* Articles Grid */}
-        {filteredArticles.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredArticles.map(article => (
-              <ArticleCard key={article.id} article={article} />
-            ))}
-          </div>
-        ) : (
-          <div className="text-center py-16">
-            <div className="max-w-md mx-auto">
-              <div className="bg-gray-200 rounded-full w-24 h-24 flex items-center justify-center mx-auto mb-6">
-                <Search className="w-12 h-12 text-gray-400" />
+            {/* Articles Grid */}
+            {filteredArticles.length > 0 ? (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {filteredArticles.map(article => (
+                  <ArticleCard key={article.id} article={article} />
+                ))}
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">No articles found</h3>
-              <p className="text-gray-600 mb-6">
-                We couldn't find any articles matching your search criteria. Try adjusting your filters or search terms.
-              </p>
-              <button
-                onClick={() => {
-                  setSearchQuery('');
-                  setSelectedCategory('All');
-                }}
-                className="bg-[#3c597B] text-white px-6 py-3 rounded-lg hover:bg-[#2a4261] transition-colors"
-              >
-                View all articles
-              </button>
-            </div>
+            ) : (
+              <div className="text-center py-16">
+                <div className="max-w-md mx-auto">
+                  <div className="bg-gray-200 rounded-full w-24 h-24 flex items-center justify-center mx-auto mb-6">
+                    <Search className="w-12 h-12 text-gray-400" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">No articles found</h3>
+                  <p className="text-gray-600 mb-6">
+                    We couldn't find any articles matching your search criteria. Try adjusting your filters or search terms.
+                  </p>
+                  <button
+                    onClick={() => {
+                      setSearchQuery('');
+                      setSelectedCategory('All');
+                    }}
+                    className="bg-[#3c597B] text-white px-6 py-3 rounded-lg hover:bg-[#2a4261] transition-colors"
+                  >
+                    View all articles
+                  </button>
+                </div>
+              </div>
+            )}
           </div>
-        )}
-      </div>
-     </section>
+        </section>
 
-    </div>
-    {/* <Footer/> */}
+      </div>
+      {/* <Footer/> */}
     </>
   );
 }

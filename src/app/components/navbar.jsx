@@ -80,7 +80,10 @@ const Navbar = () => {
           }`}
       >
         <div className="pointer-events-auto">
-          <a href="/">
+          <a
+            href="/"
+            onClick={(e) => handleNavigation(e, '/', "Envisioning Artistic Mastery Histare nurtures India's primitive and prospective expressions through cultural evolution.")}
+          >
             <img
               src="/images/navbar/logo.png"
               alt="Histare Logo"

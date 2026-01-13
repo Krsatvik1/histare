@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image'
-import Navbar from '../components/navbar'
 import ProFooter from '../components/profooterblank'
 
 export default function CollectorsAffaire() {
@@ -18,7 +17,7 @@ export default function CollectorsAffaire() {
       {/* Section 1 - Navbar + Logo */}
       <div className="snap-start min-h-screen w-full flex flex-col items-center justify-center px-4">
         <div className="w-full">
-          <Navbar />
+
         </div>
         <div className="flex flex-col items-center text-center">
           <Image
@@ -29,16 +28,16 @@ export default function CollectorsAffaire() {
             className="mb-4"
           />
           <p className="text-sm-4x1 text-base text-gray-300 sm:text-4xl md:text-2xl lg:text-2xl tracking-wide" style={{ fontFamily: 'Playfair Display' }}>
-          A Thousand Journeys of a Million Stories
-</p>
+            A Thousand Journeys of a Million Stories
+          </p>
         </div>
       </div>
 
       {/* Section 2 - Intro Paragraph */}
       <div className="snap-start min-h-screen w-full flex items-center justify-center px-3">
         <div className="max-w-5xl text-sm md:text-xl text-gray-300 text-center leading-tight">
-          <p className='text-justify'style={{ textAlign: 'justify' ,fontFamily:'Optima'}}>
-          The Erbe Project unfolds as a testament to India's artisan families across generations, revealing their profound stories through a rare collection of masterpieces crafted with sustainable materials and ancient techniques. This smart initiative aims to redefine the narrative surrounding these families, transforming perceived helplessness into recognition as custodians of India's oldest creative traditions. By re-evaluating Indian craft and folk arts, curating master artisans, and integrating contemporary design interventions, the project fosters a deep appreciation for visual and performing folk art and craft. It aspires to cultivate a new generation of connoisseurs who honor and preserve the cultural richness embodied in every stitch, stroke, and melody, thus perpetuating the enduring legacy of India's artistic heritage.
+          <p className='text-justify' style={{ textAlign: 'justify', fontFamily: 'Optima' }}>
+            The Erbe Project unfolds as a testament to India's artisan families across generations, revealing their profound stories through a rare collection of masterpieces crafted with sustainable materials and ancient techniques. This smart initiative aims to redefine the narrative surrounding these families, transforming perceived helplessness into recognition as custodians of India's oldest creative traditions. By re-evaluating Indian craft and folk arts, curating master artisans, and integrating contemporary design interventions, the project fosters a deep appreciation for visual and performing folk art and craft. It aspires to cultivate a new generation of connoisseurs who honor and preserve the cultural richness embodied in every stitch, stroke, and melody, thus perpetuating the enduring legacy of India's artistic heritage.
           </p>
         </div>
       </div>
@@ -57,10 +56,10 @@ export default function CollectorsAffaire() {
 
           <div className="relative w-full max-w-4xl">
             {/* First paragraph */}
-            <p className="text-sm md:text-base text-gray-300 leading-relaxed pr-20 md:pr-30 lg:pr-70 xl:pr-70" style={{ textAlign: 'justify' ,fontFamily:'Optima'}}>
-            In the unfolding tapestry of time, 14th September 2024 marked the inception of a significant chapter with The Erbe Project. This moment invited contemplation and engagement, heralding new possibilities and explorations that beckoned the curious and the discerning alike. It served as a canvas upon which innovation and tradition intertwined, poised to resonate with diverse narratives and aspirations.
-</p>
-<hr className="border-t  mt-10" />
+            <p className="text-sm md:text-base text-gray-300 leading-relaxed pr-20 md:pr-30 lg:pr-70 xl:pr-70" style={{ textAlign: 'justify', fontFamily: 'Optima' }}>
+              In the unfolding tapestry of time, 14th September 2024 marked the inception of a significant chapter with The Erbe Project. This moment invited contemplation and engagement, heralding new possibilities and explorations that beckoned the curious and the discerning alike. It served as a canvas upon which innovation and tradition intertwined, poised to resonate with diverse narratives and aspirations.
+            </p>
+            <hr className="border-t  mt-10" />
 
             {/* Toggle Button */}
             <button
@@ -96,10 +95,10 @@ export default function CollectorsAffaire() {
             </button>
 
             {/* Expanded content with smooth animation */}
-            
+
           </div>
         </div>
-         
+
         {/* Footer at bottom */}
         {/* <div className="w-full -ml-4">
           <ProFooter />

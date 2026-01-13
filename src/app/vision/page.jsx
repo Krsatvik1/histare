@@ -1,13 +1,14 @@
 'use client';
 
 import React from 'react';
-import Navbar from '../components/navbar';
+
+
 import Footer from '../components/footerblank';
 
 export default function Vision() {
   return (
     <div className="h-screen overflow-y-scroll scroll-smooth snap-y snap-mandatory">
-      <Navbar />
+
 
       {/* Section 1 - Title */}
       <section className="snap-start snap-always h-screen flex items-center justify-center px-6 md:px-20">
@@ -20,11 +21,11 @@ export default function Vision() {
         </h2>
       </section>
 
-      {/* Section 2 - Content with Footer */}
-      <section className="snap-start snap-always min-h-screen flex flex-col">
-        <div className="flex-1 flex items-center justify-center px-6 md:px-20 pt-0">
+      {/* Section 1 - Header */}
+      <div className="snap-start min-h-screen w-full flex flex-col">
+        <div className="flex-1 flex items-center justify-center px-6 md:px-20 --pt-24 --bg-red-200">
           <div className="text-base md:text-lg leading-tight text-[#1e1e1e] space-y-6 max-w-5xl mx-auto font-sans">
-            <p className='text-justify' style={{fontFamily:'Optima'}}>
+            <p className='text-justify' style={{ fontFamily: 'Optima' }}>
               At Histare, we harmonize diverse artistic viewpoints with a profound understanding of our patrons' tastes,
               creating a seamless blend of tradition and innovation. This core philosophy underpins every dimension of our
               work ranging from the curation of immersive displays to the innovation in design and the development of art
@@ -35,12 +36,12 @@ export default function Vision() {
             </p>
           </div>
         </div>
-        
+
         {/* Footer aligned with content */}
         {/* <div className="px-6 md:px-20 md:-ml-20">
           <Footer />
         </div> */}
-      </section>
+      </div>
     </div>
   );
 }

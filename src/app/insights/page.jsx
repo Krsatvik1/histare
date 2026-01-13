@@ -1,7 +1,8 @@
 'use client';
 
 import React, { useState } from 'react';
-import Navbar from '../components/navbar';
+
+
 import Footer from '../components/footerblank';
 
 const reports = [
@@ -11,7 +12,7 @@ const reports = [
     type: 'Impact Report',
     img: "/images/insights/reflection.png",
     pdf: "/pdf/impact.pdf",
-    pdf_title : "impact.pdf"
+    pdf_title: "impact.pdf"
   },
   {
     id: 2,
@@ -19,7 +20,7 @@ const reports = [
     type: 'Craft practices Report',
     img: "/images/insights/gestalt.png",
     pdf: "/pdf/gestalt.pdf",
-      pdf_title : "gestalt.pdf"
+    pdf_title: "gestalt.pdf"
   },
   {
     id: 3,
@@ -96,10 +97,7 @@ export default function Insights() {
   return (
     <>
       <div className="overflow-x-hidden h-screen snap-y snap-mandatory overflow-y-scroll">
-        {/* Fixed Navbar */}
-        <div className="fixed top-0 left-0 right-0 z-50">
-          <Navbar />
-        </div>
+
 
         {/* Section 1: Title */}
         <section className="h-screen snap-start flex items-center justify-center text-[#1e1e1e] px-6 md:px-20">
@@ -113,57 +111,59 @@ export default function Insights() {
 
         {/* Section 2: Description */}
         <section className="h-screen snap-start flex items-center text-[#1e1e1e] px-6 md:px-20">
-          <p className="text-base md:text-lg text-[#1e1e1e] max-w-3xl mx-auto leading-relaxed justify-self-auto text-justify" style={{fontFamily:'Optima'}}>
+          <p className="text-base md:text-lg text-[#1e1e1e] max-w-3xl mx-auto leading-relaxed justify-self-auto text-justify" style={{ fontFamily: 'Optima' }}>
             Histare conducts extensive research to explore diverse aspects of the Indian creative industry, aiming to
             uncover innovative strategies for bolstering arts support with a targeted approach. Additionally, we generate
             studies, reports, and white papers to effectively showcase advancements in our developmental initiatives.
           </p>
         </section>
 
-        {/* Section 3: Reports Grid */}
-        <section className="min-h-screen snap-start flex items-center justify-center py-20 px-6 md:px-20">
-          <div className="max-w-7xl mx-auto w-full">
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6 justify-items-center">
-              {reports.map((report) => (
-                <button
-                  key={report.id}
-                  onClick={() => handleCardClick(report)}
-                  className="--bg-red-200 p-[20px] --h-[400px] flex flex-col justify-start font-light transition-transform hover:scale-105 w-full max-w-[200px] cursor-pointer border-none --bg-transparent p-0"
-                >
-                  <div className="--bg-blue-200 flex flex-col items-center justify-start space-y-3 text-center w-full">
-                    <div className="w-full aspect-[4/4] relative overflow-hidden rounded-lg shadow-md bg-gray-100">
-                      <img
-                        src={report.img}
-                        alt={report.title}
-                        className="w-full h-full object-cover object-center"
-                      />
+        {/* Section 1 - Header */}
+        <div className="snap-start min-h-screen w-full flex flex-col">
+          <div className="flex-1 flex items-center justify-center px-6 md:px-20 --pt-24 --bg-red-200">
+            <div className="max-w-7xl mx-auto w-full">
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6 justify-items-center">
+                {reports.map((report) => (
+                  <button
+                    key={report.id}
+                    onClick={() => handleCardClick(report)}
+                    className="--bg-red-200 p-[20px] --h-[400px] flex flex-col justify-start font-light transition-transform hover:scale-105 w-full max-w-[200px] cursor-pointer border-none --bg-transparent p-0"
+                  >
+                    <div className="--bg-blue-200 flex flex-col items-center justify-start space-y-3 text-center w-full">
+                      <div className="w-full aspect-[4/4] relative overflow-hidden rounded-lg shadow-md bg-gray-100">
+                        <img
+                          src={report.img}
+                          alt={report.title}
+                          className="w-full h-full object-cover object-center"
+                        />
+                      </div>
+                      <h3 className="text-sm md:text-base font-medium text-[#1e1e1e] leading-tight px-1">
+                        {report.title}
+                      </h3>
+                      <div className="text-gray-500 text-xs md:text-sm">{report.type}</div>
                     </div>
-                    <h3 className="text-sm md:text-base font-medium text-[#1e1e1e] leading-tight px-1">
-                      {report.title}
-                    </h3>
-                    <div className="text-gray-500 text-xs md:text-sm">{report.type}</div>
-                  </div>
-                </button>
-              ))}
+                  </button>
+                ))}
+              </div>
             </div>
           </div>
-        </section>
 
-        {/* Section 4: Footer - No padding, full width */}
-        {/* <section className="snap-start">
+          {/* Section 4: Footer - No padding, full width */}
+          {/* <section className="snap-start">
           <Footer />
         </section> */}
+        </div>
       </div>
 
       {/* PDF Modal */}
       {isModalOpen && selectedPdf && (
         <div className="fixed inset-0 z-[9999] flex items-center justify-center">
           {/* Backdrop */}
-          <div 
+          <div
             className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm"
             onClick={closeModal}
           ></div>
-          
+
           {/* Modal Content */}
           <div className="relative w-[95vw] h-[95vh] max-w-6xl bg-white rounded-lg shadow-2xl overflow-hidden">
             {/* Header */}
@@ -191,7 +191,7 @@ export default function Insights() {
                 </button>
               </div>
             </div>
-            
+
             {/* PDF Viewer */}
             <div className="flex-1 h-full">
               <iframe

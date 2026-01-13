@@ -3,7 +3,8 @@
 import React from 'react';
 import Image from 'next/image';
 
-import Navbar from '../components/navbar';
+
+
 import Footer from '../components/footerblank';
 
 const icons = Array.from({ length: 10 }, (_, i) => `/images/essence/e${i + 1}.png`);
@@ -11,10 +12,7 @@ const icons = Array.from({ length: 10 }, (_, i) => `/images/essence/e${i + 1}.pn
 export default function FullPageEssence() {
   return (
     <div className="h-screen overflow-y-scroll scroll-smooth snap-y snap-mandatory">
-      {/* Fixed Navbar */}
-      <div className="fixed top-0 left-0 right-0 z-50">
-        <Navbar />
-      </div>
+
 
       {/* Section 1: Title */}
       <section className="snap-start snap-always h-screen flex items-center  justify-center text-[#3c597B] px-4">
@@ -116,7 +114,7 @@ export default function FullPageEssence() {
         {/* Top Half - Ethical World Content */}
         <div className="md:flex-1 flex mb-16 min-height items-center justify-center mb-0 md:mb-2 --bg-blue-200 !py-0">
           <div className="--bg-blue-400 w-full max-w-5xl mx-auto flex flex-col-reverse md:flex-row justify-between items-center md:items-start text-center md:text-left gap-10">
-            {/* Left Side - Text */}  
+            {/* Left Side - Text */}
             <div className="md:w-1/2 space-y-2">
               <h3 className="uppercase text-[#2c3e50] font-medium text-base md:text-lg">
                 Creating an Ethical World
@@ -195,9 +193,9 @@ export default function FullPageEssence() {
                 style={{ fontFamily: 'Rofane', fontStyle: 'italic' }}
               >
                 <span className="italic">Enduring&nbsp;</span>
-                  <span className="hidden md:inline"><br /></span>
+                <span className="hidden md:inline"><br /></span>
 
-               
+
                 <span className="not-italic">Balance</span>
               </h2>
             </div>
@@ -207,7 +205,7 @@ export default function FullPageEssence() {
               <h3 className="uppercase font-medium text-base md:text-lg text-[#2c3e50]">
                 Indian Culture for a Sustainable Future
               </h3>
-              <p className="text-[#2c3e50] text-justify leading-tight" style={{fontFamily:'Optima'}}>
+              <p className="text-[#2c3e50] text-justify leading-tight" style={{ fontFamily: 'Optima' }}>
                 Histare incorporates India's cultural inheritance within the SDG framework.
                 A cultural model is valuable for the creation of collective narratives and has
                 the ability to bind people.

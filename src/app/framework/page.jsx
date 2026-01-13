@@ -2,7 +2,8 @@
 
 import React from 'react';
 
-import Navbar from '../components/navbar';
+
+
 import Footer from '../components/footerblank';
 
 export default function Frameworks() {
@@ -11,7 +12,6 @@ export default function Frameworks() {
 
       {/* Section 1 - Header */}
       <div className="snap-start min-h-screen w-full flex flex-col">
-        <Navbar />
         <div className="flex-1 flex items-center justify-center px-6 md:px-20 --pt-24 --bg-red-200">
           <h2
             className="text-4xl md:text-8xl text-[#3c597B] text-center"
@@ -95,7 +95,7 @@ export default function Frameworks() {
       <div className="sm:hidden -bg-blue-200  snap-start min-h-screen w-full flex items-center justify-center px-6 md:px-20 --pt-24">
         <div className="max-w-5xl w-full ">
           <div className="flex flex-col md:flex-row md:items-start items-center h-full --bg-green-200">
-           
+
             <div className="--bg-green-200 md:w-2/3 text-base md:text-lg leading-relaxed text-[#1e1e1e] max-w-4xl md:max-w-none flex-1 --max-h-[55vh] --overflow-y-scroll --scrollbar-hide">
               <div className="space-y-4">
 
@@ -113,22 +113,22 @@ export default function Frameworks() {
                     <strong>Drive Collaboration:</strong> Build partnerships with stakeholders across industries to expand the reach and impact of Indian art and design.
                   </li>
                 </ol>
-               
+
               </div>
             </div>
           </div>
         </div>
       </div>
 
-            {/* Section 3 - Mission */}
+      {/* Section 3 - Mission */}
       <div className="sm:hidden -bg-blue-200  snap-start min-h-screen w-full flex items-center justify-center px-6 md:px-20 --pt-24">
         <div className="max-w-5xl w-full ">
           <div className="flex flex-col md:flex-row md:items-start items-center h-full --bg-green-200">
-          
+
             <div className="--bg-green-200 md:w-2/3 text-base md:text-lg leading-relaxed text-[#1e1e1e] max-w-4xl md:max-w-none flex-1 --max-h-[55vh] --overflow-y-scroll --scrollbar-hide">
               <div className="space-y-4">
 
-               
+
                 <p className="text-justify">
                   Through this comprehensive approach, Histare is committed to creating a lasting impact on the art and design world, shaping a future where tradition and innovation harmoniously coexist.
                 </p>

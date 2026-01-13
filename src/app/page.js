@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import Navbar from './components/navbar';
 import Hero from './components/landing/hero';
 import Elephant from './components/landing/elephant';
 // import Footer from './components/footerblank'; // This import is removed as per the instruction's implied change
@@ -16,7 +15,6 @@ import Art from './components/landing/art';
 function Home() {
   return (
     <div className="h-screen snap-y snap-mandatory overflow-y-scroll scroll-smooth">
-      <Navbar />
       
       <div className="snap-start">
         <Hero />

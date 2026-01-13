@@ -72,16 +72,38 @@ export default function TransitionProvider({ children }) {
                         {/* Fake Navbar Spacer removed as real Navbar is fixed and doesn't affect flow */}
 
                         {/* Main Content Area - Exact match to page.jsx */}
+                        {/* Main Content Area */}
                         <div className="flex-1 flex items-center justify-center px-6 md:px-20">
-                            <motion.h2
-                                initial={{ opacity: 0, scale: 0.95 }}
-                                animate={{ opacity: 1, scale: 1 }}
-                                transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
-                                className="text-4xl md:text-8xl text-[#3c597B] text-center"
-                                style={{ fontFamily: "Rofane", fontStyle: "italic" }}
-                            >
-                                {renderTransitionText(transitionText)}
-                            </motion.h2>
+                            {transitionText === "Envisioning Artistic Mastery Histare nurtures India's primitive and prospective expressions through cultural evolution." ? (
+                                <motion.div
+                                    initial={{ opacity: 0, scale: 0.95 }}
+                                    animate={{ opacity: 1, scale: 1 }}
+                                    transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
+                                    className="relative z-20 flex flex-col items-center text-center"
+                                >
+                                    <h1
+                                        className="md:text-9xl text-6xl font-serif text-[#3c5978] mb-4 max-w-5xl"
+                                        style={{ fontFamily: 'Rofane' }}
+                                    >
+                                        Envisioning <br /> Artistic Mastery
+                                    </h1>
+                                    <p className="text-[16px] sm:text-[18px] md:text-[22px] text-[#333333] max-w-lg sm:max-w-2xl !p-0 w-full" style={{ fontFamily: 'Optima' }}>
+                                        Histare nurtures India's primitive and prospective expressions
+                                        <br className="hidden sm:inline" />
+                                        through cultural evolution.
+                                    </p>
+                                </motion.div>
+                            ) : (
+                                <motion.h2
+                                    initial={{ opacity: 0, scale: 0.95 }}
+                                    animate={{ opacity: 1, scale: 1 }}
+                                    transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
+                                    className="text-4xl md:text-8xl text-[#3c597B] text-center"
+                                    style={{ fontFamily: "Rofane", fontStyle: "italic" }}
+                                >
+                                    {renderTransitionText(transitionText)}
+                                </motion.h2>
+                            )}
                         </div>
                     </motion.div>
                 )}
