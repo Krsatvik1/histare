@@ -69,7 +69,7 @@ const Navbar = () => {
     <>
       {/* Navbar */}
       <nav
-        className={`fixed top-0 left-0 w-full flex items-center justify-between p-5 --bg-red-200 py-0 sm:p-6 z-50 pointer-events-none transition-all duration-300 ${scrolled ? 'bg-[#F3F0ED] --backdrop-blur-sm --shadow-sm' : 'bg-transparent'
+        className={`fixed top-2.5 md:top-0 left-0 w-full flex items-center justify-between p-5 --bg-red-200 py-0 sm:p-6 z-50 pointer-events-none transition-all duration-300 ${scrolled ? 'bg-[#F3F0ED] --backdrop-blur-sm --shadow-sm' : 'bg-transparent'
           }`}
       >
         <div className="pointer-events-auto">

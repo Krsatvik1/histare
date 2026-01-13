@@ -1,6 +1,7 @@
 'use client';
 import React, { useState, useRef } from "react";
 import Image from "next/image";
+import MobileStoryView from "./mobile-story-view";
 
 const workItems = [
   {
@@ -331,8 +332,8 @@ function CardContent({ item, reversed, onImageClick, onHover, onLeave }) {
 }
 
 export default function Work() {
-  const [isPaused, setIsPaused] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
+  const [isPaused, setIsPaused] = useState(false);
   const scrollTrackRef = useRef(null);
 
   const handleMouseEnter = () => {
@@ -374,7 +375,7 @@ export default function Work() {
   };
 
   return (
-    <div className="h-screen bg-[#F3F0ED] overflow-x-hidden flex flex-col --bg-red-200">
+    <>
       <style jsx>{`
         @keyframes scroll {
           0% {
@@ -395,11 +396,10 @@ export default function Work() {
         
         .work-scroll-track {
           display: flex;
-          animation: scroll 80s linear infinite;
           width: fit-content;
           align-items: flex-end;
           height: 85%;
-          transition: transform 0.3s ease-out;
+          animation: scroll 100s linear infinite;
         }
 
         @media (max-width: 768px) {
@@ -449,42 +449,55 @@ export default function Work() {
         }
       `}</style>
 
-      <div className="rounded-xl overflow-hidden pt-5 md:pt-5 pt-32 mb-5 --bg-red-200 flex items-center justify-center">
-        <Image
-          src="/images/art/arth2.svg"
-          alt="artthakya"
-          width={750}
-          height={250}
-          className="!m-0 object-contain w-full pt-[34px] --bg-red-200 h-[75px] sm:h-[60px] md:h-[80px] lg:h-[90px] xl:h-[110px]"
+      {/* Mobile View */}
+      <div className="md:hidden w-full relative h-dvh bg-[#F3F0ED]">
+        <MobileStoryView
+          items={workItems}
+          sectionLogoSrc="/images/art/arth2.svg"
+          nextSectionId="work-section"
+          onItemClick={(item) => handleImageClick(item)}
         />
       </div>
 
-      <div className="flex-1 flex items-center !h-24  -bg-green-200 !mt-0" style={{ fontFamily: 'Optima' }}>
-        <div
-          className="work-scroll-container --bg-blue-200"
-        >
+      {/* Desktop View */}
+      <div className="hidden md:flex h-screen bg-[#F3F0ED] overflow-x-hidden flex-col --bg-red-200">
+        <div className="rounded-xl overflow-hidden pt-5 md:pt-5 pt-32 mb-5 --bg-red-200 flex items-center justify-center">
+          <Image
+            src="/images/art/arth2.svg"
+            alt="artthakya"
+            width={750}
+            height={250}
+            className="!m-0 object-contain w-full pt-[34px] --bg-red-200 h-[75px] sm:h-[60px] md:h-[80px] lg:h-[90px] xl:h-[110px]"
+          />
+        </div>
+
+        <div className="flex-1 flex items-center !h-24  -bg-green-200 !mt-0" style={{ fontFamily: 'Optima' }}>
           <div
-            ref={scrollTrackRef}
-            className="work-scroll-track"
-            style={{ animationPlayState: isPaused ? 'paused' : 'running' }}
+            className="work-scroll-container --bg-blue-200"
           >
-            {/* Create multiple copies for true infinite scroll */}
-            {[...workItems, ...workItems, ...workItems, ...workItems].map((item, i) => (
-              <div
-                key={i}
-                className={`work-card ${item.isGroup ? 'grouped' : ''} ${item.orientation === 'landscape' ? 'landscape' : ''
-                  } ${i % 2 === 0 ? 'card-up' : 'card-down'
-                  }`}
-              >
-                <CardContent
-                  item={item}
-                  reversed={i % 2 === 1}
-                  onImageClick={handleImageClick}
-                  onHover={handleMouseEnter}
-                  onLeave={handleMouseLeave}
-                />
-              </div>
-            ))}
+            <div
+              ref={scrollTrackRef}
+              className="work-scroll-track"
+              style={{ animationPlayState: isPaused ? 'paused' : 'running' }}
+            >
+              {/* Create multiple copies for true infinite scroll */}
+              {[...workItems, ...workItems, ...workItems, ...workItems].map((item, i) => (
+                <div
+                  key={i}
+                  className={`work-card ${item.isGroup ? 'grouped' : ''} ${item.orientation === 'landscape' ? 'landscape' : ''
+                    } ${i % 2 === 0 ? 'card-up' : 'card-down'
+                    }`}
+                >
+                  <CardContent
+                    item={item}
+                    reversed={i % 2 === 1}
+                    onImageClick={handleImageClick}
+                    onHover={handleMouseEnter}
+                    onLeave={handleMouseLeave}
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
@@ -603,6 +616,6 @@ export default function Work() {
           </div>
         </div>
       )}
-    </div>
+    </>
   );
 }

@@ -28,17 +28,17 @@ function Home() {
         <Programe />
       </div>
       </div>
-      <div className="snap-start">
+      <div className="snap-start" id="art-section">
           <Art/>
         </div>
-      <div className="snap-start">
+      <div className="snap-start" id="work-section">
         <Work />
       </div>
       {/* <div className="snap-start">
         <Interest />
       </div> */}
       
-      <div className="snap-start ">
+      <div className="snap-start " id="partnership-section">
         <Partnership />
       </div>
       <div className="snap-start">
