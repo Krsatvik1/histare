@@ -84,30 +84,49 @@ const Navbar = () => {
         <div className="pointer-events-auto">
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            onMouseEnter={() => setIsHovered(true)}
+            onMouseEnter={() => {
+              if (window.innerWidth >= 768) setIsHovered(true);
+            }}
             onMouseLeave={() => setIsHovered(false)}
             className="focus:outline-none text-gray-600 p-5 sm:p-8 md:p-10 cursor-pointer transition-transform duration-300 flex items-center justify-center"
           >
-            {menuOpen ? (
-              <span className="text-xl sm:text-2xl">✕</span>
-            ) : (
-              // Animated Hamburger (Dots <-> Lines)
-              <div className="flex flex-col gap-[5px] items-end w-[24px]">
-                {[0, 1, 2].map((i) => (
+            {/* Animated Hamburger (Dots <-> Lines <-> Cross) */}
+            <div className="flex flex-col gap-[5px] items-end w-[24px]">
+              {[0, 1, 2].map((i) => {
+                // Determine target state
+                let target = {};
+                const isExpanded = isHovered || isHinting;
+
+                if (menuOpen) {
+                  // Cross State
+                  if (i === 0) target = { width: "24px", rotate: 45, y: 9 };
+                  else if (i === 1) target = { width: "24px", opacity: 0 };
+                  else if (i === 2) target = { width: "24px", rotate: -45, y: -9 };
+                } else {
+                  // Closed State (Dots or Lines)
+                  target = {
+                    width: isExpanded ? "24px" : "4px",
+                    rotate: 0,
+                    y: 0,
+                    opacity: 1
+                  };
+                }
+
+                return (
                   <motion.div
                     key={i}
-                    className="h-[4px] bg-gray-600 rounded-full"
-                    initial={{ width: "4px" }}
-                    animate={{ width: (isHovered || isHinting) ? "24px" : "4px" }}
+                    className="h-[4px] bg-gray-600 rounded-full origin-center"
+                    initial={{ width: "4px", rotate: 0, y: 0, opacity: 1 }}
+                    animate={target}
                     transition={{
                       duration: 0.5,
                       ease: [0.22, 1, 0.36, 1], // Premium "out-quart" feel
-                      delay: i * 0.1 // Stagger effect for "left to right" feel
+                      delay: i * 0.1 // Stagger effect
                     }}
                   />
-                ))}
-              </div>
-            )}
+                );
+              })}
+            </div>
           </button>
         </div>
       </nav>

@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const testimonials = [
@@ -111,6 +111,15 @@ function Testimonial() {
   const [index, setIndex] = useState(0);
   const [direction, setDirection] = useState(1); // Slide direction
 
+  // Find the longest testimonial to set container height
+  const longestTestimonial = useMemo(() => {
+    return testimonials.reduce((prev, current) => {
+      const prevLen = prev.text.length + prev.name.length + prev.role.length;
+      const currLen = current.text.length + current.name.length + current.role.length;
+      return currLen > prevLen ? current : prev;
+    }, testimonials[0]);
+  }, []);
+
   useEffect(() => {
     const interval = setInterval(() => {
       setDirection(1); // always right to left
@@ -123,12 +132,15 @@ function Testimonial() {
   const variants = {
     enter: (direction) => ({
       x: direction > 0 ? 1000 : -1000,
+      opacity: 0
     }),
     center: {
       x: 0,
+      opacity: 1
     },
     exit: (direction) => ({
       x: direction > 0 ? -1000 : 1000,
+      opacity: 0
     }),
   };
 
@@ -142,8 +154,22 @@ function Testimonial() {
           Testimonials
         </h2>
 
-        {/* Testimonial Card */}
-        <div className="relative min-h-[300px] md:min-h-[450px] overflow-hidden">
+        {/* Testimonial Card Container - CSS Grid for Centering */}
+        <div className="grid grid-cols-1 grid-rows-1 place-items-center w-full overflow-hidden">
+
+          {/* Ghost Element (Longest Testimonial) to set height */}
+          <div className="col-start-1 row-start-1 invisible opacity-0 pointer-events-none w-full border-2 border-transparent p-4 md:p-8">
+            <p className="text-sm md:text-lg leading-relaxed mb-4 md:mb-6">{longestTestimonial.text}</p>
+            <p className="text-right font-semibold text-xs md:text-base">
+              {longestTestimonial.name}
+              <br />
+              <span className="font-normal text-xs whitespace-pre-line">
+                {longestTestimonial.role}
+              </span>
+            </p>
+          </div>
+
+          {/* Animated Active Testimonial */}
           <AnimatePresence custom={direction} mode="wait">
             <motion.div
               key={index}
@@ -153,7 +179,7 @@ function Testimonial() {
               animate="center"
               exit="exit"
               transition={{ duration: 0.6, ease: 'easeInOut' }}
-              className="absolute w-full border-2 border-[#f1d394] rounded-lg p-4 md:p-8 text-[#333]"
+              className="col-start-1 row-start-1 w-full h-fit z-10 border-2 border-[#f1d394] rounded-lg p-4 md:p-8 text-[#333] bg-[#F3F0ED]"
             >
               <p className="text-sm md:text-lg leading-relaxed mb-4 md:mb-6">{testimonials[index].text}</p>
               <p className="text-right font-semibold text-[#1e1e1e] text-xs md:text-base">
@@ -176,9 +202,8 @@ function Testimonial() {
                 setDirection(i > index ? 1 : -1);
                 setIndex(i);
               }}
-              className={`h-2 w-2 rounded-full ${
-                i === index ? 'bg-[#3c597B]' : 'bg-gray-300'
-              }`}
+              className={`h-2 w-2 rounded-full ${i === index ? 'bg-[#3c597B]' : 'bg-gray-300'
+                }`}
             />
           ))}
         </div>
