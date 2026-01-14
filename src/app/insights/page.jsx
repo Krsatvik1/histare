@@ -2,8 +2,12 @@
 
 import React, { useState } from 'react';
 
-
+import dynamic from 'next/dynamic';
 import Footer from '../components/footerblank';
+
+const CustomPDFViewer = dynamic(() => import('../components/CustomPDFViewer'), {
+  ssr: false,
+});
 
 const reports = [
   {
@@ -157,51 +161,11 @@ export default function Insights() {
 
       {/* PDF Modal */}
       {isModalOpen && selectedPdf && (
-        <div className="fixed inset-0 z-[9999] flex items-center justify-center">
-          {/* Backdrop */}
-          <div
-            className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm"
-            onClick={closeModal}
-          ></div>
-
-          {/* Modal Content */}
-          <div className="relative w-[95vw] h-[95vh] max-w-6xl bg-white rounded-lg shadow-2xl overflow-hidden">
-            {/* Header */}
-            <div className="flex items-center justify-between p-4 border-b border-gray-200 bg-white">
-              <h3 className="text-lg font-semibold text-gray-800 truncate">
-                {selectedPdf.title}
-              </h3>
-              <div className="flex items-center space-x-2">
-                <a
-                  href={selectedPdf.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-3 py-1 text-sm bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors"
-                >
-                  Open in New Tab
-                </a>
-                <button
-                  onClick={closeModal}
-                  className="p-2 hover:bg-gray-100 rounded-full transition-colors"
-                  aria-label="Close"
-                >
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                  </svg>
-                </button>
-              </div>
-            </div>
-
-            {/* PDF Viewer */}
-            <div className="flex-1 h-full">
-              <iframe
-                src={selectedPdf.url}
-                className="w-full h-full border-none"
-                title={selectedPdf.title}
-              />
-            </div>
-          </div>
-        </div>
+        <CustomPDFViewer
+          url={selectedPdf.url}
+          title={selectedPdf.title}
+          onClose={closeModal}
+        />
       )}
     </>
   );
