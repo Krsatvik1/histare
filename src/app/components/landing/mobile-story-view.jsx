@@ -207,15 +207,17 @@ export default function MobileStoryView({ items, sectionLogoSrc, nextSectionId, 
 
                         {/* Details Section */}
                         <div className="flex-1 flex flex-col justify-between" style={{ fontFamily: 'Optima' }}>
-                            <div className="text-black">
-                                {currentItem.title && (
+                            <div className="text-black text-center">
+                                {currentItem.title && currentItem.title.toLowerCase() !== 'untitled' && (
                                     <div className="text-lg font-semibold mb-1">{currentItem.title}</div>
                                 )}
-                                {currentItem.material && (
-                                    <div className="text-sm text-gray-600 mb-1 line-clamp-2">{currentItem.material}</div>
+                                {(currentItem.medium || currentItem.material) && (
+                                    <div className="text-sm text-gray-600 mb-1 line-clamp-2">
+                                        Material: {currentItem.medium || currentItem.material}
+                                    </div>
                                 )}
                                 {currentItem.size && (
-                                    <div className="text-sm text-gray-500">{currentItem.size}</div>
+                                    <div className="text-sm text-gray-500">Size: {currentItem.size}</div>
                                 )}
                                 {currentItem.isGroupChild && (
                                     <p className="text-xs text-gray-400 mt-1">Image {currentItem.groupIndex + 1} of {currentItem.totalGroup}</p>

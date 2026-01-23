@@ -280,11 +280,17 @@ function GroupedCardContent({ item, reversed, onImageClick, onHover, onLeave }) 
   const Info = (
     <div className="p-4 pl-0 pb-0 rounded-lg" style={{ fontFamily: 'Optima' }}>
       {item.author && (
-        <div className="text-sm md:text-base font-semibold text-gray-800 mb-1 break-words line-clamp-2">{item.author}</div>
+        <div className="text-sm md:text-base font-semibold text-gray-800 mb-1 wrap-break-word line-clamp-2">{item.author}</div>
       )}
-      {item.title && <div className="text-xs md:text-sm text-gray-600 mb-1 break-words">Title: {item.title}</div>}
-      {item.material && <div className="text-xs md:text-sm text-gray-600 mb-1 leading-relaxed break-words line-clamp-2">Material: {item.material}</div>}
-      {item.size && <div className="text-xs md:text-sm text-gray-600 mb-1 break-words">Size: {item.size}</div>}
+      {item.title && item.title.toLowerCase() !== 'untitled' && (
+        <div className="text-xs md:text-sm text-gray-600 mb-1 wrap-break-word">Title: {item.title}</div>
+      )}
+      {(item.medium || item.material) && (
+        <div className="text-xs md:text-sm text-gray-600 mb-1 leading-relaxed wrap-break-word line-clamp-2">
+          Material: {item.medium || item.material}
+        </div>
+      )}
+      {item.size && <div className="text-xs md:text-sm text-gray-600 mb-1 wrap-break-word">Size: {item.size}</div>}
     </div>
   );
 
@@ -383,11 +389,17 @@ function CardContent({ item, reversed, onImageClick, onHover, onLeave }) {
   const Info = (
     <div className={`p-4 pl-0 pb-0 rounded-lg ${isLandscape ? 'w-full' : 'w-52'}`} style={{ fontFamily: 'Optima' }}>
       {item.author && (
-        <div className="text-sm md:text-base font-semibold text-gray-800 mb-1 break-words line-clamp-2">{item.author}</div>
+        <div className="text-sm md:text-base font-semibold text-gray-800 mb-1 wrap-break-word line-clamp-2">{item.author}</div>
       )}
-      {item.title && <div className="text-xs md:text-sm text-gray-600 mb-1 break-words">Title: {item.title}</div>}
-      {item.material && <div className="text-xs md:text-sm text-gray-600 mb-1 leading-relaxed break-words line-clamp-2">Material: {item.material}</div>}
-      {item.size && <div className="text-xs md:text-sm text-gray-600 mb-1 break-words">Size: {item.size}</div>}
+      {item.title && item.title.toLowerCase() !== 'untitled' && (
+        <div className="text-xs md:text-sm text-gray-600 mb-1 wrap-break-word">Title: {item.title}</div>
+      )}
+      {(item.medium || item.material) && (
+        <div className="text-xs md:text-sm text-gray-600 mb-1 leading-relaxed wrap-break-word line-clamp-2">
+          Material: {item.medium || item.material}
+        </div>
+      )}
+      {item.size && <div className="text-xs md:text-sm text-gray-600 mb-1 wrap-break-word">Size: {item.size}</div>}
     </div>
   );
 
@@ -423,12 +435,12 @@ function CardContent({ item, reversed, onImageClick, onHover, onLeave }) {
   );
 
   return reversed ? (
-    <div className="!mb-0 flex flex-col justify-end --bg-red-200 h-[100%]" style={{ fontFamily: 'Optima' }}>
+    <div className="mb-0! flex flex-col justify-end --bg-red-200 h-full" style={{ fontFamily: 'Optima' }}>
       <div className="mb-4">{Info}</div>
       <div>{Art}</div>
     </div>
   ) : (
-    <div className="flex flex-col h-[100%]">
+    <div className="flex flex-col h-full">
       <div className="mb-4">{Art}</div>
       <div>{Info}</div>
     </div>
@@ -565,17 +577,17 @@ export default function Work() {
 
       {/* Desktop View */}
       <div className="hidden md:flex h-screen bg-[#F3F0ED] overflow-x-hidden flex-col --bg-red-200">
-        <div className="rounded-xl overflow-hidden pt-5 md:pt-5 pt-32 mb-5 --bg-red-200 flex items-center justify-center">
+        <div className="rounded-xl overflow-hidden pt-32 mb-5 --bg-red-200 flex items-center justify-center">
           <Image
             src="/images/art/arth2.svg"
             alt="artthakya"
             width={750}
             height={250}
-            className="!m-0 object-contain w-full pt-[34px] --bg-red-200 h-[75px] sm:h-[60px] md:h-[80px] lg:h-[90px] xl:h-[110px]"
+            className="m-0! object-contain w-full pt-[34px] --bg-red-200 h-[75px] sm:h-[60px] md:h-[80px] lg:h-[90px] xl:h-[110px]"
           />
         </div>
 
-        <div className="flex-1 flex items-center !h-24  -bg-green-200 !mt-0" style={{ fontFamily: 'Optima' }}>
+        <div className="flex-1 flex items-center h-24!  -bg-green-200 mt-0!" style={{ fontFamily: 'Optima' }}>
           <div
             className="work-scroll-container --bg-blue-200"
           >
@@ -653,14 +665,14 @@ export default function Work() {
                   {selectedImage.author && (
                     <div className="text-xl font-bold text-gray-800 mb-3">{selectedImage.author}</div>
                   )}
-                  {selectedImage.title && (
+                  {selectedImage.title && selectedImage.title.toLowerCase() !== 'untitled' && (
                     <div className="text-lg text-gray-700 mb-2">
                       <span className="font-semibold">Title:</span> {selectedImage.title}
                     </div>
                   )}
-                  {selectedImage.material && (
+                  {(selectedImage.medium || selectedImage.material) && (
                     <div className="text-base text-gray-600 mb-2 leading-relaxed">
-                      <span className="font-semibold">Material:</span> {selectedImage.material}
+                      <span className="font-semibold">Material:</span> {selectedImage.medium || selectedImage.material}
                     </div>
                   )}
                   {selectedImage.size && (
