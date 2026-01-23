@@ -7,7 +7,7 @@ const Elephant = () => {
       {/* Elephant Image */}
       <div className="flex-3/5 flex items-center justify-center">
         <Image
-          src="/images/landing/elephant.png" 
+          src="/images/landing/elephant.png"
           alt="Paper Elephant Statue"
           width={500}
           height={500}

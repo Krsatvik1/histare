@@ -3,6 +3,7 @@
 import React, { useState } from 'react'
 import Image from 'next/image'
 import ProFooter from '../components/profooterblank'
+import MorePrograms from '../components/MorePrograms';
 
 export default function TheVitrinePage() {
   const [firstExpanded, setFirstExpanded] = useState(false)
@@ -26,7 +27,7 @@ export default function TheVitrinePage() {
         </div>
         <div className="flex flex-col items-center text-center">
           <Image
-            src="/images/program/vitrine.png"
+            src="/images/program/vitrine.webp"
             alt="The Vitrine Logo"
             width={500}
             height={500}
@@ -181,11 +182,14 @@ export default function TheVitrinePage() {
           {/* Second Expandable Content - Bottom Image Grid */}
 
         </div>
+      </div>
 
-        {/* Footer at bottom */}
-        {/* <div className="w-full mt-auto -ml-8 text-white">
-          <ProFooter />
-        </div> */}
+      {/* More Programs Section */}
+      <MorePrograms currentProgram="vitrine" />
+
+      {/* Footer Section */}
+      <div className="snap-start w-full">
+        <ProFooter />
       </div>
 
       {/* Custom CSS for fade animation */}

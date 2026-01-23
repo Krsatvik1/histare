@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import Footer from '../components/footerblank';
 
+
 const ContactPage = () => {
   const [formData, setFormData] = useState({
     firstName: '',
@@ -176,9 +177,9 @@ const ContactPage = () => {
           </form>
         </div>
       </main>
-
-      {/* Footer - Sticks to bottom */}
       <Footer />
+
+
     </div>
   );
 };

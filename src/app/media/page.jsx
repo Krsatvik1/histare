@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { Search, Calendar, ExternalLink, Tag, Filter } from 'lucide-react';
+import Footer from '../components/footerblank';
 
 const mediaArticles = [
   {
@@ -307,7 +308,7 @@ export default function MediaPage() {
         </section>
 
       </div>
-      {/* <Footer/> */}
+      <Footer />
     </>
   );
 }

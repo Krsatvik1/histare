@@ -2,7 +2,8 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image'
-import Footer from '../components/footerblank';
+import ProFooter from '../components/profooterblank';
+import MorePrograms from '../components/MorePrograms';
 
 export default function CollectorsAffaire() {
   const [expanded, setExpanded] = useState(false)
@@ -21,7 +22,7 @@ export default function CollectorsAffaire() {
         </div>
         <div className="flex flex-col items-center text-center">
           <Image
-            src="/images/program/collectors.png"
+            src="/images/program/collectors.webp"
             alt="Collectors' Affaire"
             width={500}
             height={500}
@@ -126,6 +127,14 @@ export default function CollectorsAffaire() {
           </div>
 
         </div>
+      </div>
+
+      {/* More Programs Section */}
+      <MorePrograms currentProgram="collectors" />
+
+      {/* Footer Section */}
+      <div className="snap-start w-full">
+        <ProFooter />
       </div>
 
       {/* Custom CSS for fade animation */}

@@ -3,7 +3,7 @@
 import React from 'react';
 import Hero from './components/landing/hero';
 import Elephant from './components/landing/elephant';
-// import Footer from './components/footerblank'; // This import is removed as per the instruction's implied change
+import Footer from './components/footerblank';
 import Testimonial from './components/landing/testimonial';
 import Partnership from './components/landing/partnership';
 import Programe from './components/landing/programe';
@@ -43,9 +43,9 @@ function Home() {
         <Testimonial />
        
       </div>
-      {/* <div className="snap-start">
+      <div className="snap-start">
       <Footer />
-      </div> */}
+      </div>
     </div>
   );
 }

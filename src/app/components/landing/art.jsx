@@ -114,7 +114,6 @@ const workItems = [
     size: "37 x 44.5 in",
     year: ""
   },
-  // Grouped Zareena Hashmi artworks
   {
     id: 'grouped-13-14-15',
     isGroup: true,
@@ -155,9 +154,114 @@ const workItems = [
     medium: "Natural earth ochre colors on handmade paper",
     size: "40 x 56 in",
     year: "",
-    year: "",
     orientation: "landscape"
   },
+  // New items from Figma
+  {
+    id: 19,
+    img: "/images/art/gurcharan-singh-untitled.png",
+    author: "Dr. Gurcharan Singh",
+    medium: "Acrylic on canvas",
+    size: "24 x 24 in",
+    year: ""
+  },
+  {
+    id: 20,
+    isGroup: true,
+    images: [
+      "/images/art/toral-pandya-horizon-1.png",
+      "/images/art/toral-pandya-horizon-2.png",
+      "/images/art/toral-pandya-horizon-3.png"
+    ],
+    author: "Toral Pandya",
+    title: "Horizon I, Horizon II, Horizon III",
+    medium: "Linocut Printing",
+    size: "12 x 12 in (each)",
+    year: "2025"
+  },
+  {
+    id: 21,
+    img: "/images/art/suresh-kumar-flowers-mat.png",
+    author: "Suresh Kumar M",
+    title: "Flowers Mat",
+    medium: "Natural Wood",
+    size: "39 x 35.5 in",
+    year: "2024"
+  },
+  {
+    id: 22,
+    img: "/images/art/pallavi-nath-energy.png",
+    author: "Pallavi Nath",
+    title: "Energy",
+    medium: "Acrylic on canvas",
+    size: "36 x 36 in",
+    year: "2020"
+  },
+  {
+    id: 23,
+    isGroup: true,
+    images: [
+      "/images/art/pallavi-nath-mask-1.png",
+      "/images/art/pallavi-nath-mask-2.png",
+      "/images/art/pallavi-nath-mask-3.png",
+      "/images/art/pallavi-nath-mask-4.png"
+    ],
+    author: "Pallavi Nath",
+    title: "A Rhythm of Mask",
+    medium: "Acrylic on canvas",
+    size: "24 x 24 in (each)",
+    year: "2020"
+  },
+  {
+    id: 24,
+    img: "/images/art/santosh-jain-sankat-mochan.png",
+    author: "Santosh Jain",
+    title: "Sankat Mochan II",
+    medium: "Photography Mixed Media on Archival Paper",
+    size: "24 x 16 in",
+    year: "2018"
+  },
+  {
+    id: 25,
+    img: "/images/art/arunima-sanyal-triptych.png",
+    author: "Arunima Sanyal",
+    title: "Triptych",
+    medium: "Acrylic on canvas (triptych)",
+    size: "12 x 12 in (each)",
+    year: "2011"
+  },
+  {
+    id: 26,
+    img: "/images/art/chanchal-chakrabarti-tree-of-life.png",
+    author: "Chanchal Chakrabarti",
+    title: "Rectangle Tree of Life",
+    medium: "Cast brass with Patina finish, lacquered and heat treated",
+    size: "42 x 24 in",
+    year: "2024"
+  },
+  {
+    id: 27,
+    img: "/images/art/anaushka-rao-ophelia.png",
+    author: "Anaushka Rao",
+    title: "Ophelia and Amrita",
+    medium: "Digital",
+    size: "16 x 11.3 in",
+    year: "2024"
+  },
+  {
+    id: 28,
+    isGroup: true,
+    images: [
+      "/images/art/jitendra-thorat-1.png",
+      "/images/art/jitendra-thorat-2.png",
+      "/images/art/jitendra-thorat-3.png",
+      "/images/art/jitendra-thorat-4.png"
+    ],
+    author: "Jitendra Thorat",
+    medium: "Mix media on paper",
+    size: "24 x 38 in",
+    year: "2024"
+  }
 ];
 
 const isVideo = (src) => {

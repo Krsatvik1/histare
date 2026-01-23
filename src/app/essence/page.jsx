@@ -227,6 +227,14 @@ export default function FullPageEssence() {
           </div>
         </div>
       </section>
+
+      {/* Footer Section */}
+      <section className="snap-start snap-always h-auto">
+        <Footer
+          prevPage={{ label: "Our Vision in Action", href: "/vision" }}
+          nextPage={{ label: "Insights", href: "/insights" }}
+        />
+      </section>
     </div>
   );
 }

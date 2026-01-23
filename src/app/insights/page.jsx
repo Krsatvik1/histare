@@ -5,6 +5,7 @@ import React, { useState } from 'react';
 import dynamic from 'next/dynamic';
 import Footer from '../components/footerblank';
 
+
 const CustomPDFViewer = dynamic(() => import('../components/CustomPDFViewer'), {
   ssr: false,
 });
@@ -153,9 +154,13 @@ export default function Insights() {
           </div>
 
           {/* Section 4: Footer - No padding, full width */}
-          {/* <section className="snap-start">
-          <Footer />
-        </section> */}
+          <section className="snap-start">
+            <Footer
+              prevPage={{ label: "Our Essence", href: "/essence" }}
+              nextPage={{ label: "In the Spotlight", href: "/media" }}
+            />
+          </section>
+
         </div>
       </div>
 

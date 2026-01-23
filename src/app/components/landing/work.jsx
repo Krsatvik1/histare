@@ -6,7 +6,7 @@ import MobileStoryView from "./mobile-story-view";
 const workItems = [
   {
     id: 1,
-    img: "/images/nava/elephant.png",
+    img: "/images/landing/elephant.webm",
     author: "Dancing Across Time",
     material: "Statuario Marble, Semi-precious Lapis, Merino Wool, Mother of Pearl and Silk Threads",
     size: "8 H Ft.",
@@ -20,7 +20,7 @@ const workItems = [
   },
   {
     id: 2,
-    img: "/images/nava/flower.png",
+    img: "/images/nava/flower.webm",
     author: "Ethereal Echoes",
     material: "Brass and Bronze",
     size: "18 H Ft.",
@@ -87,7 +87,7 @@ const workItems = [
   },
   {
     id: 11,
-    img: "/images/nava/mockup.png",
+    img: "/images/nava/dining.webm",
     author: "The Dining & Banqueting Culture",
     material: "Charcoal and acrylic color on archival paper",
     size: "",

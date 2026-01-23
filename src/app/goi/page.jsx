@@ -30,7 +30,7 @@ const GOI = () => {
         />
 
       </div>
-      {/* <Footer /> */}
+      <Footer />
     </section>
 
 

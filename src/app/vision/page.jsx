@@ -38,9 +38,12 @@ export default function Vision() {
         </div>
 
         {/* Footer aligned with content */}
-        {/* <div className="px-6 md:px-20 md:-ml-20">
-          <Footer />
-        </div> */}
+        <div className="px-6 md:px-20 md:-ml-20">
+          <Footer
+            prevPage={{ label: "The Value of Partnership", href: "/partnerships" }}
+            nextPage={{ label: "Our Essence", href: "/essence" }}
+          />
+        </div>
       </div>
     </div>
   );

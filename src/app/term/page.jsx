@@ -207,9 +207,9 @@ export default function TermsOfUsePage() {
       </div>
 
       {/* Footer */}
-      {/* <div className="mt-16 [&_*]:text-black [&_a]:text-grey-600 [&_a:hover]:text-gray-800">
+      <div className="mt-16 [&_*]:text-black [&_a]:text-grey-600 [&_a:hover]:text-gray-800">
         <Footer />
-      </div> */}
+      </div>
     </div>
   )
 }

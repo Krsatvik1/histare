@@ -37,7 +37,10 @@ export default function History() {
             </p>
           </div>
         </div>
-        {/* <Footer /> */}
+        <Footer
+          prevPage={{ label: "Our Framework", href: "/framework" }}
+          nextPage={{ label: "The Value of Partnership", href: "/partnerships" }}
+        />
       </div>
 
       {/* Custom CSS for smooth scrolling */}

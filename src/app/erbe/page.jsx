@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image'
 import ProFooter from '../components/profooterblank'
+import MorePrograms from '../components/MorePrograms';
 
 export default function CollectorsAffaire() {
   const [expanded, setExpanded] = useState(false)
@@ -21,7 +22,7 @@ export default function CollectorsAffaire() {
         </div>
         <div className="flex flex-col items-center text-center">
           <Image
-            src="/images/program/erbe.png"
+            src="/images/program/erbe.webp"
             alt="Collectors' Affaire"
             width={500}
             height={500}
@@ -95,14 +96,32 @@ export default function CollectorsAffaire() {
             </button>
 
             {/* Expanded content with smooth animation */}
+            <div className={`overflow-hidden transition-all duration-500 ease-in-out ${expanded ? 'max-h-[600px] opacity-100 mt-6' : 'max-h-0 opacity-0'}`}>
+              <div className="w-full flex justify-center">
+                <div className="relative w-full max-w-3xl" style={{ paddingBottom: '56.25%' }}>
+                  <iframe
+                    className="absolute top-0 left-0 w-full h-full rounded-lg"
+                    src="https://www.youtube.com/embed/2EZ-XA0q_yo?si=Sh3iuDNmvuDIR4UJ"
+                    title="The Erbe Project"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                  />
+                </div>
+              </div>
+            </div>
 
           </div>
         </div>
+      </div>
 
-        {/* Footer at bottom */}
-        {/* <div className="w-full -ml-4">
-          <ProFooter />
-        </div> */}
+      {/* More Programs Section */}
+      <MorePrograms currentProgram="erbe" />
+
+      {/* Footer Section */}
+      <div className="snap-start w-full">
+        <ProFooter />
       </div>
 
       {/* Custom CSS for fade animation */}
@@ -110,15 +129,18 @@ export default function CollectorsAffaire() {
         @keyframes fadeIn {
           from {
             opacity: 0;
-            transform: translateY(-10px);
+            transform: translateY(-20px);
+            max-height: 0;
           }
           to {
             opacity: 1;
             transform: translateY(0);
+            max-height: 1000px;
           }
         }
         .animate-fadeIn {
-          animation: fadeIn 0.5s ease-in-out;
+          animation: fadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+          overflow: hidden;
         }
       `}</style>
     </div>

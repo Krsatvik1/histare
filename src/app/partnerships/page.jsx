@@ -56,9 +56,12 @@ export default function Partnerships() {
         </div>
 
         {/* Footer aligned with content */}
-        {/* <div className="px-6 md:px-20 -ml-20 md:pt-0 md:pb-0" >
-          <Footer />
-        </div> */}
+        <div className="px-6 md:px-20 -ml-20 md:pt-0 md:pb-0" >
+          <Footer 
+            prevPage={{ label: "Our History", href: "/history" }}
+            nextPage={{ label: "Our Vision in Action", href: "/vision" }}
+          />
+        </div>
       </section>
 
       <section className="block sm:hidden  snap-start snap-always min-h-screen flex flex-col">
@@ -85,9 +88,12 @@ export default function Partnerships() {
         </div>
 
         {/* Footer aligned with content */}
-        {/* <div className="px-6 md:px-20 -ml-20 md:pt-0 md:pb-0" >
-          <Footer />
-        </div> */}
+        <div className="px-6 md:px-20 -ml-20 md:pt-0 md:pb-0" >
+          <Footer
+            prevPage={{ label: "Our History", href: "/history" }}
+            nextPage={{ label: "Our Vision in Action", href: "/vision" }}
+          />
+        </div>
       </section>
 
 
@@ -110,9 +116,12 @@ export default function Partnerships() {
         </div>
 
         {/* Footer aligned with content */}
-        {/* <div className="px-6 md:px-20 -ml-20 md:pt-0 md:pb-0" >
-          <Footer />
-        </div> */}
+        <div className="px-6 md:px-20 -ml-20 md:pt-0 md:pb-0" >
+          <Footer
+            prevPage={{ label: "Our History", href: "/history" }}
+            nextPage={{ label: "Our Vision in Action", href: "/vision" }}
+          />
+        </div>
       </section>
 
 

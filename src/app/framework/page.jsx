@@ -153,7 +153,7 @@ export default function Frameworks() {
             </div>
           </div>
         </div>
-        {/* <Footer /> */}
+        <Footer nextPage={{ label: "Our History", href: "/history" }} />
       </div>
 
       {/* Custom CSS for smooth scrolling */}

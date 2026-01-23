@@ -119,6 +119,11 @@ export default function Unveiling() {
         </div>
       </section>
 
+      {/* Footer Section */}
+      <section className="snap-start snap-always h-auto">
+        <Footer />
+      </section>
+
     </div>
   );
 }

@@ -3,6 +3,7 @@
 import React from 'react'
 import Image from 'next/image'
 import Footer from '../components/footerblank'
+import MorePrograms from '../components/MorePrograms';
 
 export default function NowAndBeyondSection() {
   return (
@@ -16,7 +17,7 @@ export default function NowAndBeyondSection() {
 
         <div className="flex flex-col items-center text-center">
           <Image
-            src="/images/program/now.png"
+            src="/images/program/now.webp"
             alt="Now and Beyond Logo"
             width={500}
             height={500}
@@ -48,11 +49,14 @@ export default function NowAndBeyondSection() {
             </p>
           </div>
         </div>
+      </div>
 
-        {/* Footer aligned with content */}
-        {/* <div className="px-2 md:px-0 ">
-          <Footer />
-        </div> */}
+      {/* More Programs Section */}
+      <MorePrograms currentProgram="now" />
+
+      {/* Footer Section */}
+      <div className="snap-start px-2 md:px-0">
+        <Footer />
       </div>
 
     </div>
