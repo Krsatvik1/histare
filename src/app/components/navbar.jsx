@@ -8,9 +8,9 @@ import {
   FaInstagram,
   FaLinkedin,
   FaYoutube,
-  FaTwitter,
+  FaXTwitter,
   FaFacebook
-} from 'react-icons/fa';
+} from 'react-icons/fa6';
 import { useTransition } from '../context/TransitionContext';
 
 const Navbar = () => {
@@ -87,7 +87,7 @@ const Navbar = () => {
             <img
               src="/images/navbar/logo.png"
               alt="Histare Logo"
-              className="h-12 sm:h-14 md:h-16 w-auto"
+              className="h-18 sm:h-20 md:h-24 w-auto"
             />
           </a>
         </div>

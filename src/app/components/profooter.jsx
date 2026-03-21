@@ -4,9 +4,9 @@ import {
   FaInstagram,
   FaLinkedin,
   FaYoutube,
-  FaTwitter,
+  FaXTwitter,
   FaFacebook
-} from 'react-icons/fa';
+} from 'react-icons/fa6';
 
 const ProFooter = () => {
   const getCurrentYear = () => new Date().getFullYear();

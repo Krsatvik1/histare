@@ -6,9 +6,9 @@ import {
   FaInstagram,
   FaLinkedin,
   FaYoutube,
-  FaTwitter,
+  FaXTwitter,
   FaFacebook
-} from 'react-icons/fa';
+} from 'react-icons/fa6';
 import { useTransition } from '../context/TransitionContext';
 
 const Footer = ({ prevPage, nextPage }) => {
@@ -106,11 +106,11 @@ const Footer = ({ prevPage, nextPage }) => {
 
           {/* Centered Social Icons */}
           <div className="flex justify-center items-center gap-4 text-xl text-gray-700 md:absolute md:left-1/2 md:transform md:-translate-x-1/2">
-            <a href="#"><FaTwitter /></a>
-            <a href="https://www.linkedin.com/company/histare/"><FaLinkedin /></a>
+            <a href="https://x.com/HistareConcepts"><FaXTwitter /></a>
+            <a href="https://www.linkedin.com/company/histare/?viewAsMember=true"><FaLinkedin /></a>
             <a href="https://www.youtube.com/@thehistaregroup7950"><FaYoutube /></a>
-            <a href="#"><FaFacebook /></a>
-            <a href="https://www.instagram.com/histare.concepts/"><FaInstagram /></a>
+            <a href="https://www.facebook.com/profile.php?id=61585279072771"><FaFacebook /></a>
+            <a href="https://www.instagram.com/histare.concepts/?hl=en"><FaInstagram /></a>
           </div>
 
           <p className="text-lg text-black sm:text-xl">{new Date().getFullYear()}</p>

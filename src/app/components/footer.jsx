@@ -5,9 +5,9 @@ import {
   FaInstagram,
   FaLinkedin,
   FaYoutube,
-  FaTwitter,
+  FaXTwitter,
   FaFacebook
-} from 'react-icons/fa';
+} from 'react-icons/fa6';
 
 const Footer = () => {
   return (
@@ -50,11 +50,11 @@ const Footer = () => {
 
         {/* Social Icons */}
         <div className="flex flex-row md:flex-col justify-center md:justify-start items-center gap-4 text-xl text-gray-700">
-          <a href="#"><FaTwitter /></a>
-          <a href="#"><FaLinkedin /></a>
-          <a href="#"><FaYoutube /></a>
-          <a href="#"><FaFacebook /></a>
-          <a href="#"><FaInstagram /></a>
+          <a href="https://x.com/HistareConcepts"><FaXTwitter /></a>
+          <a href="https://www.linkedin.com/company/histare/?viewAsMember=true"><FaLinkedin /></a>
+          <a href="https://www.youtube.com/@thehistaregroup7950"><FaYoutube /></a>
+          <a href="https://www.facebook.com/profile.php?id=61585279072771"><FaFacebook /></a>
+          <a href="https://www.instagram.com/histare.concepts/?hl=en"><FaInstagram /></a>
         </div>
       </div>
 
