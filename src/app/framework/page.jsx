@@ -139,22 +139,20 @@ export default function Frameworks() {
       </div>
 
 
-      {/* Section 4 - Purpose with Footer */}
-      <div className="snap-start min-h-screen w-full flex flex-col">
-        <div className="flex-1 flex items-center justify-center px-6 md:px-20 --pt-24">
-          <div className="max-w-5xl w-full">
-            <div className="flex flex-col md:flex-row md:items-start items-center">
-              <h2 className="md:w-1/3 text-3xl md:text-4xl font-serif italic text-[#3c597B] mb-6 md:mb-0 text-center md:text-left">
-                The Purpose
-              </h2>
-              <p className="md:w-2/3 text-base md:text-lg leading-relaxed text-[#1e1e1e] max-w-4xl md:max-w-none text-justify">
-                Histare passionately preserves India's artistic legacy through traditional, contemporary, and modern art. It showcases creators' masterpieces globally while intertwining tradition with innovation, empowering future creators, and practicing a transformative legacy that resonates through generations.
-              </p>
-            </div>
+      {/* Section 4 - Purpose */}
+      <div className="snap-start min-h-screen w-full flex items-center justify-center px-6 md:px-20 --pt-24">
+        <div className="max-w-5xl w-full">
+          <div className="flex flex-col md:flex-row md:items-start items-center">
+            <h2 className="md:w-1/3 text-3xl md:text-4xl font-serif italic text-[#3c597B] mb-6 md:mb-0 text-center md:text-left">
+              The Purpose
+            </h2>
+            <p className="md:w-2/3 text-base md:text-lg leading-relaxed text-[#1e1e1e] max-w-4xl md:max-w-none text-justify">
+              Histare passionately preserves India's artistic legacy through traditional, contemporary, and modern art. It showcases creators' masterpieces globally while intertwining tradition with innovation, empowering future creators, and practicing a transformative legacy that resonates through generations.
+            </p>
           </div>
         </div>
-        <Footer nextPage={{ label: "Our History", href: "/history" }} />
       </div>
+      <Footer nextPage={{ label: "Our History", href: "/history" }} />
 
       {/* Custom CSS for smooth scrolling */}
       <style jsx>{`

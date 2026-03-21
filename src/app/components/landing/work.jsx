@@ -5,26 +5,11 @@ import MobileStoryView from "./mobile-story-view";
 
 const workItems = [
   {
-    id: 1,
-    img: "/images/landing/elephant.webm",
-    author: "Dancing Across Time",
-    material: "Statuario Marble, Semi-precious Lapis, Merino Wool, Mother of Pearl and Silk Threads",
-    size: "8 H Ft.",
-  },
-  {
     id: 12,
     img: "/images/nava/flower5.png",
     author: "Pathways To Liberation",
     material: "Stainless steel ,High quality Oil based paint",
     size: "12 H Ft.",
-  },
-  {
-    id: 2,
-    img: "/images/nava/flower.webm",
-    author: "Ethereal Echoes",
-    material: "Brass and Bronze",
-    size: "18 H Ft.",
-    orientation: "landscape"
   },
   {
     id: 3,
@@ -39,6 +24,13 @@ const workItems = [
     author: "Symphonic Splendour",
     material: "Nero Marquina Marble,Pure brass wire",
     size: "10 L Ft. x 8 B Ft.",
+  },
+  {
+    id: 1, // Video 1
+    img: "/images/landing/elephant.webm",
+    author: "Dancing Across Time",
+    material: "Statuario Marble, Semi-precious Lapis, Merino Wool, Mother of Pearl and Silk Threads",
+    size: "8 H Ft.",
   },
   {
     id: 5,
@@ -57,10 +49,17 @@ const workItems = [
   {
     id: 7,
     img: "/images/nava/overview.png",
-
     author: "Euphoric Revelry",
     material: "Nero Marquina marble,Pure brass Wire,Lapis Lauzuli",
     size: "8 H Ft. x 4 B Ft.",
+  },
+  {
+    id: 2, // Video 2
+    img: "/images/nava/flower.webm",
+    author: "Ethereal Echoes",
+    material: "Brass and Bronze",
+    size: "18 H Ft.",
+    orientation: "landscape"
   },
   {
     id: 8,
@@ -86,7 +85,7 @@ const workItems = [
     size: "10 in",
   },
   {
-    id: 11,
+    id: 11, // Video 3
     img: "/images/nava/dining.webm",
     author: "The Dining & Banqueting Culture",
     material: "Charcoal and acrylic color on archival paper",
@@ -108,7 +107,7 @@ function GroupedCardContent({ item, reversed, onImageClick, onHover, onLeave }) 
   };
 
   const Info = (
-    <div className="p-4 pl-0 pb-0 rounded-lg" style={{ fontFamily: 'Optima' }}>
+    <div className="p-4 pl-0 pb-0 rounded-lg w-full max-w-[200px]" style={{ fontFamily: 'Optima' }}>
       {item.author && (
         <div className="text-sm md:text-base font-semibold text-gray-800 mb-1 break-words line-clamp-2">{item.author}</div>
       )}
@@ -122,13 +121,13 @@ function GroupedCardContent({ item, reversed, onImageClick, onHover, onLeave }) 
   const isCurrentVideo = isVideo(currentSrc);
 
   const GroupedArt = (
-    <div className="p-0 ml-0 rounded-lg w-52">
+    <div className="p-0 ml-0 rounded-lg w-fit">
       {/* Main Image */}
       <div className="mb-3" onClick={() => onImageClick(item, currentImageIndex)}>
         {isCurrentVideo ? (
           <video
             src={currentSrc}
-            className="rounded-md object-cover cursor-pointer hover:opacity-80 transition-opacity w-full h-[350px]"
+            className="rounded-md object-contain cursor-pointer hover:opacity-80 transition-opacity max-w-[200px] max-h-[350px] w-auto h-auto"
             autoPlay
             muted
             loop
@@ -142,7 +141,7 @@ function GroupedCardContent({ item, reversed, onImageClick, onHover, onLeave }) 
             alt={`${item.title || "Artwork"} ${currentImageIndex + 1}`}
             width={200}
             height={350}
-            className="rounded-md object-cover cursor-pointer hover:opacity-80 transition-opacity w-full"
+            className="rounded-md object-contain cursor-pointer hover:opacity-80 transition-opacity max-w-[200px] max-h-[350px] w-auto h-auto"
             onMouseEnter={onHover}
             onMouseLeave={onLeave}
           />
@@ -167,7 +166,7 @@ function GroupedCardContent({ item, reversed, onImageClick, onHover, onLeave }) 
               {isThumbVideo ? (
                 <video
                   src={imgSrc}
-                  className="object-cover w-[30px] h-[40px]"
+                  className="object-contain w-[30px] h-[40px]"
                   muted
                   loop
                   playsInline
@@ -178,7 +177,7 @@ function GroupedCardContent({ item, reversed, onImageClick, onHover, onLeave }) 
                   alt={`${item.title || "Artwork"} ${index + 1}`}
                   width={30}
                   height={40}
-                  className="object-cover"
+                  className="object-contain"
                 />
               )}
             </button>
@@ -211,7 +210,7 @@ function CardContent({ item, reversed, onImageClick, onHover, onLeave }) {
   const isItemVideo = isVideo(item.img);
 
   const Info = (
-    <div className={`p-4 pl-0 pb-0 rounded-lg ${isLandscape ? 'w-full' : 'w-52'}`} style={{ fontFamily: 'Optima' }}>
+    <div className={`p-4 pl-0 pb-0 rounded-lg w-full max-w-[200px]`} style={{ fontFamily: 'Optima' }}>
       {item.author && (
         <div className="text-sm md:text-base font-semibold text-gray-800 mb-1 break-words line-clamp-2">{item.author}</div>
       )}
@@ -222,12 +221,11 @@ function CardContent({ item, reversed, onImageClick, onHover, onLeave }) {
   );
 
   const Art = (
-    <div className={`p-0 ml-0 rounded-lg ${isLandscape ? 'w-full' : 'w-52'}`}>
+    <div className={`p-0 ml-0 rounded-lg w-fit`}>
       {isItemVideo ? (
         <video
           src={item.img}
-          className={`rounded-md object-cover mx-auto ml-0 cursor-pointer hover:opacity-80 transition-opacity ${isLandscape ? 'w-full h-auto' : 'w-[200px] h-[350px]'
-            }`}
+          className={`rounded-md object-contain mx-auto ml-0 cursor-pointer hover:opacity-80 transition-opacity max-w-[200px] max-h-[350px] w-auto h-auto`}
           autoPlay
           muted
           loop
@@ -240,10 +238,9 @@ function CardContent({ item, reversed, onImageClick, onHover, onLeave }) {
         <Image
           src={item.img}
           alt={item.title || "Artwork"}
-          width={isLandscape ? 400 : 200}
-          height={isLandscape ? 250 : 350}
-          className={`rounded-md object-cover mx-auto ml-0 cursor-pointer hover:opacity-80 transition-opacity ${isLandscape ? 'w-full h-auto' : ''
-            }`}
+          width={200}
+          height={350}
+          className={`rounded-md object-contain mx-auto ml-0 cursor-pointer hover:opacity-80 transition-opacity max-w-[200px] max-h-[350px] w-auto h-auto`}
           onClick={() => onImageClick(item)}
           onMouseEnter={onHover}
           onMouseLeave={onLeave}
@@ -331,7 +328,7 @@ export default function Work() {
         .work-scroll-track {
           display: flex;
           width: fit-content;
-          align-items: flex-end;
+          align-items: flex-start;
           height: 85%;
           animation: scroll 100s linear infinite;
         }

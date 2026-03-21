@@ -162,57 +162,6 @@ const Navbar = () => {
               />
             </div>
 
-            {/* Social Media Icons */}
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.4, duration: 0.5 }}
-              className="absolute bottom-[30%] right-4 sm:right-6 md:right-10 z-20"
-            >
-              <div className="flex flex-col gap-3 sm:gap-4 md:gap-6">
-                <motion.a
-                  href="#"
-                  className="text-gray-700 hover:text-gray-900 text-xl sm:text-xl md:text-2xl transition-colors"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
-                >
-                  <FaTwitter />
-                </motion.a>
-                <motion.a
-                  href="https://www.linkedin.com/company/histare/"
-                  className="text-gray-700 hover:text-gray-900 text-xl sm:text-xl md:text-2xl transition-colors"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
-                >
-                  <FaLinkedin />
-                </motion.a>
-                <motion.a
-                  href="https://www.youtube.com/@thehistaregroup7950"
-                  className="text-gray-700 hover:text-gray-900 text-xl sm:text-xl md:text-2xl transition-colors"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
-                >
-                  <FaYoutube />
-                </motion.a>
-                <motion.a
-                  href="#"
-                  className="text-gray-700 hover:text-gray-900 text-xl sm:text-xl md:text-2xl transition-colors"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
-                >
-                  <FaFacebook />
-                </motion.a>
-                <motion.a
-                  href="https://www.instagram.com/histare.concepts/"
-                  className="text-gray-700 hover:text-gray-900 text-lg sm:text-xl md:text-2xl transition-colors"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
-                >
-                  <FaInstagram />
-                </motion.a>
-              </div>
-            </motion.div>
-
             {/* Menu Content */}
             <div className="relative z-10 flex flex-col h-full">
               <motion.div
@@ -278,7 +227,7 @@ const Navbar = () => {
                   G O I
                 </a>
 
-                {/* Contact + Privacy */}
+                {/* Contact + Year */}
                 <div className="flex justify-between items-start">
                   <a
                     href="/contact"
@@ -299,14 +248,6 @@ const Navbar = () => {
                     >
                       {new Date().getFullYear()}
                     </p>
-                    <Link
-                      href="/term"
-                      onClick={(e) => handleNavigation(e, '/term', 'Terms & Conditions')}
-                      className="hover:text-gray-800 transition-colors text-sm sm:text-sm"
-                      style={{ fontFamily: 'Optima' }}
-                    >
-                      Terms & Conditions
-                    </Link>
                   </motion.div>
                 </div>
               </motion.div>

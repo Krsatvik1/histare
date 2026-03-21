@@ -1,16 +1,16 @@
 import React from 'react';
-import Image from 'next/image'; // Use only if you're in a Next.js project
 
 const Elephant = () => {
   return (
     <section className="min-h-screen flex flex-col md:flex-row items-center justify-center px-4 sm:px-6 py-16 sm:py-20 pt-20 sm:pt-24">
       {/* Elephant Image */}
       <div className="flex-3/5 flex items-center justify-center">
-        <Image
-          src="/images/landing/elephant.png"
-          alt="Paper Elephant Statue"
-          width={500}
-          height={500}
+        <video
+          src="/Elephant Render.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
           className="object-contain w-80 sm:w-96 md:w-[500px] h-auto"
         />
       </div>

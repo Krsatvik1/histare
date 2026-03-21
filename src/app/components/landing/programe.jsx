@@ -18,7 +18,7 @@ function Programe() {
         <a href="/collectors">
           <div className="rounded-xl overflow-hidden aspect-[3/4] bg-[#2B3730]">
             <Image
-              src="/images/art/Rect.webp"
+              src="/Collectors_ Affaire logo.png"
               alt="Collectors' Affair"
               width={100}
               height={100}

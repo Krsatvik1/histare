@@ -23,7 +23,7 @@ const Footer = ({ prevPage, nextPage }) => {
     <>
       {/* Navigation Section - Full Height */}
       {(prevPage || nextPage) && (
-        <div className="min-h-dvh w-full flex items-center justify-center px-6 md:px-20 snap-start">
+        <div className="min-h-[50dvh] w-full flex items-center justify-center px-6 md:px-20 snap-start">
           <div className="w-full max-w-5xl flex justify-between items-center">
             {/* Previous Page Link */}
             <div className="flex-1">

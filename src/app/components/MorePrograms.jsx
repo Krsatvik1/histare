@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -34,7 +34,14 @@ const programs = [
 ];
 
 export default function MorePrograms({ currentProgram }) {
-    const otherPrograms = programs.filter(p => p.id !== currentProgram);
+    const [shuffledPrograms, setShuffledPrograms] = useState([]);
+
+    React.useEffect(() => {
+        const others = programs.filter(p => p.id !== currentProgram);
+        // Shuffle the programs
+        const shuffled = [...others].sort(() => Math.random() - 0.5);
+        setShuffledPrograms(shuffled);
+    }, [currentProgram]);
 
     // Get the background color for the current page based on the current program
     const currentProgramData = programs.find(p => p.id === currentProgram);
@@ -56,7 +63,7 @@ export default function MorePrograms({ currentProgram }) {
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl w-full">
-                {otherPrograms.map((program) => (
+                {shuffledPrograms.length > 0 && shuffledPrograms.map((program) => (
                     <Link
                         key={program.id}
                         href={program.href}

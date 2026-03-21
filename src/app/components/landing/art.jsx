@@ -270,41 +270,24 @@ const isVideo = (src) => {
   return ext === 'mp4' || ext === 'webm';
 };
 
-function GroupedCardContent({ item, reversed, onImageClick, onHover, onLeave }) {
+function GroupedCardContent({ item, onImageClick, onHover, onLeave }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const handleThumbnailClick = (index) => {
     setCurrentImageIndex(index);
   };
 
-  const Info = (
-    <div className="p-4 pl-0 pb-0 rounded-lg" style={{ fontFamily: 'Optima' }}>
-      {item.author && (
-        <div className="text-sm md:text-base font-semibold text-gray-800 mb-1 wrap-break-word line-clamp-2">{item.author}</div>
-      )}
-      {item.title && item.title.toLowerCase() !== 'untitled' && (
-        <div className="text-xs md:text-sm text-gray-600 mb-1 wrap-break-word">Title: {item.title}</div>
-      )}
-      {(item.medium || item.material) && (
-        <div className="text-xs md:text-sm text-gray-600 mb-1 leading-relaxed wrap-break-word line-clamp-2">
-          Material: {item.medium || item.material}
-        </div>
-      )}
-      {item.size && <div className="text-xs md:text-sm text-gray-600 mb-1 wrap-break-word">Size: {item.size}</div>}
-    </div>
-  );
-
   const currentSrc = item.images[currentImageIndex];
   const isCurrentVideo = isVideo(currentSrc);
 
-  const GroupedArt = (
-    <div className="p-0 ml-0 rounded-lg w-52">
+  return (
+    <div className="p-0 ml-0 rounded-lg w-[200px]">
       {/* Main Image */}
       <div className="mb-3" onClick={() => onImageClick(item, currentImageIndex)}>
         {isCurrentVideo ? (
           <video
             src={currentSrc}
-            className="rounded-md object-cover cursor-pointer hover:opacity-80 transition-opacity w-full h-[350px]"
+            className="rounded-md object-contain cursor-pointer hover:opacity-80 transition-opacity w-full h-[400px]"
             autoPlay
             muted
             loop
@@ -317,8 +300,8 @@ function GroupedCardContent({ item, reversed, onImageClick, onHover, onLeave }) 
             src={currentSrc}
             alt={`${item.title || "Artwork"} ${currentImageIndex + 1}`}
             width={200}
-            height={350}
-            className="rounded-md object-cover cursor-pointer hover:opacity-80 transition-opacity w-full"
+            height={400}
+            className="rounded-md object-contain cursor-pointer hover:opacity-80 transition-opacity w-full h-[400px]"
             onMouseEnter={onHover}
             onMouseLeave={onLeave}
           />
@@ -343,7 +326,7 @@ function GroupedCardContent({ item, reversed, onImageClick, onHover, onLeave }) 
               {isThumbVideo ? (
                 <video
                   src={imgSrc}
-                  className="object-cover w-[30px] h-[40px]"
+                  className="object-contain w-[30px] h-[40px]"
                   muted
                   loop
                   playsInline
@@ -354,7 +337,7 @@ function GroupedCardContent({ item, reversed, onImageClick, onHover, onLeave }) 
                   alt={`${item.title || "Artwork"} ${index + 1}`}
                   width={30}
                   height={40}
-                  className="object-cover"
+                  className="object-contain"
                 />
               )}
             </button>
@@ -363,53 +346,21 @@ function GroupedCardContent({ item, reversed, onImageClick, onHover, onLeave }) 
       </div>
     </div>
   );
-
-  return reversed ? (
-    <div className="flex flex-col" style={{ fontFamily: 'Optima' }}>
-      <div className="mb-4">{Info}</div>
-      <div>{GroupedArt}</div>
-    </div>
-  ) : (
-    <div className="flex flex-col">
-      <div className="mb-4">{GroupedArt}</div>
-      <div>{Info}</div>
-    </div>
-  );
 }
 
-function CardContent({ item, reversed, onImageClick, onHover, onLeave }) {
+function CardContent({ item, onImageClick, onHover, onLeave }) {
   if (item.isGroup) {
-    return <GroupedCardContent item={item} reversed={reversed} onImageClick={onImageClick} onHover={onHover} onLeave={onLeave} />;
+    return <GroupedCardContent item={item} onImageClick={onImageClick} onHover={onHover} onLeave={onLeave} />;
   }
 
-  // Determine if this is a landscape orientation card
-  const isLandscape = item.orientation === "landscape";
   const isItemVideo = isVideo(item.img);
 
-  const Info = (
-    <div className={`p-4 pl-0 pb-0 rounded-lg ${isLandscape ? 'w-full' : 'w-52'}`} style={{ fontFamily: 'Optima' }}>
-      {item.author && (
-        <div className="text-sm md:text-base font-semibold text-gray-800 mb-1 wrap-break-word line-clamp-2">{item.author}</div>
-      )}
-      {item.title && item.title.toLowerCase() !== 'untitled' && (
-        <div className="text-xs md:text-sm text-gray-600 mb-1 wrap-break-word">Title: {item.title}</div>
-      )}
-      {(item.medium || item.material) && (
-        <div className="text-xs md:text-sm text-gray-600 mb-1 leading-relaxed wrap-break-word line-clamp-2">
-          Material: {item.medium || item.material}
-        </div>
-      )}
-      {item.size && <div className="text-xs md:text-sm text-gray-600 mb-1 wrap-break-word">Size: {item.size}</div>}
-    </div>
-  );
-
-  const Art = (
-    <div className={`p-0 ml-0 rounded-lg ${isLandscape ? 'w-full' : 'w-52'}`}>
+  return (
+    <div className="p-0 ml-0 rounded-lg w-[200px]">
       {isItemVideo ? (
         <video
           src={item.img}
-          className={`rounded-md object-cover mx-auto ml-0 cursor-pointer hover:opacity-80 transition-opacity ${isLandscape ? 'w-full h-auto' : 'w-[200px] h-[350px]'
-            }`}
+          className="rounded-md object-contain mx-auto ml-0 cursor-pointer hover:opacity-80 transition-opacity w-[200px] h-[400px]"
           autoPlay
           muted
           loop
@@ -422,27 +373,14 @@ function CardContent({ item, reversed, onImageClick, onHover, onLeave }) {
         <Image
           src={item.img}
           alt={item.title || "Artwork"}
-          width={isLandscape ? 400 : 200}
-          height={isLandscape ? 250 : 350}
-          className={`rounded-md object-cover mx-auto ml-0 cursor-pointer hover:opacity-80 transition-opacity ${isLandscape ? 'w-full h-auto' : ''
-            }`}
+          width={200}
+          height={400}
+          className="rounded-md object-contain mx-auto ml-0 cursor-pointer hover:opacity-80 transition-opacity w-[200px] h-[400px]"
           onClick={() => onImageClick(item)}
           onMouseEnter={onHover}
           onMouseLeave={onLeave}
         />
       )}
-    </div>
-  );
-
-  return reversed ? (
-    <div className="mb-0! flex flex-col justify-end --bg-red-200 h-full" style={{ fontFamily: 'Optima' }}>
-      <div className="mb-4">{Info}</div>
-      <div>{Art}</div>
-    </div>
-  ) : (
-    <div className="flex flex-col h-full">
-      <div className="mb-4">{Art}</div>
-      <div>{Info}</div>
     </div>
   );
 }
@@ -513,9 +451,9 @@ export default function Work() {
         .work-scroll-track {
           display: flex;
           width: fit-content;
-          align-items: flex-end;
-          height: 85%;
-          animation: scroll 100s linear infinite;
+          align-items: flex-start;
+          height: 100%;
+          animation: scroll 120s linear infinite;
         }
 
         @media (max-width: 768px) {
@@ -532,22 +470,9 @@ export default function Work() {
           padding-bottom: 0px !important;
           margin-bottom : 0px !important ;
           flex-direction: column;
-          border-right: 1px solid #003677;
           border-right: 1px solid #f1d394;
           padding-left: 30px;
           border-left: none;
-        }
-
-        .work-card.grouped {
-          padding-left: 30px;
-          padding-right: 30px;
-          min-width: fit-content;
-        }
-
-        .work-card.landscape {
-          padding-left: 30px;
-          padding-right: 30px;
-          min-width: 450px;
         }
         
         .work-card.card-up {
@@ -600,13 +525,11 @@ export default function Work() {
               {[...workItems, ...workItems, ...workItems, ...workItems].map((item, i) => (
                 <div
                   key={i}
-                  className={`work-card ${item.isGroup ? 'grouped' : ''} ${item.orientation === 'landscape' ? 'landscape' : ''
-                    } ${i % 2 === 0 ? 'card-up' : 'card-down'
+                  className={`work-card ${item.isGroup ? 'grouped' : ''} ${i % 2 === 0 ? 'card-up' : 'card-down'
                     }`}
                 >
                   <CardContent
                     item={item}
-                    reversed={i % 2 === 1}
                     onImageClick={handleImageClick}
                     onHover={handleMouseEnter}
                     onLeave={handleMouseLeave}

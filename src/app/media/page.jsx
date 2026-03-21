@@ -308,7 +308,10 @@ export default function MediaPage() {
         </section>
 
       </div>
-      <Footer />
+      <Footer
+        prevPage={{ label: "Insights", href: "/insights" }}
+        nextPage={{ label: "G O I", href: "/goi" }}
+      />
     </>
   );
 }

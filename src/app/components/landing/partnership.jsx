@@ -16,6 +16,7 @@ const logoUp = [
   'taksim.png',
   'my_money.png',
   'rampur.png',
+  'habitat_for_humanity.png'
 ];
 
 const logoDown = [

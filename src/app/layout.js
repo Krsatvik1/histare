@@ -31,10 +31,7 @@ export default function RootLayout({ children }) {
       >
         {/* Critical Inline Loader */}
         <div id="global-loader">
-          <div className="relative flex items-center justify-center">
-            <div className="loader-inner"></div>
-            <div className="loader-outer"></div>
-          </div>
+          <img src="/loader.svg" alt="Histare Loader" className="loader-logo" />
         </div>
         <Loader />
         <TransitionProvider>
