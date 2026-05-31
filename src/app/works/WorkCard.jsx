@@ -28,6 +28,7 @@ export default function WorkCard({ work }) {
             src={work.image}
             alt={work.title}
             fill
+            quality={60}
             sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
             onError={() => setImgError(true)}
             className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
