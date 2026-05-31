@@ -2,6 +2,7 @@
 import React, { useState, useRef } from "react";
 import Image from "next/image";
 import MobileStoryView from "./mobile-story-view";
+import { useTransition } from "../../context/TransitionContext";
 
 const workItems = [
   {
@@ -266,6 +267,7 @@ export default function Work() {
   const [isPaused, setIsPaused] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
   const scrollTrackRef = useRef(null);
+  const { navigate } = useTransition();
 
   const handleMouseEnter = () => {
     setIsPaused(true);
@@ -387,6 +389,7 @@ export default function Work() {
           sectionLogoSrc="/images/art/nav.svg"
           nextSectionId="partnership-section"
           onItemClick={(item) => handleImageClick(item)}
+          onViewAll={() => navigate('/works', 'All Works')}
         />
       </div>
 
@@ -430,6 +433,17 @@ export default function Work() {
               ))}
             </div>
           </div>
+        </div>
+
+        {/* View All Works CTA */}
+        <div className="flex justify-center pb-10">
+          <button
+            onClick={() => navigate('/works', 'All Works')}
+            className="border border-[#3c597B] text-[#3c597B] rounded-[25px] px-8 py-3 text-[16px] uppercase tracking-wide transition-colors hover:bg-[#3c597B] hover:text-[#F3F0ED]"
+            style={{ fontFamily: 'Optima' }}
+          >
+            View All Works
+          </button>
         </div>
       </div>
 

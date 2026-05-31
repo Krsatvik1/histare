@@ -10,7 +10,7 @@ const isVideo = (src) => {
     return ext === 'mp4' || ext === 'webm';
 };
 
-export default function MobileStoryView({ items, sectionLogoSrc, nextSectionId, onItemClick }) {
+export default function MobileStoryView({ items, sectionLogoSrc, nextSectionId, onItemClick, onViewAll }) {
     // Flatten items to handle grouped images as individual slides
     const flatItems = React.useMemo(() => {
         const flat = [];
@@ -150,6 +150,19 @@ export default function MobileStoryView({ items, sectionLogoSrc, nextSectionId, 
                         />
                     )}
                 </div>
+
+                {/* View All Works CTA */}
+                {onViewAll && (
+                    <div className="flex justify-center">
+                        <button
+                            onClick={(e) => { e.stopPropagation(); onViewAll(); }}
+                            className="border border-[#3c597B] text-[#3c597B] rounded-[25px] px-5 py-1.5 text-[12px] uppercase tracking-wide"
+                            style={{ fontFamily: 'Optima' }}
+                        >
+                            View All Works
+                        </button>
+                    </div>
+                )}
 
                 {/* Progress Bars */}
                 <div className="flex gap-1 h-1 w-full">

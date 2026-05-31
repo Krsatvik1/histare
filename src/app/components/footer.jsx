@@ -31,6 +31,7 @@ const Footer = () => {
           className="flex md:flex-col gap-8 text-3xl sm:text-3xl font-medium text-gray-500 items-center md:items-start"
           style={{ fontFamily: 'Rofane' }}
         >
+          <a href="/works" className="hover:underline">Works</a>
           <a href="/media" className="hover:underline">Media</a>
           <a href="/insights" className="hover:underline">Insights</a>
           <a href="/goi" className="hover:underline">GOI</a>

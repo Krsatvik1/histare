@@ -39,3 +39,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# large source assets — redundant with /public/images/art/hires (kept out of git)
+/docs/High res Images for website/
+/docs/High res Images for website.rar
+/docs/Artwork Details for Website.zip

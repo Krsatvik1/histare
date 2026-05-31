@@ -199,6 +199,13 @@ const Navbar = () => {
                   Our Vision in Action
                 </a>
                 <a
+                  href="/works"
+                  onClick={(e) => handleNavigation(e, '/works', 'All Works')}
+                  className="hover:text-gray-600 transition-colors"
+                >
+                  All Works
+                </a>
+                <a
                   href="/essence"
                   onClick={(e) => handleNavigation(e, '/essence', 'Our Essence')}
                   className="hover:text-gray-600 transition-colors"
